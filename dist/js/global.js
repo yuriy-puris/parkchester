@@ -3737,7 +3737,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 Object(__WEBPACK_IMPORTED_MODULE_2__libs_binder__["a" /* default */])({
     bounds: {
-        "html": [__WEBPACK_IMPORTED_MODULE_3__modules_module__["b" /* constants */], __WEBPACK_IMPORTED_MODULE_3__modules_module__["a" /* accordion */], __WEBPACK_IMPORTED_MODULE_3__modules_module__["d" /* slider */], __WEBPACK_IMPORTED_MODULE_3__modules_module__["c" /* mobileMenu */]]
+        "html": [__WEBPACK_IMPORTED_MODULE_3__modules_module__["b" /* constants */], __WEBPACK_IMPORTED_MODULE_3__modules_module__["a" /* accordion */], __WEBPACK_IMPORTED_MODULE_3__modules_module__["f" /* slider */], __WEBPACK_IMPORTED_MODULE_3__modules_module__["d" /* mobileMenu */], __WEBPACK_IMPORTED_MODULE_3__modules_module__["c" /* isDev */], __WEBPACK_IMPORTED_MODULE_3__modules_module__["e" /* noDev */]]
     },
     runTests: true
 });
@@ -11877,8 +11877,10 @@ function binder(_ref) {
 "use strict";
 /* WEBPACK VAR INJECTION */(function($) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return constants; });
 /* harmony export (immutable) */ __webpack_exports__["a"] = accordion;
-/* harmony export (immutable) */ __webpack_exports__["d"] = slider;
-/* harmony export (immutable) */ __webpack_exports__["c"] = mobileMenu;
+/* harmony export (immutable) */ __webpack_exports__["f"] = slider;
+/* harmony export (immutable) */ __webpack_exports__["d"] = mobileMenu;
+/* harmony export (immutable) */ __webpack_exports__["c"] = isDev;
+/* harmony export (immutable) */ __webpack_exports__["e"] = noDev;
 
 // these properties will be available from anywhere via this.property
 var constants = {
@@ -11922,8 +11924,19 @@ function mobileMenu() {
     $('.header-content').removeClass('active-menu');
   });
   $('.parent-menu > a').on('click', function () {
+    $(this).toggleClass('active');
     $(this).next().slideToggle();
   });
+}
+
+function isDev() {
+  return !$("html").hasClass("no-dev");
+}
+
+function noDev() {
+  if (typeof window.orientation !== "undefined" || navigator.userAgent.indexOf("IEMobile") !== -1) {
+    $(".no-dev").removeClass("no-dev");
+  }
 }
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(125)))
 

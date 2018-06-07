@@ -39,6 +39,18 @@ export function mobileMenu () {
     $('.header-content').removeClass('active-menu')
   });
   $('.parent-menu > a').on('click', function() {
+    $(this).toggleClass('active');
     $(this).next().slideToggle()
   })
+}
+
+export function isDev() {
+  return !$("html").hasClass("no-dev");
+}
+
+export function noDev() {
+  if ((typeof window.orientation !== "undefined") ||
+    (navigator.userAgent.indexOf("IEMobile") !== -1)) {
+    $(".no-dev").removeClass("no-dev");
+  }
 }

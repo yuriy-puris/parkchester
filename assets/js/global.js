@@ -5,14 +5,16 @@ import {
     constants,
     accordion,
     slider,
-    mobileMenu
+    mobileMenu,
+    isDev,
+    noDev
 } from "./modules/module";
 
 
 
 binder({
     bounds: {
-        "html": [constants, accordion, slider, mobileMenu],
+        "html": [constants, accordion, slider, mobileMenu, isDev, noDev],
     },
     runTests: true
 });

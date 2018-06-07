@@ -1,0 +1,20 @@
+.intro-home {
+  height: calc(100vh - 68px);
+  width: 100%;
+  background-size: cover;
+  padding: 82px 0 0;
+  text-align: center;
+  position: relative;
+  .h5, h5 {
+    margin-bottom: 5px;
+  }
+  .scroll-to {
+    @include font-regular();
+    font-size: 13px;
+    line-height: 15px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    padding: 7px 19px;
+  }
+}

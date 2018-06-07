@@ -1,9 +1,11 @@
-
 .main {
-  padding: 20px;
+  padding: 68px 0 0;
   flex-shrink: 0;
   flex-grow: 1;
   // overflow: hidden;
+  @include media(">=desktop") {
+    padding: 163px 0 0;
+  }
 }
 
 .wrapper {

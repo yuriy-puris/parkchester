@@ -47,10 +47,10 @@ body {
   }
 }
 .container {
-  max-width: 1200px;
+  max-width: 1170px;
   min-width: 320px;
   margin: auto;
-  padding: 0 15px;
+  padding: 0 10px;
 }
 h1, .h1,
 h2, .h2,
@@ -59,64 +59,84 @@ h4, .h4,
 h5, .h5,
 h6, .h6 {
   text-transform: uppercase;
-  text-align: center;
 }
 
 h1, .h1 {
   @include font-bold;
   font-size: 28px;
+  line-height: 30px;
   margin-bottom: 30px;
   @include media(">=tablet") {
     font-size: 50px;
+    line-height: 55px;
   }
 }
 
 h2, .h2 {
   @include font-bold;
   font-size: 18px;
+  line-height: 20px;
   margin-bottom: 30px;
   @include media(">=tablet") {
     font-size: 36px;
+    line-height: 40px;
   }
 }
 
 h3, .h3 {
   @include font-bold;
   font-size: 18px;
+  line-height: 20px;
   margin-bottom: 30px;
   @include media(">=tablet") {
     font-size: 32px;
+    line-height: 35px;
   }
 }
 
 h4, .h4 {
   @include font-bold;
   font-size: 16px;
+  line-height: 20px;
   margin-bottom: 30px;
   @include media(">=tablet") {
     font-size: 24px;
+    line-height: 25px;
   }
 }
 
 h5, .h5 {
   @include font-medium;
   font-size: 14px;
+  line-height: 15px;
   color: $color-gold;
   margin-bottom: 25px;
   @include media(">=tablet") {
     font-size: 18px;
+    line-height: 20px;
   }
 }
 
 h6, .h6 {
   @include font-medium;
   font-size: 14px;
+  line-height: 15px;
   margin-bottom: 25px;
   @include media(">=tablet") {
     font-size: 16px;
+    line-height: 20px;
   }
 }
-
+strong {
+  @include font-medium;
+}
+blockquote {
+  p, q {
+    @include font-bold;
+    color: $color-gold;
+    text-transform: uppercase;
+  }
+}
 p {
   margin-bottom: $text-margin;
 }
@@ -133,6 +153,8 @@ img {
   max-width: 100%;
 }
 .content {
+  max-width: 770px;
+  margin: auto;
   ul {
     li {
       padding-left: 20px;
@@ -429,6 +451,3 @@ table {
     max-width: 140px;
   }
 }
-
-
-

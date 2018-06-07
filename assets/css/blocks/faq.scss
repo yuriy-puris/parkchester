@@ -1,0 +1,39 @@
+.faq-holder {
+  border-bottom: 1px solid $color-light-grey;
+  h5, .h5 {
+    color: $color-black;
+    text-transform: none;
+    margin-bottom: 0;
+    text-align: left;
+    a {
+      border-top: 1px solid $color-light-grey;
+      display: block;
+      font: inherit;
+      position: relative;
+      cursor: pointer;
+      color: inherit;
+      transition: color .2s;
+      padding: 30px;
+      &::after {
+        content: '';
+        @include arrow();
+        @include pos(absolute, 50%,null, null, 30px);
+        transform: translateY(-50%) rotateZ(45deg);
+        transition: transform .3s;
+      }
+      &.active {
+        color: $color-gold;
+        &::after {
+         transform: translateY(-50%) rotateZ(-135deg);
+        }
+      }
+    }
+  }
+  .faq-info {
+    display: none;
+    padding: 0 30px;
+  }
+  p {
+    margin-bottom: 30px;
+  }
+}

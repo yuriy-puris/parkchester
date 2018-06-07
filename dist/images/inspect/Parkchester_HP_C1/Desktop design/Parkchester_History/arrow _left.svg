@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="70px" height="40px" viewBox="0 0 70 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>380F0272-2807-4B01-B1B0-4E1C6E80BDAE</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Desktop-design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Parkchester_History" transform="translate(-55.000000, -1242.000000)">
+            <g id="Service-Dispatch-Department" transform="translate(55.000000, 1112.000000)">
+                <g id="arrow" transform="translate(0.000000, 130.000000)">
+                    <g id="arrow-_left">
+                        <rect id="Rectangle-2" stroke="#060707" opacity="0.2" x="0.5" y="0.5" width="69" height="39"></rect>
+                        <g id="Group" fill-rule="evenodd" transform="translate(15.000000, 13.000000)" fill="#060707">
+                            <path d="M6.21221865,12.8758621 C6.3022508,12.9586207 6.414791,13 6.53858521,13 C6.66237942,13 6.77491961,12.9586207 6.86495177,12.8758621 C7.04501608,12.7103448 7.04501608,12.4413793 6.86495177,12.2758621 L1.12540193,7 L6.86495177,1.72413793 C7.04501608,1.55862069 7.04501608,1.28965517 6.86495177,1.12413793 C6.68488746,0.95862069 6.39228296,0.95862069 6.21221865,1.12413793 L0.135048232,6.7 C-0.0450160772,6.86551724 -0.0450160772,7.13448276 0.135048232,7.3 L6.21221865,12.8758621 Z" id="Page-1"></path>
+                            <text id="Prev" font-family="Roboto-Regular, Roboto" font-size="13" font-weight="normal" line-spacing="14">
+                                <tspan x="14" y="12">Prev</tspan>
+                            </text>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

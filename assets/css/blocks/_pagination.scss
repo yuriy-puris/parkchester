@@ -1,0 +1,58 @@
+.wrap-wp-pagenavi {
+  font-size: 0;
+  display: table;
+  margin: 45px 0 95px 0;
+  a, span {
+    @include font-regular;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+    color: $color-black;
+    text-align: center;
+    cursor: pointer;
+    margin: 0 15px;
+  }
+  .extend {
+    letter-spacing: 2px;
+  }
+  .previouspostslink,
+  .nextpostslink {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    text-indent: -9999px;
+    overflow: hidden;
+    @include media(">=tablet") {
+      padding: 0 22px;
+    }
+  }
+  .previouspostslink {
+    background: url('#{$path-images}/arrow_left.svg') no-repeat center center;
+    border-right-color: transparent;
+  }
+  .nextpostslink {
+    background: url('#{$path-images}/arrow_right.svg') no-repeat center center;
+    border-left-color: transparent;
+  }
+  .current {
+    color: $color-gold;
+    pointer-events: none;
+    position: relative;
+    &::after {
+      content: '';
+      @include pos(absolute, null, null, 0, 0);
+      height: 2px;
+      width: 100%;
+      background: $color-gold;
+    }
+  }
+}
+.no-dev {
+  .wp-pagenavi {
+    a, span {
+      transition: bacground-color .3s;
+      &:hover {
+      }
+    }
+  }
+}

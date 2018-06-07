@@ -1,0 +1,58 @@
+.residents-wrapper {
+  .h5, h5 {
+    margin: 0;
+  }
+}
+.residents-holder {
+  overflow: auto;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+  position: relative;
+  .img {
+    background-size: cover;
+    width: 290px;
+    height: 210px;
+    margin: auto;
+    @include media('>=tablet') {
+      width: 370px;
+      height: 270px;
+      float: left;
+      margin: 0 30px 0 0;
+    }
+  }
+  .description {
+    display: inline-block;
+    text-align: left;
+    @include media('>=tablet') {
+      width: calc(100% - 400px);
+    }
+  }
+  p {
+    border-bottom: 1px solid $color-light-grey;
+    padding: 0 0 30px;
+    position: relative;
+    &::after {
+      @include media('>=tablet') {
+        content: '';
+        @include pos(absolute, null, null, 0, 0)
+        width: 113px;
+        height: 80px;
+        background: url('#{$path-images}/quote.svg') no-repeat;
+      }
+    }
+  }
+  strong {
+    @include font-regular;
+    font-size: 16px;
+    display: block;
+    text-transform: uppercase;
+    margin: 0 0 30px;
+  }
+  .btn {
+    font-size: 14px;
+  }
+  h5, .h5 {
+    text-align: left;
+  }
+}

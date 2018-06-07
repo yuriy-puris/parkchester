@@ -1,0 +1,226 @@
+.header {
+    padding: 10px;
+}
+.mainlogo {
+    display: block;
+    overflow: hidden;
+    width: 113px;
+    height: 55px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    @include media(">=xtablet") {
+        width: 165px;
+        height: 80px;
+        float: left;
+        position: relative;
+        transform: translateX(0);
+        left: auto;
+    }
+    a {
+        display: block;
+    }
+}
+.header-content {
+    @include media(">=xtablet") {
+        float: right;
+        width: calc(100% - 165px);
+    }
+    &::after {
+        content: '';
+        background: lighten($color-black, 70%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        transition: opacity .4s;
+        opacity: 0;
+        visibility: hidden;
+    }
+    &.active-menu {
+        &::after {
+            height: 100vh;
+            width: 100%;
+            opacity: 1;
+            visibility: visible;
+        }
+        .main-menu {
+            left: 0;
+        }
+    }
+}
+.menu-button {
+    float: left;
+    display: block;
+    width: 15px;
+    height: 12px;
+    margin: 7px 0 0;
+    text-indent: -9999px;
+    position: relative;
+    @include media(">=xtablet") {
+        display: none;
+    }
+    span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        left: 0;
+        background: $color-black;
+        position: absolute;
+        &:first-child {
+            top: 0;
+        }
+        &:nth-child(2) {
+            top: 50%;
+            transform: translateY(-50%);
+            width: 70%;
+        }
+        &:last-child {
+            bottom: 0;
+        }
+    }
+}
+.main-menu {
+    @include font-medium;
+    position: fixed;
+    left: -100%;
+    top: 0;
+    overflow-y: auto;
+    max-height: 100vh;
+    height: 100vh;
+    width: 80%;
+    background: $color-white;
+    text-transform: uppercase;
+    z-index: 3;
+    padding: 20px 20px;
+    transition: left .3s;
+    @include media(">=xtablet") {
+        font-size: 14px;
+        line-height: 15px;
+        position: relative;
+        height: auto;
+        width: 100%;
+        left: 0;
+        border: 1px solid lighten($color-black, 80%);
+        border-color: lighten($color-black, 80%) transparent transparent;
+        padding: 0;
+    }
+    & > ul {
+        border: 1px solid lighten($color-black, 80%);
+        border-color: lighten($color-black, 80%) transparent;
+        padding: 40px 0 0;
+        margin: 30px 0 40px;
+        min-height: 55vh;
+        @include media(">=xtablet") {
+            display: inline-block;
+            border-color: transparent;
+            min-height: auto;
+            padding: 0;
+            margin: 0;
+            vertical-align: middle;
+            @include clearfix;
+        }
+        & > li {
+            @include media(">=xtablet") {
+                float: left;
+                padding: 0 15px;
+            }
+        }
+        li {
+            margin: 0 0 30px;
+            @include media(">=xtablet") {
+                margin: 0;
+            }
+        }
+        a {
+            color: $color-black;
+            display: inline-block;
+            position: relative;
+        }
+    }
+    .sub-memu {
+        display: none;
+        padding: 30px 0 0;
+        li {
+            margin: 0 0 15px;
+            &:last-child {
+                margin: 0;
+            }
+        }
+    }
+    .btn {
+        text-transform: none;
+        font-size: 12px;
+        padding-top: 9px;
+        padding-bottom: 9px;
+    }
+    .parent-menu {
+        > a {
+            &::after {
+                content: '';
+                @include pos(absolute, 40%, null, null, -15px);
+                @include arrow;
+                transform: translateY(-50%) rotateZ(45deg);
+            }
+        }
+    }
+    .close-menu {
+        display: inline-block;
+        text-indent: -9999px;
+        overflow: hidden;
+        position: relative;
+        width: 11px;
+        height: 12px;
+        @include media(">=xtablet") {
+            display: none;
+        }
+        &::after {
+            content: '';
+            @include pos(absolute, 0, 0);
+            background: url('#{$path-images}/close.png');
+            width: inherit;
+            height: inherit;
+        }
+    }
+}
+.header-contact {
+    float: right;
+    margin: 5px 0 0;
+    a {
+        display: inline-block;
+        font-size: 0;
+        vertical-align: middle;
+        position: relative;
+        &:not(:last-child) {
+            margin: 0 20px 0 0;
+            &::after {
+                content: '';
+                @include pos(absolute, 50%, null, 50%, -12px);
+                height: 11px;
+                width: 2px;
+                background: lighten($color-black, 80%);
+                transform: translateY(-50%);
+            }
+        }
+    }
+    .call-link {
+        @include font-regular;
+        color: $color-black;
+        width: 12px;
+        height: 12px;
+        @include media(">=xtablet") {
+            width: auto;
+            font-size: 13px;
+        }
+    }
+    .portal-link {
+        @include font-regular;
+        color: $color-black;
+        width: 15px;
+        height: 16px;
+        @include media(">=xtablet") {
+            width: auto;
+            font-size: 13px;
+        }
+    }
+}

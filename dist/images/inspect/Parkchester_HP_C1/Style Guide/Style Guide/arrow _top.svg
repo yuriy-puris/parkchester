@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="70px" height="40px" viewBox="0 0 70 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>57AC4A7E-A728-4F92-8E1F-BC2E32EBC361</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Style-Guide" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-409.000000, -5067.000000)" id="arrow-_top_hover">
+            <g transform="translate(409.000000, 5067.000000)">
+                <rect id="Rectangle-2" stroke="#060707" opacity="0.2" x="0.5" y="0.5" width="69" height="39"></rect>
+                <g id="Group" fill-rule="evenodd" transform="translate(17.000000, 15.000000)" fill="#BE913A">
+                    <text id="Up" font-family="Roboto-Regular, Roboto" font-size="13" font-weight="normal" line-spacing="10">
+                        <tspan x="20" y="12">Up</tspan>
+                    </text>
+                    <path d="M9.21221865,10.8758621 C9.3022508,10.9586207 9.414791,11 9.53858521,11 C9.66237942,11 9.77491961,10.9586207 9.86495177,10.8758621 C10.0450161,10.7103448 10.0450161,10.4413793 9.86495177,10.2758621 L4.12540193,5 L9.86495177,-0.275862069 C10.0450161,-0.44137931 10.0450161,-0.710344828 9.86495177,-0.875862069 C9.68488746,-1.04137931 9.39228296,-1.04137931 9.21221865,-0.875862069 L3.13504823,4.7 C2.95498392,4.86551724 2.95498392,5.13448276 3.13504823,5.3 L9.21221865,10.8758621 Z" id="Page-1" transform="translate(6.500000, 5.000000) rotate(-270.000000) translate(-6.500000, -5.000000) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

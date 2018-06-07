@@ -1,0 +1,23 @@
+.social-links {
+  display: inline-block;
+  ul {
+    margin-bottom: 0;
+  }
+  li {
+    display: inline-block;
+    margin: 0 15px;
+  }
+  a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    &:hover {
+      .soc-content {
+        fill: $color-gold
+      }
+    }
+  }
+  .soc-content {
+    transition: fill .3s;
+  }
+}

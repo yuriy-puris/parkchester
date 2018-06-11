@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" class="no-dev">
+@@include("head.html", {"title": "Parkchester"})
+<body>
+<div class="wrapper">
+	@@include("header.html")
+
+	<main class="main">
+		<section class="page-apartments">
+			<div class="section main-apartments">
+				<h1>Apartments</h1>
+				<div class="breadcrumps">
+					<a href="javascript:void(0)">Apartments Index</a>
+				</div>
+				<div class="container">
+					@@include("apartments.html")
+				</div>
+			</div>
+			@@include("collection.html")
+		</section>
+	</main>
+
+	@@include("footer.html")
+</div>
+@@include("scripts.html")
+</body>
+</html>

@@ -1,4 +1,3 @@
-
 // these properties will be available from anywhere via this.property
 export const constants = {
     isTouch: "ontouchstart" in window ? function() {document.body.classList.add("touch"); return true;}() : false,
@@ -20,7 +19,7 @@ export function accordion() {
 }
 
 export function slider() {
-  $('.residents-holder').slick({
+  $('.residents-holder, .gallery-apartments').slick({
     dots: true,
     infinite: false,
     speed: 300,
@@ -28,7 +27,39 @@ export function slider() {
     slidesToScroll: 1,
     prevArrow: '<button type="button" class="slick-prev">Prev</button>',
     nextArrow: '<button type="button" class="slick-next">Next</button>'
-  })
+  });
+  $('.visual-bedroom').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    mobileFirst: true,
+    dots: false,
+    arrows: false,
+    variableWidth: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: "unslick"
+      }
+    ]
+  });
+  $('.large-sync').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    asNavFor: '.small-sync'
+  });
+  $('.small-sync').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    asNavFor: '.large-sync',
+    dots: true,
+    centerMode: true,
+    focusOnSelect: true,
+    variableWidth: true,
+    prevArrow: '<button type="button" class="slick-prev">Prev</button>',
+    nextArrow: '<button type="button" class="slick-next">Next</button>'
+  });
 }
 
 export function mobileMenu () {
@@ -53,4 +84,21 @@ export function noDev() {
     (navigator.userAgent.indexOf("IEMobile") !== -1)) {
     $(".no-dev").removeClass("no-dev");
   }
+}
+
+export function tabs() {
+  $('.tab-nav a').on('click', function(event) {
+    $(this).parent().addClass("active").siblings(".tab-nav-item").removeClass("active");
+    let attr = $(this).attr('href');
+    $(attr).addClass('active').siblings(".tab-content-item").removeClass("active");
+    event.preventDefault();
+  })
+}
+
+export function gallery() {
+  $('.gallery-holder').masonry({
+    itemSelector: '.item',
+    columnWidth: 370,
+    gutterWidth: 30
+  });
 }

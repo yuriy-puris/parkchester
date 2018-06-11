@@ -1,0 +1,120 @@
+.devided-section {
+  .apartments-item {
+    border-bottom: 1px solid $color-light-grey;
+  }
+}
+.apartments-holder {
+  text-align: center;
+  .h5 {
+    text-align: center;
+    margin-bottom: 0;
+  }
+  h3 {
+    color: $color-gold;
+    @include media(">=xtablet") {
+      margin: 0 0 10px
+    }
+  }
+  p {
+    padding: 0 0 7px;
+  }
+  strong {
+    font-size: 13px;
+    display: inline-block;
+    margin: 0 0 20px;
+    text-transform: uppercase;
+    @include media(">=xtablet") {
+      font-size: 16px;
+      margin: 0 0 30px;
+    }
+  }
+  .info-bedroom {
+    text-align: left;
+    @include media(">=tablet") {
+      max-width: 270px;
+    }
+    @include media(">=xtablet") {
+      max-width: 370px;
+    }
+    p {
+      border-bottom: 1px solid $color-light-grey;
+    }
+  }
+}
+.apartments-item {
+  padding: 0 0 30px;
+  margin: 0 0 30px;
+  @include media(">=tablet") {
+    display: flex;
+    padding: 0 0 70px;
+    margin: 0 0 70px;
+  }
+}
+.visual-bedroom {
+  margin: 0 0 30px;
+  @include media(">=tablet") {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 270px);
+    margin: 0;
+  }
+  @include media(">=xtablet") {
+    width: calc(100% - 370px);
+  }
+  .item {
+    height: 230px;
+    width: 230px;
+    background-size: cover;
+    background-position: center;
+    text-indent: -9999px;
+    overflow: hidden;
+    margin: 0 5px;
+    outline: none;
+    @include media(">=tablet") {
+      width: 300px;
+      height: 300px;
+    }
+    @include media(">=xtablet") {
+      width: 370px;
+      height: 370px;
+    }
+  }
+}
+.tab-nav {
+  @include font-regular;
+  font-size: 14px;
+  line-height: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 5px 0;
+  a {
+    color: $color-black;
+    border-bottom: 3px solid transparent;
+  }
+  li {
+    display: inline-block;
+    margin: 0 10px;
+    &.active {
+      a {
+        border-color: $color-gold;
+        color: $color-gold;
+      }
+    }
+  }
+}
+.tabs-content {
+  position: relative;
+}
+.tab-content-item {
+  top: 0;
+  left: 0;
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s;
+  &.active {
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+  }
+}

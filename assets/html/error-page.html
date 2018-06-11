@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include("head.html", {"title": "Parkchester"})
+
+<body>
+    <div class="wrapper">
+
+        @@include("header.html")
+
+        <main class="main">
+            <div class="container">
+                <section class="error-page">
+                    <h1 class="h1">404</h1>
+                    <div class="text-content">
+                        <div class="text">
+                            <h4 class="h4">Ooops!</h4>
+                            <p>We can’t seem to find a page you are looking for!</p>
+                            <p>Don’t worry and try it again.</p>
+                        </div>
+                        <a href="home.html" class="btn">Back to Home</a>
+                    </div>
+                    <div class="bg" style="background-image: url('../images/404-min.jpg');"></div>
+                </section>
+            </div>
+        </main>
+
+        @@include("footer.html")
+
+    </div>
+
+    @@include("scripts.html")
+
+</body>
+
+</html>

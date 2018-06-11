@@ -1,5 +1,6 @@
 import "babel-polyfill";
 import "./libs/slick";
+import "./libs/masonry";
 import binder from "./libs/binder";
 import {
     constants,
@@ -7,14 +8,25 @@ import {
     slider,
     mobileMenu,
     isDev,
-    noDev
+    noDev,
+    tabs,
+    gallery
 } from "./modules/module";
 
 
 
 binder({
     bounds: {
-        "html": [constants, accordion, slider, mobileMenu, isDev, noDev],
+        "html": [
+          constants,
+          accordion,
+          slider,
+          mobileMenu,
+          isDev,
+          noDev,
+          tabs,
+          gallery
+        ],
     },
     runTests: true
 });

@@ -1,0 +1,57 @@
+.error-page {
+    .h1 {
+        text-align: center;
+    }
+    .text-content {
+        width: 100%;
+        max-width: 470px;
+        margin: 0 auto;
+        .h4 {
+            margin-bottom: 5px;
+            color: $color-gold;
+        }
+        p {
+            margin-bottom: 0;
+            @include font-regular;
+        }
+    }
+    .text {
+        margin-bottom: 30px;
+    }
+    .bg {
+        // display: none;
+        @include pos(absolute, 0, 0, 0, 0);
+        @include bg(center, center, cover);
+        opacity: .3;
+        z-index: -1;
+    }
+}
+
+@include media(">=tablet") {
+    .error-page {
+        .text-content {
+            font-size: 18px;
+            line-height: 24px;
+        }
+    }
+}
+
+@include media(">=desktop") {
+    .error-page {
+        overflow: hidden;
+        .h1 {
+            clear: both;
+        }
+        .text-content {
+            float: left;
+        }
+        .bg {
+            position: static;
+            width: calc(100% - 500px);
+            height: 540px;
+            float: right;
+            opacity: 1;
+            z-index: auto;
+        }
+    }
+}

@@ -1,4 +1,103 @@
-.footer {
-    border-top: 1px solid black;
-    padding: 20px;
+.footer_ {
+    padding: 50px 0 0;
+    background-color: $color-black;
+    color: $color-white;
+    a {
+        color: $color-white;
+        @include font-light;
+    }
+    .footer-nav {
+        .h6 {
+            margin-bottom: 12px;
+        }
+    }
+    .footer-nav-block {
+        display: inline-block;
+        vertical-align: top;
+        width: 48%;
+        max-width: 200px;
+        margin-bottom: 42px;
+        padding-right: 20px;
+        ul {
+            margin-bottom: 0;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        a {
+            font-size: 13px;
+            line-height: 20px;
+        }
+    }
+    .footer-bottom {
+        padding-top: 20px;
+        text-align: center;
+        font-size: 11px;
+        line-height: 16px;
+        border-top: 1px solid $color-dark-gray;
+        p {
+            margin-bottom: 18px;
+        }
+    }
+    .social-links {
+        text-align: center;
+        width: 100%;
+        margin: -18px 0 20px;
+        li {
+            margin: 0 3px 5px;
+        }
+    }
+    .to-top {
+        display: inline-block;
+        margin-bottom: 15px;
+        @include font-medium;
+    }
+}
+@include media(">=xtablet") {
+    .footer_ {
+        .social-links {
+            margin-top: 0;
+            text-align: right;
+        }
+    }
+}
+@include media(">=desktop") {
+    .footer_ {
+        padding: 75px 0 50px;
+        .footer-nav-block {
+            margin-bottom: 0;
+            .h6 {
+                margin-bottom: 28px;
+            }
+            a {
+                font-size: 14px;
+                line-height: 24px;
+            }
+        }
+        .footer-bottom {
+            position: relative;
+            @include flex(row, space-between);
+            padding-top: 28px;
+            font-size: 13px;
+            line-height: 24px;
+            p {
+                margin-bottom: 0;
+            }
+        }
+        .to-top {
+            @include pos(absolute, 30px, center);
+            margin-bottom: 0;
+            font-size: 14px;
+        }
+    }
+}
+.no-dev {
+    .footer_ {
+        .to-top, .footer-links a {
+            transition: color .3s;
+            &:hover {
+                color: $color-gold;
+            }
+        }
+    }
 }

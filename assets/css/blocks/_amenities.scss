@@ -1,0 +1,83 @@
+.amenities-wrapper {
+  text-align: center;
+}
+.amenities-holder {
+  @include font-medium;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin: 50px 0 0;
+  @include media('>=desktop') {
+    text-align: left;
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  li {
+    background: transparent;
+    width: 50%;
+    margin: 0 0 10px;
+    @include media(">=tablet") {
+      width: 32%;
+      &:nth-child(3n-4) {
+        margin: 0 2%;
+      }
+    }
+  }
+  a {
+    font-size: 10px;
+    color: $color-black;
+    display: block;
+    position: relative;
+    border: 1px solid transparent;
+    transition: color .3s, border .3s;
+    @include media(">=xtablet") {
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+      text-align: left;
+      padding: 15px 20px;
+    }
+    @include media(">=desktop") {
+      &:hover {
+        border-color: $color-gold;
+        color: $color-gold;
+        .icon-arrow {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+    svg {
+      vertical-align: middle;
+      width: 30px;
+      height: 30px;
+      margin: 0 0 10px;
+      @include media(">=xtablet") {
+        width: 50px;
+        min-width: 50px;
+        height: 50px;
+        margin: 0 30px 0 0;
+      }
+    }
+    span {
+      display: block;
+      margin: 0 0 5px;
+      @include media(">=xtablet") {
+        display: inline-block;
+      }
+    }
+  }
+  .icon-arrow {
+    @include media(">=desktop") {
+      transform: translateX(-50%);
+      left: 50%;
+      position: absolute;
+      bottom: 11px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .7s;
+    }
+  }
+}

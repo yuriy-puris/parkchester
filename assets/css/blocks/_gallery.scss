@@ -1,0 +1,14 @@
+.gallery-holder {
+  .item {
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 370px;
+    height: 300px;
+    overflow: hidden;
+    text-indent: -9999px;
+    margin: 0 0 30px;
+    &.item-big {
+      height: 500px;
+    }
+  }
+}

@@ -32,6 +32,11 @@
 		border-width: 0 1px 1px 0;
 		border-color: transparent $color-gold $color-gold transparent;
 }
+@mixin dots(){
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
 @mixin bg ($posX: null, $posY: null, $sizeX: null, $sizeY: null) {
   background: {
     repeat: no-repeat;

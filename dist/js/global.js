@@ -189,7 +189,7 @@ module.exports = !__webpack_require__(3)(function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 var anObject = __webpack_require__(1);
-var IE8_DOM_DEFINE = __webpack_require__(91);
+var IE8_DOM_DEFINE = __webpack_require__(92);
 var toPrimitive = __webpack_require__(22);
 var dP = Object.defineProperty;
 
@@ -346,7 +346,7 @@ var createDesc = __webpack_require__(32);
 var toIObject = __webpack_require__(15);
 var toPrimitive = __webpack_require__(22);
 var has = __webpack_require__(14);
-var IE8_DOM_DEFINE = __webpack_require__(91);
+var IE8_DOM_DEFINE = __webpack_require__(92);
 var gOPD = Object.getOwnPropertyDescriptor;
 
 exports.f = __webpack_require__(6) ? gOPD : function getOwnPropertyDescriptor(O, P) {
@@ -566,7 +566,7 @@ if (__webpack_require__(6)) {
   var redefineAll = __webpack_require__(41);
   var toInteger = __webpack_require__(24);
   var toLength = __webpack_require__(8);
-  var toIndex = __webpack_require__(117);
+  var toIndex = __webpack_require__(118);
   var toAbsoluteIndex = __webpack_require__(35);
   var toPrimitive = __webpack_require__(22);
   var has = __webpack_require__(14);
@@ -588,7 +588,7 @@ if (__webpack_require__(6)) {
   var $iterDetect = __webpack_require__(54);
   var setSpecies = __webpack_require__(38);
   var arrayFill = __webpack_require__(84);
-  var arrayCopyWithin = __webpack_require__(107);
+  var arrayCopyWithin = __webpack_require__(108);
   var $DP = __webpack_require__(7);
   var $GOPD = __webpack_require__(16);
   var dP = $DP.f;
@@ -1037,10 +1037,10 @@ if (__webpack_require__(6)) {
 /* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Map = __webpack_require__(112);
+var Map = __webpack_require__(113);
 var $export = __webpack_require__(0);
 var shared = __webpack_require__(49)('metadata');
-var store = shared.store || (shared.store = new (__webpack_require__(115))());
+var store = shared.store || (shared.store = new (__webpack_require__(116))());
 
 var getOrCreateMetadataMap = function (target, targetKey, create) {
   var targetMetadata = store.get(target);
@@ -1199,7 +1199,7 @@ module.exports = function (key) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 / 15.2.3.14 Object.keys(O)
-var $keys = __webpack_require__(93);
+var $keys = __webpack_require__(94);
 var enumBugKeys = __webpack_require__(67);
 
 module.exports = Object.keys || function keys(O) {
@@ -1226,7 +1226,7 @@ module.exports = function (index, length) {
 
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
 var anObject = __webpack_require__(1);
-var dPs = __webpack_require__(94);
+var dPs = __webpack_require__(95);
 var enumBugKeys = __webpack_require__(67);
 var IE_PROTO = __webpack_require__(66)('IE_PROTO');
 var Empty = function () { /* empty */ };
@@ -1272,7 +1272,7 @@ module.exports = Object.create || function create(O, Properties) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
-var $keys = __webpack_require__(93);
+var $keys = __webpack_require__(94);
 var hiddenKeys = __webpack_require__(67).concat('length', 'prototype');
 
 exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
@@ -1316,7 +1316,7 @@ module.exports = function (it, Constructor, name, forbiddenField) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var ctx = __webpack_require__(19);
-var call = __webpack_require__(105);
+var call = __webpack_require__(106);
 var isArrayIter = __webpack_require__(80);
 var anObject = __webpack_require__(1);
 var toLength = __webpack_require__(8);
@@ -1871,7 +1871,7 @@ module.exports = function (it) {
 var global = __webpack_require__(2);
 var core = __webpack_require__(18);
 var LIBRARY = __webpack_require__(30);
-var wksExt = __webpack_require__(92);
+var wksExt = __webpack_require__(93);
 var defineProperty = __webpack_require__(7).f;
 module.exports = function (name) {
   var $Symbol = core.Symbol || (core.Symbol = LIBRARY ? {} : global.Symbol || {});
@@ -2243,7 +2243,7 @@ module.exports = function fill(value /* , start = 0, end = @length */) {
 "use strict";
 
 var addToUnscopables = __webpack_require__(31);
-var step = __webpack_require__(108);
+var step = __webpack_require__(109);
 var Iterators = __webpack_require__(44);
 var toIObject = __webpack_require__(15);
 
@@ -2282,7 +2282,7 @@ addToUnscopables('entries');
 /***/ (function(module, exports, __webpack_require__) {
 
 var ctx = __webpack_require__(19);
-var invoke = __webpack_require__(98);
+var invoke = __webpack_require__(99);
 var html = __webpack_require__(68);
 var cel = __webpack_require__(64);
 var global = __webpack_require__(2);
@@ -2483,7 +2483,7 @@ var fails = __webpack_require__(3);
 var anInstance = __webpack_require__(39);
 var toInteger = __webpack_require__(24);
 var toLength = __webpack_require__(8);
-var toIndex = __webpack_require__(117);
+var toIndex = __webpack_require__(118);
 var gOPN = __webpack_require__(37).f;
 var dP = __webpack_require__(7).f;
 var arrayFill = __webpack_require__(84);
@@ -2754,6 +2754,12 @@ exports[DATA_VIEW] = $DataView;
 /* 90 */
 /***/ (function(module, exports) {
 
+module.exports = jQuery;
+
+/***/ }),
+/* 91 */
+/***/ (function(module, exports) {
+
 var g;
 
 // This works in non-strict mode
@@ -2778,7 +2784,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 91 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = !__webpack_require__(6) && !__webpack_require__(3)(function () {
@@ -2787,14 +2793,14 @@ module.exports = !__webpack_require__(6) && !__webpack_require__(3)(function () 
 
 
 /***/ }),
-/* 92 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports.f = __webpack_require__(5);
 
 
 /***/ }),
-/* 93 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var has = __webpack_require__(14);
@@ -2817,7 +2823,7 @@ module.exports = function (object, names) {
 
 
 /***/ }),
-/* 94 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var dP = __webpack_require__(7);
@@ -2836,7 +2842,7 @@ module.exports = __webpack_require__(6) ? Object.defineProperties : function def
 
 
 /***/ }),
-/* 95 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
@@ -2861,7 +2867,7 @@ module.exports.f = function getOwnPropertyNames(it) {
 
 
 /***/ }),
-/* 96 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2902,14 +2908,14 @@ module.exports = !$assign || __webpack_require__(3)(function () {
 
 
 /***/ }),
-/* 97 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var aFunction = __webpack_require__(10);
 var isObject = __webpack_require__(4);
-var invoke = __webpack_require__(98);
+var invoke = __webpack_require__(99);
 var arraySlice = [].slice;
 var factories = {};
 
@@ -2934,7 +2940,7 @@ module.exports = Function.bind || function bind(that /* , ...args */) {
 
 
 /***/ }),
-/* 98 */
+/* 99 */
 /***/ (function(module, exports) {
 
 // fast apply, http://jsperf.lnkit.com/fast-apply/5
@@ -2956,7 +2962,7 @@ module.exports = function (fn, args, that) {
 
 
 /***/ }),
-/* 99 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $parseInt = __webpack_require__(2).parseInt;
@@ -2971,7 +2977,7 @@ module.exports = $parseInt(ws + '08') !== 8 || $parseInt(ws + '0x16') !== 22 ? f
 
 
 /***/ }),
-/* 100 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $parseFloat = __webpack_require__(2).parseFloat;
@@ -2985,7 +2991,7 @@ module.exports = 1 / $parseFloat(__webpack_require__(70) + '-0') !== -Infinity ?
 
 
 /***/ }),
-/* 101 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var cof = __webpack_require__(20);
@@ -2996,7 +3002,7 @@ module.exports = function (it, msg) {
 
 
 /***/ }),
-/* 102 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.3 Number.isInteger(number)
@@ -3008,7 +3014,7 @@ module.exports = function isInteger(it) {
 
 
 /***/ }),
-/* 103 */
+/* 104 */
 /***/ (function(module, exports) {
 
 // 20.2.2.20 Math.log1p(x)
@@ -3018,7 +3024,7 @@ module.exports = Math.log1p || function log1p(x) {
 
 
 /***/ }),
-/* 104 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.16 Math.fround(x)
@@ -3047,7 +3053,7 @@ module.exports = Math.fround || function fround(x) {
 
 
 /***/ }),
-/* 105 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // call something on iterator step with safe closing on error
@@ -3065,7 +3071,7 @@ module.exports = function (iterator, fn, value, entries) {
 
 
 /***/ }),
-/* 106 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var aFunction = __webpack_require__(10);
@@ -3099,7 +3105,7 @@ module.exports = function (that, callbackfn, aLen, memo, isRight) {
 
 
 /***/ }),
-/* 107 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3132,7 +3138,7 @@ module.exports = [].copyWithin || function copyWithin(target /* = 0 */, start /*
 
 
 /***/ }),
-/* 108 */
+/* 109 */
 /***/ (function(module, exports) {
 
 module.exports = function (done, value) {
@@ -3141,7 +3147,7 @@ module.exports = function (done, value) {
 
 
 /***/ }),
-/* 109 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 21.2.5.3 get RegExp.prototype.flags()
@@ -3152,7 +3158,7 @@ if (__webpack_require__(6) && /./g.flags != 'g') __webpack_require__(7).f(RegExp
 
 
 /***/ }),
-/* 110 */
+/* 111 */
 /***/ (function(module, exports) {
 
 module.exports = function (exec) {
@@ -3165,7 +3171,7 @@ module.exports = function (exec) {
 
 
 /***/ }),
-/* 111 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var anObject = __webpack_require__(1);
@@ -3183,12 +3189,12 @@ module.exports = function (C, x) {
 
 
 /***/ }),
-/* 112 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var strong = __webpack_require__(113);
+var strong = __webpack_require__(114);
 var validate = __webpack_require__(45);
 var MAP = 'Map';
 
@@ -3209,7 +3215,7 @@ module.exports = __webpack_require__(59)(MAP, function (get) {
 
 
 /***/ }),
-/* 113 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3221,7 +3227,7 @@ var ctx = __webpack_require__(19);
 var anInstance = __webpack_require__(39);
 var forOf = __webpack_require__(40);
 var $iterDefine = __webpack_require__(76);
-var step = __webpack_require__(108);
+var step = __webpack_require__(109);
 var setSpecies = __webpack_require__(38);
 var DESCRIPTORS = __webpack_require__(6);
 var fastKey = __webpack_require__(29).fastKey;
@@ -3360,12 +3366,12 @@ module.exports = {
 
 
 /***/ }),
-/* 114 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var strong = __webpack_require__(113);
+var strong = __webpack_require__(114);
 var validate = __webpack_require__(45);
 var SET = 'Set';
 
@@ -3381,7 +3387,7 @@ module.exports = __webpack_require__(59)(SET, function (get) {
 
 
 /***/ }),
-/* 115 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3389,8 +3395,8 @@ module.exports = __webpack_require__(59)(SET, function (get) {
 var each = __webpack_require__(26)(0);
 var redefine = __webpack_require__(12);
 var meta = __webpack_require__(29);
-var assign = __webpack_require__(96);
-var weak = __webpack_require__(116);
+var assign = __webpack_require__(97);
+var weak = __webpack_require__(117);
 var isObject = __webpack_require__(4);
 var fails = __webpack_require__(3);
 var validate = __webpack_require__(45);
@@ -3447,7 +3453,7 @@ if (fails(function () { return new $WeakMap().set((Object.freeze || Object)(tmp)
 
 
 /***/ }),
-/* 116 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3539,7 +3545,7 @@ module.exports = {
 
 
 /***/ }),
-/* 117 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://tc39.github.io/ecma262/#sec-toindex
@@ -3555,7 +3561,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 118 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // all object keys, includes non-enumerable and symbols
@@ -3571,7 +3577,7 @@ module.exports = Reflect && Reflect.ownKeys || function ownKeys(it) {
 
 
 /***/ }),
-/* 119 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3617,7 +3623,7 @@ module.exports = flattenIntoArray;
 
 
 /***/ }),
-/* 120 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/tc39/proposal-string-pad-start-end
@@ -3639,7 +3645,7 @@ module.exports = function (that, maxLength, fillString, left) {
 
 
 /***/ }),
-/* 121 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getKeys = __webpack_require__(34);
@@ -3661,12 +3667,12 @@ module.exports = function (isEntries) {
 
 
 /***/ }),
-/* 122 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/DavidBruant/Map-Set.prototype.toJSON
 var classof = __webpack_require__(48);
-var from = __webpack_require__(123);
+var from = __webpack_require__(124);
 module.exports = function (NAME) {
   return function toJSON() {
     if (classof(this) != NAME) throw TypeError(NAME + "#toJSON isn't generic");
@@ -3676,7 +3682,7 @@ module.exports = function (NAME) {
 
 
 /***/ }),
-/* 123 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var forOf = __webpack_require__(40);
@@ -3689,7 +3695,7 @@ module.exports = function (iter, ITERATOR) {
 
 
 /***/ }),
-/* 124 */
+/* 125 */
 /***/ (function(module, exports) {
 
 // https://rwaldron.github.io/proposal-math-extensions/
@@ -3713,12 +3719,6 @@ module.exports = Math.scale || function scale(x, inLow, inHigh, outLow, outHigh)
 
 
 /***/ }),
-/* 125 */
-/***/ (function(module, exports) {
-
-module.exports = jQuery;
-
-/***/ }),
 /* 126 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3728,16 +3728,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_polyfill___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_polyfill__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__libs_slick__ = __webpack_require__(329);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__libs_slick___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__libs_slick__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__libs_binder__ = __webpack_require__(330);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modules_module__ = __webpack_require__(331);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__libs_masonry__ = __webpack_require__(330);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__libs_masonry___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__libs_masonry__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__libs_binder__ = __webpack_require__(331);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modules_module__ = __webpack_require__(332);
 
 
 
 
 
-Object(__WEBPACK_IMPORTED_MODULE_2__libs_binder__["a" /* default */])({
+
+Object(__WEBPACK_IMPORTED_MODULE_3__libs_binder__["a" /* default */])({
     bounds: {
-        "html": [__WEBPACK_IMPORTED_MODULE_3__modules_module__["b" /* constants */], __WEBPACK_IMPORTED_MODULE_3__modules_module__["a" /* accordion */], __WEBPACK_IMPORTED_MODULE_3__modules_module__["f" /* slider */], __WEBPACK_IMPORTED_MODULE_3__modules_module__["d" /* mobileMenu */], __WEBPACK_IMPORTED_MODULE_3__modules_module__["c" /* isDev */], __WEBPACK_IMPORTED_MODULE_3__modules_module__["e" /* noDev */]]
+        "html": [__WEBPACK_IMPORTED_MODULE_4__modules_module__["b" /* constants */], __WEBPACK_IMPORTED_MODULE_4__modules_module__["a" /* accordion */], __WEBPACK_IMPORTED_MODULE_4__modules_module__["g" /* slider */], __WEBPACK_IMPORTED_MODULE_4__modules_module__["e" /* mobileMenu */], __WEBPACK_IMPORTED_MODULE_4__modules_module__["d" /* isDev */], __WEBPACK_IMPORTED_MODULE_4__modules_module__["f" /* noDev */], __WEBPACK_IMPORTED_MODULE_4__modules_module__["h" /* tabs */], __WEBPACK_IMPORTED_MODULE_4__modules_module__["c" /* gallery */]]
     },
     runTests: true
 });
@@ -3775,7 +3778,7 @@ define(String.prototype, "padRight", "".padEnd);
 "pop,reverse,shift,keys,values,entries,indexOf,every,some,forEach,map,filter,find,findIndex,includes,join,slice,concat,push,splice,unshift,sort,lastIndexOf,reduce,reduceRight,copyWithin,fill".split(",").forEach(function (key) {
   [][key] && define(Array, key, Function.call.bind([][key]));
 });
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(90)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(91)))
 
 /***/ }),
 /* 128 */
@@ -3883,15 +3886,15 @@ __webpack_require__(232);
 __webpack_require__(85);
 __webpack_require__(233);
 __webpack_require__(234);
-__webpack_require__(109);
+__webpack_require__(110);
 __webpack_require__(235);
 __webpack_require__(236);
 __webpack_require__(237);
 __webpack_require__(238);
 __webpack_require__(239);
-__webpack_require__(112);
-__webpack_require__(114);
+__webpack_require__(113);
 __webpack_require__(115);
+__webpack_require__(116);
 __webpack_require__(240);
 __webpack_require__(241);
 __webpack_require__(242);
@@ -3998,7 +4001,7 @@ var shared = __webpack_require__(49);
 var setToStringTag = __webpack_require__(42);
 var uid = __webpack_require__(33);
 var wks = __webpack_require__(5);
-var wksExt = __webpack_require__(92);
+var wksExt = __webpack_require__(93);
 var wksDefine = __webpack_require__(65);
 var enumKeys = __webpack_require__(130);
 var isArray = __webpack_require__(52);
@@ -4008,7 +4011,7 @@ var toIObject = __webpack_require__(15);
 var toPrimitive = __webpack_require__(22);
 var createDesc = __webpack_require__(32);
 var _create = __webpack_require__(36);
-var gOPNExt = __webpack_require__(95);
+var gOPNExt = __webpack_require__(96);
 var $GOPD = __webpack_require__(16);
 var $DP = __webpack_require__(7);
 var $keys = __webpack_require__(34);
@@ -4266,7 +4269,7 @@ $export($export.S + $export.F * !__webpack_require__(6), 'Object', { definePrope
 
 var $export = __webpack_require__(0);
 // 19.1.2.3 / 15.2.3.7 Object.defineProperties(O, Properties)
-$export($export.S + $export.F * !__webpack_require__(6), 'Object', { defineProperties: __webpack_require__(94) });
+$export($export.S + $export.F * !__webpack_require__(6), 'Object', { defineProperties: __webpack_require__(95) });
 
 
 /***/ }),
@@ -4320,7 +4323,7 @@ __webpack_require__(25)('keys', function () {
 
 // 19.1.2.7 Object.getOwnPropertyNames(O)
 __webpack_require__(25)('getOwnPropertyNames', function () {
-  return __webpack_require__(95).f;
+  return __webpack_require__(96).f;
 });
 
 
@@ -4418,7 +4421,7 @@ __webpack_require__(25)('isExtensible', function ($isExtensible) {
 // 19.1.3.1 Object.assign(target, source)
 var $export = __webpack_require__(0);
 
-$export($export.S + $export.F, 'Object', { assign: __webpack_require__(96) });
+$export($export.S + $export.F, 'Object', { assign: __webpack_require__(97) });
 
 
 /***/ }),
@@ -4474,7 +4477,7 @@ if (test + '' != '[object z]') {
 // 19.2.3.2 / 15.3.4.5 Function.prototype.bind(thisArg, args...)
 var $export = __webpack_require__(0);
 
-$export($export.P, 'Function', { bind: __webpack_require__(97) });
+$export($export.P, 'Function', { bind: __webpack_require__(98) });
 
 
 /***/ }),
@@ -4524,7 +4527,7 @@ if (!(HAS_INSTANCE in FunctionProto)) __webpack_require__(7).f(FunctionProto, HA
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
-var $parseInt = __webpack_require__(99);
+var $parseInt = __webpack_require__(100);
 // 18.2.5 parseInt(string, radix)
 $export($export.G + $export.F * (parseInt != $parseInt), { parseInt: $parseInt });
 
@@ -4534,7 +4537,7 @@ $export($export.G + $export.F * (parseInt != $parseInt), { parseInt: $parseInt }
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
-var $parseFloat = __webpack_require__(100);
+var $parseFloat = __webpack_require__(101);
 // 18.2.4 parseFloat(string)
 $export($export.G + $export.F * (parseFloat != $parseFloat), { parseFloat: $parseFloat });
 
@@ -4623,7 +4626,7 @@ if (!$Number(' 0o1') || !$Number('0b1') || $Number('+0x1')) {
 
 var $export = __webpack_require__(0);
 var toInteger = __webpack_require__(24);
-var aNumberValue = __webpack_require__(101);
+var aNumberValue = __webpack_require__(102);
 var repeat = __webpack_require__(72);
 var $toFixed = 1.0.toFixed;
 var floor = Math.floor;
@@ -4744,7 +4747,7 @@ $export($export.P + $export.F * (!!$toFixed && (
 
 var $export = __webpack_require__(0);
 var $fails = __webpack_require__(3);
-var aNumberValue = __webpack_require__(101);
+var aNumberValue = __webpack_require__(102);
 var $toPrecision = 1.0.toPrecision;
 
 $export($export.P + $export.F * ($fails(function () {
@@ -4793,7 +4796,7 @@ $export($export.S, 'Number', {
 // 20.1.2.3 Number.isInteger(number)
 var $export = __webpack_require__(0);
 
-$export($export.S, 'Number', { isInteger: __webpack_require__(102) });
+$export($export.S, 'Number', { isInteger: __webpack_require__(103) });
 
 
 /***/ }),
@@ -4817,7 +4820,7 @@ $export($export.S, 'Number', {
 
 // 20.1.2.5 Number.isSafeInteger(number)
 var $export = __webpack_require__(0);
-var isInteger = __webpack_require__(102);
+var isInteger = __webpack_require__(103);
 var abs = Math.abs;
 
 $export($export.S, 'Number', {
@@ -4852,7 +4855,7 @@ $export($export.S, 'Number', { MIN_SAFE_INTEGER: -0x1fffffffffffff });
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
-var $parseFloat = __webpack_require__(100);
+var $parseFloat = __webpack_require__(101);
 // 20.1.2.12 Number.parseFloat(string)
 $export($export.S + $export.F * (Number.parseFloat != $parseFloat), 'Number', { parseFloat: $parseFloat });
 
@@ -4862,7 +4865,7 @@ $export($export.S + $export.F * (Number.parseFloat != $parseFloat), 'Number', { 
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
-var $parseInt = __webpack_require__(99);
+var $parseInt = __webpack_require__(100);
 // 20.1.2.13 Number.parseInt(string, radix)
 $export($export.S + $export.F * (Number.parseInt != $parseInt), 'Number', { parseInt: $parseInt });
 
@@ -4873,7 +4876,7 @@ $export($export.S + $export.F * (Number.parseInt != $parseInt), 'Number', { pars
 
 // 20.2.2.3 Math.acosh(x)
 var $export = __webpack_require__(0);
-var log1p = __webpack_require__(103);
+var log1p = __webpack_require__(104);
 var sqrt = Math.sqrt;
 var $acosh = Math.acosh;
 
@@ -4985,7 +4988,7 @@ $export($export.S + $export.F * ($expm1 != Math.expm1), 'Math', { expm1: $expm1 
 // 20.2.2.16 Math.fround(x)
 var $export = __webpack_require__(0);
 
-$export($export.S, 'Math', { fround: __webpack_require__(104) });
+$export($export.S, 'Math', { fround: __webpack_require__(105) });
 
 
 /***/ }),
@@ -5063,7 +5066,7 @@ $export($export.S, 'Math', {
 // 20.2.2.20 Math.log1p(x)
 var $export = __webpack_require__(0);
 
-$export($export.S, 'Math', { log1p: __webpack_require__(103) });
+$export($export.S, 'Math', { log1p: __webpack_require__(104) });
 
 
 /***/ }),
@@ -5658,7 +5661,7 @@ $export($export.S, 'Array', { isArray: __webpack_require__(52) });
 var ctx = __webpack_require__(19);
 var $export = __webpack_require__(0);
 var toObject = __webpack_require__(9);
-var call = __webpack_require__(105);
+var call = __webpack_require__(106);
 var isArrayIter = __webpack_require__(80);
 var toLength = __webpack_require__(8);
 var createProperty = __webpack_require__(81);
@@ -5918,7 +5921,7 @@ $export($export.P + $export.F * !__webpack_require__(21)([].every, true), 'Array
 "use strict";
 
 var $export = __webpack_require__(0);
-var $reduce = __webpack_require__(106);
+var $reduce = __webpack_require__(107);
 
 $export($export.P + $export.F * !__webpack_require__(21)([].reduce, true), 'Array', {
   // 22.1.3.18 / 15.4.4.21 Array.prototype.reduce(callbackfn [, initialValue])
@@ -5935,7 +5938,7 @@ $export($export.P + $export.F * !__webpack_require__(21)([].reduce, true), 'Arra
 "use strict";
 
 var $export = __webpack_require__(0);
-var $reduce = __webpack_require__(106);
+var $reduce = __webpack_require__(107);
 
 $export($export.P + $export.F * !__webpack_require__(21)([].reduceRight, true), 'Array', {
   // 22.1.3.19 / 15.4.4.22 Array.prototype.reduceRight(callbackfn [, initialValue])
@@ -6003,7 +6006,7 @@ $export($export.P + $export.F * (NEGATIVE_ZERO || !__webpack_require__(21)($nati
 // 22.1.3.3 Array.prototype.copyWithin(target, start, end = this.length)
 var $export = __webpack_require__(0);
 
-$export($export.P, 'Array', { copyWithin: __webpack_require__(107) });
+$export($export.P, 'Array', { copyWithin: __webpack_require__(108) });
 
 __webpack_require__(31)('copyWithin');
 
@@ -6124,7 +6127,7 @@ __webpack_require__(38)('RegExp');
 
 "use strict";
 
-__webpack_require__(109);
+__webpack_require__(110);
 var anObject = __webpack_require__(1);
 var $flags = __webpack_require__(55);
 var DESCRIPTORS = __webpack_require__(6);
@@ -6296,9 +6299,9 @@ var speciesConstructor = __webpack_require__(57);
 var task = __webpack_require__(86).set;
 var microtask = __webpack_require__(87)();
 var newPromiseCapabilityModule = __webpack_require__(88);
-var perform = __webpack_require__(110);
+var perform = __webpack_require__(111);
 var userAgent = __webpack_require__(58);
-var promiseResolve = __webpack_require__(111);
+var promiseResolve = __webpack_require__(112);
 var PROMISE = 'Promise';
 var TypeError = global.TypeError;
 var process = global.process;
@@ -6576,7 +6579,7 @@ $export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(54)(function
 
 "use strict";
 
-var weak = __webpack_require__(116);
+var weak = __webpack_require__(117);
 var validate = __webpack_require__(45);
 var WEAK_SET = 'WeakSet';
 
@@ -6786,7 +6789,7 @@ var aFunction = __webpack_require__(10);
 var anObject = __webpack_require__(1);
 var isObject = __webpack_require__(4);
 var fails = __webpack_require__(3);
-var bind = __webpack_require__(97);
+var bind = __webpack_require__(98);
 var rConstruct = (__webpack_require__(2).Reflect || {}).construct;
 
 // MS Edge supports only 2 arguments and argumentsList argument is optional
@@ -7004,7 +7007,7 @@ $export($export.S, 'Reflect', {
 // 26.1.11 Reflect.ownKeys(target)
 var $export = __webpack_require__(0);
 
-$export($export.S, 'Reflect', { ownKeys: __webpack_require__(118) });
+$export($export.S, 'Reflect', { ownKeys: __webpack_require__(119) });
 
 
 /***/ }),
@@ -7116,7 +7119,7 @@ __webpack_require__(31)('includes');
 
 // https://tc39.github.io/proposal-flatMap/#sec-Array.prototype.flatMap
 var $export = __webpack_require__(0);
-var flattenIntoArray = __webpack_require__(119);
+var flattenIntoArray = __webpack_require__(120);
 var toObject = __webpack_require__(9);
 var toLength = __webpack_require__(8);
 var aFunction = __webpack_require__(10);
@@ -7145,7 +7148,7 @@ __webpack_require__(31)('flatMap');
 
 // https://tc39.github.io/proposal-flatMap/#sec-Array.prototype.flatten
 var $export = __webpack_require__(0);
-var flattenIntoArray = __webpack_require__(119);
+var flattenIntoArray = __webpack_require__(120);
 var toObject = __webpack_require__(9);
 var toLength = __webpack_require__(8);
 var toInteger = __webpack_require__(24);
@@ -7190,7 +7193,7 @@ $export($export.P, 'String', {
 
 // https://github.com/tc39/proposal-string-pad-start-end
 var $export = __webpack_require__(0);
-var $pad = __webpack_require__(120);
+var $pad = __webpack_require__(121);
 var userAgent = __webpack_require__(58);
 
 // https://github.com/zloirock/core-js/issues/280
@@ -7209,7 +7212,7 @@ $export($export.P + $export.F * /Version\/10\.\d+(\.\d+)? Safari\//.test(userAge
 
 // https://github.com/tc39/proposal-string-pad-start-end
 var $export = __webpack_require__(0);
-var $pad = __webpack_require__(120);
+var $pad = __webpack_require__(121);
 var userAgent = __webpack_require__(58);
 
 // https://github.com/zloirock/core-js/issues/280
@@ -7305,7 +7308,7 @@ __webpack_require__(65)('observable');
 
 // https://github.com/tc39/proposal-object-getownpropertydescriptors
 var $export = __webpack_require__(0);
-var ownKeys = __webpack_require__(118);
+var ownKeys = __webpack_require__(119);
 var toIObject = __webpack_require__(15);
 var gOPD = __webpack_require__(16);
 var createProperty = __webpack_require__(81);
@@ -7333,7 +7336,7 @@ $export($export.S, 'Object', {
 
 // https://github.com/tc39/proposal-object-values-entries
 var $export = __webpack_require__(0);
-var $values = __webpack_require__(121)(false);
+var $values = __webpack_require__(122)(false);
 
 $export($export.S, 'Object', {
   values: function values(it) {
@@ -7348,7 +7351,7 @@ $export($export.S, 'Object', {
 
 // https://github.com/tc39/proposal-object-values-entries
 var $export = __webpack_require__(0);
-var $entries = __webpack_require__(121)(true);
+var $entries = __webpack_require__(122)(true);
 
 $export($export.S, 'Object', {
   entries: function entries(it) {
@@ -7452,7 +7455,7 @@ __webpack_require__(6) && $export($export.P + __webpack_require__(61), 'Object',
 // https://github.com/DavidBruant/Map-Set.prototype.toJSON
 var $export = __webpack_require__(0);
 
-$export($export.P + $export.R, 'Map', { toJSON: __webpack_require__(122)('Map') });
+$export($export.P + $export.R, 'Map', { toJSON: __webpack_require__(123)('Map') });
 
 
 /***/ }),
@@ -7462,7 +7465,7 @@ $export($export.P + $export.R, 'Map', { toJSON: __webpack_require__(122)('Map') 
 // https://github.com/DavidBruant/Map-Set.prototype.toJSON
 var $export = __webpack_require__(0);
 
-$export($export.P + $export.R, 'Set', { toJSON: __webpack_require__(122)('Set') });
+$export($export.P + $export.R, 'Set', { toJSON: __webpack_require__(123)('Set') });
 
 
 /***/ }),
@@ -7609,8 +7612,8 @@ $export($export.S, 'Math', {
 
 // https://rwaldron.github.io/proposal-math-extensions/
 var $export = __webpack_require__(0);
-var scale = __webpack_require__(124);
-var fround = __webpack_require__(104);
+var scale = __webpack_require__(125);
+var fround = __webpack_require__(105);
 
 $export($export.S, 'Math', {
   fscale: function fscale(x, inLow, inHigh, outLow, outHigh) {
@@ -7707,7 +7710,7 @@ $export($export.S, 'Math', {
 // https://rwaldron.github.io/proposal-math-extensions/
 var $export = __webpack_require__(0);
 
-$export($export.S, 'Math', { scale: __webpack_require__(124) });
+$export($export.S, 'Math', { scale: __webpack_require__(125) });
 
 
 /***/ }),
@@ -7756,7 +7759,7 @@ var $export = __webpack_require__(0);
 var core = __webpack_require__(18);
 var global = __webpack_require__(2);
 var speciesConstructor = __webpack_require__(57);
-var promiseResolve = __webpack_require__(111);
+var promiseResolve = __webpack_require__(112);
 
 $export($export.P + $export.R, 'Promise', { 'finally': function (onFinally) {
   var C = speciesConstructor(this, core.Promise || global.Promise);
@@ -7781,7 +7784,7 @@ $export($export.P + $export.R, 'Promise', { 'finally': function (onFinally) {
 // https://github.com/tc39/proposal-promise-try
 var $export = __webpack_require__(0);
 var newPromiseCapability = __webpack_require__(88);
-var perform = __webpack_require__(110);
+var perform = __webpack_require__(111);
 
 $export($export.S, 'Promise', { 'try': function (callbackfn) {
   var promiseCapability = newPromiseCapability.f(this);
@@ -7853,8 +7856,8 @@ metadata.exp({ getMetadata: function getMetadata(metadataKey, target /* , target
 /* 314 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Set = __webpack_require__(114);
-var from = __webpack_require__(123);
+var Set = __webpack_require__(115);
+var from = __webpack_require__(124);
 var metadata = __webpack_require__(28);
 var anObject = __webpack_require__(1);
 var getPrototypeOf = __webpack_require__(17);
@@ -9028,7 +9031,7 @@ for (var collections = getKeys(DOMIterables), i = 0; i < collections.length; i++
   typeof self === "object" ? self : this
 );
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(90)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(91)))
 
 /***/ }),
 /* 326 */
@@ -11799,10 +11802,2406 @@ module.exports = function (regExp, replace) {
         return _;
     };
 });
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(125)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(90)))
 
 /***/ }),
 /* 330 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var __WEBPACK_LOCAL_MODULE_1__, __WEBPACK_LOCAL_MODULE_1__factory, __WEBPACK_LOCAL_MODULE_1__module;var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_LOCAL_MODULE_2__;var __WEBPACK_LOCAL_MODULE_3__, __WEBPACK_LOCAL_MODULE_3__factory, __WEBPACK_LOCAL_MODULE_3__module;var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_LOCAL_MODULE_4__;var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_LOCAL_MODULE_5__;var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_LOCAL_MODULE_6__;var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+/*!
+ * Masonry PACKAGED v4.2.1
+ * Cascading grid layout library
+ * https://masonry.desandro.com
+ * MIT License
+ * by David DeSandro
+ */
+
+/**
+ * Bridget makes jQuery widgets
+ * v2.0.1
+ * MIT license
+ */
+
+/* jshint browser: true, strict: true, undef: true, unused: true */
+
+(function (window, factory) {
+  // universal module definition
+  /*jshint strict: false */ /* globals define, module, require */
+  if (true) {
+    // AMD
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(90)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (jQuery) {
+      return factory(window, jQuery);
+    }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  } else if ((typeof module === 'undefined' ? 'undefined' : _typeof(module)) == 'object' && module.exports) {
+    // CommonJS
+    module.exports = factory(window, require('jquery'));
+  } else {
+    // browser global
+    window.jQueryBridget = factory(window, window.jQuery);
+  }
+})(window, function factory(window, jQuery) {
+  'use strict';
+
+  // ----- utils ----- //
+
+  var arraySlice = Array.prototype.slice;
+
+  // helper function for logging errors
+  // $.error breaks jQuery chaining
+  var console = window.console;
+  var logError = typeof console == 'undefined' ? function () {} : function (message) {
+    console.error(message);
+  };
+
+  // ----- jQueryBridget ----- //
+
+  function jQueryBridget(namespace, PluginClass, $) {
+    $ = $ || jQuery || window.jQuery;
+    if (!$) {
+      return;
+    }
+
+    // add option method -> $().plugin('option', {...})
+    if (!PluginClass.prototype.option) {
+      // option setter
+      PluginClass.prototype.option = function (opts) {
+        // bail out if not an object
+        if (!$.isPlainObject(opts)) {
+          return;
+        }
+        this.options = $.extend(true, this.options, opts);
+      };
+    }
+
+    // make jQuery plugin
+    $.fn[namespace] = function (arg0 /*, arg1 */) {
+      if (typeof arg0 == 'string') {
+        // method call $().plugin( 'methodName', { options } )
+        // shift arguments by 1
+        var args = arraySlice.call(arguments, 1);
+        return methodCall(this, arg0, args);
+      }
+      // just $().plugin({ options })
+      plainCall(this, arg0);
+      return this;
+    };
+
+    // $().plugin('methodName')
+    function methodCall($elems, methodName, args) {
+      var returnValue;
+      var pluginMethodStr = '$().' + namespace + '("' + methodName + '")';
+
+      $elems.each(function (i, elem) {
+        // get instance
+        var instance = $.data(elem, namespace);
+        if (!instance) {
+          logError(namespace + ' not initialized. Cannot call methods, i.e. ' + pluginMethodStr);
+          return;
+        }
+
+        var method = instance[methodName];
+        if (!method || methodName.charAt(0) == '_') {
+          logError(pluginMethodStr + ' is not a valid method');
+          return;
+        }
+
+        // apply method, get return value
+        var value = method.apply(instance, args);
+        // set return value if value is returned, use only first value
+        returnValue = returnValue === undefined ? value : returnValue;
+      });
+
+      return returnValue !== undefined ? returnValue : $elems;
+    }
+
+    function plainCall($elems, options) {
+      $elems.each(function (i, elem) {
+        var instance = $.data(elem, namespace);
+        if (instance) {
+          // set options & init
+          instance.option(options);
+          instance._init();
+        } else {
+          // initialize new instance
+          instance = new PluginClass(elem, options);
+          $.data(elem, namespace, instance);
+        }
+      });
+    }
+
+    updateJQuery($);
+  }
+
+  // ----- updateJQuery ----- //
+
+  // set $.bridget for v1 backwards compatibility
+  function updateJQuery($) {
+    if (!$ || $ && $.bridget) {
+      return;
+    }
+    $.bridget = jQueryBridget;
+  }
+
+  updateJQuery(jQuery || window.jQuery);
+
+  // -----  ----- //
+
+  return jQueryBridget;
+});
+
+/**
+ * EvEmitter v1.1.0
+ * Lil' event emitter
+ * MIT License
+ */
+
+/* jshint unused: true, undef: true, strict: true */
+
+(function (global, factory) {
+  // universal module definition
+  /* jshint strict: false */ /* globals define, module, window */
+  if (true) {
+    // AMD - RequireJS
+    !(__WEBPACK_LOCAL_MODULE_1__factory = (factory), (__WEBPACK_LOCAL_MODULE_1__module = { id: "ev-emitter/ev-emitter", exports: {}, loaded: false }), __WEBPACK_LOCAL_MODULE_1__ = (typeof __WEBPACK_LOCAL_MODULE_1__factory === 'function' ? (__WEBPACK_LOCAL_MODULE_1__factory.call(__WEBPACK_LOCAL_MODULE_1__module.exports, __webpack_require__, __WEBPACK_LOCAL_MODULE_1__module.exports, __WEBPACK_LOCAL_MODULE_1__module)) : __WEBPACK_LOCAL_MODULE_1__factory), (__WEBPACK_LOCAL_MODULE_1__module.loaded = true), __WEBPACK_LOCAL_MODULE_1__ === undefined && (__WEBPACK_LOCAL_MODULE_1__ = __WEBPACK_LOCAL_MODULE_1__module.exports));
+  } else if ((typeof module === 'undefined' ? 'undefined' : _typeof(module)) == 'object' && module.exports) {
+    // CommonJS - Browserify, Webpack
+    module.exports = factory();
+  } else {
+    // Browser globals
+    global.EvEmitter = factory();
+  }
+})(typeof window != 'undefined' ? window : this, function () {
+
+  function EvEmitter() {}
+
+  var proto = EvEmitter.prototype;
+
+  proto.on = function (eventName, listener) {
+    if (!eventName || !listener) {
+      return;
+    }
+    // set events hash
+    var events = this._events = this._events || {};
+    // set listeners array
+    var listeners = events[eventName] = events[eventName] || [];
+    // only add once
+    if (listeners.indexOf(listener) == -1) {
+      listeners.push(listener);
+    }
+
+    return this;
+  };
+
+  proto.once = function (eventName, listener) {
+    if (!eventName || !listener) {
+      return;
+    }
+    // add event
+    this.on(eventName, listener);
+    // set once flag
+    // set onceEvents hash
+    var onceEvents = this._onceEvents = this._onceEvents || {};
+    // set onceListeners object
+    var onceListeners = onceEvents[eventName] = onceEvents[eventName] || {};
+    // set flag
+    onceListeners[listener] = true;
+
+    return this;
+  };
+
+  proto.off = function (eventName, listener) {
+    var listeners = this._events && this._events[eventName];
+    if (!listeners || !listeners.length) {
+      return;
+    }
+    var index = listeners.indexOf(listener);
+    if (index != -1) {
+      listeners.splice(index, 1);
+    }
+
+    return this;
+  };
+
+  proto.emitEvent = function (eventName, args) {
+    var listeners = this._events && this._events[eventName];
+    if (!listeners || !listeners.length) {
+      return;
+    }
+    // copy over to avoid interference if .off() in listener
+    listeners = listeners.slice(0);
+    args = args || [];
+    // once stuff
+    var onceListeners = this._onceEvents && this._onceEvents[eventName];
+
+    for (var i = 0; i < listeners.length; i++) {
+      var listener = listeners[i];
+      var isOnce = onceListeners && onceListeners[listener];
+      if (isOnce) {
+        // remove listener
+        // remove before trigger to prevent recursion
+        this.off(eventName, listener);
+        // unset once flag
+        delete onceListeners[listener];
+      }
+      // trigger listener
+      listener.apply(this, args);
+    }
+
+    return this;
+  };
+
+  proto.allOff = function () {
+    delete this._events;
+    delete this._onceEvents;
+  };
+
+  return EvEmitter;
+});
+
+/*!
+ * getSize v2.0.2
+ * measure size of elements
+ * MIT license
+ */
+
+/*jshint browser: true, strict: true, undef: true, unused: true */
+/*global define: false, module: false, console: false */
+
+(function (window, factory) {
+  'use strict';
+
+  if (true) {
+    // AMD
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_LOCAL_MODULE_2__ = ((function () {
+      return factory();
+    }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)));
+  } else if ((typeof module === 'undefined' ? 'undefined' : _typeof(module)) == 'object' && module.exports) {
+    // CommonJS
+    module.exports = factory();
+  } else {
+    // browser global
+    window.getSize = factory();
+  }
+})(window, function factory() {
+  'use strict';
+
+  // -------------------------- helpers -------------------------- //
+
+  // get a number from a string, not a percentage
+
+  function getStyleSize(value) {
+    var num = parseFloat(value);
+    // not a percent like '100%', and a number
+    var isValid = value.indexOf('%') == -1 && !isNaN(num);
+    return isValid && num;
+  }
+
+  function noop() {}
+
+  var logError = typeof console == 'undefined' ? noop : function (message) {
+    console.error(message);
+  };
+
+  // -------------------------- measurements -------------------------- //
+
+  var measurements = ['paddingLeft', 'paddingRight', 'paddingTop', 'paddingBottom', 'marginLeft', 'marginRight', 'marginTop', 'marginBottom', 'borderLeftWidth', 'borderRightWidth', 'borderTopWidth', 'borderBottomWidth'];
+
+  var measurementsLength = measurements.length;
+
+  function getZeroSize() {
+    var size = {
+      width: 0,
+      height: 0,
+      innerWidth: 0,
+      innerHeight: 0,
+      outerWidth: 0,
+      outerHeight: 0
+    };
+    for (var i = 0; i < measurementsLength; i++) {
+      var measurement = measurements[i];
+      size[measurement] = 0;
+    }
+    return size;
+  }
+
+  // -------------------------- getStyle -------------------------- //
+
+  /**
+   * getStyle, get style of element, check for Firefox bug
+   * https://bugzilla.mozilla.org/show_bug.cgi?id=548397
+   */
+  function getStyle(elem) {
+    var style = getComputedStyle(elem);
+    if (!style) {
+      logError('Style returned ' + style + '. Are you running this code in a hidden iframe on Firefox? ' + 'See http://bit.ly/getsizebug1');
+    }
+    return style;
+  }
+
+  // -------------------------- setup -------------------------- //
+
+  var isSetup = false;
+
+  var isBoxSizeOuter;
+
+  /**
+   * setup
+   * check isBoxSizerOuter
+   * do on first getSize() rather than on page load for Firefox bug
+   */
+  function setup() {
+    // setup once
+    if (isSetup) {
+      return;
+    }
+    isSetup = true;
+
+    // -------------------------- box sizing -------------------------- //
+
+    /**
+     * WebKit measures the outer-width on style.width on border-box elems
+     * IE & Firefox<29 measures the inner-width
+     */
+    var div = document.createElement('div');
+    div.style.width = '200px';
+    div.style.padding = '1px 2px 3px 4px';
+    div.style.borderStyle = 'solid';
+    div.style.borderWidth = '1px 2px 3px 4px';
+    div.style.boxSizing = 'border-box';
+
+    var body = document.body || document.documentElement;
+    body.appendChild(div);
+    var style = getStyle(div);
+
+    getSize.isBoxSizeOuter = isBoxSizeOuter = getStyleSize(style.width) == 200;
+    body.removeChild(div);
+  }
+
+  // -------------------------- getSize -------------------------- //
+
+  function getSize(elem) {
+    setup();
+
+    // use querySeletor if elem is string
+    if (typeof elem == 'string') {
+      elem = document.querySelector(elem);
+    }
+
+    // do not proceed on non-objects
+    if (!elem || (typeof elem === 'undefined' ? 'undefined' : _typeof(elem)) != 'object' || !elem.nodeType) {
+      return;
+    }
+
+    var style = getStyle(elem);
+
+    // if hidden, everything is 0
+    if (style.display == 'none') {
+      return getZeroSize();
+    }
+
+    var size = {};
+    size.width = elem.offsetWidth;
+    size.height = elem.offsetHeight;
+
+    var isBorderBox = size.isBorderBox = style.boxSizing == 'border-box';
+
+    // get all measurements
+    for (var i = 0; i < measurementsLength; i++) {
+      var measurement = measurements[i];
+      var value = style[measurement];
+      var num = parseFloat(value);
+      // any 'auto', 'medium' value will be 0
+      size[measurement] = !isNaN(num) ? num : 0;
+    }
+
+    var paddingWidth = size.paddingLeft + size.paddingRight;
+    var paddingHeight = size.paddingTop + size.paddingBottom;
+    var marginWidth = size.marginLeft + size.marginRight;
+    var marginHeight = size.marginTop + size.marginBottom;
+    var borderWidth = size.borderLeftWidth + size.borderRightWidth;
+    var borderHeight = size.borderTopWidth + size.borderBottomWidth;
+
+    var isBorderBoxSizeOuter = isBorderBox && isBoxSizeOuter;
+
+    // overwrite width and height if we can get it from style
+    var styleWidth = getStyleSize(style.width);
+    if (styleWidth !== false) {
+      size.width = styleWidth + (
+      // add padding and border unless it's already including it
+      isBorderBoxSizeOuter ? 0 : paddingWidth + borderWidth);
+    }
+
+    var styleHeight = getStyleSize(style.height);
+    if (styleHeight !== false) {
+      size.height = styleHeight + (
+      // add padding and border unless it's already including it
+      isBorderBoxSizeOuter ? 0 : paddingHeight + borderHeight);
+    }
+
+    size.innerWidth = size.width - (paddingWidth + borderWidth);
+    size.innerHeight = size.height - (paddingHeight + borderHeight);
+
+    size.outerWidth = size.width + marginWidth;
+    size.outerHeight = size.height + marginHeight;
+
+    return size;
+  }
+
+  return getSize;
+});
+
+/**
+ * matchesSelector v2.0.2
+ * matchesSelector( element, '.selector' )
+ * MIT license
+ */
+
+/*jshint browser: true, strict: true, undef: true, unused: true */
+
+(function (window, factory) {
+  /*global define: false, module: false */
+  'use strict';
+  // universal module definition
+
+  if (true) {
+    // AMD
+    !(__WEBPACK_LOCAL_MODULE_3__factory = (factory), (__WEBPACK_LOCAL_MODULE_3__module = { id: "desandro-matches-selector/matches-selector", exports: {}, loaded: false }), __WEBPACK_LOCAL_MODULE_3__ = (typeof __WEBPACK_LOCAL_MODULE_3__factory === 'function' ? (__WEBPACK_LOCAL_MODULE_3__factory.call(__WEBPACK_LOCAL_MODULE_3__module.exports, __webpack_require__, __WEBPACK_LOCAL_MODULE_3__module.exports, __WEBPACK_LOCAL_MODULE_3__module)) : __WEBPACK_LOCAL_MODULE_3__factory), (__WEBPACK_LOCAL_MODULE_3__module.loaded = true), __WEBPACK_LOCAL_MODULE_3__ === undefined && (__WEBPACK_LOCAL_MODULE_3__ = __WEBPACK_LOCAL_MODULE_3__module.exports));
+  } else if ((typeof module === 'undefined' ? 'undefined' : _typeof(module)) == 'object' && module.exports) {
+    // CommonJS
+    module.exports = factory();
+  } else {
+    // browser global
+    window.matchesSelector = factory();
+  }
+})(window, function factory() {
+  'use strict';
+
+  var matchesMethod = function () {
+    var ElemProto = window.Element.prototype;
+    // check for the standard method name first
+    if (ElemProto.matches) {
+      return 'matches';
+    }
+    // check un-prefixed
+    if (ElemProto.matchesSelector) {
+      return 'matchesSelector';
+    }
+    // check vendor prefixes
+    var prefixes = ['webkit', 'moz', 'ms', 'o'];
+
+    for (var i = 0; i < prefixes.length; i++) {
+      var prefix = prefixes[i];
+      var method = prefix + 'MatchesSelector';
+      if (ElemProto[method]) {
+        return method;
+      }
+    }
+  }();
+
+  return function matchesSelector(elem, selector) {
+    return elem[matchesMethod](selector);
+  };
+});
+
+/**
+ * Fizzy UI utils v2.0.5
+ * MIT license
+ */
+
+/*jshint browser: true, undef: true, unused: true, strict: true */
+
+(function (window, factory) {
+  // universal module definition
+  /*jshint strict: false */ /*globals define, module, require */
+
+  if (true) {
+    // AMD
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__WEBPACK_LOCAL_MODULE_3__], __WEBPACK_LOCAL_MODULE_4__ = ((function (matchesSelector) {
+      return factory(window, matchesSelector);
+    }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)));
+  } else if ((typeof module === 'undefined' ? 'undefined' : _typeof(module)) == 'object' && module.exports) {
+    // CommonJS
+    module.exports = factory(window, require('desandro-matches-selector'));
+  } else {
+    // browser global
+    window.fizzyUIUtils = factory(window, window.matchesSelector);
+  }
+})(window, function factory(window, matchesSelector) {
+
+  var utils = {};
+
+  // ----- extend ----- //
+
+  // extends objects
+  utils.extend = function (a, b) {
+    for (var prop in b) {
+      a[prop] = b[prop];
+    }
+    return a;
+  };
+
+  // ----- modulo ----- //
+
+  utils.modulo = function (num, div) {
+    return (num % div + div) % div;
+  };
+
+  // ----- makeArray ----- //
+
+  // turn element or nodeList into an array
+  utils.makeArray = function (obj) {
+    var ary = [];
+    if (Array.isArray(obj)) {
+      // use object if already an array
+      ary = obj;
+    } else if (obj && (typeof obj === 'undefined' ? 'undefined' : _typeof(obj)) == 'object' && typeof obj.length == 'number') {
+      // convert nodeList to array
+      for (var i = 0; i < obj.length; i++) {
+        ary.push(obj[i]);
+      }
+    } else {
+      // array of single index
+      ary.push(obj);
+    }
+    return ary;
+  };
+
+  // ----- removeFrom ----- //
+
+  utils.removeFrom = function (ary, obj) {
+    var index = ary.indexOf(obj);
+    if (index != -1) {
+      ary.splice(index, 1);
+    }
+  };
+
+  // ----- getParent ----- //
+
+  utils.getParent = function (elem, selector) {
+    while (elem.parentNode && elem != document.body) {
+      elem = elem.parentNode;
+      if (matchesSelector(elem, selector)) {
+        return elem;
+      }
+    }
+  };
+
+  // ----- getQueryElement ----- //
+
+  // use element as selector string
+  utils.getQueryElement = function (elem) {
+    if (typeof elem == 'string') {
+      return document.querySelector(elem);
+    }
+    return elem;
+  };
+
+  // ----- handleEvent ----- //
+
+  // enable .ontype to trigger from .addEventListener( elem, 'type' )
+  utils.handleEvent = function (event) {
+    var method = 'on' + event.type;
+    if (this[method]) {
+      this[method](event);
+    }
+  };
+
+  // ----- filterFindElements ----- //
+
+  utils.filterFindElements = function (elems, selector) {
+    // make array of elems
+    elems = utils.makeArray(elems);
+    var ffElems = [];
+
+    elems.forEach(function (elem) {
+      // check that elem is an actual element
+      if (!(elem instanceof HTMLElement)) {
+        return;
+      }
+      // add elem if no selector
+      if (!selector) {
+        ffElems.push(elem);
+        return;
+      }
+      // filter & find items if we have a selector
+      // filter
+      if (matchesSelector(elem, selector)) {
+        ffElems.push(elem);
+      }
+      // find children
+      var childElems = elem.querySelectorAll(selector);
+      // concat childElems to filterFound array
+      for (var i = 0; i < childElems.length; i++) {
+        ffElems.push(childElems[i]);
+      }
+    });
+
+    return ffElems;
+  };
+
+  // ----- debounceMethod ----- //
+
+  utils.debounceMethod = function (_class, methodName, threshold) {
+    // original method
+    var method = _class.prototype[methodName];
+    var timeoutName = methodName + 'Timeout';
+
+    _class.prototype[methodName] = function () {
+      var timeout = this[timeoutName];
+      if (timeout) {
+        clearTimeout(timeout);
+      }
+      var args = arguments;
+
+      var _this = this;
+      this[timeoutName] = setTimeout(function () {
+        method.apply(_this, args);
+        delete _this[timeoutName];
+      }, threshold || 100);
+    };
+  };
+
+  // ----- docReady ----- //
+
+  utils.docReady = function (callback) {
+    var readyState = document.readyState;
+    if (readyState == 'complete' || readyState == 'interactive') {
+      // do async to allow for other scripts to run. metafizzy/flickity#441
+      setTimeout(callback);
+    } else {
+      document.addEventListener('DOMContentLoaded', callback);
+    }
+  };
+
+  // ----- htmlInit ----- //
+
+  // http://jamesroberts.name/blog/2010/02/22/string-functions-for-javascript-trim-to-camel-case-to-dashed-and-to-underscore/
+  utils.toDashed = function (str) {
+    return str.replace(/(.)([A-Z])/g, function (match, $1, $2) {
+      return $1 + '-' + $2;
+    }).toLowerCase();
+  };
+
+  var console = window.console;
+  /**
+   * allow user to initialize classes via [data-namespace] or .js-namespace class
+   * htmlInit( Widget, 'widgetName' )
+   * options are parsed from data-namespace-options
+   */
+  utils.htmlInit = function (WidgetClass, namespace) {
+    utils.docReady(function () {
+      var dashedNamespace = utils.toDashed(namespace);
+      var dataAttr = 'data-' + dashedNamespace;
+      var dataAttrElems = document.querySelectorAll('[' + dataAttr + ']');
+      var jsDashElems = document.querySelectorAll('.js-' + dashedNamespace);
+      var elems = utils.makeArray(dataAttrElems).concat(utils.makeArray(jsDashElems));
+      var dataOptionsAttr = dataAttr + '-options';
+      var jQuery = window.jQuery;
+
+      elems.forEach(function (elem) {
+        var attr = elem.getAttribute(dataAttr) || elem.getAttribute(dataOptionsAttr);
+        var options;
+        try {
+          options = attr && JSON.parse(attr);
+        } catch (error) {
+          // log error, do not initialize
+          if (console) {
+            console.error('Error parsing ' + dataAttr + ' on ' + elem.className + ': ' + error);
+          }
+          return;
+        }
+        // initialize
+        var instance = new WidgetClass(elem, options);
+        // make available via $().data('namespace')
+        if (jQuery) {
+          jQuery.data(elem, namespace, instance);
+        }
+      });
+    });
+  };
+
+  // -----  ----- //
+
+  return utils;
+});
+
+/**
+ * Outlayer Item
+ */
+
+(function (window, factory) {
+  // universal module definition
+  /* jshint strict: false */ /* globals define, module, require */
+  if (true) {
+    // AMD - RequireJS
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__WEBPACK_LOCAL_MODULE_1__, __WEBPACK_LOCAL_MODULE_2__], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+				__WEBPACK_LOCAL_MODULE_5__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__));
+  } else if ((typeof module === 'undefined' ? 'undefined' : _typeof(module)) == 'object' && module.exports) {
+    // CommonJS - Browserify, Webpack
+    module.exports = factory(require('ev-emitter'), require('get-size'));
+  } else {
+    // browser global
+    window.Outlayer = {};
+    window.Outlayer.Item = factory(window.EvEmitter, window.getSize);
+  }
+})(window, function factory(EvEmitter, getSize) {
+  'use strict';
+
+  // ----- helpers ----- //
+
+  function isEmptyObj(obj) {
+    for (var prop in obj) {
+      return false;
+    }
+    prop = null;
+    return true;
+  }
+
+  // -------------------------- CSS3 support -------------------------- //
+
+
+  var docElemStyle = document.documentElement.style;
+
+  var transitionProperty = typeof docElemStyle.transition == 'string' ? 'transition' : 'WebkitTransition';
+  var transformProperty = typeof docElemStyle.transform == 'string' ? 'transform' : 'WebkitTransform';
+
+  var transitionEndEvent = {
+    WebkitTransition: 'webkitTransitionEnd',
+    transition: 'transitionend'
+  }[transitionProperty];
+
+  // cache all vendor properties that could have vendor prefix
+  var vendorProperties = {
+    transform: transformProperty,
+    transition: transitionProperty,
+    transitionDuration: transitionProperty + 'Duration',
+    transitionProperty: transitionProperty + 'Property',
+    transitionDelay: transitionProperty + 'Delay'
+  };
+
+  // -------------------------- Item -------------------------- //
+
+  function Item(element, layout) {
+    if (!element) {
+      return;
+    }
+
+    this.element = element;
+    // parent layout class, i.e. Masonry, Isotope, or Packery
+    this.layout = layout;
+    this.position = {
+      x: 0,
+      y: 0
+    };
+
+    this._create();
+  }
+
+  // inherit EvEmitter
+  var proto = Item.prototype = Object.create(EvEmitter.prototype);
+  proto.constructor = Item;
+
+  proto._create = function () {
+    // transition objects
+    this._transn = {
+      ingProperties: {},
+      clean: {},
+      onEnd: {}
+    };
+
+    this.css({
+      position: 'absolute'
+    });
+  };
+
+  // trigger specified handler for event type
+  proto.handleEvent = function (event) {
+    var method = 'on' + event.type;
+    if (this[method]) {
+      this[method](event);
+    }
+  };
+
+  proto.getSize = function () {
+    this.size = getSize(this.element);
+  };
+
+  /**
+   * apply CSS styles to element
+   * @param {Object} style
+   */
+  proto.css = function (style) {
+    var elemStyle = this.element.style;
+
+    for (var prop in style) {
+      // use vendor property if available
+      var supportedProp = vendorProperties[prop] || prop;
+      elemStyle[supportedProp] = style[prop];
+    }
+  };
+
+  // measure position, and sets it
+  proto.getPosition = function () {
+    var style = getComputedStyle(this.element);
+    var isOriginLeft = this.layout._getOption('originLeft');
+    var isOriginTop = this.layout._getOption('originTop');
+    var xValue = style[isOriginLeft ? 'left' : 'right'];
+    var yValue = style[isOriginTop ? 'top' : 'bottom'];
+    // convert percent to pixels
+    var layoutSize = this.layout.size;
+    var x = xValue.indexOf('%') != -1 ? parseFloat(xValue) / 100 * layoutSize.width : parseInt(xValue, 10);
+    var y = yValue.indexOf('%') != -1 ? parseFloat(yValue) / 100 * layoutSize.height : parseInt(yValue, 10);
+
+    // clean up 'auto' or other non-integer values
+    x = isNaN(x) ? 0 : x;
+    y = isNaN(y) ? 0 : y;
+    // remove padding from measurement
+    x -= isOriginLeft ? layoutSize.paddingLeft : layoutSize.paddingRight;
+    y -= isOriginTop ? layoutSize.paddingTop : layoutSize.paddingBottom;
+
+    this.position.x = x;
+    this.position.y = y;
+  };
+
+  // set settled position, apply padding
+  proto.layoutPosition = function () {
+    var layoutSize = this.layout.size;
+    var style = {};
+    var isOriginLeft = this.layout._getOption('originLeft');
+    var isOriginTop = this.layout._getOption('originTop');
+
+    // x
+    var xPadding = isOriginLeft ? 'paddingLeft' : 'paddingRight';
+    var xProperty = isOriginLeft ? 'left' : 'right';
+    var xResetProperty = isOriginLeft ? 'right' : 'left';
+
+    var x = this.position.x + layoutSize[xPadding];
+    // set in percentage or pixels
+    style[xProperty] = this.getXValue(x);
+    // reset other property
+    style[xResetProperty] = '';
+
+    // y
+    var yPadding = isOriginTop ? 'paddingTop' : 'paddingBottom';
+    var yProperty = isOriginTop ? 'top' : 'bottom';
+    var yResetProperty = isOriginTop ? 'bottom' : 'top';
+
+    var y = this.position.y + layoutSize[yPadding];
+    // set in percentage or pixels
+    style[yProperty] = this.getYValue(y);
+    // reset other property
+    style[yResetProperty] = '';
+
+    this.css(style);
+    this.emitEvent('layout', [this]);
+  };
+
+  proto.getXValue = function (x) {
+    var isHorizontal = this.layout._getOption('horizontal');
+    return this.layout.options.percentPosition && !isHorizontal ? x / this.layout.size.width * 100 + '%' : x + 'px';
+  };
+
+  proto.getYValue = function (y) {
+    var isHorizontal = this.layout._getOption('horizontal');
+    return this.layout.options.percentPosition && isHorizontal ? y / this.layout.size.height * 100 + '%' : y + 'px';
+  };
+
+  proto._transitionTo = function (x, y) {
+    this.getPosition();
+    // get current x & y from top/left
+    var curX = this.position.x;
+    var curY = this.position.y;
+
+    var compareX = parseInt(x, 10);
+    var compareY = parseInt(y, 10);
+    var didNotMove = compareX === this.position.x && compareY === this.position.y;
+
+    // save end position
+    this.setPosition(x, y);
+
+    // if did not move and not transitioning, just go to layout
+    if (didNotMove && !this.isTransitioning) {
+      this.layoutPosition();
+      return;
+    }
+
+    var transX = x - curX;
+    var transY = y - curY;
+    var transitionStyle = {};
+    transitionStyle.transform = this.getTranslate(transX, transY);
+
+    this.transition({
+      to: transitionStyle,
+      onTransitionEnd: {
+        transform: this.layoutPosition
+      },
+      isCleaning: true
+    });
+  };
+
+  proto.getTranslate = function (x, y) {
+    // flip cooridinates if origin on right or bottom
+    var isOriginLeft = this.layout._getOption('originLeft');
+    var isOriginTop = this.layout._getOption('originTop');
+    x = isOriginLeft ? x : -x;
+    y = isOriginTop ? y : -y;
+    return 'translate3d(' + x + 'px, ' + y + 'px, 0)';
+  };
+
+  // non transition + transform support
+  proto.goTo = function (x, y) {
+    this.setPosition(x, y);
+    this.layoutPosition();
+  };
+
+  proto.moveTo = proto._transitionTo;
+
+  proto.setPosition = function (x, y) {
+    this.position.x = parseInt(x, 10);
+    this.position.y = parseInt(y, 10);
+  };
+
+  // ----- transition ----- //
+
+  /**
+   * @param {Object} style - CSS
+   * @param {Function} onTransitionEnd
+   */
+
+  // non transition, just trigger callback
+  proto._nonTransition = function (args) {
+    this.css(args.to);
+    if (args.isCleaning) {
+      this._removeStyles(args.to);
+    }
+    for (var prop in args.onTransitionEnd) {
+      args.onTransitionEnd[prop].call(this);
+    }
+  };
+
+  /**
+   * proper transition
+   * @param {Object} args - arguments
+   *   @param {Object} to - style to transition to
+   *   @param {Object} from - style to start transition from
+   *   @param {Boolean} isCleaning - removes transition styles after transition
+   *   @param {Function} onTransitionEnd - callback
+   */
+  proto.transition = function (args) {
+    // redirect to nonTransition if no transition duration
+    if (!parseFloat(this.layout.options.transitionDuration)) {
+      this._nonTransition(args);
+      return;
+    }
+
+    var _transition = this._transn;
+    // keep track of onTransitionEnd callback by css property
+    for (var prop in args.onTransitionEnd) {
+      _transition.onEnd[prop] = args.onTransitionEnd[prop];
+    }
+    // keep track of properties that are transitioning
+    for (prop in args.to) {
+      _transition.ingProperties[prop] = true;
+      // keep track of properties to clean up when transition is done
+      if (args.isCleaning) {
+        _transition.clean[prop] = true;
+      }
+    }
+
+    // set from styles
+    if (args.from) {
+      this.css(args.from);
+      // force redraw. http://blog.alexmaccaw.com/css-transitions
+      var h = this.element.offsetHeight;
+      // hack for JSHint to hush about unused var
+      h = null;
+    }
+    // enable transition
+    this.enableTransition(args.to);
+    // set styles that are transitioning
+    this.css(args.to);
+
+    this.isTransitioning = true;
+  };
+
+  // dash before all cap letters, including first for
+  // WebkitTransform => -webkit-transform
+  function toDashedAll(str) {
+    return str.replace(/([A-Z])/g, function ($1) {
+      return '-' + $1.toLowerCase();
+    });
+  }
+
+  var transitionProps = 'opacity,' + toDashedAll(transformProperty);
+
+  proto.enableTransition = function () /* style */{
+    // HACK changing transitionProperty during a transition
+    // will cause transition to jump
+    if (this.isTransitioning) {
+      return;
+    }
+
+    // make `transition: foo, bar, baz` from style object
+    // HACK un-comment this when enableTransition can work
+    // while a transition is happening
+    // var transitionValues = [];
+    // for ( var prop in style ) {
+    //   // dash-ify camelCased properties like WebkitTransition
+    //   prop = vendorProperties[ prop ] || prop;
+    //   transitionValues.push( toDashedAll( prop ) );
+    // }
+    // munge number to millisecond, to match stagger
+    var duration = this.layout.options.transitionDuration;
+    duration = typeof duration == 'number' ? duration + 'ms' : duration;
+    // enable transition styles
+    this.css({
+      transitionProperty: transitionProps,
+      transitionDuration: duration,
+      transitionDelay: this.staggerDelay || 0
+    });
+    // listen for transition end event
+    this.element.addEventListener(transitionEndEvent, this, false);
+  };
+
+  // ----- events ----- //
+
+  proto.onwebkitTransitionEnd = function (event) {
+    this.ontransitionend(event);
+  };
+
+  proto.onotransitionend = function (event) {
+    this.ontransitionend(event);
+  };
+
+  // properties that I munge to make my life easier
+  var dashedVendorProperties = {
+    '-webkit-transform': 'transform'
+  };
+
+  proto.ontransitionend = function (event) {
+    // disregard bubbled events from children
+    if (event.target !== this.element) {
+      return;
+    }
+    var _transition = this._transn;
+    // get property name of transitioned property, convert to prefix-free
+    var propertyName = dashedVendorProperties[event.propertyName] || event.propertyName;
+
+    // remove property that has completed transitioning
+    delete _transition.ingProperties[propertyName];
+    // check if any properties are still transitioning
+    if (isEmptyObj(_transition.ingProperties)) {
+      // all properties have completed transitioning
+      this.disableTransition();
+    }
+    // clean style
+    if (propertyName in _transition.clean) {
+      // clean up style
+      this.element.style[event.propertyName] = '';
+      delete _transition.clean[propertyName];
+    }
+    // trigger onTransitionEnd callback
+    if (propertyName in _transition.onEnd) {
+      var onTransitionEnd = _transition.onEnd[propertyName];
+      onTransitionEnd.call(this);
+      delete _transition.onEnd[propertyName];
+    }
+
+    this.emitEvent('transitionEnd', [this]);
+  };
+
+  proto.disableTransition = function () {
+    this.removeTransitionStyles();
+    this.element.removeEventListener(transitionEndEvent, this, false);
+    this.isTransitioning = false;
+  };
+
+  /**
+   * removes style property from element
+   * @param {Object} style
+   **/
+  proto._removeStyles = function (style) {
+    // clean up transition styles
+    var cleanStyle = {};
+    for (var prop in style) {
+      cleanStyle[prop] = '';
+    }
+    this.css(cleanStyle);
+  };
+
+  var cleanTransitionStyle = {
+    transitionProperty: '',
+    transitionDuration: '',
+    transitionDelay: ''
+  };
+
+  proto.removeTransitionStyles = function () {
+    // remove transition
+    this.css(cleanTransitionStyle);
+  };
+
+  // ----- stagger ----- //
+
+  proto.stagger = function (delay) {
+    delay = isNaN(delay) ? 0 : delay;
+    this.staggerDelay = delay + 'ms';
+  };
+
+  // ----- show/hide/remove ----- //
+
+  // remove element from DOM
+  proto.removeElem = function () {
+    this.element.parentNode.removeChild(this.element);
+    // remove display: none
+    this.css({ display: '' });
+    this.emitEvent('remove', [this]);
+  };
+
+  proto.remove = function () {
+    // just remove element if no transition support or no transition
+    if (!transitionProperty || !parseFloat(this.layout.options.transitionDuration)) {
+      this.removeElem();
+      return;
+    }
+
+    // start transition
+    this.once('transitionEnd', function () {
+      this.removeElem();
+    });
+    this.hide();
+  };
+
+  proto.reveal = function () {
+    delete this.isHidden;
+    // remove display: none
+    this.css({ display: '' });
+
+    var options = this.layout.options;
+
+    var onTransitionEnd = {};
+    var transitionEndProperty = this.getHideRevealTransitionEndProperty('visibleStyle');
+    onTransitionEnd[transitionEndProperty] = this.onRevealTransitionEnd;
+
+    this.transition({
+      from: options.hiddenStyle,
+      to: options.visibleStyle,
+      isCleaning: true,
+      onTransitionEnd: onTransitionEnd
+    });
+  };
+
+  proto.onRevealTransitionEnd = function () {
+    // check if still visible
+    // during transition, item may have been hidden
+    if (!this.isHidden) {
+      this.emitEvent('reveal');
+    }
+  };
+
+  /**
+   * get style property use for hide/reveal transition end
+   * @param {String} styleProperty - hiddenStyle/visibleStyle
+   * @returns {String}
+   */
+  proto.getHideRevealTransitionEndProperty = function (styleProperty) {
+    var optionStyle = this.layout.options[styleProperty];
+    // use opacity
+    if (optionStyle.opacity) {
+      return 'opacity';
+    }
+    // get first property
+    for (var prop in optionStyle) {
+      return prop;
+    }
+  };
+
+  proto.hide = function () {
+    // set flag
+    this.isHidden = true;
+    // remove display: none
+    this.css({ display: '' });
+
+    var options = this.layout.options;
+
+    var onTransitionEnd = {};
+    var transitionEndProperty = this.getHideRevealTransitionEndProperty('hiddenStyle');
+    onTransitionEnd[transitionEndProperty] = this.onHideTransitionEnd;
+
+    this.transition({
+      from: options.visibleStyle,
+      to: options.hiddenStyle,
+      // keep hidden stuff hidden
+      isCleaning: true,
+      onTransitionEnd: onTransitionEnd
+    });
+  };
+
+  proto.onHideTransitionEnd = function () {
+    // check if still hidden
+    // during transition, item may have been un-hidden
+    if (this.isHidden) {
+      this.css({ display: 'none' });
+      this.emitEvent('hide');
+    }
+  };
+
+  proto.destroy = function () {
+    this.css({
+      position: '',
+      left: '',
+      right: '',
+      top: '',
+      bottom: '',
+      transition: '',
+      transform: ''
+    });
+  };
+
+  return Item;
+});
+
+/*!
+ * Outlayer v2.1.0
+ * the brains and guts of a layout library
+ * MIT license
+ */
+
+(function (window, factory) {
+  'use strict';
+  // universal module definition
+  /* jshint strict: false */ /* globals define, module, require */
+
+  if (true) {
+    // AMD - RequireJS
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__WEBPACK_LOCAL_MODULE_1__, __WEBPACK_LOCAL_MODULE_2__, __WEBPACK_LOCAL_MODULE_4__, __WEBPACK_LOCAL_MODULE_5__], __WEBPACK_LOCAL_MODULE_6__ = ((function (EvEmitter, getSize, utils, Item) {
+      return factory(window, EvEmitter, getSize, utils, Item);
+    }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)));
+  } else if ((typeof module === 'undefined' ? 'undefined' : _typeof(module)) == 'object' && module.exports) {
+    // CommonJS - Browserify, Webpack
+    module.exports = factory(window, require('ev-emitter'), require('get-size'), require('fizzy-ui-utils'), require('./item'));
+  } else {
+    // browser global
+    window.Outlayer = factory(window, window.EvEmitter, window.getSize, window.fizzyUIUtils, window.Outlayer.Item);
+  }
+})(window, function factory(window, EvEmitter, getSize, utils, Item) {
+  'use strict';
+
+  // ----- vars ----- //
+
+  var console = window.console;
+  var jQuery = window.jQuery;
+  var noop = function noop() {};
+
+  // -------------------------- Outlayer -------------------------- //
+
+  // globally unique identifiers
+  var GUID = 0;
+  // internal store of all Outlayer intances
+  var instances = {};
+
+  /**
+   * @param {Element, String} element
+   * @param {Object} options
+   * @constructor
+   */
+  function Outlayer(element, options) {
+    var queryElement = utils.getQueryElement(element);
+    if (!queryElement) {
+      if (console) {
+        console.error('Bad element for ' + this.constructor.namespace + ': ' + (queryElement || element));
+      }
+      return;
+    }
+    this.element = queryElement;
+    // add jQuery
+    if (jQuery) {
+      this.$element = jQuery(this.element);
+    }
+
+    // options
+    this.options = utils.extend({}, this.constructor.defaults);
+    this.option(options);
+
+    // add id for Outlayer.getFromElement
+    var id = ++GUID;
+    this.element.outlayerGUID = id; // expando
+    instances[id] = this; // associate via id
+
+    // kick it off
+    this._create();
+
+    var isInitLayout = this._getOption('initLayout');
+    if (isInitLayout) {
+      this.layout();
+    }
+  }
+
+  // settings are for internal use only
+  Outlayer.namespace = 'outlayer';
+  Outlayer.Item = Item;
+
+  // default options
+  Outlayer.defaults = {
+    containerStyle: {
+      position: 'relative'
+    },
+    initLayout: true,
+    originLeft: true,
+    originTop: true,
+    resize: true,
+    resizeContainer: true,
+    // item options
+    transitionDuration: '0.4s',
+    hiddenStyle: {
+      opacity: 0,
+      transform: 'scale(0.001)'
+    },
+    visibleStyle: {
+      opacity: 1,
+      transform: 'scale(1)'
+    }
+  };
+
+  var proto = Outlayer.prototype;
+  // inherit EvEmitter
+  utils.extend(proto, EvEmitter.prototype);
+
+  /**
+   * set options
+   * @param {Object} opts
+   */
+  proto.option = function (opts) {
+    utils.extend(this.options, opts);
+  };
+
+  /**
+   * get backwards compatible option value, check old name
+   */
+  proto._getOption = function (option) {
+    var oldOption = this.constructor.compatOptions[option];
+    return oldOption && this.options[oldOption] !== undefined ? this.options[oldOption] : this.options[option];
+  };
+
+  Outlayer.compatOptions = {
+    // currentName: oldName
+    initLayout: 'isInitLayout',
+    horizontal: 'isHorizontal',
+    layoutInstant: 'isLayoutInstant',
+    originLeft: 'isOriginLeft',
+    originTop: 'isOriginTop',
+    resize: 'isResizeBound',
+    resizeContainer: 'isResizingContainer'
+  };
+
+  proto._create = function () {
+    // get items from children
+    this.reloadItems();
+    // elements that affect layout, but are not laid out
+    this.stamps = [];
+    this.stamp(this.options.stamp);
+    // set container style
+    utils.extend(this.element.style, this.options.containerStyle);
+
+    // bind resize method
+    var canBindResize = this._getOption('resize');
+    if (canBindResize) {
+      this.bindResize();
+    }
+  };
+
+  // goes through all children again and gets bricks in proper order
+  proto.reloadItems = function () {
+    // collection of item elements
+    this.items = this._itemize(this.element.children);
+  };
+
+  /**
+   * turn elements into Outlayer.Items to be used in layout
+   * @param {Array or NodeList or HTMLElement} elems
+   * @returns {Array} items - collection of new Outlayer Items
+   */
+  proto._itemize = function (elems) {
+
+    var itemElems = this._filterFindItemElements(elems);
+    var Item = this.constructor.Item;
+
+    // create new Outlayer Items for collection
+    var items = [];
+    for (var i = 0; i < itemElems.length; i++) {
+      var elem = itemElems[i];
+      var item = new Item(elem, this);
+      items.push(item);
+    }
+
+    return items;
+  };
+
+  /**
+   * get item elements to be used in layout
+   * @param {Array or NodeList or HTMLElement} elems
+   * @returns {Array} items - item elements
+   */
+  proto._filterFindItemElements = function (elems) {
+    return utils.filterFindElements(elems, this.options.itemSelector);
+  };
+
+  /**
+   * getter method for getting item elements
+   * @returns {Array} elems - collection of item elements
+   */
+  proto.getItemElements = function () {
+    return this.items.map(function (item) {
+      return item.element;
+    });
+  };
+
+  // ----- init & layout ----- //
+
+  /**
+   * lays out all items
+   */
+  proto.layout = function () {
+    this._resetLayout();
+    this._manageStamps();
+
+    // don't animate first layout
+    var layoutInstant = this._getOption('layoutInstant');
+    var isInstant = layoutInstant !== undefined ? layoutInstant : !this._isLayoutInited;
+    this.layoutItems(this.items, isInstant);
+
+    // flag for initalized
+    this._isLayoutInited = true;
+  };
+
+  // _init is alias for layout
+  proto._init = proto.layout;
+
+  /**
+   * logic before any new layout
+   */
+  proto._resetLayout = function () {
+    this.getSize();
+  };
+
+  proto.getSize = function () {
+    this.size = getSize(this.element);
+  };
+
+  /**
+   * get measurement from option, for columnWidth, rowHeight, gutter
+   * if option is String -> get element from selector string, & get size of element
+   * if option is Element -> get size of element
+   * else use option as a number
+   *
+   * @param {String} measurement
+   * @param {String} size - width or height
+   * @private
+   */
+  proto._getMeasurement = function (measurement, size) {
+    var option = this.options[measurement];
+    var elem;
+    if (!option) {
+      // default to 0
+      this[measurement] = 0;
+    } else {
+      // use option as an element
+      if (typeof option == 'string') {
+        elem = this.element.querySelector(option);
+      } else if (option instanceof HTMLElement) {
+        elem = option;
+      }
+      // use size of element, if element
+      this[measurement] = elem ? getSize(elem)[size] : option;
+    }
+  };
+
+  /**
+   * layout a collection of item elements
+   * @api public
+   */
+  proto.layoutItems = function (items, isInstant) {
+    items = this._getItemsForLayout(items);
+
+    this._layoutItems(items, isInstant);
+
+    this._postLayout();
+  };
+
+  /**
+   * get the items to be laid out
+   * you may want to skip over some items
+   * @param {Array} items
+   * @returns {Array} items
+   */
+  proto._getItemsForLayout = function (items) {
+    return items.filter(function (item) {
+      return !item.isIgnored;
+    });
+  };
+
+  /**
+   * layout items
+   * @param {Array} items
+   * @param {Boolean} isInstant
+   */
+  proto._layoutItems = function (items, isInstant) {
+    this._emitCompleteOnItems('layout', items);
+
+    if (!items || !items.length) {
+      // no items, emit event with empty array
+      return;
+    }
+
+    var queue = [];
+
+    items.forEach(function (item) {
+      // get x/y object from method
+      var position = this._getItemLayoutPosition(item);
+      // enqueue
+      position.item = item;
+      position.isInstant = isInstant || item.isLayoutInstant;
+      queue.push(position);
+    }, this);
+
+    this._processLayoutQueue(queue);
+  };
+
+  /**
+   * get item layout position
+   * @param {Outlayer.Item} item
+   * @returns {Object} x and y position
+   */
+  proto._getItemLayoutPosition = function () /* item */{
+    return {
+      x: 0,
+      y: 0
+    };
+  };
+
+  /**
+   * iterate over array and position each item
+   * Reason being - separating this logic prevents 'layout invalidation'
+   * thx @paul_irish
+   * @param {Array} queue
+   */
+  proto._processLayoutQueue = function (queue) {
+    this.updateStagger();
+    queue.forEach(function (obj, i) {
+      this._positionItem(obj.item, obj.x, obj.y, obj.isInstant, i);
+    }, this);
+  };
+
+  // set stagger from option in milliseconds number
+  proto.updateStagger = function () {
+    var stagger = this.options.stagger;
+    if (stagger === null || stagger === undefined) {
+      this.stagger = 0;
+      return;
+    }
+    this.stagger = getMilliseconds(stagger);
+    return this.stagger;
+  };
+
+  /**
+   * Sets position of item in DOM
+   * @param {Outlayer.Item} item
+   * @param {Number} x - horizontal position
+   * @param {Number} y - vertical position
+   * @param {Boolean} isInstant - disables transitions
+   */
+  proto._positionItem = function (item, x, y, isInstant, i) {
+    if (isInstant) {
+      // if not transition, just set CSS
+      item.goTo(x, y);
+    } else {
+      item.stagger(i * this.stagger);
+      item.moveTo(x, y);
+    }
+  };
+
+  /**
+   * Any logic you want to do after each layout,
+   * i.e. size the container
+   */
+  proto._postLayout = function () {
+    this.resizeContainer();
+  };
+
+  proto.resizeContainer = function () {
+    var isResizingContainer = this._getOption('resizeContainer');
+    if (!isResizingContainer) {
+      return;
+    }
+    var size = this._getContainerSize();
+    if (size) {
+      this._setContainerMeasure(size.width, true);
+      this._setContainerMeasure(size.height, false);
+    }
+  };
+
+  /**
+   * Sets width or height of container if returned
+   * @returns {Object} size
+   *   @param {Number} width
+   *   @param {Number} height
+   */
+  proto._getContainerSize = noop;
+
+  /**
+   * @param {Number} measure - size of width or height
+   * @param {Boolean} isWidth
+   */
+  proto._setContainerMeasure = function (measure, isWidth) {
+    if (measure === undefined) {
+      return;
+    }
+
+    var elemSize = this.size;
+    // add padding and border width if border box
+    if (elemSize.isBorderBox) {
+      measure += isWidth ? elemSize.paddingLeft + elemSize.paddingRight + elemSize.borderLeftWidth + elemSize.borderRightWidth : elemSize.paddingBottom + elemSize.paddingTop + elemSize.borderTopWidth + elemSize.borderBottomWidth;
+    }
+
+    measure = Math.max(measure, 0);
+    this.element.style[isWidth ? 'width' : 'height'] = measure + 'px';
+  };
+
+  /**
+   * emit eventComplete on a collection of items events
+   * @param {String} eventName
+   * @param {Array} items - Outlayer.Items
+   */
+  proto._emitCompleteOnItems = function (eventName, items) {
+    var _this = this;
+    function onComplete() {
+      _this.dispatchEvent(eventName + 'Complete', null, [items]);
+    }
+
+    var count = items.length;
+    if (!items || !count) {
+      onComplete();
+      return;
+    }
+
+    var doneCount = 0;
+    function tick() {
+      doneCount++;
+      if (doneCount == count) {
+        onComplete();
+      }
+    }
+
+    // bind callback
+    items.forEach(function (item) {
+      item.once(eventName, tick);
+    });
+  };
+
+  /**
+   * emits events via EvEmitter and jQuery events
+   * @param {String} type - name of event
+   * @param {Event} event - original event
+   * @param {Array} args - extra arguments
+   */
+  proto.dispatchEvent = function (type, event, args) {
+    // add original event to arguments
+    var emitArgs = event ? [event].concat(args) : args;
+    this.emitEvent(type, emitArgs);
+
+    if (jQuery) {
+      // set this.$element
+      this.$element = this.$element || jQuery(this.element);
+      if (event) {
+        // create jQuery event
+        var $event = jQuery.Event(event);
+        $event.type = type;
+        this.$element.trigger($event, args);
+      } else {
+        // just trigger with type if no event available
+        this.$element.trigger(type, args);
+      }
+    }
+  };
+
+  // -------------------------- ignore & stamps -------------------------- //
+
+
+  /**
+   * keep item in collection, but do not lay it out
+   * ignored items do not get skipped in layout
+   * @param {Element} elem
+   */
+  proto.ignore = function (elem) {
+    var item = this.getItem(elem);
+    if (item) {
+      item.isIgnored = true;
+    }
+  };
+
+  /**
+   * return item to layout collection
+   * @param {Element} elem
+   */
+  proto.unignore = function (elem) {
+    var item = this.getItem(elem);
+    if (item) {
+      delete item.isIgnored;
+    }
+  };
+
+  /**
+   * adds elements to stamps
+   * @param {NodeList, Array, Element, or String} elems
+   */
+  proto.stamp = function (elems) {
+    elems = this._find(elems);
+    if (!elems) {
+      return;
+    }
+
+    this.stamps = this.stamps.concat(elems);
+    // ignore
+    elems.forEach(this.ignore, this);
+  };
+
+  /**
+   * removes elements to stamps
+   * @param {NodeList, Array, or Element} elems
+   */
+  proto.unstamp = function (elems) {
+    elems = this._find(elems);
+    if (!elems) {
+      return;
+    }
+
+    elems.forEach(function (elem) {
+      // filter out removed stamp elements
+      utils.removeFrom(this.stamps, elem);
+      this.unignore(elem);
+    }, this);
+  };
+
+  /**
+   * finds child elements
+   * @param {NodeList, Array, Element, or String} elems
+   * @returns {Array} elems
+   */
+  proto._find = function (elems) {
+    if (!elems) {
+      return;
+    }
+    // if string, use argument as selector string
+    if (typeof elems == 'string') {
+      elems = this.element.querySelectorAll(elems);
+    }
+    elems = utils.makeArray(elems);
+    return elems;
+  };
+
+  proto._manageStamps = function () {
+    if (!this.stamps || !this.stamps.length) {
+      return;
+    }
+
+    this._getBoundingRect();
+
+    this.stamps.forEach(this._manageStamp, this);
+  };
+
+  // update boundingLeft / Top
+  proto._getBoundingRect = function () {
+    // get bounding rect for container element
+    var boundingRect = this.element.getBoundingClientRect();
+    var size = this.size;
+    this._boundingRect = {
+      left: boundingRect.left + size.paddingLeft + size.borderLeftWidth,
+      top: boundingRect.top + size.paddingTop + size.borderTopWidth,
+      right: boundingRect.right - (size.paddingRight + size.borderRightWidth),
+      bottom: boundingRect.bottom - (size.paddingBottom + size.borderBottomWidth)
+    };
+  };
+
+  /**
+   * @param {Element} stamp
+   **/
+  proto._manageStamp = noop;
+
+  /**
+   * get x/y position of element relative to container element
+   * @param {Element} elem
+   * @returns {Object} offset - has left, top, right, bottom
+   */
+  proto._getElementOffset = function (elem) {
+    var boundingRect = elem.getBoundingClientRect();
+    var thisRect = this._boundingRect;
+    var size = getSize(elem);
+    var offset = {
+      left: boundingRect.left - thisRect.left - size.marginLeft,
+      top: boundingRect.top - thisRect.top - size.marginTop,
+      right: thisRect.right - boundingRect.right - size.marginRight,
+      bottom: thisRect.bottom - boundingRect.bottom - size.marginBottom
+    };
+    return offset;
+  };
+
+  // -------------------------- resize -------------------------- //
+
+  // enable event handlers for listeners
+  // i.e. resize -> onresize
+  proto.handleEvent = utils.handleEvent;
+
+  /**
+   * Bind layout to window resizing
+   */
+  proto.bindResize = function () {
+    window.addEventListener('resize', this);
+    this.isResizeBound = true;
+  };
+
+  /**
+   * Unbind layout to window resizing
+   */
+  proto.unbindResize = function () {
+    window.removeEventListener('resize', this);
+    this.isResizeBound = false;
+  };
+
+  proto.onresize = function () {
+    this.resize();
+  };
+
+  utils.debounceMethod(Outlayer, 'onresize', 100);
+
+  proto.resize = function () {
+    // don't trigger if size did not change
+    // or if resize was unbound. See #9
+    if (!this.isResizeBound || !this.needsResizeLayout()) {
+      return;
+    }
+
+    this.layout();
+  };
+
+  /**
+   * check if layout is needed post layout
+   * @returns Boolean
+   */
+  proto.needsResizeLayout = function () {
+    var size = getSize(this.element);
+    // check that this.size and size are there
+    // IE8 triggers resize on body size change, so they might not be
+    var hasSizes = this.size && size;
+    return hasSizes && size.innerWidth !== this.size.innerWidth;
+  };
+
+  // -------------------------- methods -------------------------- //
+
+  /**
+   * add items to Outlayer instance
+   * @param {Array or NodeList or Element} elems
+   * @returns {Array} items - Outlayer.Items
+   **/
+  proto.addItems = function (elems) {
+    var items = this._itemize(elems);
+    // add items to collection
+    if (items.length) {
+      this.items = this.items.concat(items);
+    }
+    return items;
+  };
+
+  /**
+   * Layout newly-appended item elements
+   * @param {Array or NodeList or Element} elems
+   */
+  proto.appended = function (elems) {
+    var items = this.addItems(elems);
+    if (!items.length) {
+      return;
+    }
+    // layout and reveal just the new items
+    this.layoutItems(items, true);
+    this.reveal(items);
+  };
+
+  /**
+   * Layout prepended elements
+   * @param {Array or NodeList or Element} elems
+   */
+  proto.prepended = function (elems) {
+    var items = this._itemize(elems);
+    if (!items.length) {
+      return;
+    }
+    // add items to beginning of collection
+    var previousItems = this.items.slice(0);
+    this.items = items.concat(previousItems);
+    // start new layout
+    this._resetLayout();
+    this._manageStamps();
+    // layout new stuff without transition
+    this.layoutItems(items, true);
+    this.reveal(items);
+    // layout previous items
+    this.layoutItems(previousItems);
+  };
+
+  /**
+   * reveal a collection of items
+   * @param {Array of Outlayer.Items} items
+   */
+  proto.reveal = function (items) {
+    this._emitCompleteOnItems('reveal', items);
+    if (!items || !items.length) {
+      return;
+    }
+    var stagger = this.updateStagger();
+    items.forEach(function (item, i) {
+      item.stagger(i * stagger);
+      item.reveal();
+    });
+  };
+
+  /**
+   * hide a collection of items
+   * @param {Array of Outlayer.Items} items
+   */
+  proto.hide = function (items) {
+    this._emitCompleteOnItems('hide', items);
+    if (!items || !items.length) {
+      return;
+    }
+    var stagger = this.updateStagger();
+    items.forEach(function (item, i) {
+      item.stagger(i * stagger);
+      item.hide();
+    });
+  };
+
+  /**
+   * reveal item elements
+   * @param {Array}, {Element}, {NodeList} items
+   */
+  proto.revealItemElements = function (elems) {
+    var items = this.getItems(elems);
+    this.reveal(items);
+  };
+
+  /**
+   * hide item elements
+   * @param {Array}, {Element}, {NodeList} items
+   */
+  proto.hideItemElements = function (elems) {
+    var items = this.getItems(elems);
+    this.hide(items);
+  };
+
+  /**
+   * get Outlayer.Item, given an Element
+   * @param {Element} elem
+   * @param {Function} callback
+   * @returns {Outlayer.Item} item
+   */
+  proto.getItem = function (elem) {
+    // loop through items to get the one that matches
+    for (var i = 0; i < this.items.length; i++) {
+      var item = this.items[i];
+      if (item.element == elem) {
+        // return item
+        return item;
+      }
+    }
+  };
+
+  /**
+   * get collection of Outlayer.Items, given Elements
+   * @param {Array} elems
+   * @returns {Array} items - Outlayer.Items
+   */
+  proto.getItems = function (elems) {
+    elems = utils.makeArray(elems);
+    var items = [];
+    elems.forEach(function (elem) {
+      var item = this.getItem(elem);
+      if (item) {
+        items.push(item);
+      }
+    }, this);
+
+    return items;
+  };
+
+  /**
+   * remove element(s) from instance and DOM
+   * @param {Array or NodeList or Element} elems
+   */
+  proto.remove = function (elems) {
+    var removeItems = this.getItems(elems);
+
+    this._emitCompleteOnItems('remove', removeItems);
+
+    // bail if no items to remove
+    if (!removeItems || !removeItems.length) {
+      return;
+    }
+
+    removeItems.forEach(function (item) {
+      item.remove();
+      // remove item from collection
+      utils.removeFrom(this.items, item);
+    }, this);
+  };
+
+  // ----- destroy ----- //
+
+  // remove and disable Outlayer instance
+  proto.destroy = function () {
+    // clean up dynamic styles
+    var style = this.element.style;
+    style.height = '';
+    style.position = '';
+    style.width = '';
+    // destroy items
+    this.items.forEach(function (item) {
+      item.destroy();
+    });
+
+    this.unbindResize();
+
+    var id = this.element.outlayerGUID;
+    delete instances[id]; // remove reference to instance by id
+    delete this.element.outlayerGUID;
+    // remove data for jQuery
+    if (jQuery) {
+      jQuery.removeData(this.element, this.constructor.namespace);
+    }
+  };
+
+  // -------------------------- data -------------------------- //
+
+  /**
+   * get Outlayer instance from element
+   * @param {Element} elem
+   * @returns {Outlayer}
+   */
+  Outlayer.data = function (elem) {
+    elem = utils.getQueryElement(elem);
+    var id = elem && elem.outlayerGUID;
+    return id && instances[id];
+  };
+
+  // -------------------------- create Outlayer class -------------------------- //
+
+  /**
+   * create a layout class
+   * @param {String} namespace
+   */
+  Outlayer.create = function (namespace, options) {
+    // sub-class Outlayer
+    var Layout = subclass(Outlayer);
+    // apply new options and compatOptions
+    Layout.defaults = utils.extend({}, Outlayer.defaults);
+    utils.extend(Layout.defaults, options);
+    Layout.compatOptions = utils.extend({}, Outlayer.compatOptions);
+
+    Layout.namespace = namespace;
+
+    Layout.data = Outlayer.data;
+
+    // sub-class Item
+    Layout.Item = subclass(Item);
+
+    // -------------------------- declarative -------------------------- //
+
+    utils.htmlInit(Layout, namespace);
+
+    // -------------------------- jQuery bridge -------------------------- //
+
+    // make into jQuery plugin
+    if (jQuery && jQuery.bridget) {
+      jQuery.bridget(namespace, Layout);
+    }
+
+    return Layout;
+  };
+
+  function subclass(Parent) {
+    function SubClass() {
+      Parent.apply(this, arguments);
+    }
+
+    SubClass.prototype = Object.create(Parent.prototype);
+    SubClass.prototype.constructor = SubClass;
+
+    return SubClass;
+  }
+
+  // ----- helpers ----- //
+
+  // how many milliseconds are in each unit
+  var msUnits = {
+    ms: 1,
+    s: 1000
+  };
+
+  // munge time-like parameter into millisecond number
+  // '0.4s' -> 40
+  function getMilliseconds(time) {
+    if (typeof time == 'number') {
+      return time;
+    }
+    var matches = time.match(/(^\d*\.?\d*)(\w*)/);
+    var num = matches && matches[1];
+    var unit = matches && matches[2];
+    if (!num.length) {
+      return 0;
+    }
+    num = parseFloat(num);
+    var mult = msUnits[unit] || 1;
+    return num * mult;
+  }
+
+  // ----- fin ----- //
+
+  // back in global
+  Outlayer.Item = Item;
+
+  return Outlayer;
+});
+
+/*!
+ * Masonry v4.2.1
+ * Cascading grid layout library
+ * https://masonry.desandro.com
+ * MIT License
+ * by David DeSandro
+ */
+
+(function (window, factory) {
+  // universal module definition
+  /* jshint strict: false */ /*globals define, module, require */
+  if (true) {
+    // AMD
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__WEBPACK_LOCAL_MODULE_6__, __WEBPACK_LOCAL_MODULE_2__], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  } else if ((typeof module === 'undefined' ? 'undefined' : _typeof(module)) == 'object' && module.exports) {
+    // CommonJS
+    module.exports = factory(require('outlayer'), require('get-size'));
+  } else {
+    // browser global
+    window.Masonry = factory(window.Outlayer, window.getSize);
+  }
+})(window, function factory(Outlayer, getSize) {
+
+  // -------------------------- masonryDefinition -------------------------- //
+
+  // create an Outlayer layout class
+  var Masonry = Outlayer.create('masonry');
+  // isFitWidth -> fitWidth
+  Masonry.compatOptions.fitWidth = 'isFitWidth';
+
+  var proto = Masonry.prototype;
+
+  proto._resetLayout = function () {
+    this.getSize();
+    this._getMeasurement('columnWidth', 'outerWidth');
+    this._getMeasurement('gutter', 'outerWidth');
+    this.measureColumns();
+
+    // reset column Y
+    this.colYs = [];
+    for (var i = 0; i < this.cols; i++) {
+      this.colYs.push(0);
+    }
+
+    this.maxY = 0;
+    this.horizontalColIndex = 0;
+  };
+
+  proto.measureColumns = function () {
+    this.getContainerWidth();
+    // if columnWidth is 0, default to outerWidth of first item
+    if (!this.columnWidth) {
+      var firstItem = this.items[0];
+      var firstItemElem = firstItem && firstItem.element;
+      // columnWidth fall back to item of first element
+      this.columnWidth = firstItemElem && getSize(firstItemElem).outerWidth ||
+      // if first elem has no width, default to size of container
+      this.containerWidth;
+    }
+
+    var columnWidth = this.columnWidth += this.gutter;
+
+    // calculate columns
+    var containerWidth = this.containerWidth + this.gutter;
+    var cols = containerWidth / columnWidth;
+    // fix rounding errors, typically with gutters
+    var excess = columnWidth - containerWidth % columnWidth;
+    // if overshoot is less than a pixel, round up, otherwise floor it
+    var mathMethod = excess && excess < 1 ? 'round' : 'floor';
+    cols = Math[mathMethod](cols);
+    this.cols = Math.max(cols, 1);
+  };
+
+  proto.getContainerWidth = function () {
+    // container is parent if fit width
+    var isFitWidth = this._getOption('fitWidth');
+    var container = isFitWidth ? this.element.parentNode : this.element;
+    // check that this.size and size are there
+    // IE8 triggers resize on body size change, so they might not be
+    var size = getSize(container);
+    this.containerWidth = size && size.innerWidth;
+  };
+
+  proto._getItemLayoutPosition = function (item) {
+    item.getSize();
+    // how many columns does this brick span
+    var remainder = item.size.outerWidth % this.columnWidth;
+    var mathMethod = remainder && remainder < 1 ? 'round' : 'ceil';
+    // round if off by 1 pixel, otherwise use ceil
+    var colSpan = Math[mathMethod](item.size.outerWidth / this.columnWidth);
+    colSpan = Math.min(colSpan, this.cols);
+    // use horizontal or top column position
+    var colPosMethod = this.options.horizontalOrder ? '_getHorizontalColPosition' : '_getTopColPosition';
+    var colPosition = this[colPosMethod](colSpan, item);
+    // position the brick
+    var position = {
+      x: this.columnWidth * colPosition.col,
+      y: colPosition.y
+    };
+    // apply setHeight to necessary columns
+    var setHeight = colPosition.y + item.size.outerHeight;
+    var setMax = colSpan + colPosition.col;
+    for (var i = colPosition.col; i < setMax; i++) {
+      this.colYs[i] = setHeight;
+    }
+
+    return position;
+  };
+
+  proto._getTopColPosition = function (colSpan) {
+    var colGroup = this._getTopColGroup(colSpan);
+    // get the minimum Y value from the columns
+    var minimumY = Math.min.apply(Math, colGroup);
+
+    return {
+      col: colGroup.indexOf(minimumY),
+      y: minimumY
+    };
+  };
+
+  /**
+   * @param {Number} colSpan - number of columns the element spans
+   * @returns {Array} colGroup
+   */
+  proto._getTopColGroup = function (colSpan) {
+    if (colSpan < 2) {
+      // if brick spans only one column, use all the column Ys
+      return this.colYs;
+    }
+
+    var colGroup = [];
+    // how many different places could this brick fit horizontally
+    var groupCount = this.cols + 1 - colSpan;
+    // for each group potential horizontal position
+    for (var i = 0; i < groupCount; i++) {
+      colGroup[i] = this._getColGroupY(i, colSpan);
+    }
+    return colGroup;
+  };
+
+  proto._getColGroupY = function (col, colSpan) {
+    if (colSpan < 2) {
+      return this.colYs[col];
+    }
+    // make an array of colY values for that one group
+    var groupColYs = this.colYs.slice(col, col + colSpan);
+    // and get the max value of the array
+    return Math.max.apply(Math, groupColYs);
+  };
+
+  // get column position based on horizontal index. #873
+  proto._getHorizontalColPosition = function (colSpan, item) {
+    var col = this.horizontalColIndex % this.cols;
+    var isOver = colSpan > 1 && col + colSpan > this.cols;
+    // shift to next row if item can't fit on current row
+    col = isOver ? 0 : col;
+    // don't let zero-size items take up space
+    var hasSize = item.size.outerWidth && item.size.outerHeight;
+    this.horizontalColIndex = hasSize ? col + colSpan : this.horizontalColIndex;
+
+    return {
+      col: col,
+      y: this._getColGroupY(col, colSpan)
+    };
+  };
+
+  proto._manageStamp = function (stamp) {
+    var stampSize = getSize(stamp);
+    var offset = this._getElementOffset(stamp);
+    // get the columns that this stamp affects
+    var isOriginLeft = this._getOption('originLeft');
+    var firstX = isOriginLeft ? offset.left : offset.right;
+    var lastX = firstX + stampSize.outerWidth;
+    var firstCol = Math.floor(firstX / this.columnWidth);
+    firstCol = Math.max(0, firstCol);
+    var lastCol = Math.floor(lastX / this.columnWidth);
+    // lastCol should not go over if multiple of columnWidth #425
+    lastCol -= lastX % this.columnWidth ? 0 : 1;
+    lastCol = Math.min(this.cols - 1, lastCol);
+    // set colYs to bottom of the stamp
+
+    var isOriginTop = this._getOption('originTop');
+    var stampMaxY = (isOriginTop ? offset.top : offset.bottom) + stampSize.outerHeight;
+    for (var i = firstCol; i <= lastCol; i++) {
+      this.colYs[i] = Math.max(stampMaxY, this.colYs[i]);
+    }
+  };
+
+  proto._getContainerSize = function () {
+    this.maxY = Math.max.apply(Math, this.colYs);
+    var size = {
+      height: this.maxY
+    };
+
+    if (this._getOption('fitWidth')) {
+      size.width = this._getContainerFitWidth();
+    }
+
+    return size;
+  };
+
+  proto._getContainerFitWidth = function () {
+    var unusedCols = 0;
+    // count unused columns
+    var i = this.cols;
+    while (--i) {
+      if (this.colYs[i] !== 0) {
+        break;
+      }
+      unusedCols++;
+    }
+    // fit container to columns that have been used
+    return (this.cols - unusedCols) * this.columnWidth - this.gutter;
+  };
+
+  proto.needsResizeLayout = function () {
+    var previousWidth = this.containerWidth;
+    this.getContainerWidth();
+    return previousWidth != this.containerWidth;
+  };
+
+  return Masonry;
+});
+
+/***/ }),
+/* 331 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11871,17 +14270,18 @@ function binder(_ref) {
 }
 
 /***/ }),
-/* 331 */
+/* 332 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function($) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return constants; });
 /* harmony export (immutable) */ __webpack_exports__["a"] = accordion;
-/* harmony export (immutable) */ __webpack_exports__["f"] = slider;
-/* harmony export (immutable) */ __webpack_exports__["d"] = mobileMenu;
-/* harmony export (immutable) */ __webpack_exports__["c"] = isDev;
-/* harmony export (immutable) */ __webpack_exports__["e"] = noDev;
-
+/* harmony export (immutable) */ __webpack_exports__["g"] = slider;
+/* harmony export (immutable) */ __webpack_exports__["e"] = mobileMenu;
+/* harmony export (immutable) */ __webpack_exports__["d"] = isDev;
+/* harmony export (immutable) */ __webpack_exports__["f"] = noDev;
+/* harmony export (immutable) */ __webpack_exports__["h"] = tabs;
+/* harmony export (immutable) */ __webpack_exports__["c"] = gallery;
 // these properties will be available from anywhere via this.property
 var constants = {
   isTouch: "ontouchstart" in window ? function () {
@@ -11905,12 +14305,42 @@ function accordion() {
 }
 
 function slider() {
-  $('.residents-holder').slick({
+  $('.residents-holder, .gallery-apartments').slick({
     dots: true,
     infinite: false,
     speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
+    prevArrow: '<button type="button" class="slick-prev">Prev</button>',
+    nextArrow: '<button type="button" class="slick-next">Next</button>'
+  });
+  $('.visual-bedroom').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    mobileFirst: true,
+    dots: false,
+    arrows: false,
+    variableWidth: true,
+    responsive: [{
+      breakpoint: 768,
+      settings: "unslick"
+    }]
+  });
+  $('.large-sync').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    asNavFor: '.small-sync'
+  });
+  $('.small-sync').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    asNavFor: '.large-sync',
+    dots: true,
+    centerMode: true,
+    focusOnSelect: true,
+    variableWidth: true,
     prevArrow: '<button type="button" class="slick-prev">Prev</button>',
     nextArrow: '<button type="button" class="slick-next">Next</button>'
   });
@@ -11938,7 +14368,24 @@ function noDev() {
     $(".no-dev").removeClass("no-dev");
   }
 }
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(125)))
+
+function tabs() {
+  $('.tab-nav a').on('click', function (event) {
+    $(this).parent().addClass("active").siblings(".tab-nav-item").removeClass("active");
+    var attr = $(this).attr('href');
+    $(attr).addClass('active').siblings(".tab-content-item").removeClass("active");
+    event.preventDefault();
+  });
+}
+
+function gallery() {
+  $('.gallery-holder').masonry({
+    itemSelector: '.item',
+    columnWidth: 370,
+    gutterWidth: 30
+  });
+}
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(90)))
 
 /***/ })
 /******/ ]);

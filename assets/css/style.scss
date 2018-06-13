@@ -12,6 +12,7 @@
 @import "blocks/footer";
 @import "blocks/any-stand-alone-block";
 @import "blocks/pagination";
+@import "blocks/custom-controls";
 @import "blocks/social";
 @import "blocks/faq";
 @import "blocks/residents";
@@ -22,12 +23,24 @@
 @import "blocks/gallery";
 @import "blocks/more-info";
 @import "blocks/divided-section";
-@import "blocks/shedule-holder";
+@import "blocks/schedule-holder";
 @import "blocks/gallery-apartments";
 @import "blocks/property-animities";
 @import "blocks/community-list";
+@import "blocks/perks-working";
+@import "blocks/parkchester-timeline";
+@import "blocks/accordion";
+@import "blocks/page-nav";
+@import "blocks/popups";
+@import "blocks/popup-video";
+@import "blocks/photo-gallery";
+@import "blocks/photogallery-slider";
 
 @import "pages/common";
 @import "pages/home";
 @import "pages/about-us";
+@import "pages/press";
 @import "pages/error-page";
+@import "pages/faq";
+@import "pages/our-residents";
+@import "pages/careers";

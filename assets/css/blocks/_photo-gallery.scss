@@ -1,0 +1,26 @@
+.photo-gallery {
+  overflow: hidden;
+  margin: 0 0 30px;
+  .item {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: -9999px;
+    overflow: hidden;
+    width: 300px;
+    min-width: 300px;
+    height: 240px;
+    margin: 0 15px;
+    @include media('>=desktop') {
+      margin: 0 0 30px;
+      width: 370px;
+      min-width: 370px;
+      height: 300px;
+    }
+    &.big {
+      @include media('>=desktop') {
+        height: 500px;
+      }
+    }
+  }
+}

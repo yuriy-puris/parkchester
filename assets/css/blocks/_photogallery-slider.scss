@@ -1,0 +1,72 @@
+.photogallery-slider {
+  @include media('>=desktop') {
+    display: flex;
+  }
+  .large-slider {
+    width: 100%;
+    @include media('>=desktop') {
+      width: 970px;
+    }
+  }
+  .small-slider {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 50px;
+    @include media('>=desktop') {
+      text-align: center;
+      width: calc(100% - 970px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0;
+    }
+    .slick-list {
+      flex-shrink: 1;
+    }
+    .slick-arrow {
+      position: relative;
+      flex-shrink: 0;
+      flex-grow: 1;
+      &.slick-next {
+        right: -3px;
+      }
+      &.slick-prev {
+        left: -3px;
+      }
+    }
+  }
+  .large-item {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 200px;
+    width: 400px;
+    overflow: hidden;
+    @include media('>=tablet') {
+      height: 400px;
+      width: 600px;
+    }
+    @include media('>=desktop') {
+      height: 800px;
+      width: 970px;
+    }
+  }
+  .small-item {
+    min-width: 170px;
+    max-width: 170px;
+    height: 100px;
+    margin: 10px 10px;
+    @include media('>=tablet') {
+      margin: 10px 20px;  
+    }
+    @include media('>=desktop') {
+      float: none;
+      margin: 0 auto 50px;
+    }
+  }
+  .slick-next {
+    margin: 0;
+  }
+}

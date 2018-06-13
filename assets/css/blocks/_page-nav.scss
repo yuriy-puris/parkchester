@@ -1,0 +1,51 @@
+.page-nav {
+    margin-bottom: 70px;
+    text-align: center;
+    li {
+        margin-bottom: 10px;
+    }
+    a {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        text-transform: uppercase;
+        color: $color-black;
+        @include font-regular;
+        &:before {
+            content: "";
+            @include pos(absolute, $bottom: 0, $left: 0);
+            width: 0;
+            height: 3px;
+            background-color: $color-gold;
+            opacity: 0;
+            transition: width .5s, opacity, .3s;
+            will-change: width, opacity;
+        }
+    }
+    .current-menu-item {
+        a {
+            padding-bottom: 5px;
+            color: $color-gold;
+            &:before {
+                width: 100%;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+@include media(">=desktop") {
+    .page-nav {
+        li {
+            display: inline-block;
+            vertical-align: top;
+            margin: 0 20px;
+        }
+        .current-menu-item {
+            a {
+                padding-bottom: 20px;
+                font-size: 18px;
+            }
+        }
+    }
+}

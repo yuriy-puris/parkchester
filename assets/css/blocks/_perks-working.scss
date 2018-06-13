@@ -1,0 +1,33 @@
+.perks-working {
+  margin: 0 0 30px;
+  @include media('>=tablet') {
+    margin: 0 0 60px;
+  }
+  @include media('>=desktop') {
+    margin: 0 0 100px;
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  li {
+    width: 50%;
+    text-align: center;
+    margin: 0 0 20px;
+    @include media('>=tablet') {
+      width: 20%;
+    }
+  }
+  svg {
+    height: 56px;
+    max-width: 50px;
+  }
+  span {
+    @include font-medium;    
+    display: block;
+    text-transform: uppercase;
+  }
+  a {
+    text-align: center;
+  }
+}

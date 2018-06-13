@@ -62,6 +62,7 @@
     width: calc(100% - 370px);
   }
   .item {
+    position: relative;
     height: 230px;
     width: 230px;
     background-size: cover;

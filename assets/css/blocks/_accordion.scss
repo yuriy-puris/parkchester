@@ -1,0 +1,100 @@
+.accordion {
+    .accordion-item {
+        max-height: 85px;
+        border-top: 1px solid $color-light-grey;
+        overflow: hidden;
+        transition: max-height .5s;
+        &.expanded {
+            max-height: 640px;
+            .h5 {
+                white-space: normal;
+                color: $color-gold;
+            }
+            .accordion-content {
+                transform: translate(0, -15px);
+                opacity: 1;
+            }
+            .accordion-opener:after {
+                transform: rotate(225deg) translate(-2px, -2px);
+            }
+        }
+    }
+    .accordion-head {
+        position: relative;
+        padding: 35px 40px 35px 20px;
+        .h5 {
+            margin-bottom: 0;
+            color: $color-black;
+            @include dots;
+            transition: color .3s;
+            text-transform: none;
+            text-align: left;
+        }
+    }
+    .accordion-opener {
+        @include pos(absolute, 0, $right: 0);
+        width: 40px;
+        height: 100%;
+        max-height: 90px;
+        text-indent: -9999px;
+        &:after {
+            content: "";
+            @include pos(absolute, calc(50% - 4px), calc(50% - 4px));
+            width: 8px;
+            height: 8px;
+            transform: rotate(45deg) translate(0, 0);
+            border-right: 2px solid $color-gold;
+            border-bottom: 2px solid $color-gold;
+            transition: transform .3s;
+            will-change: transform;
+        }
+    }
+    .accordion-content {
+        width: 100%;
+        max-width: 800px;
+        transform: translate(0, 20px);
+        padding: 0 0 0 30px;
+        opacity: 0;
+        transition: transform ease-in-out .5s, opacity .5s;
+        will-change: transform;
+    }
+}
+
+@include media(">=desktop") {
+    .accordion {
+        .accordion-item {
+            max-height: 90px;
+        }
+        .accordion-item.expanded {
+            .accordion-opener:before {
+                content: "Hide";
+                transform: rotateX(360deg);
+            }
+        }
+        .accordion-head {
+            padding-left: 30px;
+            padding-right: 60px;
+        }
+        .accordion-opener {
+            width: 60px;
+            &:before {
+                content: "Show";
+                @include pos(absolute, calc(50% - 7px), $right: 20px);
+                @include font-regular;
+                width: 40px;
+                height: 15px;
+                font-size: 13px;
+                line-height: 15px;
+                color: $color-black;
+                text-indent: 0;
+                transform: rotateX(0deg);
+                transition: transform .3s;
+                will-change: transform;
+            }
+            &:after {
+                right: 2px;
+                left: auto;
+            }
+        }
+    }
+}

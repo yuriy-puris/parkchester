@@ -1,0 +1,75 @@
+.press-page {
+    .press-item {
+        padding-top: 30px;
+        border-top: 1px solid $color-light-grey;
+        &:last-of-type {
+            border-bottom: 1px solid $color-light-grey;
+        }
+        a {
+            @include pos(absolute, 0, 0, 0, 0);
+            text-indent: -9999px;
+            z-index: 1;
+        }
+    }
+    .content-wrap {
+        position: relative;
+        width: 100%;
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0 10px;
+        text-align: center;
+    }
+    .press-logo {
+        width: 100%;
+        max-width: 270px;
+        margin: 0 auto 30px;
+        text-align: center;
+    }
+    .press-content {
+        .h6 {
+            margin-bottom: 10px;
+        }
+        .h3,
+        .h6 {
+            transition: color .3s;
+        }
+    }
+}
+
+@include media(">=xtablet") {
+    .press-page {
+        margin-bottom: 70px;
+        .press-item {
+            padding: 0;
+            .content-wrap {
+                @include flex(row, space-between, center);
+                min-height: 240px;
+                text-align: left;
+            }
+        }
+        .press-logo {
+            width: 270px;
+            margin: 0;
+        }
+        .press-content {
+            width: calc(100% - 270px);
+            max-width: 570px;
+            .h3 {
+                margin: 0;
+            }
+        }
+    }
+}
+
+.no-dev {
+    .press-page {
+        .press-item:hover {
+            .press-content {
+                .h6,
+                .h3 {
+                    color: $color-gold;
+                }
+            }
+        }
+    }
+}

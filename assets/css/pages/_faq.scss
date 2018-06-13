@@ -1,0 +1,27 @@
+.faq-page {
+    .questions-group {
+        width: 100%;
+        max-width: 970px;
+        margin: 0 auto 70px;
+        border-bottom: 1px solid $color-light-grey;
+    }
+}
+
+@include media(">=desktop") {
+    .faq-page {
+        position: relative;
+        &:before {
+            content: "FAQ's";
+            @include pos(absolute, 0, center);
+            width: 100%;
+            max-width: 1000px;
+            text-align: center;
+            color: rgba($color-gold, .05);
+            @include font-bold;
+            font-size: 400px;
+            line-height: 210px;
+            pointer-events: none;
+            z-index: -1;
+        }
+    }
+}

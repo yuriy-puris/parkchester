@@ -31,6 +31,7 @@
     }
   }
   .media-section {
+    position: relative;
     @include bg(center, center, cover);
     max-width: 670px;
     min-height: 240px;

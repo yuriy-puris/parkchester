@@ -1,4 +1,5 @@
 .error-page {
+    padding-top: 40px;
     .h1 {
         text-align: center;
     }
@@ -19,7 +20,6 @@
         margin-bottom: 30px;
     }
     .bg {
-        // display: none;
         @include pos(absolute, 0, 0, 0, 0);
         @include bg(center, center, cover);
         opacity: .3;

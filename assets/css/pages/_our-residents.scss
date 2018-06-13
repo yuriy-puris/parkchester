@@ -1,0 +1,93 @@
+.our-residents-page {
+    .video-description {
+        text-align: center;
+        .h4 {
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 0;
+        }
+    }
+    .videos-list {
+        .video-wrap {
+            padding-top: 50px;
+        }
+    }
+}
+
+@include media(">=tablet") {
+    .our-residents-page {
+        .videos-list {
+            .video-wrap {
+                width: 100%;
+                max-width: 370px;
+                margin: 0 auto;
+                overflow: hidden;
+            }
+            .video {
+                position: relative;
+                height: 270px;
+                iframe {
+                    @include pos(absolute, 0, center);
+                    width: 370px;
+                    height: 270px;
+                }
+            }
+        }
+    }
+}
+
+@include media(">=desktop") {
+    .our-residents-page {
+        .video {
+            iframe {
+                height: calc(1170px / 16 * 9);
+            }
+        }
+        .videos-list {
+            @include flex(row, $fw: wrap);
+            .video-wrap {
+                margin: 0 30px 0 0;
+                flex-shrink: 0;
+                &:nth-child(3n) {
+                    margin-right: 0;
+                }
+            }
+            .video {
+                .custom-play-btn {
+                    &:before,
+                    &:after {
+                        width: 95px;
+                    }
+                }
+            }
+            .video-description {
+                text-align: left;
+                font-size: 14px;
+                line-height: 24px;
+            }
+        }
+    }
+}
+
+.no-dev {
+    .our-residents-page {
+        .videos-list {
+            .video-wrap {
+                transform: translate(0, 100px);
+                opacity: 0;
+                transition: transform .7s, opacity 1s;
+                will-change: transform;
+                @for $i from 1 through 30 {
+                    &:nth-child(#{$i}) {
+                        transition-delay: .2s * $i;
+                    }
+                }
+            }
+            .video-wrap.animation {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+    }
+}

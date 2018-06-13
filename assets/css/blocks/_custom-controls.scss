@@ -1,0 +1,126 @@
+//slick
+.slick-slide {
+  &:focus,
+  &:hover {
+    outline: none;
+  }
+}
+.slick-dots {
+  display: inline-block;
+  position: relative;
+  @include media('>=xtablet') {
+    margin: 10px 45px;
+  }
+  li {
+    display: inline-block;
+    margin: 0 15px;
+  }
+  button {
+    border: 1px solid lighten($color-black, 80%);
+    background: transparent;
+    text-indent: -9999px;
+    width: 10px;
+    min-width: auto;
+    height: 10px;
+    padding: 0;
+    margin: 0;
+    outline: none;
+  }
+  .slick-active {
+    button {
+      border-color: $color-gold;
+      background: $color-gold;
+    }
+  }
+}
+.slick-arrow {
+  background: transparent;
+  border: 1px solid lighten($color-black, 80%);
+  color: $color-black;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 0;
+  height: 40px;
+  width: 41px;
+  min-width: auto;
+  padding: 0;
+  text-indent: -9999px;
+  @include media('>=xtablet') {
+    width: 70px;
+    text-indent: 0;
+  }
+}
+.slick-arrow {
+  background: transparent;
+  border: 1px solid lighten($color-black, 80%);
+  color: $color-black;
+  position: relative;
+  margin: 0 10px;
+  bottom: 0;
+  margin-bottom: 0;
+  height: 40px;
+  width: 41px;
+  min-width: auto;
+  padding: 0;
+  text-indent: -9999px;
+  @include media('>=xtablet') {
+    position: absolute;
+    margin: 0;
+  }
+  @include media('>=xtablet') {
+    width: 70px;
+    text-indent: 0;
+  }
+  &::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    top: 50%;
+    border: 1px solid;
+    border-color: $color-black $color-black transparent transparent;
+  }
+  &.slick-prev {
+    left: 0;
+    @include media('>=xtablet') {
+      padding-left: 15px;
+    }
+    &::after {
+      left: 50%;
+      margin-left: -2px;
+      margin-top: -1px;
+      transform: translateY(-50%) rotate(-135deg);
+      @include media('>=xtablet') {
+        margin-left: 0;
+        margin-top: 0;
+        left: 15px;
+        transform: translateY(-50%) rotate(-135deg);
+      }
+    }
+  }
+  &.slick-next {
+    right: 0;
+    @include media('>=xtablet') {
+      padding-right: 15px;
+    }
+    &::after {
+      margin-right: -2px;
+      margin-top: -1px;
+      right: 50%;
+      transform: translateY(-50%) rotate(45deg);
+      @include media('>=xtablet') {
+        margin-right: 0;
+        margin-top: 0;
+        right: 15px;
+        transform: translateY(-50%) rotate(45deg);
+      }
+    }
+  }
+}
+.custom-controls {
+  display: inline-block;
+  position: relative;
+  padding: 0 70px;
+  transform: translateX(-50%);
+  left: 50%;
+}

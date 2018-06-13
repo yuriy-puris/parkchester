@@ -1,0 +1,57 @@
+.video {
+    position: relative;
+    margin-bottom: 30px;
+    overflow: hidden;
+    iframe {
+        width: 100%;
+        height: calc((100vw - 20px) / 16 * 9);
+    }
+    .video-poster {
+        @include pos(absolute, 0, 0, 0, 0);
+        @include bg(center, center, cover);
+        transition: transform .5s, opacity .5s;
+        will-change: transform;
+        z-index: 1;
+        &.active {
+            opacity: 0;
+            transform: scale(10);
+            pointer-events: none;
+        }
+    }
+}
+
+.no-dev {
+    .video {
+        .custom-play-btn {
+            transform: translate(-50%, -50%) scale(.8);
+            opacity: 0;
+            &:before,
+            &:after {
+                position: absolute;
+                left: calc(100% + 10px);
+                width: 200px;
+                color: $color-white;
+                text-transform: uppercase;
+                @include font-medium;
+                text-indent: 0;
+                @include dots;
+            }
+            &:before {
+                content: attr(data-first-row);
+                top: calc(50% - 15px);
+                font-size: 14px;
+            }
+            &:after {
+                content: attr(data-second-row);
+                top: calc(50% - 3px);
+                font-size: 24px;
+            }
+        }
+        .video-poster:hover {
+            .custom-play-btn {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+        }
+    }
+}

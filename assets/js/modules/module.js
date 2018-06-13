@@ -1,22 +1,16 @@
 // these properties will be available from anywhere via this.property
 export const constants = {
-    isTouch: "ontouchstart" in window ? function() {document.body.classList.add("touch"); return true;}() : false,
-    body: $("body")
+  isDev: "ontouchstart" in window
+      ? (() => {
+        $("html").removeClass("no-dev");
+        return true;
+      })()
+      : false,
+  $body: $("body"),
+  $window: $(window),
+  $document: $(document),
 };
 
-export function accordion() {
-  const $questionHead = $('.faq-title');
-  $questionHead.on('click', function (e) {
-    e.preventDefault();
-    let $this = $(this);
-    if ($this.hasClass('active')) {
-      $this.removeClass('active').parent().next().slideUp(300);
-    } else {
-      $questionHead.removeClass('active').parent().next().slideUp(300);
-      $this.addClass('active').parent().next().slideDown(300);
-    }
-  });
-}
 
 export function slider() {
   $('.residents-holder, .gallery-apartments').slick({
@@ -25,8 +19,15 @@ export function slider() {
     speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
-    prevArrow: '<button type="button" class="slick-prev">Prev</button>',
-    nextArrow: '<button type="button" class="slick-next">Next</button>'
+  });
+  $('.timeline-slider').slick({
+    dots: true,
+    infinite: false,
+    speed: 500,
+    fade: true,
+    cssEase: 'linear',
+    slidesToShow: 1,
+    slidesToScroll: 1,
   });
   $('.visual-bedroom').slick({
     slidesToShow: 1,
@@ -57,9 +58,105 @@ export function slider() {
     centerMode: true,
     focusOnSelect: true,
     variableWidth: true,
-    prevArrow: '<button type="button" class="slick-prev">Prev</button>',
-    nextArrow: '<button type="button" class="slick-next">Next</button>'
   });
+    //property-animities
+  $('.large-slider').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    asNavFor: '.small-slider',
+    infinite: true,
+    centerMode: true,
+    variableWidth: true
+  });
+  $('.small-slider').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    asNavFor: '.large-slider',
+    dots: false,
+    focusOnSelect: true,
+    mobileFirst: true,
+    infinite: true,
+    centerMode: true,
+    variableWidth: true,
+    responsive: [
+      {
+        breakpoint: 1280,
+        settings: {
+          slidesToShow: 4,
+          vertical: true,
+          verticalSwiping: true,
+          adaptiveHeight: true,
+        }
+      }
+    ]
+  });
+  //photo gallery
+  $('.photo-gallery').slick({
+    appendArrows: $('.custom-controls'),
+    appendDots: $('.custom-controls'),
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    mobileFirst: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          centerMode: true,
+          variableWidth: true,
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 1280,
+        settings: {
+          dots: true,
+          slidesToScroll: 9,
+          slidesToShow: 9
+        }
+      }
+    ]
+  });
+  //timeline slide
+  $('.timeline-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+    console.log(nextSlide)
+    $('.part[data-history='+nextSlide+']').click()
+  });
+}
+
+export function timeline() {
+  $('.chapter').on('click', function(e) {
+    if (!$(this).hasClass('active')) {
+      $('.chapter.active').removeClass('active');
+      $(this).addClass('active');
+    }
+    $(this).removeClass('past');
+    $(this).prevAll().addClass('past');
+    $(this).nextAll().each(function() {
+      $(this).removeClass('active').removeClass('past');
+      $(this).find('.active, .past').removeClass('active').removeClass('past');
+    });
+  });
+  
+  $('.part').on('click', function(e) {
+    let $this = $(this),
+        $attr = $this.data('history');
+        $('.timeline-slider .slick-dots li').eq($attr).children().click();
+
+    if (!$this.hasClass('active')) {
+      $('.part.active').removeClass('active');
+      $this.addClass('active');
+      $this.parent().trigger('click');
+      
+      $this.removeClass('past');
+      $this.prevAll().addClass('past');
+      $this.nextAll().removeClass('past');
+    }
+  });
+
 }
 
 export function mobileMenu () {
@@ -70,20 +167,12 @@ export function mobileMenu () {
     $('.header-content').removeClass('active-menu')
   });
   $('.parent-menu > a').on('click', function() {
-    $(this).toggleClass('active');
-    $(this).next().slideToggle()
+    $(this).toggleClass('active').next().slideToggle()
   })
 }
 
 export function isDev() {
   return !$("html").hasClass("no-dev");
-}
-
-export function noDev() {
-  if ((typeof window.orientation !== "undefined") ||
-    (navigator.userAgent.indexOf("IEMobile") !== -1)) {
-    $(".no-dev").removeClass("no-dev");
-  }
 }
 
 export function tabs() {
@@ -95,10 +184,42 @@ export function tabs() {
   })
 }
 
-export function gallery() {
+export function gallery () {
   $('.gallery-holder').masonry({
     itemSelector: '.item',
     columnWidth: 370,
-    gutterWidth: 30
+    gutter: 30
   });
+}
+
+export function photoGallery() {
+  $('.photo-gallery .slick-track').masonry({
+    itemSelector: '.item',
+    columnWidth: 370,
+    gutter: 20
+  });
+}
+
+export function checkViewPort () {
+  let e = window,
+      propWidth = 'inner';
+  if( !('innerWidth' in window) ) {
+    propWidth = 'client';
+    e = document.documentElement || document.body
+  }
+  return {
+    width: e[propWidth + 'Width'],
+    height: e[propWidth + 'Height']
+  }
+}
+
+export function initMasonry () {
+  $(window).on('load resize', function () {
+    let wWidth = checkViewPort().width;
+    if( wWidth >= 1280 ) {
+      setTimeout(() => {
+        photoGallery()
+      }, 1000)
+    }
+  })
 }

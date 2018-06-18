@@ -1,41 +1,41 @@
 .video-popup {
-    top: 0 !important;
-    width: 100%;
+  top: 0 !important;
+  width: 100%;
+  max-width: 100%;
+  height: 100vh;
+  background-color: transparent;
+  overflow: hidden;
+  .popup-close {
+    color: $color-black;
+    border-color: $color-black;
+    background-color: $color-white;
+    &:before,
+    &:after {
+      background-color: $color-black;
+    }
+  }
+  .popup-content {
+    @include pos(absolute, center, center);
+    width: 960px;
     max-width: 100%;
     height: 100vh;
-    background-color: transparent;
+    max-height: 540px !important;
     overflow: hidden;
-    .popup-close {
-      color: $color-black;
-      border-color: $color-black;
-      background-color: $color-white;
-      &:before,
-      &:after {
-        background-color: $color-black;
-      }
-    }
-    .popup-content {
-      @include pos(absolute, center, center);
-      width: 960px;
-      max-width: 100%;
-      height: 100vh;
-      max-height: 540px !important;
-      overflow: hidden;
-    }
-    iframe {
-      @include pos(absolute, 0, 0);
-      width: 100%;
-      max-width: 960px;
-      height: 100%;
-      max-height: 540px;
-      border: none;
+  }
+  iframe {
+    @include pos(absolute, 0, 0);
+    width: 100%;
+    max-width: 960px;
+    height: 100%;
+    max-height: 540px;
+    border: none;
+  }
+}
+@include media('>=xdesktop') {
+  .video-popup {
+    height: 100%;
+    &.opened {
+      top: calc(50% - 388px);
     }
   }
-  @include media('>=xdesktop') {
-    .video-popup {
-      height: 100%;
-      &.opened {
-        top: calc(50% - 388px);
-      }
-    }
-  }
+}

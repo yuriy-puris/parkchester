@@ -1,3 +1,5 @@
+import "babel-polyfill";
+import { popupGallery } from "./popupGallery";
 // these properties will be available from anywhere via this.property
 export const constants = {
   isDev: "ontouchstart" in window
@@ -19,6 +21,8 @@ export function slider() {
     speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
+    appendArrows: $('.custom-controls'),
+    appendDots: $('.custom-controls'),
   });
   $('.timeline-slider').slick({
     dots: true,
@@ -83,14 +87,50 @@ export function slider() {
       {
         breakpoint: 1280,
         settings: {
+          asNavFor: '.large-slider',
           slidesToShow: 4,
+          slidesToScroll: 4,
           vertical: true,
           verticalSwiping: true,
-          adaptiveHeight: true,
+          centerMode: true,
+          focusOnSelect: true,
+          variableWidth: true,
         }
       }
     ]
   });
+  //timeline slide
+  $('.timeline-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+    $('.part[data-history='+nextSlide+']').click()
+  });
+
+}
+
+export function popupGallerySlider() {
+  let clickCurrent,
+      wScrollTop;
+  const item = $('.photo-gallery .item'),
+      wrapperPopup = $('.popups'),
+      galleryPopup = $('.gallery-popup'),
+      galleryPopupWrapper = $('.popup-gallery-slider');
+      
+  item.on('click', function(event) {
+    wScrollTop = $(window).scrollTop();
+    console.log(wScrollTop)
+    clickCurrent = $(this).index();
+    item.clone().attr('style', '').appendTo(galleryPopupWrapper);
+    wrapperPopup.addClass('active');
+    galleryPopup.addClass('opened');
+    popupGallery(clickCurrent);
+  })
+  $('.popup-close').on('click', function(event) {
+    event.preventDefault();
+    $(window).scrollTop(wScrollTop);
+    galleryPopupWrapper.slick('unslick');
+  })
+}
+  //photo gallery
+export function photoGallerySlider() {
   //photo gallery
   $('.photo-gallery').slick({
     appendArrows: $('.custom-controls'),
@@ -113,17 +153,16 @@ export function slider() {
       {
         breakpoint: 1280,
         settings: {
+          variableWidth: false,
+          infinite: false,
+          centerMode: false,
           dots: true,
           slidesToScroll: 9,
-          slidesToShow: 9
+          slidesToShow: 9,
+          adaptiveHeight: true
         }
       }
     ]
-  });
-  //timeline slide
-  $('.timeline-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-    console.log(nextSlide)
-    $('.part[data-history='+nextSlide+']').click()
   });
 }
 
@@ -150,7 +189,6 @@ export function timeline() {
       $('.part.active').removeClass('active');
       $this.addClass('active');
       $this.parent().trigger('click');
-      
       $this.removeClass('past');
       $this.prevAll().addClass('past');
       $this.nextAll().removeClass('past');
@@ -187,16 +225,17 @@ export function tabs() {
 export function gallery () {
   $('.gallery-holder').masonry({
     itemSelector: '.item',
-    columnWidth: 370,
-    gutter: 30
+    columnWidth: '.item-size',
+    gutter: 30,
+    percentPosition: true
   });
 }
 
 export function photoGallery() {
   $('.photo-gallery .slick-track').masonry({
     itemSelector: '.item',
-    columnWidth: 370,
-    gutter: 20
+    columnWidth: 360,
+    gutter: 30,
   });
 }
 
@@ -218,8 +257,29 @@ export function initMasonry () {
     let wWidth = checkViewPort().width;
     if( wWidth >= 1280 ) {
       setTimeout(() => {
-        photoGallery()
+        photoGallery();
       }, 1000)
     }
+  })
+}
+
+export function scrollTo() {
+  if ( $('.scroll-to').length ) {
+    const btn = $('.scroll-to'),
+        parentBtn = $('.scroll-to').parent(),
+        parentBtnOffsetTop = parentBtn.next().offset().top;
+    $('.scroll-to').on('click', function() {
+      $('html, body').animate({
+        scrollTop: parentBtnOffsetTop
+      }, 1000)  
+    })
+  }
+}
+
+export function fixedHeader() {
+  const header = $('.header'),
+        headerScrollTop = header.scrollTop();
+  $(window).on('load scroll', () => {
+    $(window).scrollTop() > headerScrollTop ? header.addClass('fixed') : header.removeClass('fixed')
   })
 }

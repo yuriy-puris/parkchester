@@ -1,21 +1,31 @@
 .intro-home {
-  height: calc(100vh - 68px);
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 82px 0 0;
+  padding: 65px 0 0;
   text-align: center;
   position: relative;
+  height: calc(100vh - 70px);
+  @include media('>=desktop') {
+    height: calc(100vh - 165px);
+  }
   .h5, h5 {
     margin-bottom: 5px;
   }
   .scroll-to {
-    @include font-regular();
+    @include font-regular;
     font-size: 13px;
     line-height: 15px;
     position: absolute;
-    bottom: 10px;
-    left: 10px;
-    padding: 7px 19px;
+    bottom: 30px;
+    left: 50%;
+    padding: 10px 20px;
+    margin: 0;
+    transform: translateX(-50%);
+    @include media('>=desktop') {
+      bottom: 30px;
+      left: 30px;
+      transform: translate(0, 0);
+    }
   }
 }

@@ -56,19 +56,33 @@ body {
     padding: 0;
   }
 }
+.min-container {
+  max-width: 770px;
+  margin: 0 auto 55px;
+  text-align: center;
+  p {
+    @include font-light;
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
 section {
-  margin-bottom: 60px;
+  padding: 30px 0;
   @include media(">=desktop") {
-    margin-bottom: 100px;
+    padding: 0 100px;
   }
 }
 .section {
   border-bottom: 1px solid $color-light-grey;
-  margin-bottom: 60px;
   padding: 30px 0;
   @include media(">=desktop") {
-    margin-bottom: 100px;
-    padding: 0 0 100px;
+    padding: 100px 0;
+  }
+}
+.section,
+section {
+  h5, .h5 {
+    margin-bottom: 0;
   }
 }
 h1, .h1,
@@ -94,7 +108,7 @@ h1, .h1 {
     line-height: 48px;
   }
   @include media(">=desktop") {
-    margin-bottom: 35px;
+    margin-bottom: 20px;
     font-size: 50px;
     line-height: 55px;
   }
@@ -335,7 +349,6 @@ button {
   margin: 0 0 $main-margin;
   border: 1px solid transparent;
   padding: 8px 25px;
-  min-width: 150px;
   font-size: 13px;
   color: $color-white;
   vertical-align: middle;
@@ -357,6 +370,10 @@ button {
     color: $color-black;
     background: transparent;
     border-color: $color-black;
+    min-width: 170px;
+    @include media('>=desktop') {
+      padding: 13px 50px;
+    }
     &:hover,
     &:focus {
       border-color: $color-gold;
@@ -518,8 +535,13 @@ table {
 }
 //demo-visual 
 .demo-visual {
-  max-width: 1170px;
-  margin: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 230px;
+  @include media('>=xtablet') {
+    height: 460px;
+  }
 }
 
 

@@ -27,6 +27,7 @@
   font-size: 12px;
   line-height: 14px;
   color: $color-black;
+  background-color: $color-white;
   &:before,
   &:after {
     content: "";
@@ -35,7 +36,7 @@
     height: 3px;
     border-radius: 2px;
     z-index: 1;
-    background-color: $color-white;
+    background-color: $color-black;
     transition: background-color .3s;
   }
   &:before {
@@ -74,7 +75,6 @@
     max-height: 100%;
   }
 }
-
 @include media('>=tablet') {
   .popup {
     padding: 70px 70px 65px 100px;
@@ -89,13 +89,11 @@
     height: auto;
   }
 }
-
 @include media(">=desktop") {
   .popup-close {
     right: 50px;
   }
 }
-
 @include media('>=xdesktop') {
   .popup {
     max-height: 800px;
@@ -103,6 +101,7 @@
       height: 100%;
     }
   }
+
 }
 
 .no-dev {

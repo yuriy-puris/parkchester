@@ -6,14 +6,31 @@
 	@@include("header.html")
 
 	<main class="main">
-		<section class="page-careers">
+		<div class="page-careers">
 				<h1>Schedule a Tour</h1>
+				<div class="page-nav">
+						<ul>
+							<li>
+								<a href="javascript:void(0)">About Parkchester</a>
+							</li>
+							<li>
+								<a href="javascript:void(0)">History</a>
+							</li>
+							<li>
+								<a href="javascript:void(0)">Press</a>
+							</li>
+							<li>
+								<a href="javascript:void(0)">FAQ's</a>
+							</li>
+							<li class="current-menu-item">
+								<a href="javascript:void(0)">Careers</a>
+							</li>
+						</ul>
+					</div>
 				@@include("careers-description.html")
 				@@include("perks-working.html")
-				<figure class="demo-visual">
-					<img src="/dist/images/careers.png" alt="demo">
-				</figure>
-		</section>	
+				<div class="demo-visual" style="background-image: url('/dist/images/careers.png')"></div>
+		</div>	
 	</main>
 
 	@@include("footer.html")

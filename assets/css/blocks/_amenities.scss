@@ -1,18 +1,49 @@
 .amenities-wrapper {
   text-align: center;
+  position: relative;
+  @include media('>=desktop') {
+    padding: 100px 0 65px;
+  }
+  &::before {
+    @include media('>=desktop') {
+      content: 'A&F';
+      @include font-bold;
+      font-size: 400px;
+      line-height: 420px;
+      text-transform: uppercase;
+      color: $color-gold;
+      opacity: .05;
+      @include pos(absolute, -15px, 50%);
+      transform: translateX(-50%);
+      z-index: -1;
+    }
+  }
+  .h1, h2 {
+    margin-bottom: 40px;
+  }
+  .min-container {
+    max-width: 930px;
+    margin-bottom: 45px;
+    p {
+      font-size: 14px;
+      line-height: 24px;
+    }
+  }
 }
 .amenities-holder {
   @include font-medium;
   font-size: 16px;
   text-transform: uppercase;
-  margin: 50px 0 0;
+  margin: 15px 0 0;
   @include media('>=desktop') {
     text-align: left;
+    margin: 15px 0 0;
   }
   ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin: 0;
   }
   li {
     background: transparent;
@@ -37,7 +68,7 @@
       align-items: center;
       font-size: 16px;
       text-align: left;
-      padding: 15px 20px;
+      padding: 20px 20px;
     }
     @include media(">=desktop") {
       &:hover {
@@ -66,6 +97,7 @@
       margin: 0 0 5px;
       @include media(">=xtablet") {
         display: inline-block;
+        margin: 0;
       }
     }
   }

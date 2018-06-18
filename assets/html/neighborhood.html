@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" class="no-dev">
+@@include("head.html", {"title": "Parkchester"})
+<body>
+<div class="wrapper">
+	@@include("header.html")
+
+	<main class="main">
+    <div class="page-neighborhood">
+      <div class="container">
+        <h1>The neighborhood</h1>
+        <div class="min-container">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.</p>
+        </div>
+        @@include("neighborhood-map.html")
+        @@include("neighborhood-residents.html")
+        @@include("neighborhood-events.html")
+      </div>
+    </div>
+	</main>
+
+	@@include("footer.html")
+</div>
+<div class="popups">
+
+	@@include("popup-video.html")
+
+</div>
+@@include("scripts.html")
+</body>
+</html>

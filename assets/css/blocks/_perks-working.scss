@@ -6,6 +6,9 @@
   @include media('>=desktop') {
     margin: 0 0 100px;
   }
+  h2 {
+    margin-bottom: 50px;
+  }
   ul {
     display: flex;
     flex-wrap: wrap;

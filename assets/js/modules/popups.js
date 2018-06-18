@@ -6,6 +6,7 @@ export function popups() {
   let popup;
   $(".popup-link").on("click", function (event) {
     event.preventDefault();
+    scrolled = $window.scrollTop();
     let $this = $(this);
     scrolled = $window.scrollTop();
     mainWrap.addClass("no-scroll");
@@ -39,7 +40,7 @@ export function popups() {
     popupWrap.removeClass("active");
     mainWrap.removeClass("no-scroll");
     window.location.hash = "";
-    $("html, body").scrollTop(scrolled);
     $(".popup-link").parents("li").removeClass("current-menu-item");
+    $window.scrollTop(scrolled);
   }
 }

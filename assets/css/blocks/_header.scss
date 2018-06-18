@@ -6,6 +6,18 @@
     top: 0;
     left: 0;
     z-index: 3;
+    transition: all .3s;
+    @include media(">=desktop") {
+        padding: 20px 50px;
+    }
+    &.fixed {
+        @include media(">=desktop") {
+            padding: 10px 50px;
+            .header-contact {
+                margin: -5px 0 5px;
+            }
+        }
+    }
 }
 .mainlogo {
     display: block;
@@ -113,7 +125,7 @@
         left: auto;
         border: 1px solid lighten($color-black, 80%);
         border-color: lighten($color-black, 80%) transparent transparent;
-        padding: 0 0 0 22px;
+        padding: 0 0 0 10px;
         overflow: visible;
         transform: translateX(0);
         transition: transform 0s;
@@ -155,6 +167,9 @@
                 color: $color-gold;
             }
         }
+        & + .btn {
+            margin-right: 0;
+        }
     }
     .sub-memu {
         @include font-regular;
@@ -164,6 +179,7 @@
         padding: 30px 0 0;
         text-transform: none;
         @include media(">=desktop") {
+            font-size: 13px;
             box-shadow: 7px 7px 15px 0 rgba(0,0,0, .15);
             display: block;
             position: absolute;
@@ -199,11 +215,13 @@
     .btn {
         text-transform: none;
         font-size: 12px;
-        padding-top: 9px;
-        padding-bottom: 9px;
+        padding-top: 11px;
+        padding-bottom: 11px;
         @include media(">=desktop") {
             margin: 15px 5px 0;
+            padding: 13px 25px;
             float: right;
+            min-width: 113px;
         }
     }
     .parent-menu {
@@ -265,15 +283,20 @@
 .header-contact {
     text-align: right;
     @include media(">=desktop") {
-        margin: 0 0 20px;
+        margin: -5px 0 15px;
+        transition: margin .3s;
     }
     a {
         display: inline-block;
         font-size: 0;
         vertical-align: middle;
         position: relative;
+        min-height: 15px;
         &:not(:last-child) {
             margin: 0 20px 0 0;
+            @include media(">=desktop") {
+                margin: 0 50px 0 0;
+            }
             &::after {
                 content: '';
                 @include pos(absolute, 50%, null, 50%, -12px);
@@ -288,7 +311,6 @@
         @include font-regular;
         color: $color-black;
         width: 12px;
-        height: 12px;
         @include media(">=xtablet") {
             width: auto;
             font-size: 13px;
@@ -302,7 +324,6 @@
         @include font-regular;
         color: $color-black;
         width: 15px;
-        height: 16px;
         @include media(">=xtablet") {
             width: auto;
             font-size: 13px;

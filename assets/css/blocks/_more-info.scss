@@ -1,4 +1,28 @@
 .more-info {
-  background-size: cover;
-  background-repeat: repeat;
+  position: relative;
+  text-align: center;
+  @include media('>=xtablet') {
+    min-height: 615px;
+    padding: 100px 0 0;
+  }
+  .container {
+    max-width: 900px;
+  }
+  h2 {
+    margin-bottom: 40px;
+  }
+  .btn {
+    min-width: 145px;
+    padding: 13px 20px;
+  }
+}
+.moreinfo-bg {
+  @include media('>=xtablet') {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    min-height: 471px;
+    margin: -145px 0 0;
+  }   
 }

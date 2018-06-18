@@ -1,5 +1,5 @@
 export function customYTPlayer () {
-    const playBtn = document.querySelectorAll(".custom-play-btn");
+    const playBtn = document.querySelectorAll(".video .custom-play-btn");
     [...playBtn].map(item=> {
         item.addEventListener("click", (event) => {
             event.preventDefault();

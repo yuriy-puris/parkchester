@@ -7,6 +7,7 @@ import { customYTPlayer } from "./modules/customYTPlayer";
 import { scrollAnimate } from "./modules/scrollAnimate";
 import { popups } from "./modules/popups";
 import { backToTop } from "./modules/backToTop";
+import { contactUsMap } from "./modules/contactUsMap";
 import {
     constants,
     slider,
@@ -14,9 +15,12 @@ import {
     isDev,
     noDev,
     tabs,
-    gallery,
     timeline,
-    initMasonry
+    initMasonry,
+    popupGallerySlider,
+    photoGallerySlider,
+    scrollTo,
+    fixedHeader,
 } from "./modules/module";
 
 
@@ -30,15 +34,19 @@ binder({
           isDev,
           noDev,
           tabs,
-          gallery,
           timeline,
           initMasonry,
+          popupGallerySlider,
+          photoGallerySlider,
+          scrollTo,
+          fixedHeader,
+          contactUsMap
         ],
         ".accordion": accordion,
         ".custom-play-btn": customYTPlayer,
         ".animated": scrollAnimate,
         ".popups": popups,
-        ".to-top": backToTop
+        ".to-top": backToTop,
     },
     runTests: false
 });

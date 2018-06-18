@@ -1,5 +1,5 @@
 .main {
-  padding: 100px 0 5px;
+  padding: 70px 0 5px;
   flex-shrink: 0;
   flex-grow: 1;
   @include media(">=desktop") {
@@ -46,6 +46,10 @@
   img {
     @include pos(absolute, center, center);
     text-indent: 0;
+  }
+  @include media('>=desktop') {
+    opacity: 0;
+    visibility: hidden;
   }
 }
 

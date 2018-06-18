@@ -1,0 +1,21 @@
+.page-onebedroom {
+  .section {
+    padding: 0 0 100px;
+  }
+  .btn {
+    padding: 13px 25px;
+    min-width: 110px;
+  }
+  .property-amenities {
+    @include media('>=desktop') {
+      padding: 100px 0;
+    }
+  }
+  .slick-dots {
+    transform: translateX(-50%);
+    left: 50%;
+  }
+  .slick-arrow {
+    position: absolute;
+  }
+}

@@ -84,8 +84,8 @@
 	                    <a href="javascript:void(0)">Amenities</a>
 	                </li>
 	            </ul>
-	            <a href="javascript:void(0)" class="btn btn-apply">Apply Now</a>
 	            <a href="javascript:void(0)" class="btn btn-shedule">Schedule a Tour</a>
+	            <a href="javascript:void(0)" class="btn btn-apply">Apply Now</a>
 	        </nav>
 	    </div>
 	</header>
@@ -98,13 +98,15 @@
 			</div>
 			<a href="javascript:void(0)" class="btn scroll-to">Skip to content</a>
 		</div>
-		<section class="apartments-holder">
+		<div class="section apartments-holder">
 			<div class="container">
-				<div class="h5">Our</div>
-				<div class="h1">Parkchester Apartments</div>
-				<p>Parkchester is a completely self contained community within the city. Comfort, convenience and affordability are the hallmarks
-					of every no fee apartment. Rentals for one bedroom apartments start as low as $1290 per month; $1600 for two bedroom apartments,
-					and $1900 for a three-bedroom</p>
+					<div class="h5">Our</div>
+					<div class="h1">Parkchester Apartments</div>
+					<div class="min-container">
+							<p>Parkchester is a completely self contained community within the city. Comfort, convenience and affordability are the hallmarks
+								of every no fee apartment. Rentals for one bedroom apartments start as low as $1290 per month; $1600 for two bedroom apartments,
+								and $1900 for a three-bedroom</p>
+					</div>
 				<div class="tab-nav">
 					<ul>
 						<li class="tab-nav-item active">
@@ -122,7 +124,7 @@
 								<h3>One Bedroom</h3>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet
 									lacus accumsan et viverra justo commodo.</p>
-								<strong>Start at $1,290, minimum income requirement: $48,375</strong>
+								<strong>Start at $1,290, minimum income requirement: <span>$48,375</span></strong>
 								<a href="javascript:void(0)" class="btn learn-more">Learn More</a>
 							</div>
 							<div class="visual-bedroom">
@@ -132,7 +134,7 @@
 									</a>
 									one bedroom
 								</div>
-								<div class="item" style="background-image:url('/dist/images/bedroom1.png')">one bedroom</div>
+								<div class="item" style="background-image:url('/dist/images/bedroom1.png')"></div>
 							</div>
 						</div>
 						<a href="javascript:void(0)" class="btn btn-apply">See All Apartments</a>
@@ -147,20 +149,27 @@
 								<a href="javascript:void(0)" class="btn learn-more">Learn More</a>
 							</div>
 							<div class="visual-bedroom">
-								<div class="item" style="background-image:url('/dist/images/floorplan.jpg')">one bedroom</div>
-								<div class="item" style="background-image:url('/dist/images/bedroom1.png')">one bedroom</div>
+									<div class="item" style="background-image:url('/dist/images/floorplan.jpg')">
+										<a href="#popup-video" class="popup-link custom-play-btn">Open video-popup
+											<img src="../images/play.svg" alt="">
+										</a>
+										one bedroom
+									</div>
+									<div class="item" style="background-image:url('/dist/images/bedroom1.png')"></div>
 							</div>
 						</div>
 						<a href="javascript:void(0)" class="btn btn-apply">See All Apartments</a>
 					</div>
 				</div>
 			</div>
-		</section>
-		<section class="amenities-wrapper">
+		</div>
+		<div class="section amenities-wrapper">
 			<div class="container">
 				<div class="h5">What We Suggest</div>
 				<h2 class="h1">Amenities &amp; Facilities</h2>
-				<p>The complex has more than 100 retail outlets including Macy's, Applebee's, Starbucks, our own medical and dental offices, most major banks and much more. Public, private, and parochial schools are nearby. Other amenities include onsite management, convenient garages as well as on-street parking and roving 24-hour security.</p>
+				<div class="min-container">
+						<p>The complex has more than 100 retail outlets including Macy's, Applebee's, Starbucks, our own medical and dental offices, most major banks and much more. Public, private, and parochial schools are nearby. Other amenities include onsite management, convenient garages as well as on-street parking and roving 24-hour security.</p>
+				</div>
 				<a href="javascript:void(0)" class="btn btn-apply">Learn More</a>
 				<div class="amenities-holder">
 					<ul>
@@ -480,8 +489,14 @@
 					</ul>
 				</div>
 			</div>
-		</section>
-		<section class="events-wrapper">
+		</div>
+		<div class="section map-home">
+		  <div class="h5">Map</div>
+		  <h2 class="h1">The Neighborhood</h2>
+		  <!-- <div id="map" data-longitude="40.6700" data-latitude="-73.9400" data-image="dist/images/mappin.png" data-title="Parkchester"></div> -->
+		  <a href="javascript:void(0)" class="btn btn-apply">Search Our Neighborhood</a>
+		</div>
+		<div class="section events-wrapper">
 			<div class="container">
 				<div class="h5">Some of our</div>
 				<h2 class="h1">neighborhood events</h2>
@@ -507,43 +522,32 @@
 				</div>
 				<a href="javascript:void(0)" class="btn btn-apply">See All Events</a>
 			</div>
-		</section>
-		<section class="gallery-wrapper">
+		</div>
+		<div class="section gallery-wrapper">
 			<div class="container">
 				<div class="h5">Our</div>
 				<div class="h1">Gallery</div>
 				<div class="gallery-holder">
+					<!-- <div class="item-size"></div> -->
 					<div class="item" style="background-image: url('/dist/images/gallery1.png')">galleryfoto</div>
 					<div class="item item-big" style="background-image: url('/dist/images/gallery2.png')">galleryfoto</div>
 					<div class="item" style="background-image: url('/dist/images/gallery3.png')">galleryfoto</div>
 					<div class="item item-big" style="background-image: url('/dist/images/gallery4.png')">galleryfoto</div>
 					<div class="item" style="background-image: url('/dist/images/gallery5.png')">galleryfoto</div>
-					<div class="item item-big" style="background-image: url('/dist/images/gallery6.png')">galleryfoto</div>
 					<div class="item" style="background-image: url('/dist/images/gallery7.png')">galleryfoto</div>
 					<div class="item" style="background-image: url('/dist/images/gallery8.png')">galleryfoto</div>
+					<div class="item item-big" style="background-image: url('/dist/images/gallery6.png')">galleryfoto</div>
 					<div class="item" style="background-image: url('/dist/images/gallery9.png')">galleryfoto</div>
 				</div>
+				<a href="javascript:void(0)" class="btn btn-apply">View More</a>
 			</div>
-		</section>
-		<section class="more-info" style="background-image: url('/dist/images/more-info.png')">
+		</div>
+		<div class="section more-info">
 			<div class="container">
 				<h2>Interested in our apartments or learning more about our neighborhood?</h2>
 				<a href="javascript:void(0)" class="btn btn-apply">Schedule a Tour</a>
 			</div>
-		</section>
-		<div class="shedule-holder">
-			<div class="subholder">
-				<div class="subholder-ttl">Our Location</div>
-				<address>
-					<p>1480 Parkchester Road</p>
-					<p>Bronx, NY 10462</p>
-				</address>
-			</div>
-			<div class="subholder">
-				<div class="subholder-ttl">Days and Times</div>
-				<p><span>Tuesdays:</span>5:00 PM - 7:45 PM</p>
-				<p><span>Saturdays:</span>10:00 AM - 1:45 PM</p>
-			</div>
+			<div class="moreinfo-bg" style="background-image: url('/dist/images/more-info.png')"></div>
 		</div>
 	</main>
 
@@ -732,6 +736,7 @@
 
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type='text/javascript' src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDcMDn53phMNbO-gcXo52UkBwSdEs2JFrs'></script>
 <script src="../js/global.js"></script>
 </body>
 </html>

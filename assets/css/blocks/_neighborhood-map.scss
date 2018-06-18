@@ -1,0 +1,105 @@
+.map-holder {
+  @include media('>=tablet') {
+    display: flex;
+  }
+  #map-landmarks {
+    @include media('>=desktop') {
+      width: 770px;
+      height: 500px;
+    }
+  }
+}
+.map-menu {
+  @include font-medium;
+  font-size: 16px;
+  line-height: 16px;
+  @include media('>=desktop') {
+    width: calc(100% - 770px);
+    padding: 0 30px 0 0;
+  }
+  li {
+    margin: 0 0 20px;
+    text-transform: none;
+    cursor: pointer;
+    transition: color .3s;
+    span {
+      &.active {
+        color: $color-gold;
+        & + ul {
+          opacity: 1;
+          visibility: visible;  
+        }
+      }
+    }
+  }
+  & > ul {
+    position: relative;
+    @include media('>=desktop') {
+      width: 50%;
+      padding: 0 15px 0 0;
+    } 
+    & > li {
+      text-transform: uppercase;
+    }
+    ul {
+      @include font-regular;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      opacity: 0;
+      visibility: hidden;
+      width: 100%;
+      height: 100%;
+      transition: opacity 1s;
+      @include media('>=desktop') {
+        padding: 0 0 0 15px;
+      }
+      &::after {
+        @include media('>=desktop') {
+          content: '';
+          @include pos(absolute, 0, 0);
+          width: 15px;
+          height: 100%;
+          background: transparent;
+          transform: translateX(-100%);
+        }
+      }
+      &.active {
+        color: $color-gold;
+      }
+    }
+  }
+  
+}
+.map-menu-title {
+  color: $color-gold;
+  @include font-bold;
+  font-size: 24px;
+  line-height: 26px;
+  text-transform: uppercase;
+  padding: 0 0 30px;
+  margin: 0 0 30px;
+  border-bottom: 1px solid $color-light-grey;
+}
+.no-dev {
+  .map-menu {
+    & > ul {
+      & > li {
+        &:hover,
+        &.active {
+          ul {
+            opacity: 1;
+            visibility: visible;  
+          }
+        }
+      }
+      ul {
+        li {
+          &:hover {
+            color: $color-gold;
+          }
+        }
+      }
+    }
+  }
+}

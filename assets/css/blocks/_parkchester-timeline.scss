@@ -33,6 +33,7 @@
     transition: all .6s ease-out;
     z-index: 2;
     vertical-align: middle;
+    user-select: none;
     &:first-child {
       &.past {
         .past {
@@ -236,12 +237,13 @@
     }
   }
   .slick-arrow {
+    position: absolute;
     top: 120px;
     @include media('>=desktop') {
       top: 50%;
     }
     &.slick-prev {
-      left: 10px;
+      left: 0;
       transform: translate(0,-50%);
       @include media('>=desktop') {
         left: -30px;
@@ -249,7 +251,7 @@
       }
     }
     &.slick-next {
-      right: 10px;
+      right: 0;
       transform: translate(0,-50%);
       @include media('>=desktop') {
         right: -30px;

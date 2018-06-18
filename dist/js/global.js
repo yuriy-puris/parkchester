@@ -14476,7 +14476,31 @@ function contactUsMap() {
       // content = dataTitle;
       // marker.setContent(content);
       var marker = void 0;
-      for (var i = 0; i < childCategory.length; i++) {
+      // for (var i = 0; i < childCategory.length; i++) {
+      //   let childItem = childCategory[i];
+      //   marker = new google.maps.Marker({
+      //     position: { 
+      //       lat: childItem[0], 
+      //       lng:  childItem[1] 
+      //     },
+      //     map: map,
+      //     icon: image,
+      //     title: childItem[2],
+      //   });
+
+      //   if( i === idx && typeof idx !== typeof undefined) {
+      //     marker[idx] = new google.maps.InfoWindow({
+      //       position: { 
+      //         lat: childItem[0], 
+      //         lng:  childItem[1] 
+      //       },
+      //       map: map,
+      //       icon: image,
+      //       content: childItem[2],
+      //     })
+      //   }
+      // }
+      Array.prototype.forEach.call(childCategory, function (item, i) {
         var childItem = childCategory[i];
         marker = new google.maps.Marker({
           position: {
@@ -14487,7 +14511,6 @@ function contactUsMap() {
           icon: image,
           title: childItem[2]
         });
-
         if (i === idx && (typeof idx === "undefined" ? "undefined" : _typeof(idx)) !== ( true ? "undefined" : _typeof(undefined))) {
           marker[idx] = new google.maps.InfoWindow({
             position: {
@@ -14499,24 +14522,27 @@ function contactUsMap() {
             content: childItem[2]
           });
         }
-      }
-      google.maps.event.addListenerOnce(marker, "domready", function () {
-        var iw = $(".gm-style-iw");
-        var iwBg = iw.prev();
-        iwBg.children(":nth-child(2)").css("display", "none");
-        iwBg.children(":nth-child(4)").css("display", "none");
-        iwBg.children(":nth-child(1)").attr("style", function (i, s) {
-          return s + "display: none !important;";
-        });
-        iwBg.children(":nth-child(3)").attr("style", function (i, s) {
-          return s + "display: none !important;";
-        });
-        iw.siblings("div, img").remove();
-        iw.parent().parent().css({
-          left: "100px",
-          top: "325px"
-        });
       });
+
+      function correctMarker() {
+        google.maps.event.addListenerOnce(marker, "domready", function () {
+          var iw = $(".gm-style-iw");
+          var iwBg = iw.prev();
+          iwBg.children(":nth-child(2)").css("display", "none");
+          iwBg.children(":nth-child(4)").css("display", "none");
+          iwBg.children(":nth-child(1)").attr("style", function (i, s) {
+            return s + "display: none !important;";
+          });
+          iwBg.children(":nth-child(3)").attr("style", function (i, s) {
+            return s + "display: none !important;";
+          });
+          iw.siblings("div, img").remove();
+          iw.parent().parent().css({
+            left: "100px",
+            top: "325px"
+          });
+        });
+      }
     }
 
     function getData(locationItem, idx) {

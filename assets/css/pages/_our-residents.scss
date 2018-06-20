@@ -13,6 +13,11 @@
             padding-top: 50px;
         }
     }
+    .video {
+        iframe {
+            width: 100%;
+        }
+    }
 }
 
 @include media(">=tablet") {
@@ -73,21 +78,21 @@
 .no-dev {
     .our-residents-page {
         .videos-list {
-            .video-wrap {
-                transform: translate(0, 100px);
-                opacity: 0;
-                transition: transform .7s, opacity 1s;
-                will-change: transform;
-                @for $i from 1 through 30 {
-                    &:nth-child(#{$i}) {
-                        transition-delay: .2s * $i;
-                    }
-                }
-            }
-            .video-wrap.animation {
-                transform: translate(0, 0);
-                opacity: 1;
-            }
+            // .video-wrap {
+            //     transform: translate(0, 100px);
+            //     opacity: 0;
+            //     transition: transform .7s, opacity 1s;
+            //     will-change: transform;
+            //     @for $i from 1 through 30 {
+            //         &:nth-child(#{$i}) {
+            //             transition-delay: .2s * $i;
+            //         }
+            //     }
+            // }
+            // .video-wrap.animation {
+            //     transform: translate(0, 0);
+            //     opacity: 1;
+            // }
         }
     }
 }

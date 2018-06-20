@@ -3,7 +3,20 @@
   flex-shrink: 0;
   flex-grow: 1;
   @include media(">=desktop") {
-    padding: 165px 0 5px;
+    padding: 135px 0 5px;
+  }
+  .section {
+    &:last-child {
+      margin-bottom: 0;
+      padding: 0;
+      border-bottom: none;
+      @include media('>=tablet') {
+        padding-top: 60px;
+      }
+      @include media('>=desktop') {
+        padding-top: 100px;
+      }
+    }
   }
 }
 
@@ -49,7 +62,6 @@
   }
   @include media('>=desktop') {
     opacity: 0;
-    visibility: hidden;
   }
 }
 

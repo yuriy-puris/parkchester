@@ -8,6 +8,7 @@ import { scrollAnimate } from "./modules/scrollAnimate";
 import { popups } from "./modules/popups";
 import { backToTop } from "./modules/backToTop";
 import { contactUsMap } from "./modules/contactUsMap";
+import { googleMap } from "./modules/googleMap";
 import {
     constants,
     slider,
@@ -40,7 +41,8 @@ binder({
           photoGallerySlider,
           scrollTo,
           fixedHeader,
-          contactUsMap
+          contactUsMap,
+          googleMap
         ],
         ".accordion": accordion,
         ".custom-play-btn": customYTPlayer,

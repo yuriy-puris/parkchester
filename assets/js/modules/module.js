@@ -15,7 +15,7 @@ export const constants = {
 
 
 export function slider() {
-  $('.residents-holder, .gallery-apartments').slick({
+  $('.residents-holder').slick({
     dots: true,
     infinite: false,
     speed: 300,
@@ -23,6 +23,33 @@ export function slider() {
     slidesToScroll: 1,
     appendArrows: $('.custom-controls'),
     appendDots: $('.custom-controls'),
+  });
+  $('.gallery-features').slick({
+    dots: true,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    appendArrows: $('.features-controls'),
+    appendDots: $('.features-controls'),
+  });
+  $('.gallery-community').slick({
+    dots: true,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    appendArrows: $('.community-controls'),
+    appendDots: $('.community-controls'),
+  });
+  $('.gallery-contemporary').slick({
+    dots: true,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    appendArrows: $('.contemporary-controls'),
+    appendDots: $('.contemporary-controls'),
   });
   $('.timeline-slider').slick({
     dots: true,
@@ -40,6 +67,7 @@ export function slider() {
     dots: false,
     arrows: false,
     variableWidth: true,
+    infinite: false,
     responsive: [
       {
         breakpoint: 768,
@@ -69,32 +97,27 @@ export function slider() {
     slidesToScroll: 1,
     arrows: false,
     asNavFor: '.small-slider',
-    infinite: true,
-    centerMode: true,
-    variableWidth: true
+    fade: true,
   });
   $('.small-slider').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    asNavFor: '.large-slider',
     dots: false,
-    focusOnSelect: true,
-    mobileFirst: true,
+    vertical: true,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    verticalSwiping: true,
     infinite: true,
-    centerMode: true,
-    variableWidth: true,
+    asNavFor: '.large-slider',
     responsive: [
       {
         breakpoint: 1280,
         settings: {
-          asNavFor: '.large-slider',
-          slidesToShow: 4,
-          slidesToScroll: 4,
-          vertical: true,
-          verticalSwiping: true,
-          centerMode: true,
-          focusOnSelect: true,
+          vertical: false,
+          verticalSwiping: false,
           variableWidth: true,
+          infinite: true,
+          centerMode: true,
+          slidesToScroll: 1,
+          slidesToShow: 3,
         }
       }
     ]
@@ -116,18 +139,17 @@ export function popupGallerySlider() {
       
   item.on('click', function(event) {
     wScrollTop = $(window).scrollTop();
-    console.log(wScrollTop)
     clickCurrent = $(this).index();
     item.clone().attr('style', '').appendTo(galleryPopupWrapper);
     wrapperPopup.addClass('active');
     galleryPopup.addClass('opened');
     popupGallery(clickCurrent);
-  })
+  });
   $('.popup-close').on('click', function(event) {
     event.preventDefault();
-    $(window).scrollTop(wScrollTop);
     galleryPopupWrapper.slick('unslick');
-  })
+    galleryPopupWrapper.empty();
+  });
 }
   //photo gallery
 export function photoGallerySlider() {
@@ -157,8 +179,8 @@ export function photoGallerySlider() {
           infinite: false,
           centerMode: false,
           dots: true,
-          slidesToScroll: 9,
-          slidesToShow: 9,
+          slidesToScroll: 1,
+          slidesToShow: 1,
           adaptiveHeight: true
         }
       }
@@ -231,12 +253,17 @@ export function gallery () {
   });
 }
 
-export function photoGallery() {
-  $('.photo-gallery .slick-track').masonry({
-    itemSelector: '.item',
-    columnWidth: 360,
-    gutter: 30,
-  });
+export function wrapperGallery() {
+  $(".photo-gallery").slick('unslick');
+  let context = $('.photo-gallery'),
+      wrapperCounter = 0;
+  while( context.children('div:not(.wrap-items)' ).length) {
+    context.children('div:not(.wrap-items):lt(9)').wrapAll('<div class="wrap-items">');
+    wrapperCounter++;
+  }
+  if( wrapperCounter === context.children('.wrap-items' ).length ) {
+    photoGallerySlider()
+  }
 }
 
 export function checkViewPort () {
@@ -255,10 +282,14 @@ export function checkViewPort () {
 export function initMasonry () {
   $(window).on('load resize', function () {
     let wWidth = checkViewPort().width;
+    let resizeId;
     if( wWidth >= 1280 ) {
       setTimeout(() => {
-        photoGallery();
-      }, 1000)
+        wrapperGallery();
+      }, 100)
+    }  else {
+      clearTimeout(resizeId);
+      resizeId = setTimeout(photoGallerySlider, 500);
     }
   })
 }
@@ -267,10 +298,11 @@ export function scrollTo() {
   if ( $('.scroll-to').length ) {
     const btn = $('.scroll-to'),
         parentBtn = $('.scroll-to').parent(),
-        parentBtnOffsetTop = parentBtn.next().offset().top;
+        parentBtnOffsetTop = parentBtn.next().offset().top,
+        headerHeight = $('.header').outerHeight();
     $('.scroll-to').on('click', function() {
       $('html, body').animate({
-        scrollTop: parentBtnOffsetTop
+        scrollTop: parentBtnOffsetTop - headerHeight
       }, 1000)  
     })
   }

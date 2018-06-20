@@ -7,16 +7,30 @@
     height: 240px;
     margin: 0 15px;
     @include media('>=desktop') {
+      break-inside: avoid;
+      -webkit-column-break-inside: avoid;
+      page-break-inside: avoid;
       margin: 0 0 30px;
       width: 370px;
       min-width: 370px;
       height: 300px;
       transition: left .4s, top .4s;
+      width: 100%;
     }
     &.big {
       @include media('>=desktop') {
         height: 500px;
       }
+    }
+  }
+  .wrap-items {
+    @include media('>=desktop') {
+      columns: 370px 3;
+      column-gap: 30px;
+      margin: 0;
+    }
+    .slick-track {
+      
     }
   }
   .item-img {

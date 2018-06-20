@@ -48,35 +48,60 @@ body {
   }
 }
 .container {
-  max-width: 1170px;
+  width: 100%;
   min-width: 320px;
   margin: auto;
   padding: 0 10px;
   @include media(">=desktop") {
     padding: 0;
+    width: 1170px;
   }
 }
 .min-container {
   max-width: 770px;
-  margin: 0 auto 55px;
+  margin: 0 auto 15px;
   text-align: center;
+  @include media('>=tablet') {
+    margin: 0 auto 50px;
+  }
   p {
+    font-size: 13px;
+    line-height: 19px;
     @include font-light;
-    font-size: 14px;
-    line-height: 24px;
+    @include media('>=tablet') {
+      font-size: 14px;
+      line-height: 24px;
+    }
   }
 }
 section {
-  padding: 30px 0;
+  padding: 60px 0;
   @include media(">=desktop") {
-    padding: 0 100px;
+    padding: 100px 0;
+  }
+  & + .section {
+    padding: 0 0 100px;
+  }
+  > h1,
+  > .h1 {
+    @include media(">=desktop") {
+      margin-bottom: 40px;
+    }
+  }
+  .section {
+    &:last-child {
+      margin-bottom: 0;
+      padding: 0;
+      border-bottom: none;
+    }
   }
 }
 .section {
   border-bottom: 1px solid $color-light-grey;
-  padding: 30px 0;
+  padding: 60px 0;
   @include media(">=desktop") {
-    padding: 100px 0;
+    padding: 0 0 100px;
+    margin: 0 0 100px;
   }
 }
 .section,
@@ -117,6 +142,9 @@ h1, .h1 {
     @include media(">=desktop") {
       margin-top: -15px;
     }
+  }
+  & + .section {
+    padding: 0 0 100px;
   }
 }
 
@@ -346,9 +374,8 @@ button {
   @include font-regular;
   background: $color-gold;
   display: inline-block;
-  margin: 0 0 $main-margin;
   border: 1px solid transparent;
-  padding: 8px 25px;
+  padding: 4px 25px;
   font-size: 13px;
   color: $color-white;
   vertical-align: middle;
@@ -359,6 +386,9 @@ button {
   -webkit-border-radius: 0;
   text-align: center;
   transition: color .2s, background .2s, border .2s;
+  @include media('>=tablet') {
+    padding: 8px 25px;
+  }
   &:hover,
   &:focus {
     background: transparent;
@@ -372,7 +402,7 @@ button {
     border-color: $color-black;
     min-width: 170px;
     @include media('>=desktop') {
-      padding: 13px 50px;
+      padding: 9px 44px;
     }
     &:hover,
     &:focus {
@@ -389,34 +419,14 @@ button {
       color: $color-white;
     }
   }
-  //&.secondary {
-  //  background: $secondary-color;
-  //  &:hover,
-  //  &:focus {
-  //    background: darken($secondary-color, 10%);
-  //  }
-  //}
-  //&.danger {
-  //  background: $danger-color;
-  //  &:hover,
-  //  &:focus {
-  //    background: darken($danger-color, 10%);
-  //  }
-  //}
-  //&.warning {
-  //  background: $warning-color;
-  //  &:hover,
-  //  &:focus {
-  //    background: darken($warning-color, 10%);
-  //  }
-  //}
-  //&.success {
-  //  background: $success-color;
-  //  &:hover,
-  //  &:focus {
-  //    background: darken($success-color, 10%);
-  //  }
-  //}
+  &:hover,
+  &:focus {
+    &.slick-arrow {
+      &::after {
+        border-color: $color-gold $color-gold transparent transparent;
+      }
+    }
+  }
 }
 input[type="submit"] {
   padding: 13px 25px;

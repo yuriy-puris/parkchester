@@ -1,15 +1,24 @@
 .map-home {
   text-align: center;
 }
-#map {
+#map-home {
   width: 100%;
-  height: 200px;
+  height: 250px;
   margin: 0 0 30px;
+  overflow: hidden;
   @include media('>=tablet') {
     height: 400px;
   }
   @include media('>=desktop') {
     height: 600px;
+  }
+  > div {
+    transform: translateY(-50px);
+    height: calc(100% + 50px)!important;
+    @include media('>=desktop') {
+      transform: translateY(-150px);
+      height: calc(100% + 150px)!important;
+    }
   }
 }
 #map-note {
@@ -20,10 +29,15 @@
   }
   #content-note {
     @include font-medium;
-    font-size: 14px;
-    line-height: 24px;
-    padding: 20px;
+    font-size: 12px;
+    line-height: 20px;
+    padding: 10px;
     background: $color-white;
     text-align: left;
+    @include media('>=desktop') {
+      font-size: 14px;
+      line-height: 24px;
+      padding: 20px;
+    }
   }
 }

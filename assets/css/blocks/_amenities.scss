@@ -1,32 +1,38 @@
 .amenities-wrapper {
   text-align: center;
   position: relative;
+  padding-bottom: 30px;
   @include media('>=desktop') {
-    padding: 100px 0 65px;
+    padding-bottom: 65px;
   }
   &::before {
-    @include media('>=desktop') {
       content: 'A&F';
       @include font-bold;
-      font-size: 400px;
-      line-height: 420px;
+      font-size: 150px;
+      line-height: 170px;
       text-transform: uppercase;
       color: $color-gold;
       opacity: .05;
-      @include pos(absolute, -15px, 50%);
+      @include pos(absolute, -5px, 50%);
       transform: translateX(-50%);
       z-index: -1;
+    @include media('>=desktop') {
+      font-size: 400px;
+      line-height: 420px;
+      @include pos(absolute, -120px, 50%);
     }
   }
   .h1, h2 {
-    margin-bottom: 40px;
+    margin-bottom: 10px;
+    @include media('>=desktop') {
+      margin-bottom: 40px;
+    }
   }
   .min-container {
     max-width: 930px;
-    margin-bottom: 45px;
-    p {
-      font-size: 14px;
-      line-height: 24px;
+    margin-bottom: 30px;
+    @include media('>=desktop') {
+      margin-bottom: 40px;
     }
   }
 }
@@ -34,10 +40,10 @@
   @include font-medium;
   font-size: 16px;
   text-transform: uppercase;
-  margin: 15px 0 0;
+  margin: 50px 0 0;
   @include media('>=desktop') {
     text-align: left;
-    margin: 15px 0 0;
+    margin: 40px 0 0;
   }
   ul {
     display: flex;
@@ -48,7 +54,7 @@
   li {
     background: transparent;
     width: 50%;
-    margin: 0 0 10px;
+    margin: 0 0 20px;
     @include media(">=tablet") {
       width: 32%;
       &:nth-child(3n-4) {
@@ -102,13 +108,13 @@
     }
   }
   .icon-arrow {
-    @include media(">=desktop") {
+    @include media(">=xtablet") {
       transform: translateX(-50%);
       left: 50%;
       position: absolute;
       bottom: 11px;
-      opacity: 0;
-      visibility: hidden;
+      opacity: 1;
+      visibility: visible;
       transition: opacity .7s;
     }
   }

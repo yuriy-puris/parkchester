@@ -24,11 +24,14 @@
     }
     .slick-list {
       flex-shrink: 1;
+      @include media(">=desktop") {
+        padding: 25px 0 0 0;
+      }
     }
     .slick-arrow {
       position: relative;
       flex-shrink: 0;
-      flex-grow: 1;
+      flex-grow: 0;
       &.slick-next {
         right: -3px;
       }

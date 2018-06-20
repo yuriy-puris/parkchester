@@ -1,3 +1,8 @@
+.section {
+  &.gallery-wrapper {
+    margin: 0;
+  }
+}
 .gallery-wrapper {
   text-align: center;
   h2, .h1 {
@@ -8,6 +13,7 @@
   column-count: 2;
   column-gap: 1em;
   margin: 0 0 30px;
+  width: 100%;
   @include media('>=tablet') {
     column-count: 3;
   }
@@ -21,10 +27,10 @@
     -webkit-column-break-inside: avoid;
     page-break-inside: avoid;
     width: 100%;
-    @include media('>=desktop') {
-      columns: 370px 3;
-      column-gap: 30px;
-    }
+    // @include media('>=desktop') {
+    //   columns: 370px 3;
+    //   column-gap: 30px;
+    // }
   }
   .item-size,
   .item {

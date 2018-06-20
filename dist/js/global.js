@@ -548,6 +548,12 @@ module.exports = function (TYPE, $create) {
 
 /***/ }),
 /* 27 */
+/***/ (function(module, exports) {
+
+module.exports = jQuery;
+
+/***/ }),
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1034,7 +1040,7 @@ if (__webpack_require__(6)) {
 
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Map = __webpack_require__(114);
@@ -1089,12 +1095,6 @@ module.exports = {
   exp: exp
 };
 
-
-/***/ }),
-/* 29 */
-/***/ (function(module, exports) {
-
-module.exports = jQuery;
 
 /***/ }),
 /* 30 */
@@ -3772,7 +3772,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__modules_popups__ = __webpack_require__(335);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__modules_backToTop__ = __webpack_require__(336);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__modules_contactUsMap__ = __webpack_require__(337);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__modules_module__ = __webpack_require__(338);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__modules_googleMap__ = __webpack_require__(338);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__modules_module__ = __webpack_require__(339);
+
 
 
 
@@ -3787,7 +3789,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 Object(__WEBPACK_IMPORTED_MODULE_3__libs_binder__["a" /* default */])({
     bounds: {
-        "html": [__WEBPACK_IMPORTED_MODULE_10__modules_module__["a" /* constants */], __WEBPACK_IMPORTED_MODULE_10__modules_module__["j" /* slider */], __WEBPACK_IMPORTED_MODULE_10__modules_module__["e" /* mobileMenu */], __WEBPACK_IMPORTED_MODULE_10__modules_module__["d" /* isDev */], __WEBPACK_IMPORTED_MODULE_10__modules_module__["noDev"], __WEBPACK_IMPORTED_MODULE_10__modules_module__["k" /* tabs */], __WEBPACK_IMPORTED_MODULE_10__modules_module__["l" /* timeline */], __WEBPACK_IMPORTED_MODULE_10__modules_module__["c" /* initMasonry */], __WEBPACK_IMPORTED_MODULE_10__modules_module__["h" /* popupGallerySlider */], __WEBPACK_IMPORTED_MODULE_10__modules_module__["g" /* photoGallerySlider */], __WEBPACK_IMPORTED_MODULE_10__modules_module__["i" /* scrollTo */], __WEBPACK_IMPORTED_MODULE_10__modules_module__["b" /* fixedHeader */], __WEBPACK_IMPORTED_MODULE_9__modules_contactUsMap__["a" /* contactUsMap */]],
+        "html": [__WEBPACK_IMPORTED_MODULE_11__modules_module__["a" /* constants */], __WEBPACK_IMPORTED_MODULE_11__modules_module__["j" /* slider */], __WEBPACK_IMPORTED_MODULE_11__modules_module__["e" /* mobileMenu */], __WEBPACK_IMPORTED_MODULE_11__modules_module__["d" /* isDev */], __WEBPACK_IMPORTED_MODULE_11__modules_module__["noDev"], __WEBPACK_IMPORTED_MODULE_11__modules_module__["k" /* tabs */], __WEBPACK_IMPORTED_MODULE_11__modules_module__["l" /* timeline */], __WEBPACK_IMPORTED_MODULE_11__modules_module__["c" /* initMasonry */], __WEBPACK_IMPORTED_MODULE_11__modules_module__["h" /* popupGallerySlider */], __WEBPACK_IMPORTED_MODULE_11__modules_module__["g" /* photoGallerySlider */], __WEBPACK_IMPORTED_MODULE_11__modules_module__["i" /* scrollTo */], __WEBPACK_IMPORTED_MODULE_11__modules_module__["b" /* fixedHeader */], __WEBPACK_IMPORTED_MODULE_9__modules_contactUsMap__["a" /* contactUsMap */], __WEBPACK_IMPORTED_MODULE_10__modules_googleMap__["a" /* googleMap */]],
         ".accordion": __WEBPACK_IMPORTED_MODULE_4__modules_accordion__["a" /* accordion */],
         ".custom-play-btn": __WEBPACK_IMPORTED_MODULE_5__modules_customYTPlayer__["a" /* customYTPlayer */],
         ".animated": __WEBPACK_IMPORTED_MODULE_6__modules_scrollAnimate__["a" /* scrollAnimate */],
@@ -6678,7 +6680,7 @@ $export($export.G + $export.W + $export.F * !__webpack_require__(61).ABV, {
 /* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(27)('Int8', 1, function (init) {
+__webpack_require__(28)('Int8', 1, function (init) {
   return function Int8Array(data, byteOffset, length) {
     return init(this, data, byteOffset, length);
   };
@@ -6689,7 +6691,7 @@ __webpack_require__(27)('Int8', 1, function (init) {
 /* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(27)('Uint8', 1, function (init) {
+__webpack_require__(28)('Uint8', 1, function (init) {
   return function Uint8Array(data, byteOffset, length) {
     return init(this, data, byteOffset, length);
   };
@@ -6700,7 +6702,7 @@ __webpack_require__(27)('Uint8', 1, function (init) {
 /* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(27)('Uint8', 1, function (init) {
+__webpack_require__(28)('Uint8', 1, function (init) {
   return function Uint8ClampedArray(data, byteOffset, length) {
     return init(this, data, byteOffset, length);
   };
@@ -6711,7 +6713,7 @@ __webpack_require__(27)('Uint8', 1, function (init) {
 /* 246 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(27)('Int16', 2, function (init) {
+__webpack_require__(28)('Int16', 2, function (init) {
   return function Int16Array(data, byteOffset, length) {
     return init(this, data, byteOffset, length);
   };
@@ -6722,7 +6724,7 @@ __webpack_require__(27)('Int16', 2, function (init) {
 /* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(27)('Uint16', 2, function (init) {
+__webpack_require__(28)('Uint16', 2, function (init) {
   return function Uint16Array(data, byteOffset, length) {
     return init(this, data, byteOffset, length);
   };
@@ -6733,7 +6735,7 @@ __webpack_require__(27)('Uint16', 2, function (init) {
 /* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(27)('Int32', 4, function (init) {
+__webpack_require__(28)('Int32', 4, function (init) {
   return function Int32Array(data, byteOffset, length) {
     return init(this, data, byteOffset, length);
   };
@@ -6744,7 +6746,7 @@ __webpack_require__(27)('Int32', 4, function (init) {
 /* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(27)('Uint32', 4, function (init) {
+__webpack_require__(28)('Uint32', 4, function (init) {
   return function Uint32Array(data, byteOffset, length) {
     return init(this, data, byteOffset, length);
   };
@@ -6755,7 +6757,7 @@ __webpack_require__(27)('Uint32', 4, function (init) {
 /* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(27)('Float32', 4, function (init) {
+__webpack_require__(28)('Float32', 4, function (init) {
   return function Float32Array(data, byteOffset, length) {
     return init(this, data, byteOffset, length);
   };
@@ -6766,7 +6768,7 @@ __webpack_require__(27)('Float32', 4, function (init) {
 /* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(27)('Float64', 8, function (init) {
+__webpack_require__(28)('Float64', 8, function (init) {
   return function Float64Array(data, byteOffset, length) {
     return init(this, data, byteOffset, length);
   };
@@ -7815,7 +7817,7 @@ $export($export.S, 'Promise', { 'try': function (callbackfn) {
 /* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var metadata = __webpack_require__(28);
+var metadata = __webpack_require__(29);
 var anObject = __webpack_require__(1);
 var toMetaKey = metadata.key;
 var ordinaryDefineOwnMetadata = metadata.set;
@@ -7829,7 +7831,7 @@ metadata.exp({ defineMetadata: function defineMetadata(metadataKey, metadataValu
 /* 312 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var metadata = __webpack_require__(28);
+var metadata = __webpack_require__(29);
 var anObject = __webpack_require__(1);
 var toMetaKey = metadata.key;
 var getOrCreateMetadataMap = metadata.map;
@@ -7850,7 +7852,7 @@ metadata.exp({ deleteMetadata: function deleteMetadata(metadataKey, target /* , 
 /* 313 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var metadata = __webpack_require__(28);
+var metadata = __webpack_require__(29);
 var anObject = __webpack_require__(1);
 var getPrototypeOf = __webpack_require__(17);
 var ordinaryHasOwnMetadata = metadata.has;
@@ -7875,7 +7877,7 @@ metadata.exp({ getMetadata: function getMetadata(metadataKey, target /* , target
 
 var Set = __webpack_require__(116);
 var from = __webpack_require__(125);
-var metadata = __webpack_require__(28);
+var metadata = __webpack_require__(29);
 var anObject = __webpack_require__(1);
 var getPrototypeOf = __webpack_require__(17);
 var ordinaryOwnMetadataKeys = metadata.keys;
@@ -7898,7 +7900,7 @@ metadata.exp({ getMetadataKeys: function getMetadataKeys(target /* , targetKey *
 /* 315 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var metadata = __webpack_require__(28);
+var metadata = __webpack_require__(29);
 var anObject = __webpack_require__(1);
 var ordinaryGetOwnMetadata = metadata.get;
 var toMetaKey = metadata.key;
@@ -7913,7 +7915,7 @@ metadata.exp({ getOwnMetadata: function getOwnMetadata(metadataKey, target /* , 
 /* 316 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var metadata = __webpack_require__(28);
+var metadata = __webpack_require__(29);
 var anObject = __webpack_require__(1);
 var ordinaryOwnMetadataKeys = metadata.keys;
 var toMetaKey = metadata.key;
@@ -7927,7 +7929,7 @@ metadata.exp({ getOwnMetadataKeys: function getOwnMetadataKeys(target /* , targe
 /* 317 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var metadata = __webpack_require__(28);
+var metadata = __webpack_require__(29);
 var anObject = __webpack_require__(1);
 var getPrototypeOf = __webpack_require__(17);
 var ordinaryHasOwnMetadata = metadata.has;
@@ -7949,7 +7951,7 @@ metadata.exp({ hasMetadata: function hasMetadata(metadataKey, target /* , target
 /* 318 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var metadata = __webpack_require__(28);
+var metadata = __webpack_require__(29);
 var anObject = __webpack_require__(1);
 var ordinaryHasOwnMetadata = metadata.has;
 var toMetaKey = metadata.key;
@@ -7964,7 +7966,7 @@ metadata.exp({ hasOwnMetadata: function hasOwnMetadata(metadataKey, target /* , 
 /* 319 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var $metadata = __webpack_require__(28);
+var $metadata = __webpack_require__(29);
 var anObject = __webpack_require__(1);
 var aFunction = __webpack_require__(10);
 var toMetaKey = $metadata.key;
@@ -11819,7 +11821,7 @@ module.exports = function (regExp, replace) {
         return _;
     };
 });
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(29)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(27)))
 
 /***/ }),
 /* 330 */
@@ -11848,7 +11850,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var __WEBPACK_LO
   /*jshint strict: false */ /* globals define, module, require */
   if (true) {
     // AMD
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(29)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (jQuery) {
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(27)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (jQuery) {
       return factory(window, jQuery);
     }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -14307,7 +14309,7 @@ function accordion() {
         $this.toggleClass("expanded").siblings().removeClass("expanded");
     });
 }
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(29)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(27)))
 
 /***/ }),
 /* 333 */
@@ -14359,7 +14361,7 @@ function scrollAnimate() {
         });
     }
 }
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(29)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(27)))
 
 /***/ }),
 /* 335 */
@@ -14413,7 +14415,7 @@ function popups() {
     $window.scrollTop(scrolled);
   }
 }
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(29)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(27)))
 
 /***/ }),
 /* 336 */
@@ -14429,7 +14431,7 @@ function backToTop() {
     }, 700);
   });
 }
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(29)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(27)))
 
 /***/ }),
 /* 337 */
@@ -14440,147 +14442,296 @@ function backToTop() {
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 function contactUsMap() {
-  $(window).on("load", function () {
-    var location = $(".map-menu-item"),
-        curLocation = location.find("span.active"),
-        dataWindow = $(".data-window-content");
+    if ($("#map").length) {
+        $(window).on("load", function () {
+            var location = $(".map-menu-list"),
+                curLocation = location.children('.active').find("a"),
+                subLocation = $(".map-menu .tab-content-item");
 
-    function createMap(dataLat, dataLng, dataTitle, childCategory, idx) {
-      var $map = $('#map'),
-          lat = dataLat,
-          lng = dataLng,
-          myLatlng = new google.maps.LatLng(lat, lng),
-          styles = [{ "featureType": "all", "elementType": "all", "stylers": [{ "lightness": "0" }, { "gamma": "0.96" }] }, { "featureType": "all", "elementType": "geometry.fill", "stylers": [{ "hue": "#00ff9c" }, { "visibility": "on" }] }, { "featureType": "all", "elementType": "geometry.stroke", "stylers": [{ "weight": "8.62" }, { "visibility": "simplified" }, { "color": "#0bb5e7" }] }, { "featureType": "all", "elementType": "labels.text", "stylers": [{ "saturation": "-88" }, { "lightness": "-99" }, { "gamma": "0.00" }, { "weight": "0.63" }, { "color": "#ebebeb" }, { "visibility": "on" }] }, { "featureType": "all", "elementType": "labels.text.fill", "stylers": [{ "visibility": "on" }, { "saturation": "-90" }, { "lightness": "-34" }, { "weight": "2.48" }, { "gamma": "0.48" }] }, { "featureType": "administrative", "elementType": "labels.text.fill", "stylers": [{ "color": "#444444" }] }, { "featureType": "landscape", "elementType": "all", "stylers": [{ "color": "#f2f2f2" }] }, { "featureType": "landscape.natural.landcover", "elementType": "geometry.fill", "stylers": [{ "saturation": "-100" }] }, { "featureType": "landscape.natural.terrain", "elementType": "geometry.fill", "stylers": [{ "saturation": "-1" }, { "lightness": "-100" }, { "weight": "0.01" }] }, { "featureType": "poi", "elementType": "all", "stylers": [{ "visibility": "off" }] }, { "featureType": "road", "elementType": "all", "stylers": [{ "saturation": -100 }, { "lightness": 45 }] }, { "featureType": "road", "elementType": "labels.text", "stylers": [{ "lightness": "6" }, { "saturation": "1" }, { "weight": "0.93" }] }, { "featureType": "road.highway", "elementType": "all", "stylers": [{ "visibility": "simplified" }] }, { "featureType": "road.highway", "elementType": "labels.text", "stylers": [{ "lightness": "-33" }] }, { "featureType": "road.highway", "elementType": "labels.text.fill", "stylers": [{ "lightness": "-21" }] }, { "featureType": "road.arterial", "elementType": "labels.text", "stylers": [{ "lightness": "5" }] }, { "featureType": "road.arterial", "elementType": "labels.icon", "stylers": [{ "visibility": "off" }] }, { "featureType": "road.local", "elementType": "labels.text", "stylers": [{ "lightness": "21" }] }, { "featureType": "transit", "elementType": "all", "stylers": [{ "visibility": "off" }] }, { "featureType": "water", "elementType": "all", "stylers": [{ "color": "#96d7f1" }, { "visibility": "on" }] }, { "featureType": "water", "elementType": "geometry.fill", "stylers": [{ "lightness": "63" }, { "hue": "#0061ff" }] }, { "featureType": "water", "elementType": "labels.text", "stylers": [{ "lightness": "65" }] }],
-          mapOptions = {
-        zoom: 7,
-        center: myLatlng,
-        scrollwheel: false,
-        scaleControl: false,
-        zoomControl: true,
-        disableDoubleClickZoom: true,
-        panControl: false,
-        mapTypeControl: false,
-        streetViewControl: false,
-        overviewMapControl: false,
-        styles: styles
-      },
-          map = new google.maps.Map($map[0], mapOptions),
-          image = {
-        url: $map.attr('data-image')
-      };
-      // marker = new google.maps.InfoWindow({
-      //   position: myLatlng,
-      //   map: map,
-      //   icon: image,
-      // }),
-      // content = dataTitle;
-      // marker.setContent(content);
-      var marker = void 0;
-      // for (var i = 0; i < childCategory.length; i++) {
-      //   let childItem = childCategory[i];
-      //   marker = new google.maps.Marker({
-      //     position: { 
-      //       lat: childItem[0], 
-      //       lng:  childItem[1] 
-      //     },
-      //     map: map,
-      //     icon: image,
-      //     title: childItem[2],
-      //   });
+            function createMap(dataLat, dataLng, dataTitle, childCategory, idx) {
+                var $map = $("#map"),
+                    lat = dataLat,
+                    lng = dataLng,
+                    myLatlng = new google.maps.LatLng(lat, lng),
+                    styles = [{
+                    "featureType": "administrative",
+                    "elementType": "all",
+                    "stylers": [{
+                        "visibility": "on"
+                    }, {
+                        "lightness": 33
+                    }]
+                }, {
+                    "featureType": "landscape",
+                    "elementType": "all",
+                    "stylers": [{
+                        "color": "#f7f7f7"
+                    }]
+                }, {
+                    "featureType": "poi.business",
+                    "elementType": "all",
+                    "stylers": [{
+                        "visibility": "off"
+                    }]
+                }, {
+                    "featureType": "poi.park",
+                    "elementType": "geometry",
+                    "stylers": [{
+                        "color": "#deecdb"
+                    }]
+                }, {
+                    "featureType": "poi.park",
+                    "elementType": "labels",
+                    "stylers": [{
+                        "visibility": "on"
+                    }, {
+                        "lightness": "25"
+                    }]
+                }, {
+                    "featureType": "road",
+                    "elementType": "all",
+                    "stylers": [{
+                        "lightness": "25"
+                    }]
+                }, {
+                    "featureType": "road",
+                    "elementType": "labels.icon",
+                    "stylers": [{
+                        "visibility": "off"
+                    }]
+                }, {
+                    "featureType": "road.highway",
+                    "elementType": "geometry",
+                    "stylers": [{
+                        "color": "#ffffff"
+                    }]
+                }, {
+                    "featureType": "road.highway",
+                    "elementType": "labels",
+                    "stylers": [{
+                        "saturation": "-90"
+                    }, {
+                        "lightness": "25"
+                    }]
+                }, {
+                    "featureType": "road.arterial",
+                    "elementType": "all",
+                    "stylers": [{
+                        "visibility": "on"
+                    }]
+                }, {
+                    "featureType": "road.arterial",
+                    "elementType": "geometry",
+                    "stylers": [{
+                        "color": "#ffffff"
+                    }]
+                }, {
+                    "featureType": "road.local",
+                    "elementType": "geometry",
+                    "stylers": [{
+                        "color": "#ffffff"
+                    }]
+                }, {
+                    "featureType": "transit.line",
+                    "elementType": "all",
+                    "stylers": [{
+                        "visibility": "off"
+                    }]
+                }, {
+                    "featureType": "transit.station",
+                    "elementType": "all",
+                    "stylers": [{
+                        "visibility": "off"
+                    }]
+                }, {
+                    "featureType": "water",
+                    "elementType": "all",
+                    "stylers": [{
+                        "visibility": "on"
+                    }, {
+                        "color": "#e0f1f9"
+                    }]
+                }],
+                    mapOptions = {
+                    zoom: 7,
+                    center: myLatlng,
+                    scrollwheel: false,
+                    scaleControl: false,
+                    zoomControl: true,
+                    disableDoubleClickZoom: true,
+                    panControl: false,
+                    mapTypeControl: false,
+                    streetViewControl: false,
+                    overviewMapControl: false,
+                    styles: styles
+                },
+                    map = new google.maps.Map($map[0], mapOptions),
+                    image = {
+                    url: $map.attr('data-image')
+                };
+                var marker = void 0;
+                Array.prototype.forEach.call(childCategory, function (item, i) {
+                    var childItem = childCategory[i];
+                    marker = new google.maps.Marker({
+                        position: {
+                            lat: childItem[0],
+                            lng: childItem[1]
+                        },
+                        map: map,
+                        icon: image,
+                        title: childItem[2]
+                    });
+                    if (i === idx && (typeof idx === "undefined" ? "undefined" : _typeof(idx)) !== ( true ? "undefined" : _typeof(undefined))) {
+                        marker[idx] = new google.maps.InfoWindow({
+                            position: {
+                                lat: childItem[0],
+                                lng: childItem[1]
+                            },
+                            map: map,
+                            icon: image
+                        });
+                        var content = '<div id="map-note-neighborhood">' + '<h6>' + childItem[2] + '</h6>' + '<div id="content-note">' + '<div>2000 East Tremont Avenue</div>' + '<div>Bronx, NY 10462</div>' + '</div>' + '</div>';
+                        marker[idx].setContent(content);
+                        var crctMarker = marker[idx];
+                        correctMarker(crctMarker);
+                    }
+                });
 
-      //   if( i === idx && typeof idx !== typeof undefined) {
-      //     marker[idx] = new google.maps.InfoWindow({
-      //       position: { 
-      //         lat: childItem[0], 
-      //         lng:  childItem[1] 
-      //       },
-      //       map: map,
-      //       icon: image,
-      //       content: childItem[2],
-      //     })
-      //   }
-      // }
-      Array.prototype.forEach.call(childCategory, function (item, i) {
-        var childItem = childCategory[i];
-        marker = new google.maps.Marker({
-          position: {
-            lat: childItem[0],
-            lng: childItem[1]
-          },
-          map: map,
-          icon: image,
-          title: childItem[2]
+                function correctMarker(marker) {
+                    google.maps.event.addListenerOnce(marker, "domready", function () {
+                        var iw = $(".gm-style-iw");
+                        var iwBg = iw.prev();
+                        iwBg.children(":nth-child(2)").css("display", "none");
+                        iwBg.children(":nth-child(4)").css("display", "none");
+                        iwBg.children(":nth-child(1)").attr("style", function (i, s) {
+                            return s + "display: none !important;";
+                        });
+                        iwBg.children(":nth-child(3)").attr("style", function (i, s) {
+                            return s + "display: none !important;";
+                        });
+                        iw.siblings("div, img").remove();
+                        iw.parent().parent().css({
+                            left: "120px",
+                            top: "70px"
+                        });
+                    });
+                }
+            }
+
+            function getData(locationItem, idx) {
+                var curLat = parseFloat(locationItem.attr("data-lat")),
+                    curLng = parseFloat(locationItem.attr("data-lng")),
+                    curTitle = locationItem.attr("data-title");
+                var childCategory = [];
+                $('.tab-content-item.active').find("a").each(function (index, item) {
+                    var childItem = [];
+                    childItem.push(parseFloat($(this).attr("data-lat")));
+                    childItem.push(parseFloat($(this).attr("data-lng")));
+                    childItem.push($(this).attr("data-title"));
+                    childCategory.push(childItem);
+                }).promise().done(createMap(curLat, curLng, curTitle, childCategory, idx));
+            }
+
+            getData(curLocation);
+
+            location.find("a").on("click", function () {
+                var $this = $(this);
+                getData($this);
+            });
+
+            subLocation.find("a").on("click", function () {
+                var $this = $(this),
+                    $pseudoThis = $(".tab-nav-item.active").find("a"),
+                    $idx = $this.parent("li").index();
+                $this.addClass("active").parent("li").siblings().find("a").removeClass("active");
+                getData($pseudoThis, $idx);
+            });
         });
-        if (i === idx && (typeof idx === "undefined" ? "undefined" : _typeof(idx)) !== ( true ? "undefined" : _typeof(undefined))) {
-          marker[idx] = new google.maps.InfoWindow({
-            position: {
-              lat: childItem[0],
-              lng: childItem[1]
-            },
-            map: map,
-            icon: image,
-            content: childItem[2]
-          });
-        }
-      });
-
-      function correctMarker() {
-        google.maps.event.addListenerOnce(marker, "domready", function () {
-          var iw = $(".gm-style-iw");
-          var iwBg = iw.prev();
-          iwBg.children(":nth-child(2)").css("display", "none");
-          iwBg.children(":nth-child(4)").css("display", "none");
-          iwBg.children(":nth-child(1)").attr("style", function (i, s) {
-            return s + "display: none !important;";
-          });
-          iwBg.children(":nth-child(3)").attr("style", function (i, s) {
-            return s + "display: none !important;";
-          });
-          iw.siblings("div, img").remove();
-          iw.parent().parent().css({
-            left: "100px",
-            top: "325px"
-          });
-        });
-      }
     }
-
-    function getData(locationItem, idx) {
-      var curLat = parseFloat(locationItem.attr("data-lat")),
-          curLng = parseFloat(locationItem.attr("data-lng")),
-          curTitle = locationItem.attr("data-title");
-      var childCategory = [];
-      locationItem.next("ul").find("li").each(function (index, item) {
-        var childItem = [];
-        childItem.push(parseFloat($(this).attr("data-lat")));
-        childItem.push(parseFloat($(this).attr("data-lng")));
-        childItem.push($(this).attr("data-title"));
-        childCategory.push(childItem);
-      }).promise().done(createMap(curLat, curLng, curTitle, childCategory, idx));
-    }
-
-    getData(curLocation);
-
-    location.children('span').on("click", function () {
-      var $this = $(this);
-      $this.addClass("active").parent("li").addClass("active").siblings("li").removeClass("active").find('span').removeClass("active");
-      getData($this);
-    });
-
-    location.children('ul').children('li').on("click", function () {
-      var $this = $(this),
-          $pseudoThis = $(this).parent("ul").prev("span"),
-          $idx = $this.index();
-      $this.addClass("active").siblings("li").removeClass("active").parent("ul").children("li").not($this).removeClass("active");
-      console.log($pseudoThis);
-      getData($pseudoThis, $idx);
-    });
-  });
 }
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(29)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(27)))
 
 /***/ }),
 /* 338 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function($) {/* harmony export (immutable) */ __webpack_exports__["a"] = googleMap;
+function googleMap() {
+  if ($('#map-home').length) {
+    var createMap = function createMap() {
+      var image = void 0;
+      var iconSrc = $("#map-home").attr('data-image');
+      if ($(window).width() >= 1280) {
+        image = {
+          url: iconSrc
+        };
+      } else {
+        image = {
+          url: iconSrc,
+          scaledSize: new google.maps.Size(17, 21)
+        };
+      }
+      var $map = $('#map-home'),
+          longitude = $map.attr('data-longitude'),
+          latitude = $map.attr('data-latitude'),
+          myLatlng = new google.maps.LatLng(longitude, latitude),
+          styles = [{ "featureType": "all", "elementType": "all", "stylers": [{ "lightness": "0" }, { "gamma": "0.96" }] }, { "featureType": "all", "elementType": "geometry.fill", "stylers": [{ "hue": "#00ff9c" }, { "visibility": "on" }] }, { "featureType": "all", "elementType": "geometry.stroke", "stylers": [{ "weight": "8.62" }, { "visibility": "simplified" }, { "color": "#0bb5e7" }] }, { "featureType": "all", "elementType": "labels.text", "stylers": [{ "saturation": "-88" }, { "lightness": "-99" }, { "gamma": "0.00" }, { "weight": "0.63" }, { "color": "#ebebeb" }, { "visibility": "on" }] }, { "featureType": "all", "elementType": "labels.text.fill", "stylers": [{ "visibility": "on" }, { "saturation": "-90" }, { "lightness": "-34" }, { "weight": "2.48" }, { "gamma": "0.48" }] }, { "featureType": "administrative", "elementType": "labels.text.fill", "stylers": [{ "color": "#444444" }] }, { "featureType": "landscape", "elementType": "all", "stylers": [{ "color": "#f2f2f2" }] }, { "featureType": "landscape.natural.landcover", "elementType": "geometry.fill", "stylers": [{ "saturation": "-100" }] }, { "featureType": "landscape.natural.terrain", "elementType": "geometry.fill", "stylers": [{ "saturation": "-1" }, { "lightness": "-100" }, { "weight": "0.01" }] }, { "featureType": "poi", "elementType": "all", "stylers": [{ "visibility": "off" }] }, { "featureType": "road", "elementType": "all", "stylers": [{ "saturation": -100 }, { "lightness": 45 }] }, { "featureType": "road", "elementType": "labels.text", "stylers": [{ "lightness": "6" }, { "saturation": "1" }, { "weight": "0.93" }] }, { "featureType": "road.highway", "elementType": "all", "stylers": [{ "visibility": "simplified" }] }, { "featureType": "road.highway", "elementType": "labels.text", "stylers": [{ "lightness": "-33" }] }, { "featureType": "road.highway", "elementType": "labels.text.fill", "stylers": [{ "lightness": "-21" }] }, { "featureType": "road.arterial", "elementType": "labels.text", "stylers": [{ "lightness": "5" }] }, { "featureType": "road.arterial", "elementType": "labels.icon", "stylers": [{ "visibility": "off" }] }, { "featureType": "road.local", "elementType": "labels.text", "stylers": [{ "lightness": "21" }] }, { "featureType": "transit", "elementType": "all", "stylers": [{ "visibility": "off" }] }, { "featureType": "water", "elementType": "all", "stylers": [{ "color": "#96d7f1" }, { "visibility": "on" }] }, { "featureType": "water", "elementType": "geometry.fill", "stylers": [{ "lightness": "63" }, { "hue": "#0061ff" }] }, { "featureType": "water", "elementType": "labels.text", "stylers": [{ "lightness": "65" }] }],
+          mapOptions = {
+        zoom: 14,
+        center: myLatlng,
+        styles: styles,
+        disableDefaultUI: true,
+        scrollwheel: false,
+        zoomControl: true,
+        gestureHandling: 'cooperative'
+      },
+          map = new google.maps.Map($map[0], mapOptions),
+          marker = new google.maps.InfoWindow({
+        position: myLatlng,
+        map: map,
+        icon: image
+      }),
+          content = '<div id="map-note">' + '<h5>Parkchester</h5>' + '<div id="content-note">' + '<div>2000 East Tremont Avenue</div>' + '<div>Bronx, NY 10462</div>' + '</div>' + '</div>';
+      new google.maps.Marker({
+        position: myLatlng,
+        map: map,
+        icon: image
+      });
+      marker.setContent(content);
+      google.maps.event.addListenerOnce(marker, "domready", function () {
+        var iw = $(".gm-style-iw");
+        var iwBg = iw.prev();
+        iwBg.children(":nth-child(2)").css("display", "none");
+        iwBg.children(":nth-child(4)").css("display", "none");
+        iwBg.children(":nth-child(1)").attr("style", function (i, s) {
+          return s + "display: none !important;";
+        });
+        iwBg.children(":nth-child(3)").attr("style", function (i, s) {
+          return s + "display: none !important;";
+        });
+        iw.siblings("div, img").remove();
+        if ($(window).width() >= 1280) {
+          iw.parent().parent().css({
+            left: "95px",
+            top: "150px"
+          });
+        } else {
+          iw.parent().parent().css({
+            left: "75px",
+            top: "110px"
+          });
+        }
+      });
+    };
+
+    createMap();
+  }
+}
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(27)))
+
+/***/ }),
+/* 339 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -14593,14 +14744,14 @@ function contactUsMap() {
 /* harmony export (immutable) */ __webpack_exports__["d"] = isDev;
 /* harmony export (immutable) */ __webpack_exports__["k"] = tabs;
 /* unused harmony export gallery */
-/* unused harmony export photoGallery */
+/* unused harmony export wrapperGallery */
 /* unused harmony export checkViewPort */
 /* harmony export (immutable) */ __webpack_exports__["c"] = initMasonry;
 /* harmony export (immutable) */ __webpack_exports__["i"] = scrollTo;
 /* harmony export (immutable) */ __webpack_exports__["b"] = fixedHeader;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_polyfill__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_polyfill___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_polyfill__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__popupGallery__ = __webpack_require__(339);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__popupGallery__ = __webpack_require__(340);
 
 
 // these properties will be available from anywhere via this.property
@@ -14615,7 +14766,7 @@ var constants = {
 };
 
 function slider() {
-  $('.residents-holder, .gallery-apartments').slick({
+  $('.residents-holder').slick({
     dots: true,
     infinite: false,
     speed: 300,
@@ -14623,6 +14774,33 @@ function slider() {
     slidesToScroll: 1,
     appendArrows: $('.custom-controls'),
     appendDots: $('.custom-controls')
+  });
+  $('.gallery-features').slick({
+    dots: true,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    appendArrows: $('.features-controls'),
+    appendDots: $('.features-controls')
+  });
+  $('.gallery-community').slick({
+    dots: true,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    appendArrows: $('.community-controls'),
+    appendDots: $('.community-controls')
+  });
+  $('.gallery-contemporary').slick({
+    dots: true,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    appendArrows: $('.contemporary-controls'),
+    appendDots: $('.contemporary-controls')
   });
   $('.timeline-slider').slick({
     dots: true,
@@ -14640,6 +14818,7 @@ function slider() {
     dots: false,
     arrows: false,
     variableWidth: true,
+    infinite: false,
     responsive: [{
       breakpoint: 768,
       settings: "unslick"
@@ -14667,31 +14846,26 @@ function slider() {
     slidesToScroll: 1,
     arrows: false,
     asNavFor: '.small-slider',
-    infinite: true,
-    centerMode: true,
-    variableWidth: true
+    fade: true
   });
   $('.small-slider').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    asNavFor: '.large-slider',
     dots: false,
-    focusOnSelect: true,
-    mobileFirst: true,
+    vertical: true,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    verticalSwiping: true,
     infinite: true,
-    centerMode: true,
-    variableWidth: true,
+    asNavFor: '.large-slider',
     responsive: [{
       breakpoint: 1280,
       settings: {
-        asNavFor: '.large-slider',
-        slidesToShow: 4,
-        slidesToScroll: 4,
-        vertical: true,
-        verticalSwiping: true,
+        vertical: false,
+        verticalSwiping: false,
+        variableWidth: true,
+        infinite: true,
         centerMode: true,
-        focusOnSelect: true,
-        variableWidth: true
+        slidesToScroll: 1,
+        slidesToShow: 3
       }
     }]
   });
@@ -14711,7 +14885,6 @@ function popupGallerySlider() {
 
   item.on('click', function (event) {
     wScrollTop = $(window).scrollTop();
-    console.log(wScrollTop);
     clickCurrent = $(this).index();
     item.clone().attr('style', '').appendTo(galleryPopupWrapper);
     wrapperPopup.addClass('active');
@@ -14720,8 +14893,8 @@ function popupGallerySlider() {
   });
   $('.popup-close').on('click', function (event) {
     event.preventDefault();
-    $(window).scrollTop(wScrollTop);
     galleryPopupWrapper.slick('unslick');
+    galleryPopupWrapper.empty();
   });
 }
 //photo gallery
@@ -14750,8 +14923,8 @@ function photoGallerySlider() {
         infinite: false,
         centerMode: false,
         dots: true,
-        slidesToScroll: 9,
-        slidesToShow: 9,
+        slidesToScroll: 1,
+        slidesToShow: 1,
         adaptiveHeight: true
       }
     }]
@@ -14822,12 +14995,17 @@ function gallery() {
   });
 }
 
-function photoGallery() {
-  $('.photo-gallery .slick-track').masonry({
-    itemSelector: '.item',
-    columnWidth: 360,
-    gutter: 30
-  });
+function wrapperGallery() {
+  $(".photo-gallery").slick('unslick');
+  var context = $('.photo-gallery'),
+      wrapperCounter = 0;
+  while (context.children('div:not(.wrap-items)').length) {
+    context.children('div:not(.wrap-items):lt(9)').wrapAll('<div class="wrap-items">');
+    wrapperCounter++;
+  }
+  if (wrapperCounter === context.children('.wrap-items').length) {
+    photoGallerySlider();
+  }
 }
 
 function checkViewPort() {
@@ -14846,10 +15024,14 @@ function checkViewPort() {
 function initMasonry() {
   $(window).on('load resize', function () {
     var wWidth = checkViewPort().width;
+    var resizeId = void 0;
     if (wWidth >= 1280) {
       setTimeout(function () {
-        photoGallery();
-      }, 1000);
+        wrapperGallery();
+      }, 100);
+    } else {
+      clearTimeout(resizeId);
+      resizeId = setTimeout(photoGallerySlider, 500);
     }
   });
 }
@@ -14858,10 +15040,11 @@ function scrollTo() {
   if ($('.scroll-to').length) {
     var btn = $('.scroll-to'),
         parentBtn = $('.scroll-to').parent(),
-        parentBtnOffsetTop = parentBtn.next().offset().top;
+        parentBtnOffsetTop = parentBtn.next().offset().top,
+        headerHeight = $('.header').outerHeight();
     $('.scroll-to').on('click', function () {
       $('html, body').animate({
-        scrollTop: parentBtnOffsetTop
+        scrollTop: parentBtnOffsetTop - headerHeight
       }, 1000);
     });
   }
@@ -14874,10 +15057,10 @@ function fixedHeader() {
     $(window).scrollTop() > headerScrollTop ? header.addClass('fixed') : header.removeClass('fixed');
   });
 }
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(29)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(27)))
 
 /***/ }),
-/* 339 */
+/* 340 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -14909,7 +15092,7 @@ function popupGallery(clickCurrent) {
     }]
   });
 }
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(29)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(27)))
 
 /***/ })
 /******/ ]);

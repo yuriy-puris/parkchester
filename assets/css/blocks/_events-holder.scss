@@ -22,7 +22,7 @@
     max-width: 300px;
     @include media(">=desktop") {
       font-size: 14px;
-      margin: 0 0 20px;
+      margin: 0 0 30px;
       width: 32%;
       max-width: 370px;
       &:nth-child(3n-4) {

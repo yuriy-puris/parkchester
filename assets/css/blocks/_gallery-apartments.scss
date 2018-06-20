@@ -2,11 +2,11 @@
   width: 100%;
   max-width: 670px;
   height: 240px;
-  margin: 0 auto 100px;
+  margin: 0 auto 50px;
   @include media(">=xtablet") {
     width: 670px;
     height: 540px;
-    margin: 0 30px 0 0;
+    margin: 0 30px 30px 0;
   }
   .item {
     background-size: cover;
@@ -26,5 +26,11 @@
   }
   .slick-arrow {
     bottom: -65px;
+  }
+}
+.gallery-wrap {
+  margin: 0 0 50px;
+  @include media(">=xtablet") {
+    margin: 0;
   }
 }

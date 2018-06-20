@@ -43,11 +43,20 @@
     }
     @include media('>=xtablet') {
       display: flex;
-      min-height: 460px;
+      // min-height: 460px;
+      height: 460px;
       overflow: hidden;
       margin: 0 30px 0 0;
       &.large {
         min-height: 540px;
+      }
+    }
+    &.video {
+      text-indent: 0;
+      iframe {
+        @include media('>=xtablet') {
+          height: 100%;
+        }
       }
     }
   }

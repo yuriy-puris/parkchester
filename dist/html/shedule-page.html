@@ -91,59 +91,61 @@
 	</header>
 
 	<main class="main">
-		<div class="container">
-			<h1>Schedule a Tour</h1>
-			<div class="devided-section reverse">
-				<div class="media-section large" style="background-image: url('/dist/images/shedule.png')">shedule</div>
-				<div class="content-section">
-					<strong>Please bring most recent proof of income and photo ID.</strong>
-					<p class="note">*indicates a required field</p>
-					<form class="form-shedule">
-						<div class="form-group">
-							<label for="name">Name *</label>
-							<input id="name" type="text" class="form-control">
+		<section class="page-schedule">
+				<div class="container">
+						<h1>Schedule a Tour</h1>
+						<div class="divided-section">
+							<div class="media-section large" style="background-image: url('/dist/images/shedule.png')">shedule</div>
+							<div class="content-section">
+								<strong>Please bring most recent proof of income and photo ID.</strong>
+								<p class="note">*indicates a required field</p>
+								<form class="form-shedule">
+									<div class="form-group">
+										<label for="name">Name *</label>
+										<input id="name" type="text" class="form-control">
+									</div>
+									<div class="form-group">
+										<label for="phone">Phone Number *</label>
+										<input id="phone" type="text" class="form-control">
+									</div>
+									<div class="form-group">
+										<label for="email">Email *</label>
+										<input id="email" type="text" class="form-control">
+									</div>
+									<div class="form-group">
+										<label for="day">Preferred Day *</label>
+										<select name="day" id="day">
+											<option value=""></option>
+											<option value=""></option>
+											<option value=""></option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label for="message">Message</label>
+										<input id="message" type="text" class="form-control">
+									</div>
+									<div class="form-group-submit">
+										<input type="submit" value="Request Appointment">
+									</div>
+								</form>
+							</div>
 						</div>
-						<div class="form-group">
-							<label for="phone">Phone Number *</label>
-							<input id="phone" type="text" class="form-control">
+						<div class="shedule-holder">
+							<div class="subholder">
+								<div class="subholder-ttl">Our Location</div>
+								<address>
+									<p>1480 Parkchester Road</p>
+									<p>Bronx, NY 10462</p>
+								</address>
+							</div>
+							<div class="subholder">
+								<div class="subholder-ttl">Days and Times</div>
+								<p><span>Tuesdays:</span>5:00 PM - 7:45 PM</p>
+								<p><span>Saturdays:</span>10:00 AM - 1:45 PM</p>
+							</div>
 						</div>
-						<div class="form-group">
-							<label for="email">Email *</label>
-							<input id="email" type="text" class="form-control">
-						</div>
-						<div class="form-group">
-							<label for="day">Preferred Day *</label>
-							<select name="day" id="day">
-								<option value=""></option>
-								<option value=""></option>
-								<option value=""></option>
-							</select>
-						</div>
-						<div class="form-group">
-							<label for="message">Message</label>
-							<input id="message" type="text" class="form-control">
-						</div>
-						<div class="form-group-submit">
-							<input type="submit" value="Request Appointment">
-						</div>
-					</form>
 				</div>
-			</div>
-			<div class="shedule-holder">
-				<div class="subholder">
-					<div class="subholder-ttl">Our Location</div>
-					<address>
-						<p>1480 Parkchester Road</p>
-						<p>Bronx, NY 10462</p>
-					</address>
-				</div>
-				<div class="subholder">
-					<div class="subholder-ttl">Days and Times</div>
-					<p><span>Tuesdays:</span>5:00 PM - 7:45 PM</p>
-					<p><span>Saturdays:</span>10:00 AM - 1:45 PM</p>
-				</div>
-			</div>
-		</div>
+		</section>
 	</main>
 
 	<footer class="footer_">

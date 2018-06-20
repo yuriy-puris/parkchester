@@ -8,6 +8,5 @@ export function customYTPlayer () {
             poster.classList.add("active");
             iframe.contentWindow.postMessage("{\"event\":\"command\",\"func\":\"" + "playVideo" + "\",\"args\":\"\"}", "*");
         });
-    })
-    
+    });
 }

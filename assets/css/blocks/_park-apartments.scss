@@ -11,17 +11,22 @@
   }
   h3 {
     color: $color-gold;
+    margin: 0 0 15px;
     @include media(">=xtablet") {
       margin: 0 0 20px;
     }
   }
   p {
-    padding: 0 0 7px;
+    padding: 0 0 10px;
+    margin: 0 0 10px;  
+    @include media(">=xtablet") {
+      margin: 0 0 20px;
+    }
   }
   strong {
     font-size: 13px;
-    display: inline-block;
-    margin: 0 0 20px;
+    display: block;
+    margin: 0 0 15px;
     @include media(">=xtablet") {
       font-size: 14px;
       margin: 0 0 45px;
@@ -44,30 +49,33 @@
     }
     p {
       border-bottom: 1px solid $color-light-grey;
-      padding: 0 0 25px;
+      @include media(">=tablet") {
+        padding: 0 0 25px;
+      }
     }
     .btn {
-      padding: 8px 20px;
+      padding: 5px 22px;
       margin: 0;
+      @include media(">=tablet") {
+        padding: 7px 24px;
+      }
     }
   }
 }
 .apartments-item {
   padding: 0 0 30px;
-  margin: 0 0 30px;
   @include media(">=tablet") {
     display: flex;
-    padding: 0 0 65px;
+    padding: 0 0 60px;
     margin: 0;
   }
 }
 .visual-bedroom {
-  margin: 0 0 30px;
   @include media(">=tablet") {
     display: flex;
     justify-content: space-between;
     width: calc(100% - 270px);
-    padding: 0 0 0 20px;
+    padding: 10px 0 0 20px;
     margin: 0;
   }
   @include media(">=xtablet") {
@@ -102,13 +110,15 @@
   text-align: center;
   text-transform: uppercase;
   padding: 5px 0;
-  margin: 0 0 30px;
+  margin: 0 0 5px;
   @include media('>=desktop') {
     font-size: 16px;
+    margin: 0 0 30px;
   }
   a {
     color: $color-black;
     border-bottom: 3px solid transparent;
+    padding: 0 0 5px;
     @include media('>=desktop') {
       padding: 0 25px 20px;
     }
@@ -117,7 +127,7 @@
     display: inline-block;
     margin: 0 10px;
     @include media(">=desktop") {
-      margin: 0 15px;
+      margin: 0 20px;
     }
     &.active {
       a {

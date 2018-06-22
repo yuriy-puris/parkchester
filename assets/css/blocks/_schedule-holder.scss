@@ -1,10 +1,10 @@
 .shedule-holder {
   max-width: 670px;
   width: 100%;
-  margin: 0 auto 95px;
+  margin: auto;
   @include media(">=xtablet") {
     display: flex;
-    margin: 0 0 95px;
+    margin: 0;
   }
   .subholder {
     text-align: center;

@@ -1,6 +1,8 @@
 import "babel-polyfill";
 import "./libs/slick";
 import "./libs/masonry";
+import "./libs/jcf";
+import "./libs/jcf.select";
 import binder from "./libs/binder";
 import { accordion } from "./modules/accordion";
 import { customYTPlayer } from "./modules/customYTPlayer";
@@ -9,6 +11,7 @@ import { popups } from "./modules/popups";
 import { backToTop } from "./modules/backToTop";
 import { contactUsMap } from "./modules/contactUsMap";
 import { googleMap } from "./modules/googleMap";
+import { vueMap } from "./modules/vueMap";
 import {
     constants,
     slider,
@@ -22,6 +25,7 @@ import {
     photoGallerySlider,
     scrollTo,
     fixedHeader,
+    formSelect,
 } from "./modules/module";
 
 
@@ -42,7 +46,9 @@ binder({
           scrollTo,
           fixedHeader,
           contactUsMap,
-          googleMap
+          googleMap,
+          formSelect,
+          vueMap
         ],
         ".accordion": accordion,
         ".custom-play-btn": customYTPlayer,

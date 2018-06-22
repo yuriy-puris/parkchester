@@ -38,6 +38,7 @@
   .info-bedroom {
     text-align: left;
     margin: 0 0 30px;
+    font-size: 13px;
     @include media(">=tablet") {
       max-width: 270px;
     }
@@ -93,6 +94,7 @@
     margin: 0 5px;
     outline: none;
     transition: box-shadow .3s;
+    display: inline-block;
     @include media(">=tablet") {
       width: 300px;
       height: 300px;

@@ -149,7 +149,11 @@
         & > li {
             @include media(">=desktop") {
                 float: left;
-                padding: 0 19px;
+            }
+            > a {
+                @include media(">=desktop") {
+                    padding: 0 19px;
+                }
             }
         }
         li {
@@ -242,7 +246,7 @@
         > a {
             &::after {
                 content: '';
-                @include pos(absolute, 40%, null, null, -15px);
+                @include pos(absolute, 40%, null, null, 7px);
                 @include arrow;
                 transform: translateY(-50%) rotateZ(45deg);
                 transition: transform .3s;
@@ -283,14 +287,19 @@
         }
     }
 }
-.parent-menu {
-    &:hover {
-        > a {
-            color: $color-gold;
-        }
-        ul {
-            visibility: visible;
-            opacity: 1;
+.no-dev {
+    .parent-menu {
+        &:hover {
+            > a {
+                color: $color-gold;
+                &::after {
+                    transform: translateY(0) rotateZ(-135deg);
+                }
+            }
+            ul {
+                visibility: visible;
+                opacity: 1;
+            }
         }
     }
 }

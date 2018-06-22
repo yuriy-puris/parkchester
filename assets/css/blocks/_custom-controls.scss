@@ -134,4 +134,9 @@
       margin: 10px 45px;
     }
   }
+  &.contemporary-controls {
+    @include media(">=xtablet") {
+      margin-right: 30px;
+    }
+  }
 }

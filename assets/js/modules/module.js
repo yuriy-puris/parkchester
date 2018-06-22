@@ -70,7 +70,7 @@ export function slider() {
     infinite: false,
     responsive: [
       {
-        breakpoint: 768,
+        breakpoint: 568,
         settings: "unslick"
       }
     ]
@@ -220,15 +220,17 @@ export function timeline() {
 }
 
 export function mobileMenu () {
-  $('.menu-button').on('click', function() {
-    $('.header-content').addClass('active-menu')
-  });
-  $('.close-menu').on('click', function() {
-    $('.header-content').removeClass('active-menu')
-  });
-  $('.parent-menu > a').on('click', function() {
-    $(this).toggleClass('active').next().slideToggle()
-  })
+  if( !$('.no-dev').length ) {
+    $('.menu-button').on('click', function() {
+      $('.header-content').addClass('active-menu')
+    });
+    $('.close-menu').on('click', function() {
+      $('.header-content').removeClass('active-menu')
+    });
+    $('.parent-menu > a').on('click', function() {
+      $(this).toggleClass('active').next().slideToggle()
+    })
+  }
 }
 
 export function isDev() {
@@ -314,4 +316,13 @@ export function fixedHeader() {
   $(window).on('load scroll', () => {
     $(window).scrollTop() > headerScrollTop ? header.addClass('fixed') : header.removeClass('fixed')
   })
+}
+
+export function formSelect() {
+    jcf.setOptions('Select', {
+      wrapNativeOnMobile: false,
+      wrapNative: false,
+      maxVisibleItems: 7
+    });
+    jcf.replaceAll();
 }

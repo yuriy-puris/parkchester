@@ -1,0 +1,29 @@
+.page-apartments {
+  .h1, h1 {
+    margin-bottom: 40px;
+  }
+  .apartments-item {
+    padding: 0 0 75px;
+    margin: 0;
+    &:not(:first-child) {
+      border-top: 1px solid $color-light-grey;
+      padding: 75px 0;
+    }
+  }
+}
+.collection-holder {
+  .apartments-item {
+    h3 {
+      font-size: 24px;
+      margin: 0;
+    }
+    strong {
+      text-transform: uppercase;
+      margin: 0 0 20px;
+    }
+    .btn {
+      @include font-light;
+      padding: 7px 44px;
+    }
+  }
+}

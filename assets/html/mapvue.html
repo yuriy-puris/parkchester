@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" class="no-dev">
+@@include("head.html", {"title": "Parkchester"})
+<body>
+<div class="wrapper">
+	@@include("header.html")
+
+	<main class="main">
+		<div id="app">
+      <div class="container">
+          <map-holder></map-holder>
+      </div>
+  </div>
+  <template id="map-holder">
+    <div class="section map-holder">
+    <div class="map-menu">
+      <ul class="tab-nav map-menu-list">
+        <li 
+            v-for="(item, index) in getLocations"
+            :class="['tab-nav-item', {'active' : index == 0}]"
+            :key="index"
+            @click="tabs(index)">
+            <a 
+               href="javascript:void(0)"
+               data-lat="item.latitude"
+               data-lng="item.longtitude"
+               data-title="item.title"
+               >
+              {{item.name}}
+          </a>
+        </li>
+      </ul>
+      <div class="tabs-content">
+        <ul 
+            v-for="(subitem, subindex) in getLocations"
+            :class="['tab-content-item',{ 'active' : subindex == indexTab }]"
+            :key="subindex">
+          <li v-for="(itm, idx) in subitem.subList">
+            <a 
+               href="javascript:void(0)"
+               data-lat="itm.latitude"
+               data-lng="itm.longtitude"
+               data-title="itm.title">
+              {{itm.name}}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="map" ref="map"></div>
+    </div>
+  </template>
+	</main>
+
+	@@include("footer.html")
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.6/vue.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vuex/3.0.1/vuex.js"></script>
+@@include("scripts.html")
+</body>
+</html>

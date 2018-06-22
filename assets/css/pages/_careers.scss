@@ -1,6 +1,11 @@
 .page-careers {
   margin-bottom: 0;
-  section {
-    padding: 0 0 100px;
+  padding-bottom: 0;
+  .section {
+    padding: 0;
+    border-color: transparent;
+    @include media('>=desktop') {
+      margin: 0 0 80px;
+    }
   }
 }

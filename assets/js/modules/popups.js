@@ -13,6 +13,7 @@ export function popups() {
     popupWrap.addClass("active");
     popup = (!$this.attr("href")) ? $this.find("a").attr("href") : $this.attr("href");
     $(popup).addClass("opened");
+    $(popup).find(".popup-close").focus();
     if ($(popup).hasClass("video-popup")) {
       $(".video-popup.opened iframe")[0].contentWindow.postMessage("{\"event\":\"command\",\"func\":\"" + "playVideo" + "\",\"args\":\"\"}", "*");
     }
@@ -42,5 +43,6 @@ export function popups() {
     window.location.hash = "";
     $(".popup-link").parents("li").removeClass("current-menu-item");
     $window.scrollTop(scrolled);
+    $(`a[href="${popup}]"`).focus();
   }
 }

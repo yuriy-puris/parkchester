@@ -3,6 +3,7 @@
 @import "libs/mixins";
 @import "libs/fonts";
 @import "libs/include-media";
+@import "libs/jcf";
 @import "libs/styleguide";
 @import "libs/gridlex";
 @import "libs/slick";
@@ -53,3 +54,5 @@
 @import "pages/main-apartments";
 @import "pages/page-history";
 @import "pages/page-schedule";
+@import "pages/page-amenities";
+@import "pages/page-apartments";

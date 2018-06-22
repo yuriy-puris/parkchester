@@ -73,6 +73,9 @@
 .preservation-management {
   .divided-section {
     margin-bottom: 30px;
+    @include media('>=desktop') {
+      margin-bottom: 70px;  
+    }
   }
 }
 
@@ -102,6 +105,7 @@
     margin-bottom: 0;
     padding-left: 30px;
     text-align: left;
+    text-transform: uppercase;
   }
 }
 

@@ -1,5 +1,41 @@
 .page-schedule {
+  padding: 60px 0;
   .divided-section {
-    margin: 0 0 30px;
+    margin: 0 0 25px;
+  }
+  .content-section {
+    max-width: 670px;
+    margin: auto;
+    @include media('>=xtablet') {
+      margin: 0;
+    }
+  }
+}
+//form-shedule
+.form-shedule {
+  .form-group {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 15px;
+  }
+  .form-control {
+    @include media('>=xtablet') {
+      max-width: 370px;
+    }
+  }
+  label {
+    min-width: 105px;
+    display: inline-block;
+    line-height: 30px;
+  }
+  .form-group-submit {
+    text-align: center;
+    @include media('>=xtablet') {
+      text-align: left;
+      margin: 70px 0 0;
+    }
+  }
+  .jcf-select {
+    max-width: 270px;
   }
 }

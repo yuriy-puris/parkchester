@@ -54,7 +54,7 @@
   li {
     background: transparent;
     width: 50%;
-    margin: 0 0 20px;
+    margin: 0 0 10px;
     @include media(">=tablet") {
       width: 32%;
       &:nth-child(3n-4) {

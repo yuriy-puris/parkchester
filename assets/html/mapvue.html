@@ -6,48 +6,72 @@
 	@@include("header.html")
 
 	<main class="main">
-		<div id="app">
-      <div class="container">
-          <map-holder></map-holder>
-      </div>
+    <div class="section page-nighborhood">
+      <div id="app">
+        <div class="map-holder">
+            <div class="container">
+                <h1>The neighborhood</h1>
+                <div class="min-container">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.</p>
+                </div>
+                <map-holder></map-holder>
+            </div>
+        </div> 
+      </div>  
   </div>
   <template id="map-holder">
-    <div class="section map-holder">
-    <div class="map-menu">
-      <ul class="tab-nav map-menu-list">
-        <li 
-            v-for="(item, index) in getLocations"
-            :class="['tab-nav-item', {'active' : index == 0}]"
-            :key="index"
-            @click="tabs(index)">
-            <a 
-               href="javascript:void(0)"
-               data-lat="item.latitude"
-               data-lng="item.longtitude"
-               data-title="item.title"
-               >
-              {{item.name}}
-          </a>
-        </li>
-      </ul>
-      <div class="tabs-content">
-        <ul 
-            v-for="(subitem, subindex) in getLocations"
-            :class="['tab-content-item',{ 'active' : subindex == indexTab }]"
-            :key="subindex">
-          <li v-for="(itm, idx) in subitem.subList">
-            <a 
-               href="javascript:void(0)"
-               data-lat="itm.latitude"
-               data-lng="itm.longtitude"
-               data-title="itm.title">
-              {{itm.name}}
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div id="map" ref="map"></div>
+    <div class="map-wrapper">
+        <div class="search-landmarks">
+          <div class="search-form">
+            <form action="#">
+              <div class="row-field">
+                <input 
+                  type="text"
+                  v-model="searchText"
+                  placeholder="Fitness">
+                <ul 
+                  class="search-dropdown">
+                  <li 
+                    v-for="item in dropLocations">{{item.name}}</li>
+                </ul>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="section map-holder">
+            <div class="map-menu">
+              <div class="map-menu-title">LANDMARKS NEAR PARKCHESTER</div>
+              <ul class="tab-nav map-menu-list">
+                <li 
+                    v-for="(item, index) in getLocations"
+                    :class="['tab-nav-item', {'active' : index == mainTab}]"
+                    :key="index"
+                    @click="tabs(index)">
+                    <a 
+                      href="javascript:void(0)"
+                      >
+                      {{item.name}}
+                  </a>
+                </li>
+              </ul>
+              <div class="tabs-content">
+                <ul 
+                    v-for="(subitem, subindex) in getLocations"
+                    :class="['tab-content-item',{ 'active' : subindex == mainTab }]"
+                    :key="subindex">
+                  <li 
+                    v-for="(itm, idx) in subitem.subList"
+                    @click="subTabs(idx)">
+                    <a 
+                      href="javascript:void(0)">
+                      {{itm.name}}
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div id="map" ref="map"></div>
+        </div>
     </div>
   </template>
 	</main>

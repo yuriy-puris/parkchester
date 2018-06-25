@@ -16200,241 +16200,303 @@ function googleMap() {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function($) {/* harmony export (immutable) */ __webpack_exports__["a"] = vueMap;
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
 function vueMap() {
-    if ($("#app").length) {
+  if ($("#app").length) {
 
-        var state = {
-            data: [{
-                name: "Parks1",
-                latitude: "73.0040",
-                longtitude: "40.0040",
-                title: "Parks",
-                subList: [{
-                    name: "Fitness Centers1",
-                    latitude: "73.0040",
-                    longtitude: "40.0040",
-                    title: "Fitness Centers1"
-                }, {
-                    name: "Fitness Centers2",
-                    latitude: "73.0040",
-                    longtitude: "40.0040",
-                    title: "Fitness Centers3"
-                }, {
-                    name: "Fitness Centers1",
-                    latitude: "73.0040",
-                    longtitude: "40.0040",
-                    title: "Fitness Centers1"
-                }]
+    var state = {
+      data: [{
+        name: "Parks1",
+        latitude: "40.0040",
+        longtitude: "-73.0040",
+        title: "Parks",
+        subList: [{
+          name: "Yankees",
+          latitude: "40.0040",
+          longtitude: "-73.0040",
+          title: "Fitness Centers1"
+        }, {
+          name: "Parks",
+          latitude: "40.0040",
+          longtitude: "-74.0040",
+          title: "Fitness Centers3"
+        }, {
+          name: "Fitness Centers1",
+          latitude: "40.0040",
+          longtitude: "-75.0040",
+          title: "Fitness Centers1"
+        }]
+      }, {
+        name: "Culture",
+        latitude: "40.0040",
+        longtitude: "-73.0040",
+        title: "Parks",
+        subList: [{
+          name: "Yankees",
+          latitude: "40.0040",
+          longtitude: "-73.0040",
+          title: "Fitness Centers1"
+        }, {
+          name: "Parks",
+          latitude: "40.0040",
+          longtitude: "-74.0040",
+          title: "Fitness Centers3"
+        }]
+      }, {
+        name: "Culture3",
+        latitude: "40.0040",
+        longtitude: "-73.0040",
+        title: "Parks",
+        subList: [{
+          name: "Fitness Centers1",
+          latitude: "40.0040",
+          longtitude: "-71.0040",
+          title: "Fitness Centers1"
+        }]
+      }]
+    };
+
+    var getters = {
+      get_mapmenu_list: function get_mapmenu_list(state) {
+        return state.data;
+      },
+      filter_mapmenu_list: function filter_mapmenu_list(state) {
+        return function (id) {
+          return state.data[id];
+        };
+      }
+    };
+
+    Vue.use(Vuex);
+
+    var store = new Vuex.Store({
+      state: state,
+      getters: getters
+    });
+
+    Vue.component('mapHolder', {
+      template: '#map-holder',
+      data: function data() {
+        return {
+          mainTab: 0,
+          mainCategory: null,
+          subIdx: null,
+          icon: "/dist/images/mappin.png",
+          searchQuery: '',
+          arrLocations: [],
+          searchText: ''
+        };
+      },
+
+      computed: {
+        getLocations: function getLocations() {
+          return this.$store.getters.get_mapmenu_list;
+        },
+
+        dropLocations: function dropLocations() {
+          var _self = this;
+          console.log(this.searchText);
+          return this.$store.getters.get_mapmenu_list.forEach(function (item) {
+            return item.subList.forEach(function (itm) {
+              itm.name.toLowerCase().indexOf(_self.searchText.toLowerCase()) >= 0;
+            });
+          });
+        }
+      },
+      methods: {
+        tabs: function tabs(index) {
+          this.mainTab = index;
+          this.mainCategory = this.$store.getters.filter_mapmenu_list(index);
+          this.initMap(this.mainCategory);
+          return index;
+        },
+        subTabs: function subTabs(idx) {
+          this.subIdx = idx;
+          this.mainCategory = this.$store.getters.filter_mapmenu_list(this.mainTab);
+          this.initMap(this.mainCategory, this.subIdx);
+        },
+        initMap: function initMap(locations, subIdx) {
+          var _self = this,
+              $map = this.$refs.map,
+              lat = parseFloat(locations.latitude),
+              lng = parseFloat(locations.longtitude),
+              myLatlng = new google.maps.LatLng(lat, lng),
+              styles = [{
+            "featureType": "administrative",
+            "elementType": "all",
+            "stylers": [{
+              "visibility": "on"
             }, {
-                name: "Culture",
-                latitude: "73.0040",
-                longtitude: "40.0040",
-                title: "Parks",
-                subList: [{
-                    name: "Fitness Centers1",
-                    latitude: "73.0040",
-                    longtitude: "40.0040",
-                    title: "Fitness Centers1"
-                }, {
-                    name: "Fitness Centers1",
-                    latitude: "73.0040",
-                    longtitude: "40.0040",
-                    title: "Fitness Centers1"
-                }, {
-                    name: "Fitness Centers1",
-                    latitude: "73.0040",
-                    longtitude: "40.0040",
-                    title: "Fitness Centers1"
-                }]
-            }, {
-                name: "Culture3",
-                latitude: "73.0040",
-                longtitude: "40.0040",
-                title: "Parks",
-                subList: [{
-                    name: "Fitness Centers1",
-                    latitude: "73.0040",
-                    longtitude: "40.0040",
-                    title: "Fitness Centers5"
-                }, {
-                    name: "Fitness Centers1",
-                    latitude: "73.0040",
-                    longtitude: "40.0040",
-                    title: "Fitness Centers6"
-                }]
+              "lightness": 33
             }]
-        };
-
-        var getters = {
-            get_mapmenu_list: function get_mapmenu_list(state) {
-                return state.data;
-            }
-        };
-
-        Vue.use(Vuex);
-
-        var store = new Vuex.Store({
-            state: state,
-            getters: getters
-        });
-
-        Vue.component('mapHolder', {
-            template: '#map-holder',
-            data: function data() {
-                return {
-                    indexTab: 0
-                };
-            },
-
-            computed: {
-                getLocations: function getLocations() {
-                    return this.$store.getters.get_mapmenu_list;
-                }
-            },
-            methods: {
-                tabs: function tabs(index) {
-                    this.indexTab = index;
-                    return index;
+          }, {
+            "featureType": "landscape",
+            "elementType": "all",
+            "stylers": [{
+              "color": "#f7f7f7"
+            }]
+          }, {
+            "featureType": "poi.business",
+            "elementType": "all",
+            "stylers": [{
+              "visibility": "off"
+            }]
+          }, {
+            "featureType": "poi.park",
+            "elementType": "geometry",
+            "stylers": [{
+              "color": "#deecdb"
+            }]
+          }, {
+            "featureType": "poi.park",
+            "elementType": "labels",
+            "stylers": [{
+              "visibility": "on"
+            }, {
+              "lightness": "25"
+            }]
+          }, {
+            "featureType": "road",
+            "elementType": "all",
+            "stylers": [{
+              "lightness": "25"
+            }]
+          }, {
+            "featureType": "road",
+            "elementType": "labels.icon",
+            "stylers": [{
+              "visibility": "off"
+            }]
+          }, {
+            "featureType": "road.highway",
+            "elementType": "geometry",
+            "stylers": [{
+              "color": "#ffffff"
+            }]
+          }, {
+            "featureType": "road.highway",
+            "elementType": "labels",
+            "stylers": [{
+              "saturation": "-90"
+            }, {
+              "lightness": "25"
+            }]
+          }, {
+            "featureType": "road.arterial",
+            "elementType": "all",
+            "stylers": [{
+              "visibility": "on"
+            }]
+          }, {
+            "featureType": "road.arterial",
+            "elementType": "geometry",
+            "stylers": [{
+              "color": "#ffffff"
+            }]
+          }, {
+            "featureType": "road.local",
+            "elementType": "geometry",
+            "stylers": [{
+              "color": "#ffffff"
+            }]
+          }, {
+            "featureType": "transit.line",
+            "elementType": "all",
+            "stylers": [{
+              "visibility": "off"
+            }]
+          }, {
+            "featureType": "transit.station",
+            "elementType": "all",
+            "stylers": [{
+              "visibility": "off"
+            }]
+          }, {
+            "featureType": "water",
+            "elementType": "all",
+            "stylers": [{
+              "visibility": "on"
+            }, {
+              "color": "#e0f1f9"
+            }]
+          }],
+              mapOptions = {
+            zoom: 7,
+            center: myLatlng,
+            scrollwheel: false,
+            scaleControl: false,
+            zoomControl: true,
+            disableDoubleClickZoom: true,
+            panControl: false,
+            mapTypeControl: false,
+            streetViewControl: false,
+            overviewMapControl: false,
+            styles: styles
+          },
+              map = new google.maps.Map($map, mapOptions),
+              subLocations = locations.subList,
+              image = {
+            url: this.icon
+          },
+              marker = void 0;
+          Array.prototype.forEach.call(subLocations, function (subItem, i) {
+            marker = new google.maps.Marker({
+              position: {
+                lat: parseFloat(subItem.latitude),
+                lng: parseFloat(subItem.longtitude)
+              },
+              map: map,
+              icon: image,
+              title: subItem.title
+            });
+            if (i === subIdx && (typeof subIdx === "undefined" ? "undefined" : _typeof(subIdx)) !== ( true ? "undefined" : _typeof(undefined))) {
+              marker[subIdx] = new google.maps.InfoWindow({
+                position: {
+                  lat: parseFloat(subItem.latitude),
+                  lng: parseFloat(subItem.longtitude)
                 },
-                initMap: function initMap() {
-                    var $map = $("#map"),
-                        myLatlng = new google.maps.LatLng("40.6700", "-73.9400"),
-                        styles = [{
-                        "featureType": "administrative",
-                        "elementType": "all",
-                        "stylers": [{
-                            "visibility": "on"
-                        }, {
-                            "lightness": 33
-                        }]
-                    }, {
-                        "featureType": "landscape",
-                        "elementType": "all",
-                        "stylers": [{
-                            "color": "#f7f7f7"
-                        }]
-                    }, {
-                        "featureType": "poi.business",
-                        "elementType": "all",
-                        "stylers": [{
-                            "visibility": "off"
-                        }]
-                    }, {
-                        "featureType": "poi.park",
-                        "elementType": "geometry",
-                        "stylers": [{
-                            "color": "#deecdb"
-                        }]
-                    }, {
-                        "featureType": "poi.park",
-                        "elementType": "labels",
-                        "stylers": [{
-                            "visibility": "on"
-                        }, {
-                            "lightness": "25"
-                        }]
-                    }, {
-                        "featureType": "road",
-                        "elementType": "all",
-                        "stylers": [{
-                            "lightness": "25"
-                        }]
-                    }, {
-                        "featureType": "road",
-                        "elementType": "labels.icon",
-                        "stylers": [{
-                            "visibility": "off"
-                        }]
-                    }, {
-                        "featureType": "road.highway",
-                        "elementType": "geometry",
-                        "stylers": [{
-                            "color": "#ffffff"
-                        }]
-                    }, {
-                        "featureType": "road.highway",
-                        "elementType": "labels",
-                        "stylers": [{
-                            "saturation": "-90"
-                        }, {
-                            "lightness": "25"
-                        }]
-                    }, {
-                        "featureType": "road.arterial",
-                        "elementType": "all",
-                        "stylers": [{
-                            "visibility": "on"
-                        }]
-                    }, {
-                        "featureType": "road.arterial",
-                        "elementType": "geometry",
-                        "stylers": [{
-                            "color": "#ffffff"
-                        }]
-                    }, {
-                        "featureType": "road.local",
-                        "elementType": "geometry",
-                        "stylers": [{
-                            "color": "#ffffff"
-                        }]
-                    }, {
-                        "featureType": "transit.line",
-                        "elementType": "all",
-                        "stylers": [{
-                            "visibility": "off"
-                        }]
-                    }, {
-                        "featureType": "transit.station",
-                        "elementType": "all",
-                        "stylers": [{
-                            "visibility": "off"
-                        }]
-                    }, {
-                        "featureType": "water",
-                        "elementType": "all",
-                        "stylers": [{
-                            "visibility": "on"
-                        }, {
-                            "color": "#e0f1f9"
-                        }]
-                    }],
-                        mapOptions = {
-                        zoom: 7,
-                        center: myLatlng,
-                        scrollwheel: false,
-                        scaleControl: false,
-                        zoomControl: true,
-                        disableDoubleClickZoom: true,
-                        panControl: false,
-                        mapTypeControl: false,
-                        streetViewControl: false,
-                        overviewMapControl: false,
-                        styles: styles
-                    },
-                        map = new google.maps.Map($map[0], mapOptions);
-                    var marker = new google.maps.Marker({
-                        position: {
-                            lat: 40.6700,
-                            lng: -73.9400
-                        },
-                        map: map
-                    });
-                }
-            },
-            created: function created() {
-                this.tabs(this.indexTab);
-                var _self = this;
-                $(window).on("load", function () {
-                    _self.initMap();
-                });
+                map: map,
+                icon: image,
+                title: subItem.title
+              });
+              var content = '<div id="map-note-neighborhood">' + '<h6>' + subItem.title + '</h6>' + '<div id="content-note">' + '<div>2000 East Tremont Avenue</div>' + '<div>Bronx, NY 10462</div>' + '</div>' + '</div>';
+              marker[subIdx].setContent(content);
+              var crctMarker = marker[subIdx];
+              _self.correctMarker(crctMarker);
             }
-        });
+          });
+        },
+        correctMarker: function correctMarker(marker) {
+          google.maps.event.addListenerOnce(marker, "domready", function () {
+            var iw = $(".gm-style-iw");
+            var iwBg = iw.prev();
+            iwBg.children(":nth-child(2)").css("display", "none");
+            iwBg.children(":nth-child(4)").css("display", "none");
+            iwBg.children(":nth-child(1)").attr("style", function (i, s) {
+              return s + "display: none !important;";
+            });
+            iwBg.children(":nth-child(3)").attr("style", function (i, s) {
+              return s + "display: none !important;";
+            });
+            iw.siblings("div, img").remove();
+            iw.parent().parent().css({
+              left: "120px",
+              top: "70px"
+            });
+          });
+        }
+      },
+      mounted: function mounted() {
+        this.tabs(this.mainTab);
+      }
+    });
 
-        new Vue({
-            el: '#app',
-            store: store
-        });
-    }
+    new Vue({
+      el: '#app',
+      store: store
+    });
+  }
 }
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(18)))
 

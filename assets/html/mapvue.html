@@ -31,11 +31,11 @@
                   placeholder="Fitness">
                   <ul 
                     class="search-dropdown"
-                    v-show="activeFilter">
+                    >
                       <li 
-                        v-for="(item, index) in dropLocations"
-                        :key="index">
-                        {{ item.name }}
+                        v-for="item in dropLocations"
+                        @click="searchTabs(item.parentindex, item.subindex)">
+                          {{item.parentname}} / {{item.name}}
                       </li>
                   </transition-group>
               </div>

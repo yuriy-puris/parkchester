@@ -103,8 +103,11 @@ export function vueMap() {
           dropLocations: function() {
             let _self = this,
                 arrDrop = []
-            _self.$store.getters.get_mapmenu_list.map(item => {
-              item.subList.map(itm => {
+            _self.$store.getters.get_mapmenu_list.map((item, index) => {
+              item.subList.map((itm, idx) => {
+                itm.parentname = item.name
+                itm.parentindex = index
+                itm.subindex = idx
                 arrDrop.push(itm)
               })  
             })
@@ -129,6 +132,10 @@ export function vueMap() {
             this.subIdx = idx
             this.mainCategory = this.$store.getters.filter_mapmenu_list(this.mainTab)
             this.initMap(this.mainCategory, this.subIdx)
+          },
+          searchTabs(parentIndex, subindex) {
+            this.mainCategory = this.$store.getters.filter_mapmenu_list(parentIndex)
+            this.initMap(this.mainCategory, subindex)
           },
           initMap(locations, subIdx) {
             let

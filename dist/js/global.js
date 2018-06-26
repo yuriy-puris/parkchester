@@ -16298,8 +16298,11 @@ function vueMap() {
         dropLocations: function dropLocations() {
           var _self = this,
               arrDrop = [];
-          _self.$store.getters.get_mapmenu_list.map(function (item) {
-            item.subList.map(function (itm) {
+          _self.$store.getters.get_mapmenu_list.map(function (item, index) {
+            item.subList.map(function (itm, idx) {
+              itm.parentname = item.name;
+              itm.parentindex = index;
+              itm.subindex = idx;
               arrDrop.push(itm);
             });
           });
@@ -16324,6 +16327,10 @@ function vueMap() {
           this.subIdx = idx;
           this.mainCategory = this.$store.getters.filter_mapmenu_list(this.mainTab);
           this.initMap(this.mainCategory, this.subIdx);
+        },
+        searchTabs: function searchTabs(parentIndex, subindex) {
+          this.mainCategory = this.$store.getters.filter_mapmenu_list(parentIndex);
+          this.initMap(this.mainCategory, subindex);
         },
         initMap: function initMap(locations, subIdx) {
           var _self = this,

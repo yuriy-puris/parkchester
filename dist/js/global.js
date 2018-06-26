@@ -16285,7 +16285,8 @@ function vueMap() {
           icon: "/dist/images/mappin.png",
           searchQuery: '',
           arrLocations: [],
-          searchText: ''
+          searchText: '',
+          activeFilter: false
         };
       },
 
@@ -16295,13 +16296,21 @@ function vueMap() {
         },
 
         dropLocations: function dropLocations() {
-          var _self = this;
-          console.log(this.searchText);
-          return this.$store.getters.get_mapmenu_list.forEach(function (item) {
-            return item.subList.forEach(function (itm) {
-              itm.name.toLowerCase().indexOf(_self.searchText.toLowerCase()) >= 0;
+          var _self = this,
+              arrDrop = [];
+          _self.$store.getters.get_mapmenu_list.map(function (item) {
+            item.subList.map(function (itm) {
+              arrDrop.push(itm);
             });
           });
+          if (_self.searchText !== '' && _self.searchText !== null) {
+            _self.activeFilter = true;
+            return arrDrop.filter(function (item) {
+              return item.name.toLowerCase().indexOf(_self.searchText.toLowerCase()) >= 0;
+            });
+          } else {
+            _self.activeFilter = false;
+          }
         }
       },
       methods: {

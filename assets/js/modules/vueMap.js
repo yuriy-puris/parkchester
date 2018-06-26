@@ -93,6 +93,7 @@ export function vueMap() {
             searchQuery: '',
             arrLocations: [],
             searchText: '',
+            activeFilter: false,
           }
         },
         computed: {
@@ -100,13 +101,21 @@ export function vueMap() {
             return this.$store.getters.get_mapmenu_list
           },
           dropLocations: function() {
-            let _self = this
-            console.log(this.searchText)
-            return this.$store.getters.get_mapmenu_list.forEach(item => {
-              return item.subList.forEach(itm => {
-                itm.name.toLowerCase().indexOf(_self.searchText.toLowerCase()) >= 0
-              })
+            let _self = this,
+                arrDrop = []
+            _self.$store.getters.get_mapmenu_list.map(item => {
+              item.subList.map(itm => {
+                arrDrop.push(itm)
+              })  
             })
+            if ( _self.searchText !== '' && _self.searchText !== null ) {
+              _self.activeFilter = true
+              return arrDrop.filter(item => {
+                return item.name.toLowerCase().indexOf(_self.searchText.toLowerCase()) >= 0
+              })
+            } else {
+              _self.activeFilter = false
+            }
           }
         },
         methods: {
@@ -325,6 +334,30 @@ export function vueMap() {
               });
             });
           },
+          // beforeEnter: function(el) {
+          //   el.style.opacity = 0
+          //   el.style.height = 0
+          // },
+          // enter: function(el, done) {
+          //   let delay = el.dataset.index * 150
+          //   setTimeout(() => {
+          //     Velocity(
+          //       el,
+          //       { opacity: 1, height: '1.6em' },
+          //       { complete: done }
+          //     )
+          //   }, delay)
+          // },
+          // leave: function(el, done) {
+          //   let delay = el.dataset.index * 150
+          //   setTimeout(() => {
+          //     Velocity(
+          //       el, 
+          //       { opacity: 0, height: '1.6em'},
+          //       { complete: done }
+          //     )
+          //   }, delay)
+          // }
         },
         mounted() {
           this.tabs(this.mainTab)

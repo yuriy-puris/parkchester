@@ -108,17 +108,21 @@
     <div class="map-wrapper">
         <div class="search-landmarks">
           <div class="search-form">
-            <form action="#">
+            <form action="#"> 
               <div class="row-field">
                 <input 
                   type="text"
                   v-model="searchText"
                   placeholder="Fitness">
-                <ul 
-                  class="search-dropdown">
-                  <li 
-                    v-for="item in dropLocations">{{item.name}}</li>
-                </ul>
+                  <ul 
+                    class="search-dropdown"
+                    v-show="activeFilter">
+                      <li 
+                        v-for="(item, index) in dropLocations"
+                        :key="index">
+                        {{ item.name }}
+                      </li>
+                  </transition-group>
               </div>
             </form>
           </div>
@@ -336,6 +340,7 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.6/vue.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vuex/3.0.1/vuex.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/2.0.5/velocity.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type='text/javascript' src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDcMDn53phMNbO-gcXo52UkBwSdEs2JFrs'></script>
 <script src="../js/global.js"></script>

@@ -147,11 +147,42 @@
   }    
   
   /*style the p tag*/
-  .gm-style .gm-style-iw #google-popup p{
+  .gm-style .gm-style-iw #google-popup p {
     padding: 10px;
   }
 }
 .search-form {
   max-width: 470px;
   margin: auto;
+  position: relative;
+  z-index: 5;
+  input {
+    margin: 0 0 10px;
+  }
+}
+.search-dropdown {
+  @include font-light;
+  font-size: 14px;
+  line-height: 24px;
+  box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.15);
+  background: $color-white;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  padding: 30px 0;
+  li {
+    margin: 0 0 15px;
+    padding: 0 30px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+  opacity: 0;
 }

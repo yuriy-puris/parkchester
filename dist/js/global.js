@@ -16286,7 +16286,8 @@ function vueMap() {
           searchQuery: '',
           arrLocations: [],
           searchText: '',
-          activeFilter: false
+          activeFilter: false,
+          activeSubIndex: false
         };
       },
 

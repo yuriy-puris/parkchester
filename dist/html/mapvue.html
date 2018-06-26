@@ -116,13 +116,13 @@
                   placeholder="Fitness">
                   <ul 
                     class="search-dropdown"
+                    v-show="activeFilter"
                     >
                       <li 
                         v-for="item in dropLocations"
-                        @click="searchTabs(item.parentindex, item.subindex)">
+                        @click="[searchTabs(item.parentindex, item.subindex), activeFilter = false]">
                           {{item.parentname}} / {{item.name}}
                       </li>
-                  </transition-group>
               </div>
             </form>
           </div>
@@ -150,7 +150,8 @@
                     :key="subindex">
                   <li 
                     v-for="(itm, idx) in subitem.subList"
-                    @click="subTabs(idx)">
+                    :class="{ active : activeSubIndex === idx }"
+                    @click="[activeSubIndex = idx, subTabs(idx)]">
                     <a 
                       href="javascript:void(0)">
                       {{itm.name}}

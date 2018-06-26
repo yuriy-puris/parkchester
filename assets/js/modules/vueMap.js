@@ -94,6 +94,7 @@ export function vueMap() {
             arrLocations: [],
             searchText: '',
             activeFilter: false,
+            activeSubIndex: false
           }
         },
         computed: {

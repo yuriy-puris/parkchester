@@ -54,6 +54,11 @@
         }
       }
     }
+    &.active {
+      a {
+        color: $color-gold;
+      }
+    }
   }
   & > ul {
     position: relative;

@@ -13,19 +13,22 @@ export function vueMap() {
                           name: "Yankees",
                           latitude: "40.0040",
                           longtitude: "-73.0040",
-                          title: "Fitness Centers1"
+                          title: "Fitness Centers1",
+                          address: "2001 East Tremont Avenue Bronx, NY 10462"
                         },
                         {
                           name: "Parks",
                           latitude: "40.0040",
                           longtitude: "-74.0040",
-                          title: "Fitness Centers3"
+                          title: "Fitness Centers3",
+                          address: "2002 East Tremont Avenue Bronx, NY 10462"
                         },  
                         {
                           name: "Fitness Centers1",
                           latitude: "40.0040",
                           longtitude: "-75.0040",
-                          title: "Fitness Centers1"
+                          title: "Fitness Centers1",
+                          address: "2003 East Tremont Avenue Bronx, NY 10462"
                         }
                       ]    
             },
@@ -39,13 +42,15 @@ export function vueMap() {
                         name: "Yankees",
                         latitude: "40.0040",
                         longtitude: "-73.0040",
-                        title: "Fitness Centers1"
+                        title: "Fitness Centers1",
+                        address: "2004 East Tremont Avenue Bronx, NY 10462"
                       },
                       {
                         name: "Parks",
                         latitude: "40.0040",
                         longtitude: "-74.0040",
-                        title: "Fitness Centers3"
+                        title: "Fitness Centers3",
+                        address: "2005 East Tremont Avenue Bronx, NY 10462"
                       }, 
                     ]     
             },
@@ -59,7 +64,8 @@ export function vueMap() {
                         name: "Fitness Centers1",
                         latitude: "40.0040",
                         longtitude: "-71.0040",
-                        title: "Fitness Centers1"
+                        title: "Fitness Centers1",
+                        address: "2006 East Tremont Avenue Bronx, NY 10462"
                       },
                     ]     
             }
@@ -81,6 +87,8 @@ export function vueMap() {
         state,
         getters
       })
+
+      Vue.component('v-select', VueSelect.VueSelect)
       
       Vue.component('mapHolder', {
         template: '#map-holder',
@@ -94,7 +102,7 @@ export function vueMap() {
             arrLocations: [],
             searchText: '',
             activeFilter: false,
-            activeSubIndex: false
+            activeSubIndex: false,
           }
         },
         computed: {
@@ -137,6 +145,10 @@ export function vueMap() {
           searchTabs(parentIndex, subindex) {
             this.mainCategory = this.$store.getters.filter_mapmenu_list(parentIndex)
             this.initMap(this.mainCategory, subindex)
+          },
+          triggerFilter(parentindex, subindex) {
+            this.mainTab = parentindex
+            this.activeSubIndex = parentindex+'_'+subindex
           },
           initMap(locations, subIdx) {
             let
@@ -310,8 +322,7 @@ export function vueMap() {
                 let content = '<div id="map-note-neighborhood">' +
                     '<h6>' + subItem.title + '</h6>' +
                     '<div id="content-note">' +
-                    '<div>2000 East Tremont Avenue</div>' +
-                    '<div>Bronx, NY 10462</div>' +
+                    '<div>' + subItem.address + '</div>' +
                     '</div>' +
                     '</div>';
                 marker[subIdx].setContent(content)
@@ -342,30 +353,6 @@ export function vueMap() {
               });
             });
           },
-          // beforeEnter: function(el) {
-          //   el.style.opacity = 0
-          //   el.style.height = 0
-          // },
-          // enter: function(el, done) {
-          //   let delay = el.dataset.index * 150
-          //   setTimeout(() => {
-          //     Velocity(
-          //       el,
-          //       { opacity: 1, height: '1.6em' },
-          //       { complete: done }
-          //     )
-          //   }, delay)
-          // },
-          // leave: function(el, done) {
-          //   let delay = el.dataset.index * 150
-          //   setTimeout(() => {
-          //     Velocity(
-          //       el, 
-          //       { opacity: 0, height: '1.6em'},
-          //       { complete: done }
-          //     )
-          //   }, delay)
-          // }
         },
         mounted() {
           this.tabs(this.mainTab)

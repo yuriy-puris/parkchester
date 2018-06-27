@@ -16215,17 +16215,20 @@ function vueMap() {
           name: "Yankees",
           latitude: "40.0040",
           longtitude: "-73.0040",
-          title: "Fitness Centers1"
+          title: "Fitness Centers1",
+          address: "2001 East Tremont Avenue Bronx, NY 10462"
         }, {
           name: "Parks",
           latitude: "40.0040",
           longtitude: "-74.0040",
-          title: "Fitness Centers3"
+          title: "Fitness Centers3",
+          address: "2002 East Tremont Avenue Bronx, NY 10462"
         }, {
           name: "Fitness Centers1",
           latitude: "40.0040",
           longtitude: "-75.0040",
-          title: "Fitness Centers1"
+          title: "Fitness Centers1",
+          address: "2003 East Tremont Avenue Bronx, NY 10462"
         }]
       }, {
         name: "Culture",
@@ -16236,12 +16239,14 @@ function vueMap() {
           name: "Yankees",
           latitude: "40.0040",
           longtitude: "-73.0040",
-          title: "Fitness Centers1"
+          title: "Fitness Centers1",
+          address: "2004 East Tremont Avenue Bronx, NY 10462"
         }, {
           name: "Parks",
           latitude: "40.0040",
           longtitude: "-74.0040",
-          title: "Fitness Centers3"
+          title: "Fitness Centers3",
+          address: "2005 East Tremont Avenue Bronx, NY 10462"
         }]
       }, {
         name: "Culture3",
@@ -16252,7 +16257,8 @@ function vueMap() {
           name: "Fitness Centers1",
           latitude: "40.0040",
           longtitude: "-71.0040",
-          title: "Fitness Centers1"
+          title: "Fitness Centers1",
+          address: "2006 East Tremont Avenue Bronx, NY 10462"
         }]
       }]
     };
@@ -16274,6 +16280,8 @@ function vueMap() {
       state: state,
       getters: getters
     });
+
+    Vue.component('v-select', VueSelect.VueSelect);
 
     Vue.component('mapHolder', {
       template: '#map-holder',
@@ -16332,6 +16340,10 @@ function vueMap() {
         searchTabs: function searchTabs(parentIndex, subindex) {
           this.mainCategory = this.$store.getters.filter_mapmenu_list(parentIndex);
           this.initMap(this.mainCategory, subindex);
+        },
+        triggerFilter: function triggerFilter(parentindex, subindex) {
+          this.mainTab = parentindex;
+          this.activeSubIndex = parentindex + '_' + subindex;
         },
         initMap: function initMap(locations, subIdx) {
           var _self = this,
@@ -16477,7 +16489,7 @@ function vueMap() {
                 icon: image,
                 title: subItem.title
               });
-              var content = '<div id="map-note-neighborhood">' + '<h6>' + subItem.title + '</h6>' + '<div id="content-note">' + '<div>2000 East Tremont Avenue</div>' + '<div>Bronx, NY 10462</div>' + '</div>' + '</div>';
+              var content = '<div id="map-note-neighborhood">' + '<h6>' + subItem.title + '</h6>' + '<div id="content-note">' + '<div>' + subItem.address + '</div>' + '</div>' + '</div>';
               marker[subIdx].setContent(content);
               var crctMarker = marker[subIdx];
               _self.correctMarker(crctMarker);

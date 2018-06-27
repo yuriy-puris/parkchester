@@ -8,12 +8,13 @@
 .slick-dots {
   display: inline-block;
   position: relative;
+  margin: 0 0 13px;
   @include media('>=xtablet') {
-    margin: 10px 45px;
+    margin: 10px 50px;
   }
   li {
     display: inline-block;
-    margin: 0 15px;
+    margin: 0 5px;
   }
   button {
     border: 1px solid lighten($color-black, 80%);
@@ -127,12 +128,6 @@
   .slick-arrow {
     position: absolute;
     margin: 0;
-  }
-  .slick-dots {
-    margin: 0 0 13px;
-    @include media(">=xtablet") {
-      margin: 10px 45px;
-    }
   }
   &.contemporary-controls {
     @include media(">=xtablet") {

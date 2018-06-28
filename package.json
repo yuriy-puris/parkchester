@@ -47,6 +47,8 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
-    "node-sass": "^4.9.0"
+    "node-sass": "^4.9.0",
+    "vue-date": "^1.1.10",
+    "vue-datetime-picker": "^0.2.1"
   }
 }

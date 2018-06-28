@@ -1,3 +1,4 @@
+import datepicker from 'vue-date'
 export function vueMap() {
   if($("#app").length) {
 
@@ -359,10 +360,30 @@ export function vueMap() {
         }
       })
 
-      
       new Vue({
         el: '#app',
         store,
+        data () {
+          return {
+              langList: [
+                  {value: 'en', label: 'English'},
+                  {value: 'zh-cn', label: 'Chinese'},
+                  {value: 'uk', label: 'Ukrainsk'},
+                  {value: 'es', label: 'Spanish'}
+              ],
+              language:"en",
+              selected: '2018-06-28',
+              start: '2018-06-28',
+              end: '',
+              range: ['2016-01-01', '2016-01-11'],
+              init: '2016-12-26',
+              event_date: {
+                  date: '',
+                  range: false
+              }
+          }
+        },
+        components: { datepicker }
       });
   }
 }

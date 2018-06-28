@@ -1,3 +1,18 @@
+#app {
+  .map-app {
+    border-bottom: 1px solid $color-light-grey;
+    padding: 0 0 30px;
+    margin: 0 0 30px;
+    @include media('>=tablet') {
+      padding: 0 0 60px;
+      margin: 0 0 60px;
+    }
+    @include media('>=desktop') {
+      padding: 0 0 100px;
+      margin: 0 0 100px;
+    }
+  }  
+}
 .map-holder {
   @include media('>=tablet') {
     display: flex;
@@ -209,4 +224,68 @@
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
   opacity: 0;
+}
+.date-range {
+  button {
+    background: transparent;
+    color: $color-black;
+  }
+  input {
+    color: $color-black;
+  }
+  .btn {
+    height: auto;
+    width: auto;
+    padding: 0;
+  }
+}
+.date-picker-header {
+  .btn--icon {
+    &:hover {
+      border-color: transparent;
+    }
+    .icon {
+      text-indent: -999px;
+      width: 20px;
+      height: 20px;
+      background: transparent;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        border: 1px solid;
+        border-color: $color-black $color-black transparent transparent;
+        transform: rotate(-135deg)
+      }
+    }
+    &:last-child {
+      .icon {
+        &::after {
+          transform: rotate(45deg)
+        }
+      }
+    }
+  }
+}
+.datepicker {
+  text-align: right;
+  margin: 50px 0 50px;
+  .input {
+    width: 100%;
+  }
+  .date-picker {
+    vertical-align: top;
+    display: inline-block;
+    max-width: 170px;
+    width: 100%;
+  }
+  .input-wrapper {
+    position: relative;
+  }
+  .date-panel {
+    right: 0;
+    left: auto!important;
+  }
 }

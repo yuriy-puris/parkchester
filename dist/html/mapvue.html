@@ -90,18 +90,22 @@
 	    </div>
 	</header>
 
-	<main class="main">
-    <div class="section page-nighborhood">
+<main class="main">
+    <section class="page-nighborhood">
       <div id="app">
-        <section class="map-holder">
+        <div class="section map-app">
             <div class="container">
                 <h1>The neighborhood</h1>
                 <div class="min-container">
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.</p>
                 </div>
                 <map-holder></map-holder>
+                <div class="datepicker">
+                  <datepicker v-model="start" class="picker" min="2015-01-01" max="2020-01-01"></datepicker>
+                  <datepicker v-model="end" class="picker" :min="start" max="2020-01-08"></datepicker>
+                </div>
             </div>
-        </section> 
+          </div> 
       </div>  
       <div class="section residents-wrapper">
           <div class="h5">Meet Our</div>
@@ -184,7 +188,7 @@
             <a href="javascript:void(0)" class="btn btn-apply">View More</a>
           </div>
         </div>
-  </div>
+  </section>
   <template id="map-holder">
     <div class="map-wrapper">
         <div class="search-landmarks">
@@ -211,7 +215,7 @@
             </form>
           </div>
         </div>
-        <div class="section map-holder">
+        <div class="map-holder">
             <div class="map-menu">
               <div class="map-menu-title">LANDMARKS NEAR PARKCHESTER</div>
               <ul class="tab-nav map-menu-list">
@@ -248,6 +252,7 @@
         </div>
     </div>
   </template>
+
 	</main>
 
 	<footer class="footer_">
@@ -423,9 +428,8 @@
 	    </div>
 	</footer>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.6/vue.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.0/vue.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vuex/3.0.1/vuex.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/2.0.5/velocity.min.js"></script>
 <script src="https://unpkg.com/vue-select@latest"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type='text/javascript' src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDxqzP5BG8HA0OazvwWYLz1GigjngwvZXA'></script>

@@ -16263,6 +16263,223 @@ function vueMap() {
           title: "Fitness Centers1",
           address: "2006 East Tremont Avenue Bronx, NY 10462"
         }]
+      }],
+      date_events: [{
+        item_image: "events1.png",
+        item_title: "Christmas Tree Lighting",
+        item_description: "Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.",
+        item_data_start: "2018-01-20",
+        item_data_end: "2018-01-24"
+      }, {
+        item_image: "events1.png",
+        item_title: "Christmas Tree Lighting",
+        item_description: "Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.",
+        item_data_start: "2018-01-24",
+        item_data_end: "2018-01-27"
+      }, {
+        item_image: "events1.png",
+        item_title: "Christmas Tree Lighting",
+        item_description: "Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.",
+        item_data_start: "2018-01-27",
+        item_data_end: "2018-01-30"
+      }, {
+        item_image: "events1.png",
+        item_title: "Christmas Tree Lighting",
+        item_description: "Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.",
+        item_data_start: "2018-02-03",
+        item_data_end: "2018-02-10"
+      }, {
+        item_image: "events2.png",
+        item_title: "Christmas Tree Lighting",
+        item_description: "Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.",
+        item_data_start: "2018-02-10",
+        item_data_end: "2018-02-15"
+      }, {
+        item_image: "events3.png",
+        item_title: "Christmas Tree Lighting",
+        item_description: "Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.",
+        item_data_start: "2018-02-15",
+        item_data_end: "2018-02-20"
+      }, {
+        item_image: "events3.png",
+        item_title: "Christmas Tree Lighting",
+        item_description: "Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.",
+        item_data_start: "2018-03-05",
+        item_data_end: "2018-03-10"
+      }, {
+        item_image: "events3.png",
+        item_title: "Christmas Tree Lighting",
+        item_description: "Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.",
+        item_data_start: "2018-03-10",
+        item_data_end: "2018-03-20"
+      }, {
+        item_image: "events3.png",
+        item_title: "Christmas Tree Lighting",
+        item_description: "Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.",
+        item_data_start: "2018-03-20",
+        item_data_end: "2018-03-25"
+      }, {
+        item_image: "events3.png",
+        item_title: "Christmas Tree Lighting",
+        item_description: "'Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.",
+        item_data_start: "2018-04-05",
+        item_data_end: "2018-04-10"
+      }, {
+        item_image: "events3.png",
+        item_title: "Christmas Tree Lighting",
+        item_description: "Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.",
+        item_data_start: "2018-04-10",
+        item_data_end: "2018-04-20"
+      }, {
+        item_image: "events3.png",
+        item_title: "Christmas Tree Lighting",
+        item_description: "Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.",
+        item_data_start: "2018-04-20",
+        item_data_end: "2018-04-25"
+      }, {
+        item_image: "events3.png",
+        item_title: "Christmas Tree Lighting",
+        item_description: "Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.",
+        item_data_start: "2018-05-05",
+        item_data_end: "2018-05-10"
+      }, {
+        item_image: "events3.png",
+        item_title: "Christmas Tree Lighting",
+        item_description: "Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.",
+        item_data_start: "2018-05-10",
+        item_data_end: "2018-05-20"
+      }, {
+        item_image: "events3.png",
+        item_title: "Christmas Tree Lighting",
+        item_description: "Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.",
+        item_data_start: "2018-05-20",
+        item_data_end: "2018-05-25"
+      }, {
+        item_image: "events3.png",
+        item_title: "Christmas Tree Lighting",
+        item_description: "Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.",
+        item_data_start: "2018-06-05",
+        item_data_end: "2018-06-10"
+      }, {
+        item_image: "events3.png",
+        item_title: "Christmas Tree Lighting",
+        item_description: "Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.",
+        item_data_start: "2018-06-10",
+        item_data_end: "2018-06-20"
+      }, {
+        item_image: "events3.png",
+        item_title: "Christmas Tree Lighting",
+        item_description: "Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.",
+        item_data_start: "2018-06-20",
+        item_data_end: "2018-06-25"
+      }, {
+        item_image: "events3.png",
+        item_title: "Christmas Tree Lighting",
+        item_description: "Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.",
+        item_data_start: "2018-07-05",
+        item_data_end: "2018-07-10"
+      }, {
+        item_image: "events3.png",
+        item_title: "Christmas Tree Lighting",
+        item_description: "Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.",
+        item_data_start: "2018-07-10",
+        item_data_end: "2018-07-20"
+      }, {
+        item_image: "events3.png",
+        item_title: "Christmas Tree Lighting",
+        item_description: "Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.",
+        item_data_start: "2018-07-20",
+        item_data_end: "2018-07-25"
+      }, {
+        item_image: "events3.png",
+        item_title: "Christmas Tree Lighting",
+        item_description: "Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.",
+        item_data_start: "2018-08-05",
+        item_data_end: "2018-08-10"
+      }, {
+        item_image: "events3.png",
+        item_title: "Christmas Tree Lighting",
+        item_description: "Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.",
+        item_data_start: "2018-08-10",
+        item_data_end: "2018-08-20"
+      }, {
+        item_image: "events3.png",
+        item_title: "Christmas Tree Lighting",
+        item_description: "Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.",
+        item_data_start: "2018-08-20",
+        item_data_end: "2018-08-25"
+      }, {
+        item_image: "events3.png",
+        item_title: "Christmas Tree Lighting",
+        item_description: "Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.",
+        item_data_start: "2018-09-05",
+        item_data_end: "2018-09-10"
+      }, {
+        item_image: "events3.png",
+        item_title: "Christmas Tree Lighting",
+        item_description: "Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.",
+        item_data_start: "2018-09-10",
+        item_data_end: "2018-09-20"
+      }, {
+        item_image: "events3.png",
+        item_title: "Christmas Tree Lighting",
+        item_description: "Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.",
+        item_data_start: "2018-09-20",
+        item_data_end: "2018-09-25"
+      }, {
+        item_image: "events3.png",
+        item_title: "Christmas Tree Lighting",
+        item_description: "Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.",
+        item_data_start: "2018-10-05",
+        item_data_end: "2018-10-10"
+      }, {
+        item_image: "events3.png",
+        item_title: "Christmas Tree Lighting",
+        item_description: "Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.",
+        item_data_start: "2018-10-10",
+        item_data_end: "2018-10-20"
+      }, {
+        item_image: "events3.png",
+        item_title: "Christmas Tree Lighting",
+        item_description: "Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.",
+        item_data_start: "2018-10-20",
+        item_data_end: "2018-10-25"
+      }, {
+        item_image: "events3.png",
+        item_title: "Christmas Tree Lighting",
+        item_description: "Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.",
+        item_data_start: "2018-11-05",
+        item_data_end: "2018-11-10"
+      }, {
+        item_image: "events3.png",
+        item_title: "Christmas Tree Lighting",
+        item_description: "Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.",
+        item_data_start: "2018-11-10",
+        item_data_end: "2018-11-20"
+      }, {
+        item_image: "events3.png",
+        item_title: "Christmas Tree Lighting",
+        item_description: "Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.",
+        item_data_start: "2018-11-20",
+        item_data_end: "2018-11-25"
+      }, {
+        item_image: "events3.png",
+        item_title: "Christmas Tree Lighting",
+        item_description: "Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.",
+        item_data_start: "2018-12-05",
+        item_data_end: "2018-12-10"
+      }, {
+        item_image: "events3.png",
+        item_title: "Christmas Tree Lighting",
+        item_description: "Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.",
+        item_data_start: "2018-12-10",
+        item_data_end: "2018-12-20"
+      }, {
+        item_image: "events3.png",
+        item_title: "Christmas Tree Lighting",
+        item_description: "Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.",
+        item_data_start: "2018-12-20",
+        item_data_end: "2018-12-25"
       }]
     };
 
@@ -16273,6 +16490,24 @@ function vueMap() {
       filter_mapmenu_list: function filter_mapmenu_list(state) {
         return function (id) {
           return state.data[id];
+        };
+      },
+      get_events: function get_events(state) {
+        return state.date_events;
+      },
+      filter_events_list: function filter_events_list(state) {
+        return function (date_start, date_end) {
+          if (date_end == '') {
+            return state.date_events;
+          } else {
+            var eventArray = [];
+            return state.date_events.filter(function (item) {
+              if (Date.parse(date_start) <= Date.parse(item.item_data_end) && Date.parse(date_end) >= Date.parse(item.item_data_end)) {
+                eventArray.push(item);
+                return eventArray;
+              }
+            });
+          }
         };
       }
     };
@@ -16526,24 +16761,41 @@ function vueMap() {
 
     new Vue({
       el: '#app',
+      store: store
+    });
+    new Vue({
+      el: '#sort-events',
       store: store,
       data: function data() {
         return {
-          langList: [{ value: 'en', label: 'English' }, { value: 'zh-cn', label: 'Chinese' }, { value: 'uk', label: 'Ukrainsk' }, { value: 'es', label: 'Spanish' }],
           language: "en",
-          selected: '2018-06-28',
-          start: '2018-06-28',
-          end: '',
+          selected: '2018-07-01',
+          start: '2018-07-01',
+          end: '2018-09-01',
           range: ['2016-01-01', '2016-01-11'],
           init: '2016-12-26',
           event_date: {
             date: '',
             range: false
-          }
+          },
+          active: true
         };
       },
 
-      components: { datepicker: __WEBPACK_IMPORTED_MODULE_0_vue_date___default.a }
+      components: { datepicker: __WEBPACK_IMPORTED_MODULE_0_vue_date___default.a },
+      computed: {
+        getEvents: function getEvents() {
+          return this.$store.getters.filter_events_list(this.start, this.end);
+        }
+      },
+      methods: {
+        filterDate: function filterDate(val) {
+          var dateStr = void 0;
+          var objDate = new Date(val).toString().split(' ');
+          dateStr = objDate[1] + ' ' + objDate[2] + ',' + ' ' + objDate[3];
+          return dateStr;
+        }
+      }
     });
   }
 }

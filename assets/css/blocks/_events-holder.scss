@@ -7,6 +7,11 @@
     margin-bottom: 0;
   }
 }
+#sort-events {
+  .events-holder {
+    justify-content: center;
+  }
+}
 .events-holder {
   display: flex;
   flex-wrap: wrap;

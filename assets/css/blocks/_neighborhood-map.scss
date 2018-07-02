@@ -270,22 +270,151 @@
   }
 }
 .datepicker {
+  font-size: 14px;
   text-align: right;
   margin: 50px 0 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  span {
+    &:first-child {
+      margin-right: 30px;
+    }
+  }
   .input {
     width: 100%;
+    text-align: left;
   }
   .date-picker {
     vertical-align: top;
     display: inline-block;
     max-width: 170px;
     width: 100%;
-  }
-  .input-wrapper {
-    position: relative;
+    margin: 0 12px!important;
+    &:last-child {
+      margin-right: 0!important;
+    }
   }
   .date-panel {
     right: 0;
     left: auto!important;
   }
+  .input-wrapper {
+    padding: 0!important;
+    @include font-light();
+    border-color: transparent transparent $color-light-grey!important;
+    cursor: pointer;
+    .input {
+      line-height: 20px;
+      padding: 5px 30px 5px 10px!important;
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 6px;
+        margin-top: -8px;
+        width: 16px;
+        height: 16px;
+        background: url('#{$path-images}/iconcalendar.png') no-repeat;
+      }
+    }
+  }
+  .cancel-btn {
+    display: none!important;
+  }
+}
+.year-box[data-v-89588f16], 
+.month-box[data-v-89588f16] {
+  font-size: 14px!important;
+  line-height: 14px!important;
+}
+.year-month-box[data-v-89588f16] {
+  align-items: center!important;
+}
+.arrow-left[data-v-89588f16] {
+  font-size: 15px!important;
+  text-align: left!important;
+}
+.arrow-right[data-v-89588f16] {
+  font-size: 15px!important;
+  text-align: right!important;
+}
+.date-list li .message span[data-v-89588f16] {
+  @include font-regular();
+  font-size: 10px!important;
+}
+.weeks li[data-v-89588f16] {
+  color: rgba(6, 7, 7, 0.3);
+  @include font-regular();
+  font-size: 10px!important;
+  text-transform: uppercase;
+}
+.date-list li .message.selected .bg[data-v-89588f16] {
+  background: $color-light-yellow!important;
+}
+.date-list li .message .bg[data-v-89588f16] {
+  border-radius: 0!important;
+}
+.date-list li .message.selected span[data-v-89588f16] {
+  color: $color-black!important;
+}
+.weeks .preMonth[data-v-89588f16], 
+.date-list .preMonth[data-v-89588f16], 
+.weeks .nextMonth[data-v-89588f16], 
+.date-list .nextMonth[data-v-89588f16] {
+  color: $color-white!important;
+}
+.date-list li .message:not(.selected):hover .bg[data-v-89588f16] {
+  background: $color-light-yellow!important;
+  transform: scale(1);
+  opacity: .6;
+}
+.date-list li.preMonth .message:not(.selected):hover .bg[data-v-89588f16],
+.date-list li.nextMonth .message:not(.selected):hover .bg[data-v-89588f16] {
+  opacity: 0;
+}
+.date-list li.preMonth,
+.date-list li.nextMonth {
+  pointer-events: none;
+}
+.date-list li.preMonth .message:not(.selected):hover,
+.date-list li.nextMonth .message:not(.selected):hover {
+  cursor: not-allowed;
+}
+.date-list li:not(.preMonth) .message:not(.selected):hover span[data-v-89588f16],
+.date-list li:not(.nextMonth) .message:not(.selected):hover span[data-v-89588f16] {
+  color: $color-black!important;
+}
+.date-list li.invalid[data-v-89588f16] {
+  color: $color-white!important;
+}
+.year-list li.selected[data-v-89588f16], 
+.month-list li.selected[data-v-89588f16],
+.year-list li[data-v-89588f16]:hover, 
+.month-list li[data-v-89588f16]:hover {
+  background-color: $color-light-yellow!important;
+  color: $color-black!important;
+}
+.year-list li[data-v-89588f16], 
+.month-list li[data-v-89588f16] {
+  font-size: 15px!important;
+}
+.date-list li .message span[data-v-89588f16] {
+  position: relative!important;
+  left: 0!important;
+  top: 0!important;
+  transform: none!important;
+}
+.date-list li .message[data-v-89588f16] {
+  line-height: 28px;
+}
+.panel-header {
+  border-bottom: 1px solid $color-light-grey;
+}
+.date-list li[data-v-89588f16]:not(.firstItem) {
+  margin-left: 0!important;
+}
+.date-panel {
+  padding: 30px 30px 0!important;
 }

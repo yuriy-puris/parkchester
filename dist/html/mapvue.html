@@ -93,102 +93,84 @@
 <main class="main">
     <section class="page-nighborhood">
       <div id="app">
-        <div class="section map-app">
+          <div class="section map-app">
             <div class="container">
                 <h1>The neighborhood</h1>
                 <div class="min-container">
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.</p>
                 </div>
                 <map-holder></map-holder>
-                <div class="datepicker">
-                  <datepicker v-model="start" class="picker" min="2015-01-01" max="2020-01-01"></datepicker>
-                  <datepicker v-model="end" class="picker" :min="start" max="2020-01-08"></datepicker>
+            </div>
+          </div>
+        </div>  
+          <div class="section residents-wrapper">
+            <div class="h5">Meet Our</div>
+            <div class="h1">Residents</div>
+            <div class="residents-holder">
+              <div class="item">
+                <div class="img" style="background-image: url('/dist/images/resident.png')"></div>
+                <div class="description">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                  <div class="h5">John Doe</div>
+                  <strong>Resident Since 2016</strong>
+                  <a href="javascript:void(0)" class="btn">Meet Our Residents</a>
+                </div>
+              </div>
+              <div class="item">
+                <div class="img" style="background-image: url('/dist/images/resident.png')"></div>
+                <div class="description">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                  <div class="h5">John Doe</div>
+                  <strong>Resident Since 2016</strong>
+                  <a href="javascript:void(0)" class="btn">Meet Our Residents</a>
+                </div>
+              </div>
+              <div class="item">
+                <div class="img" style="background-image: url('/dist/images/resident.png')"></div>
+                <div class="description">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                  <div class="h5">John Doe</div>
+                  <strong>Resident Since 2016</strong>
+                  <a href="javascript:void(0)" class="btn">Meet Our Residents</a>
+                </div>
+              </div>
+            </div>
+            <div class="custom-controls"></div>
+          </div>
+          <div id="sort-events">
+              <div class="section events-wrapper">
+                  <div class="container">
+                    <div class="h5">Some of our</div>
+                    <h2 class="h1">neighborhood events</h2>
+                    <div class="datepicker">
+                        <span>Filter by: Date Range</span>
+                        <datepicker v-model="start" class="picker" min="2015-01-01" max="2020-01-01"></datepicker>
+                        <span>-</span>
+                        <datepicker v-model="end" class="picker" :min="start" max="2020-01-08"></datepicker>
+                      </div>
+                    <div class="events-holder">
+                      <div
+                        v-for="item in getEvents" 
+                        class="item">
+                        <div 
+                          class="img"
+                          v-bind:style="{ backgroundImage: 'url(/dist/images/' + item.item_image + ')' }">Christmas</div>
+                        <div class="title">{{ item.item_title }}</div>
+                        <p>{{ item.item_description }}</p>
+                        <div class="date">
+                          <span class="date-start">{{ filterDate(item.item_data_start) }}</span> - 
+                          <span class="date-end">{{ filterDate(item.item_data_end) }}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <a href="javascript:void(0)" class="btn btn-apply">View More</a>
+                  </div>
                 </div>
             </div>
           </div> 
-      </div>  
-      <div class="section residents-wrapper">
-          <div class="h5">Meet Our</div>
-          <div class="h1">Residents</div>
-    
-          <div class="residents-holder">
-            <div class="item">
-              <div class="img" style="background-image: url('/dist/images/resident.png')"></div>
-              <div class="description">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                <div class="h5">John Doe</div>
-                <strong>Resident Since 2016</strong>
-                <a href="javascript:void(0)" class="btn">Meet Our Residents</a>
-              </div>
-            </div>
-            <div class="item">
-              <div class="img" style="background-image: url('/dist/images/resident.png')"></div>
-              <div class="description">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                <div class="h5">John Doe</div>
-                <strong>Resident Since 2016</strong>
-                <a href="javascript:void(0)" class="btn">Meet Our Residents</a>
-              </div>
-            </div>
-            <div class="item">
-              <div class="img" style="background-image: url('/dist/images/resident.png')"></div>
-              <div class="description">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                <div class="h5">John Doe</div>
-                <strong>Resident Since 2016</strong>
-                <a href="javascript:void(0)" class="btn">Meet Our Residents</a>
-              </div>
-            </div>
-          </div>
-          <div class="custom-controls"></div>
-        </div>
-      <div class="section events-wrapper">
-          <div class="container">
-            <div class="h5">Some of our</div>
-            <h2 class="h1">neighborhood events</h2>
-      
-            <div class="events-holder">
-              <div class="item">
-                <div class="img" style="background-image: url('/dist/images/events1.png')">Christmas</div>
-                <div class="title">Christmas Tree Lighting</div>
-                <p>'Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.</p>
-                <div class="date">December 11, 2017 - December 12, 2017</div>
-              </div>
-              <div class="item">
-                <div class="img" style="background-image: url('/dist/images/events2.png')">Christmas</div>
-                <div class="title">Christmas Tree Lighting</div>
-                <p>'Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.</p>
-                <div class="date">December 11, 2017 - December 12, 2017</div>
-              </div>
-              <div class="item">
-                <div class="img" style="background-image: url('/dist/images/events3.png')">Christmas</div>
-                <div class="title">Christmas Tree Lighting</div>
-                <p>'Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.</p>
-                <div class="date">December 11, 2017 - December 12, 2017</div>
-              </div>
-              <div class="item">
-                <div class="img" style="background-image: url('/dist/images/events1.png')">Christmas</div>
-                <div class="title">Christmas Tree Lighting</div>
-                <p>'Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.</p>
-                <div class="date">December 11, 2017 - December 12, 2017</div>
-              </div>
-              <div class="item">
-                <div class="img" style="background-image: url('/dist/images/events2.png')">Christmas</div>
-                <div class="title">Christmas Tree Lighting</div>
-                <p>'Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.</p>
-                <div class="date">December 11, 2017 - December 12, 2017</div>
-              </div>
-              <div class="item">
-                <div class="img" style="background-image: url('/dist/images/events3.png')">Christmas</div>
-                <div class="title">Christmas Tree Lighting</div>
-                <p>'Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.</p>
-                <div class="date">December 11, 2017 - December 12, 2017</div>
-              </div>
-            </div>
-            <a href="javascript:void(0)" class="btn btn-apply">View More</a>
-          </div>
-        </div>
+      </div>
   </section>
+
   <template id="map-holder">
     <div class="map-wrapper">
         <div class="search-landmarks">

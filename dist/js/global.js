@@ -16763,6 +16763,7 @@ function vueMap() {
       el: '#app',
       store: store
     });
+
     new Vue({
       el: '#sort-events',
       store: store,
@@ -16771,21 +16772,54 @@ function vueMap() {
           language: "en",
           selected: '2018-07-01',
           start: '2018-07-01',
+          pseudo_start: 'Jul 01, 2018',
           end: '2018-09-01',
+          pseudo_end: 'Sep 01, 2018',
           range: ['2016-01-01', '2016-01-11'],
           init: '2016-12-26',
           event_date: {
             date: '',
             range: false
           },
-          active: true
+          active: true,
+          activeIndex: 9,
+          activeViewMore: true,
+          notEvents: false
         };
       },
 
       components: { datepicker: __WEBPACK_IMPORTED_MODULE_0_vue_date___default.a },
       computed: {
         getEvents: function getEvents() {
-          return this.$store.getters.filter_events_list(this.start, this.end);
+          var countIdx = void 0;
+          var countEvents = this.$store.getters.filter_events_list(this.start, this.end);
+          countEvents.forEach(function (item, index) {
+            countIdx = index;
+          });
+          if (countIdx < this.activeIndex) {
+            this.activeViewMore = false;
+          } else {
+            this.activeViewMore = true;
+          }
+          if (countEvents.length === 0) {
+            this.notEvents = true;
+            this.activeViewMore = false;
+          } else {
+            this.notEvents = false;
+            return this.$store.getters.filter_events_list(this.start, this.end);
+          }
+        }
+      },
+      watch: {
+        start: function start() {
+          var start = this.filterDate(this.start);
+          this.pseudo_start = start;
+          return this.pseudo_start;
+        },
+        end: function end() {
+          var end = this.filterDate(this.end);
+          this.pseudo_end = end;
+          return this.pseudo_end;
         }
       },
       methods: {
@@ -16794,6 +16828,14 @@ function vueMap() {
           var objDate = new Date(val).toString().split(' ');
           dateStr = objDate[1] + ' ' + objDate[2] + ',' + ' ' + objDate[3];
           return dateStr;
+        },
+        eventsIndex: function eventsIndex() {
+          var idx = void 0;
+          this.$store.getters.get_events.forEach(function (item, index) {
+            idx = index;
+          });
+          this.activeIndex = idx;
+          this.activeViewMore = false;
         }
       }
     });
@@ -17163,7 +17205,7 @@ function popupGallery(clickCurrent) {
     slidesToShow: 1,
     slidesToScroll: 1,
     dots: false,
-    arrows: true,
+    arrows: false,
     variableWidth: false,
     useCss: false,
     mobileFirst: true,
@@ -17176,7 +17218,8 @@ function popupGallery(clickCurrent) {
     }, {
       breakpoint: 1279,
       settings: {
-        centerPadding: "200px"
+        infinite: false,
+        centerPadding: "255px"
       }
     }]
   });

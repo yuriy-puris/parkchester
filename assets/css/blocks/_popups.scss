@@ -92,6 +92,7 @@
 @include media(">=desktop") {
   .popup-close {
     right: 50px;
+    top: 50px;
   }
 }
 @include media('>=xdesktop') {

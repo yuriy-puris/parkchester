@@ -289,7 +289,7 @@ export function initMasonry () {
       setTimeout(() => {
         wrapperGallery();
       }, 100)
-    }  else {
+    } else {
       clearTimeout(resizeId);
       resizeId = setTimeout(photoGallerySlider, 500);
     }

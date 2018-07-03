@@ -34,25 +34,34 @@
     @include font-medium;
     font-size: 16px;
     line-height: 16px;
-    text-align: left;
+    text-align: center;
+    padding: 0;
+    margin: 0 0 30px;
     @include media('>=desktop') {
       width: 50%;
       float: left;
+      text-align: left;
+      margin: 0;
     }
     a {
       padding: 0;
     }
   }
   .tabs-content {
+    text-align: center;
     @include media('>=desktop') {
+      text-align: left;
       width: 50%;
       float: right;
     }
   }
   .tab-content-item {
     @include font-medium;
-    font-size: 16px;
+    font-size: 13px;
     line-height: 16px;
+    @include media('>=desktop') {
+      font-size: 16px;
+    }
   }
   li {
     margin: 0 0 20px;
@@ -191,10 +200,13 @@
     margin: 0;
   }
   label {
-    font-size: 18px;
+    font-size: 14px;
     @include font-regular;
     margin: 0 30px 0 0;
     text-transform: uppercase;
+    @include media('>=tablet') {
+      font-size: 18px;
+    }
   }
 }
 .search-dropdown {
@@ -270,15 +282,23 @@
   }
 }
 .datepicker {
-  font-size: 14px;
+  font-size: 12px;
   text-align: right;
   margin: 50px 0 50px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
+  @include media('>=xtablet') {
+    font-size: 14px;
+    justify-content: flex-end;
+  }
   span {
     &:first-child {
-      margin-right: 30px;
+      display: none;
+      @include media('>=xtablet') {
+        display: block;
+        margin-right: 30px;
+      }
     }
   }
   .input {
@@ -288,9 +308,10 @@
   .date-picker {
     vertical-align: top;
     display: inline-block;
-    max-width: 170px;
-    width: 100%;
-    margin: 0 12px!important;
+    width: 130px;
+    @include media('>=xtablet') {
+      width: 170px;
+    }
     &:last-child {
       margin-right: 0!important;
     }
@@ -308,6 +329,25 @@
       line-height: 20px;
       padding: 5px 30px 5px 10px!important;
       position: relative;
+    }
+  }
+  .datepicker-column {
+    position: relative;
+    margin: 0 12px;
+    .datepicker-placeholder {
+      @include font-light();
+      border: 1px solid;
+      border-color: transparent transparent $color-light-grey!important;
+      background: $color-white;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 32px;
+      pointer-events: none;
+      line-height: 20px;
+      padding: 5px 30px 5px 10px!important;
+      text-align: left;
       &::after {
         content: '';
         position: absolute;

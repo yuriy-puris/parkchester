@@ -635,6 +635,7 @@ export function vueMap() {
         el: '#app',
         store,
       });
+
       new Vue({
         el: '#sort-events',
         store,
@@ -643,21 +644,54 @@ export function vueMap() {
               language:"en",
               selected: '2018-07-01',
               start: '2018-07-01',
+              pseudo_start: 'Jul 01, 2018',
               end: '2018-09-01',
+              pseudo_end: 'Sep 01, 2018',
               range: ['2016-01-01', '2016-01-11'],
               init: '2016-12-26',
               event_date: {
                   date: '',
                   range: false
               },
-              active: true
+              active: true,
+              activeIndex: 9,
+              activeViewMore: true,
+              notEvents: false
           }
         },
         components: { datepicker },
         computed: {
           getEvents() {
-            return this.$store.getters.filter_events_list(this.start, this.end)
+            let countIdx
+            let countEvents = this.$store.getters.filter_events_list(this.start, this.end)
+            countEvents.forEach((item, index) => {
+              countIdx = index
+            })
+            if (countIdx < this.activeIndex) {
+              this.activeViewMore = false
+            } else {
+              this.activeViewMore = true              
+            }
+            if ( countEvents.length === 0 ) {
+              this.notEvents = true
+              this.activeViewMore = false
+            } else {
+              this.notEvents = false
+              return this.$store.getters.filter_events_list(this.start, this.end)
+            }
           },
+        },
+        watch: {
+          start: function() {
+            let start = this.filterDate(this.start)
+            this.pseudo_start = start
+            return this.pseudo_start
+          },
+          end: function() {
+            let end = this.filterDate(this.end)
+            this.pseudo_end = end
+            return this.pseudo_end
+          }
         },
         methods: {
           filterDate(val) {
@@ -665,6 +699,14 @@ export function vueMap() {
             let objDate = new Date(val).toString().split(' ')
             dateStr = objDate[1] + ' ' + objDate[2]+ ',' + ' ' + objDate[3]
             return dateStr
+          },
+          eventsIndex() {
+            let idx;
+            this.$store.getters.get_events.forEach((item, index) => {
+              idx = index
+            })
+            this.activeIndex = idx
+            this.activeViewMore = false
           }
         }
       });

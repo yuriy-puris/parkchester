@@ -7,7 +7,7 @@ export function popupGallery(clickCurrent) {
     slidesToShow: 1,
     slidesToScroll: 1,
     dots: false,
-    arrows: true,
+    arrows: false,
     variableWidth: false,
     useCss: false,
     mobileFirst: true,
@@ -22,7 +22,8 @@ export function popupGallery(clickCurrent) {
       {
         breakpoint: 1279,
         settings: {
-          centerPadding: "200px",
+          infinite: false,
+          centerPadding: "255px",
         }
       }
     ]

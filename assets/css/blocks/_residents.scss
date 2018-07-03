@@ -6,9 +6,12 @@
 .residents-holder {
   overflow: auto;
   max-width: 1000px;
-  margin: auto;
+  margin: 0 auto 30px;
   text-align: center;
   position: relative;
+  @include media('>=tablet') {
+    margin: auto;
+  }
   .item {
     margin: 0 0 15px;
   }
@@ -16,7 +19,7 @@
     background-size: cover;
     width: 290px;
     height: 210px;
-    margin: auto;
+    margin: 0 auto 30px;
     @include media('>=tablet') {
       width: 370px;
       height: 270px;
@@ -26,9 +29,10 @@
   }
   .description {
     display: inline-block;
-    text-align: left;
-    @include media('>=tablet') {
+    text-align: center;
+    @include media('>=tablet') {  
       width: calc(100% - 400px);
+      text-align: left;
     }
   }
   p {
@@ -56,6 +60,9 @@
     font-size: 14px;
   }
   h5, .h5 {
-    text-align: left;
+    text-align: center;
+    @include media('>=tablet') {
+      text-align: left;
+    }
   }
 }

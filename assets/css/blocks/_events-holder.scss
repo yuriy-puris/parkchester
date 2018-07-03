@@ -11,6 +11,15 @@
   .events-holder {
     justify-content: center;
   }
+  .btn-apply {
+    display: none;
+    &.active {
+      display: inline-block;
+    }
+  }
+  .not-events {
+    padding: 100px 0;
+  }
 }
 .events-holder {
   display: flex;

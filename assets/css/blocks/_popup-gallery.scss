@@ -11,16 +11,24 @@
   .popup-content {
     height: auto;
     width: 100%;
-    // position: relative;
-    // top: 50%;
-    // transform: translateY(-50%);
   }
   .item-img {
     position: relative;
     width: 100%;
     height: 100%;
+    height: calc(100vh - 170px);
     margin-bottom: 10px;
     @include bg(center, center, cover);
+    @include media('>=tablet') {
+      height: calc(100vh - 270px);
+    }
+    @include media('>=xtablet') {
+      height: calc(100vh - 370px);
+    }
+    @include media('>=xdesktop') {
+      width: 800px;
+      height: 400px;
+    }
   }
   .popup-gallery-slider, .slick-list {
     width: 100%;
@@ -29,9 +37,9 @@
   }
   .item-title {
     @include font-medium;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 24px;
-    @include pos(absolute, $bottom: -85px, $left: 0);
+    @include pos(absolute, $bottom: -65px, $left: 0);
     width: 100%;
     margin-bottom: 0;
     padding: 10px;
@@ -42,6 +50,10 @@
     opacity: 0;
     visibility: hidden;
     transition: opacity .3s;
+    @include media('>=tablet') {
+      font-size: 18px;
+      @include pos(absolute, $bottom: -85px, $left: 0);
+    }
   }
   .slick-current {
     .item-title {
@@ -58,37 +70,32 @@
     transform: scale(1);
     opacity: 1;
   }
+}
+.popup-controls {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  width: 120px;
+  transform: translateX(-50%);
+  @include media('>=xtablet') {
+    top: auto;
+    bottom: 65px;
+    width: 300px;
+  }
   .slick-arrow {
-    top: calc(50% - 20px);
-    background-color: $color-gold;
-    z-index: 10;
-    &.slick-prev {
-      left: -20px;
-      transform: translateX(0);
+    position: relative;
+    color: $color-white;
+    &::after {
+      border-color: $color-white $color-white transparent transparent;
     }
-    &.slick-next {
-      right: -20px;
-      transform: translateX(0);
+    &:hover {
+      color: $color-gold;
     }
     &.slick-disabled {
-      background-color: $color-light-grey;
-      opacity: .1;
+      opacity: .5;
       cursor: not-allowed;
-    }
-  }
-}
-@include media(">=xtablet") {
-  .gallery-popup {
-    .item-img {
-      height: calc(100vh - 370px);
-    }
-    .slick-arrow {
-      &.slick-prev {
-        left: -80px;
-      }
-      &.slick-next {
-        right: -80px;
-      }
     }
   }
 }

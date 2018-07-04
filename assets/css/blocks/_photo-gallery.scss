@@ -30,7 +30,7 @@
       margin: 0;
     }
     .slick-track {
-      
+
     }
   }
   .item-img {
@@ -44,5 +44,31 @@
   }
   .item-title {
     opacity: 0;
+  }
+}
+.photo-gallery-controls {
+  width: 140px;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  @include media('>=xtablet') {
+    width: 300px;
+  }
+  @include media('>=desktop') {
+    display: inline-block;
+    padding: 0 70px;
+    width: auto;
+  }
+  .slick-arrow {
+    position: relative;
+    @include media('>=desktop') {
+      position: absolute;
+    }
+  }
+  .slick-dots {
+    display: none!important;
+    @include media('>=desktop') {
+      display: block!important;
+    }
   }
 }

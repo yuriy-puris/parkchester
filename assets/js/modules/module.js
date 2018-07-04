@@ -91,7 +91,6 @@ export function slider() {
     focusOnSelect: true,
     variableWidth: true,
   });
-    //property-animities
   $('.large-slider').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -107,6 +106,9 @@ export function slider() {
     verticalSwiping: true,
     infinite: true,
     asNavFor: '.large-slider',
+    prevArrow: '<button type="button" class="slick-prev">Up</button>',
+    nextArrow: '<button type="button" class="slick-next">Down</button>',
+    focusOnSelect: true,
     responsive: [
       {
         breakpoint: 1280,
@@ -118,6 +120,8 @@ export function slider() {
           centerMode: true,
           slidesToScroll: 1,
           slidesToShow: 3,
+          prevArrow: '<button type="button" class="slick-prev">Prev</button>',
+          nextArrow: '<button type="button" class="slick-next">Next</button>'
         }
       }
     ]
@@ -131,43 +135,73 @@ export function slider() {
 
 export function popupGallerySlider() {
   let clickCurrent,
-      wScrollTop;
+      clickCurrentParent,
+      finalCurrent;
   const item = $('.photo-gallery .item'),
       wrapperPopup = $('.popups'),
       galleryPopup = $('.gallery-popup'),
       galleryPopupWrapper = $('.popup-gallery-slider');
-      
-  item.on('click', function(event) {
-    wScrollTop = $(window).scrollTop();
+
+  item.on('click', function() {
+    let wWidth = checkViewPort().width;
     clickCurrent = $(this).index();
+    clickCurrentParent = $(this).closest('.wrap-items').index();
+    finalCurrent = 9 * clickCurrentParent + clickCurrent;
     item.clone().attr('style', '').appendTo(galleryPopupWrapper);
     wrapperPopup.addClass('active');
     galleryPopup.addClass('opened');
-    popupGallery(clickCurrent);
+    if( wWidth >= 1280 ) {
+      popupGallery(finalCurrent);
+    } else {
+      popupGallery(clickCurrent);
+    }
   });
   $('.popup-close').on('click', function(event) {
     event.preventDefault();
+    let wWidth = checkViewPort().width;
+    let popupActiveIdx = galleryPopupWrapper.find(".slick-current").index();
+    if( wWidth < 1280 ) {
+      $(".photo-gallery-controls .slick-dots").find("li").eq(popupActiveIdx).click();
+    } else {
+      let ceilIdx = Math.ceil(popupActiveIdx / 9);
+      let photoGalleryIdx;
+      if( popupActiveIdx / 9 < ceilIdx ) {
+        photoGalleryIdx = ceilIdx - 1
+      } else if ( popupActiveIdx / 9 == ceilIdx ) {
+        photoGalleryIdx = ceilIdx
+      }
+      $(".photo-gallery-controls .slick-dots").find("li").eq(photoGalleryIdx).click();
+    }
     galleryPopupWrapper.slick('unslick');
     galleryPopupWrapper.empty();
   });
 }
-  //photo gallery
+//photo gallery
 export function photoGallerySlider() {
-  //photo gallery
   $('.photo-gallery').slick({
     appendArrows: $('.custom-controls'),
     appendDots: $('.custom-controls'),
-    infinite: true,
-    speed: 300,
+    infinite: false,
+    speed: 200,
     slidesToShow: 1,
     slidesToScroll: 1,
     mobileFirst: true,
+    centerMode: false,
+    variableWidth: false,
+    dots: true,
     responsive: [
       {
         breakpoint: 768,
         settings: {
-          centerMode: true,
-          variableWidth: true,
+          centerMode: false,
+          variableWidth: false,
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 1024,
+        settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
         }
@@ -201,7 +235,7 @@ export function timeline() {
       $(this).find('.active, .past').removeClass('active').removeClass('past');
     });
   });
-  
+
   $('.part').on('click', function(e) {
     let $this = $(this),
         $attr = $this.data('history');
@@ -220,17 +254,15 @@ export function timeline() {
 }
 
 export function mobileMenu () {
-  if( !$('.no-dev').length ) {
-    $('.menu-button').on('click', function() {
-      $('.header-content').addClass('active-menu')
-    });
-    $('.close-menu').on('click', function() {
-      $('.header-content').removeClass('active-menu')
-    });
-    $('.parent-menu > a').on('click', function() {
-      $(this).toggleClass('active').next().slideToggle()
-    })
-  }
+  $('.menu-button').on('click', function() {
+    $('.header-content').addClass('active-menu')
+  });
+  $('.close-menu').on('click', function() {
+    $('.header-content').removeClass('active-menu')
+  });
+  $('.parent-menu > a').on('click', function() {
+    $(this).toggleClass('active').next().slideToggle()
+  })
 }
 
 export function isDev() {
@@ -256,7 +288,7 @@ export function gallery () {
 }
 
 export function wrapperGallery() {
-  $(".photo-gallery").slick('unslick');
+  // $(".photo-gallery").slick('unslick');
   let context = $('.photo-gallery'),
       wrapperCounter = 0;
   while( context.children('div:not(.wrap-items)' ).length) {
@@ -282,7 +314,7 @@ export function checkViewPort () {
 }
 
 export function initMasonry () {
-  $(window).on('load resize', function () {
+  $(window).on('load', function () {
     let wWidth = checkViewPort().width;
     let resizeId;
     if( wWidth >= 1280 ) {
@@ -290,6 +322,9 @@ export function initMasonry () {
         wrapperGallery();
       }, 100)
     } else {
+      // setTimeout(() => {
+      //   photoGallerySlider();
+      // }, 100)
       clearTimeout(resizeId);
       resizeId = setTimeout(photoGallerySlider, 500);
     }
@@ -305,7 +340,7 @@ export function scrollTo() {
     $('.scroll-to').on('click', function() {
       $('html, body').animate({
         scrollTop: parentBtnOffsetTop - headerHeight
-      }, 1000)  
+      }, 1000)
     })
   }
 }

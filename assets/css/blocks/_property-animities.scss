@@ -1,8 +1,5 @@
 .property-amenities {
   padding: 30px 0;
-  @include media('>=xtablet') {
-    padding: 0 0 100px;
-  }
   h1, .h1,
   h5, .h5 {
     text-align: center;
@@ -89,7 +86,7 @@
   }
   .slick-dots {
     display: inline-block;
-    max-width: 100%;    
+    max-width: 100%;
     margin: 30px 0 15px;
     @include media('>=tablet') {
       margin: 40px 0 0;

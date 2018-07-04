@@ -82,6 +82,10 @@
     border-color: $color-black $color-black transparent transparent;
     transition: border-color .2s;
   }
+  &.slick-disabled {
+    opacity: .5;
+    cursor: not-allowed;
+  }
   &.slick-prev {
     left: 0;
     @include media('>=xtablet') {

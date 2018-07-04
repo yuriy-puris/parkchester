@@ -2,13 +2,12 @@ export function popups() {
   const mainWrap = this.$body;
   const popupWrap = $(".popups");
   const $window = this.$window;
-  let scrolled = $window.scrollTop();
+  // let scrolled = $window.scrollTop();
   let popup;
   $(".popup-link").on("click", function (event) {
     event.preventDefault();
-    scrolled = $window.scrollTop();
     let $this = $(this);
-    scrolled = $window.scrollTop();
+    // let scrolled = $window.scrollTop();
     mainWrap.addClass("no-scroll");
     popupWrap.addClass("active");
     popup = (!$this.attr("href")) ? $this.find("a").attr("href") : $this.attr("href");
@@ -19,21 +18,23 @@ export function popups() {
     }
   });
   this.$document.on("click", ".popup-close", function () {
-    closePopup();
+    setTimeout(closePopup, 200)
   });
   $(".popups").on("click", function (event) {
     if ($(event.target).hasClass("video-popup")) {
       if (!$(event.target).closest(".popup-content").length) {
-        closePopup();
+        setTimeout(closePopup, 200)
       }
     } else {
       if (!$(event.target).closest(".popup").length) {
-        closePopup();
+        setTimeout(closePopup, 200)
       }
     }
   });
 
   function closePopup() {
+    let scrolled = $(window).scrollTop();
+    console.log(scrolled);
     if ($(".popup.opened").hasClass("video-popup")) {
       $(".video-popup.opened iframe")[0].contentWindow.postMessage("{\"event\":\"command\",\"func\":\"" + "stopVideo" + "\",\"args\":\"\"}", "*");
     }
@@ -42,7 +43,7 @@ export function popups() {
     mainWrap.removeClass("no-scroll");
     window.location.hash = "";
     $(".popup-link").parents("li").removeClass("current-menu-item");
-    $window.scrollTop(scrolled);
+    $(window).scrollTop(scrolled);
     $(`a[href="${popup}]"`).focus();
   }
 }

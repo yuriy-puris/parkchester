@@ -88,17 +88,18 @@ section {
       margin-bottom: 30px;
     }
   }
-  // .section {
-  //   &:last-child {
-  //     margin-bottom: 0;
-  //     padding: 0;
-  //     border-bottom: none;
-  //   }
-  // }
+  .section-last {
+    @include media(">=desktop") {
+      margin-bottom: 0;
+      padding: 0;
+      border-bottom: none;
+    }
+  }
 }
 .section {
   border-bottom: 1px solid $color-light-grey;
   padding: 60px 0;
+  margin: 0 0 60px;
   @include media(">=desktop") {
     padding: 0 0 100px;
     margin: 0 0 100px;
@@ -146,7 +147,7 @@ h1, .h1 {
     }
   }
   & + .section {
-    padding: 0 0 100px;
+    padding-top: 0;
   }
 }
 
@@ -526,7 +527,7 @@ table {
     transform: translateY(-50%) rotate(135deg);
   }
 }
-//demo-visual 
+//demo-visual
 .demo-visual {
   background-size: cover;
   background-repeat: no-repeat;
@@ -566,7 +567,7 @@ table {
     }
   }
   .jcf-select-text {
-    font-size: 14px;  
+    font-size: 14px;
   }
 }
 .jcf-focus,
@@ -604,9 +605,9 @@ body > .jcf-select-drop {
 }
 //ADA
 .no-dev {
-  a:active, 
+  a:active,
   a:focus,
-  button:focus, 
+  button:focus,
   input[type="submit"]:focus,
   input[type="text"]:focus,
   input[type="number"]:focus,
@@ -617,8 +618,8 @@ body > .jcf-select-drop {
   input[type="radio"]:focus + label,
   input[type="file"]:focus + label,
   textarea:focus,
-  .jcf-focus, 
-  select:focus, 
+  .jcf-focus,
+  select:focus,
   select:active {
     box-shadow: inset 0 0 0 2px rgba($color-red, .5) !important;
   }

@@ -7,9 +7,6 @@
     min-width: 110px;
   }
   .property-amenities {
-    @include media('>=desktop') {
-      padding: 100px 0;
-    }
     .slick-dots {
       transform: translateX(-50%);
       left: 50%;

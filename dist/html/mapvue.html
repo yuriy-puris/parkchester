@@ -139,68 +139,71 @@
             <div class="custom-controls"></div>
           </div>
         </div>
-        <div id="sort-events">
-            <div class="section events-wrapper">
-                <div class="container">
-                  <div class="h5">Some of our</div>
-                  <h2 class="h1">neighborhood events</h2>
-                  <div class="datepicker">
-                      <span>Filter by: Date Range</span>
-                      <div class="datepicker-column">
-                        <datepicker v-model="start" class="picker" min="2015-01-01" max="2020-01-01"></datepicker>
-                        <span class="datepicker-placeholder">{{ pseudo_start}}</span>
-                      </div>
-                      <span>-</span>
-                      <div class="datepicker-column">
-                        <datepicker v-model="end" class="picker" :min="start" max="2020-01-08"></datepicker>
-                        <span class="datepicker-placeholder">{{ pseudo_end }}</span>
-                      </div>
-                    </div>
-                  <div class="events-holder">
-                    <div
-                      v-for="(item, index) in getEvents" 
-                      v-if="index < activeIndex"
-                      class="item">
-                      <div 
-                        class="img"
-                        v-bind:style="{ backgroundImage: 'url(/dist/images/' + item.item_image + ')' }">Christmas</div>
-                      <div class="title">{{ item.item_title }}</div>
-                      <p>{{ item.item_description }}</p>
-                      <div class="date">
-                        <span class="date-start">{{ filterDate(item.item_data_start) }}</span> - 
-                        <span class="date-end">{{ filterDate(item.item_data_end) }}</span>
-                      </div>
-                    </div>
-                    <div v-if="notEvents" class="not-events">No Current Events, Check Back Soon</div>
-                  </div>
-                  <a 
-                    href="javascript:void(0)" 
-                    :class="['btn', 'btn-apply', { active:  activeViewMore}]"
-                    @click="eventsIndex()">View More</a>
-                </div>
-              </div>
-            </div>
-          </div> 
+				<div id="sort-events">
+						<sort-holder></sort-holder>
+				</div>
+          </div>
       </div>
   </section>
 
+	<template id="sort-holder">
+				<div class="events-wrapper">
+						<div class="container">
+							<div class="h5">Some of our</div>
+							<h2 class="h1">neighborhood events</h2>
+							<div class="datepicker">
+									<span>Filter by: Date Range</span>
+									<div class="datepicker-column">
+										<datepicker v-model="start" class="picker" min="2015-01-01" max="2020-01-01"></datepicker>
+										<span class="datepicker-placeholder">{{ pseudo_start}}</span>
+									</div>
+									<span>-</span>
+									<div class="datepicker-column">
+										<datepicker v-model="end" class="picker" :min="start" max="2020-01-08"></datepicker>
+										<span class="datepicker-placeholder">{{ pseudo_end }}</span>
+									</div>
+								</div>
+							<div class="events-holder">
+								<div
+									v-for="(item, index) in getEvents"
+									v-if="index < activeIndex"
+									class="item">
+									<div
+										class="img"
+										v-bind:style="{ backgroundImage: 'url(/dist/images/' + item.item_image + ')' }">Christmas</div>
+									<div class="title">{{ item.item_title }}</div>
+									<p>{{ item.item_description }}</p>
+									<div class="date">
+										<span class="date-start">{{ filterDate(item.item_data_start) }}</span> -
+										<span class="date-end">{{ filterDate(item.item_data_end) }}</span>
+									</div>
+								</div>
+								<div v-if="notEvents" class="not-events">No Current Events, Check Back Soon</div>
+							</div>
+							<a
+								href="javascript:void(0)"
+								:class="['btn', 'btn-apply', { active:  activeViewMore}]"
+								@click="eventsIndex()">View More</a>
+						</div>
+					</div>
+	</template>
   <template id="map-holder">
     <div class="map-wrapper">
         <div class="search-landmarks">
           <div class="search-form">
-            <form action="#"> 
+            <form action="#">
               <label for="search">Search</label>
               <div class="row-field">
-                <input 
+                <input
                   type="text"
                   v-model="searchText"
                   placeholder="Fitness"
                   id="search">
-                  <ul 
+                  <ul
                     class="search-dropdown"
                     v-show="activeFilter"
                     >
-                      <li 
+                      <li
                         v-for="item in dropLocations"
                         @click="[ searchTabs(item.parentindex, item.subindex), triggerFilter(item.parentindex, item.subindex), activeFilter = false]">
                           {{item.parentname}} / {{item.name}}
@@ -214,12 +217,12 @@
             <div class="map-menu">
               <div class="map-menu-title">LANDMARKS NEAR PARKCHESTER</div>
               <ul class="tab-nav map-menu-list">
-                <li 
+                <li
                     v-for="(item, index) in getLocations"
                     :class="['tab-nav-item', {'active' : index == mainTab}]"
                     :key="index"
                     @click="tabs(index)">
-                    <a 
+                    <a
                       href="javascript:void(0)"
                       >
                       {{item.name}}
@@ -227,15 +230,15 @@
                 </li>
               </ul>
               <div class="tabs-content">
-                <ul 
+                <ul
                   v-for="(subitem, subindex) in getLocations"
                   :class="['tab-content-item',{ 'active' : subindex == mainTab }]"
                   :key="subindex">
-                  <li 
+                  <li
                     v-for="(itm, idx) in subitem.subList"
                     :class="{ active : activeSubIndex === (subindex + '_' + idx) }"
                     @click="[ activeSubIndex = (subindex + '_' + idx), subTabs(idx)]">
-                    <a 
+                    <a
                       href="javascript:void(0)">
                       {{itm.name}}
                     </a>

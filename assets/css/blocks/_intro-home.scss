@@ -6,9 +6,10 @@
   text-align: center;
   position: relative;
   height: calc(100vh - 70px);
+  overflow: hidden;
   @include media('>=desktop') {
     padding: 95px 0 0;
-    height: calc(100vh - 135px);
+    height: calc(100vh - 128px);
     margin: 0 0 100px;
   }
   &::after {
@@ -42,5 +43,53 @@
   .intro-content {
     z-index: 2;
     position: relative;
+  }
+  .bg-video {
+    min-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .play-pause-button {
+    @include font-regular;
+    font-size: 13px;
+    line-height: 15px;
+    color: $color-white;
+    position: absolute;
+    bottom: 17px;
+    right: 10px;
+    z-index: 2;
+    padding: 0 20px 0 0;
+    display: inline-block;
+    @include media(">=tablet") {
+      bottom: 30px;
+      right: 30px;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      border-left: 13px solid $color-white;
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+      right: 0;
+      top: 1px;
+      transition: border .3s;
+    }
+    &.play {
+      &::after {
+        content: "";
+        position: absolute;
+        width: 11px;
+        height: 18px;
+        border-width: 0 3px;
+        border-style: solid;
+        border-color: transparent $color-white;
+        right: 0;
+        top: -1px;
+        transition: border .3s;
+      }
+    }
   }
 }

@@ -3,7 +3,7 @@
   flex-shrink: 0;
   flex-grow: 1;
   @include media(">=desktop") {
-    padding: 135px 0 5px;
+    padding: 128px 0 5px;
   }
   .section {
     &:last-child {

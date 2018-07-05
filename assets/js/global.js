@@ -25,6 +25,7 @@ import {
     scrollTo,
     fixedHeader,
     formSelect,
+    playPause,
 } from "./modules/module";
 
 
@@ -46,7 +47,8 @@ binder({
           contactUsMap,
           googleMap,
           formSelect,
-          vueMap
+          vueMap,
+          playPause,
         ],
         ".accordion": accordion,
         ".custom-play-btn": customYTPlayer,

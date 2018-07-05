@@ -361,3 +361,19 @@ export function formSelect() {
     });
     jcf.replaceAll();
 }
+
+export function playPause() {
+  const homeVideo = document.getElementById("home-video"),
+        playPauseBtn = $(".play-pause-button");     
+  playPauseBtn.on("click", function(event) {
+    let target = $(event.target);
+    if(target.hasClass("play")) {
+      homeVideo.pause()
+      $(this).removeClass("play")
+    } else {
+      homeVideo.play()
+      $(this).addClass("play")
+    }
+  })
+
+}

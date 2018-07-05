@@ -246,10 +246,15 @@
         > a {
             &::after {
                 content: '';
-                @include pos(absolute, 40%, null, null, 7px);
+                @include pos(absolute, 40%, null, null, -14px);
                 @include arrow;
                 transform: translateY(-50%) rotateZ(45deg);
                 transition: transform .3s;
+            }
+            @include media(">=desktop") {
+                &::after {
+                    @include pos(absolute, 40%, null, null, 7px);
+                }
             }
             &.active {
                 &::after {

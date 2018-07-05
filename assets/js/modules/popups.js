@@ -34,7 +34,6 @@ export function popups() {
 
   function closePopup() {
     let scrolled = $(window).scrollTop();
-    console.log(scrolled);
     if ($(".popup.opened").hasClass("video-popup")) {
       $(".video-popup.opened iframe")[0].contentWindow.postMessage("{\"event\":\"command\",\"func\":\"" + "stopVideo" + "\",\"args\":\"\"}", "*");
     }

@@ -334,6 +334,15 @@
   .datepicker-column {
     position: relative;
     margin: 0 12px;
+    &:nth-child(2) {
+      .date-panel {
+        left: 0 !important;
+        @include media('>=xtablet') {
+          right: 0 !important;
+          left: auto !important;
+        }
+      }
+    }
     .datepicker-placeholder {
       @include font-light();
       border: 1px solid;

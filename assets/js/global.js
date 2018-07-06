@@ -9,52 +9,48 @@ import { customYTPlayer } from "./modules/customYTPlayer";
 import { scrollAnimate } from "./modules/scrollAnimate";
 import { popups } from "./modules/popups";
 import { backToTop } from "./modules/backToTop";
-import { contactUsMap } from "./modules/contactUsMap";
 import { googleMap } from "./modules/googleMap";
 import { vueMap } from "./modules/vueMap";
 import {
-    constants,
-    slider,
-    mobileMenu,
-    isDev,
-    noDev,
-    tabs,
-    timeline,
-    initMasonry,
-    popupGallerySlider,
-    scrollTo,
-    fixedHeader,
-    formSelect,
-    playPause,
+  constants,
+  slider,
+  mobileMenu,
+  isDev,
+  tabs,
+  timeline,
+  initMasonry,
+  popupGallerySlider,
+  scrollTo,
+  fixedHeader,
+  formSelect,
+  playPause,
 } from "./modules/module";
 
 
 
 binder({
-    bounds: {
-        "html": [
-          constants,
-          slider,
-          mobileMenu,
-          isDev,
-          noDev,
-          tabs,
-          timeline,
-          initMasonry,
-          popupGallerySlider,
-          scrollTo,
-          fixedHeader,
-          contactUsMap,
-          googleMap,
-          formSelect,
-          vueMap,
-          playPause,
-        ],
-        ".accordion": accordion,
-        ".custom-play-btn": customYTPlayer,
-        ".animated": scrollAnimate,
-        ".popups": popups,
-        ".to-top": backToTop,
-    },
-    runTests: false
+  bounds: {
+    "html": [
+      constants,
+      slider,
+      mobileMenu,
+      isDev,
+      tabs,
+      timeline,
+      initMasonry,
+      popupGallerySlider,
+      scrollTo,
+      fixedHeader,
+      googleMap,
+      formSelect,
+      vueMap,
+      playPause,
+    ],
+    ".accordion": accordion,
+    ".custom-play-btn": customYTPlayer,
+    ".animated": scrollAnimate,
+    ".popups": popups,
+    ".to-top": backToTop,
+  },
+  runTests: false
 });

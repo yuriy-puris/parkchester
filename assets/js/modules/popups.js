@@ -15,19 +15,19 @@ export function popups() {
     $(popup).find(".popup-close").focus();
     if ($(popup).hasClass("video-popup")) {
       $(".video-popup.opened iframe")[0].contentWindow.postMessage("{\"event\":\"command\",\"func\":\"" + "playVideo" + "\",\"args\":\"\"}", "*");
-    }
+    };
   });
   this.$document.on("click", ".popup-close", function () {
-    setTimeout(closePopup, 200)
+    setTimeout(closePopup, 200);
   });
   $(".popups").on("click", function (event) {
     if ($(event.target).hasClass("video-popup")) {
       if (!$(event.target).closest(".popup-content").length) {
-        setTimeout(closePopup, 200)
+        setTimeout(closePopup, 200);
       }
     } else {
       if (!$(event.target).closest(".popup").length) {
-        setTimeout(closePopup, 200)
+        setTimeout(closePopup, 200);
       }
     }
   });
@@ -36,7 +36,7 @@ export function popups() {
     let scrolled = $(window).scrollTop();
     if ($(".popup.opened").hasClass("video-popup")) {
       $(".video-popup.opened iframe")[0].contentWindow.postMessage("{\"event\":\"command\",\"func\":\"" + "stopVideo" + "\",\"args\":\"\"}", "*");
-    }
+    };
     $(".popup").removeClass("opened");
     popupWrap.removeClass("active");
     mainWrap.removeClass("no-scroll");

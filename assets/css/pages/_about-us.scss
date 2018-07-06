@@ -1,7 +1,11 @@
 .services {
-  margin-bottom: 100px;
+  @include media(">=tablet") {
+    margin-bottom: 100px;
+  }
   .service-block {
-    margin-bottom: 60px;
+    @include media(">=tablet") {
+      margin-bottom: 60px;
+    }
   }
   .service-bg {
     width: 100%;

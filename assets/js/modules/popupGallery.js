@@ -1,6 +1,6 @@
 export function popupGallery(finalCurrent) {
   let slider = $(".popup-gallery-slider");
-  slider.not('.slick-initialized').slick({
+  slider.not(".slick-initialized").slick({
     infinite: false,
     centerMode: true,
     centerPadding: "20px",
@@ -12,7 +12,7 @@ export function popupGallery(finalCurrent) {
     useCss: false,
     mobileFirst: true,
     initialSlide: finalCurrent,
-    appendArrows: $('.popup-controls'),
+    appendArrows: $(".popup-controls"),
     focusOnSelect: true,
     responsive: [
       {

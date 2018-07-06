@@ -68,10 +68,10 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 var global = __webpack_require__(2);
-var core = __webpack_require__(19);
+var core = __webpack_require__(18);
 var hide = __webpack_require__(11);
 var redefine = __webpack_require__(12);
-var ctx = __webpack_require__(20);
+var ctx = __webpack_require__(19);
 var PROTOTYPE = 'prototype';
 
 var $export = function (type, name, source) {
@@ -265,7 +265,7 @@ var TO_STRING = 'toString';
 var $toString = Function[TO_STRING];
 var TPL = ('' + $toString).split(TO_STRING);
 
-__webpack_require__(19).inspectSource = function (it) {
+__webpack_require__(18).inspectSource = function (it) {
   return $toString.call(it);
 };
 
@@ -382,18 +382,12 @@ module.exports = Object.getPrototypeOf || function (O) {
 /* 18 */
 /***/ (function(module, exports) {
 
-module.exports = jQuery;
-
-/***/ }),
-/* 19 */
-/***/ (function(module, exports) {
-
 var core = module.exports = { version: '2.5.7' };
 if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 
 
 /***/ }),
-/* 20 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // optional / simple context binding
@@ -419,7 +413,7 @@ module.exports = function (fn, that, length) {
 
 
 /***/ }),
-/* 21 */
+/* 20 */
 /***/ (function(module, exports) {
 
 var toString = {}.toString;
@@ -430,7 +424,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 22 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -444,6 +438,12 @@ module.exports = function (method, arg) {
   });
 };
 
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports) {
+
+module.exports = jQuery;
 
 /***/ }),
 /* 23 */
@@ -492,7 +492,7 @@ module.exports = function (it) {
 
 // most Object methods by ES6 should accept primitives
 var $export = __webpack_require__(0);
-var core = __webpack_require__(19);
+var core = __webpack_require__(18);
 var fails = __webpack_require__(3);
 module.exports = function (KEY, exec) {
   var fn = (core.Object || {})[KEY] || Object[KEY];
@@ -513,7 +513,7 @@ module.exports = function (KEY, exec) {
 // 4 -> Array#every
 // 5 -> Array#find
 // 6 -> Array#findIndex
-var ctx = __webpack_require__(20);
+var ctx = __webpack_require__(19);
 var IObject = __webpack_require__(47);
 var toObject = __webpack_require__(9);
 var toLength = __webpack_require__(8);
@@ -565,7 +565,7 @@ if (__webpack_require__(6)) {
   var $export = __webpack_require__(0);
   var $typed = __webpack_require__(61);
   var $buffer = __webpack_require__(90);
-  var ctx = __webpack_require__(20);
+  var ctx = __webpack_require__(19);
   var anInstance = __webpack_require__(40);
   var propertyDesc = __webpack_require__(33);
   var hide = __webpack_require__(11);
@@ -1321,7 +1321,7 @@ module.exports = function (it, Constructor, name, forbiddenField) {
 /* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var ctx = __webpack_require__(20);
+var ctx = __webpack_require__(19);
 var call = __webpack_require__(107);
 var isArrayIter = __webpack_require__(81);
 var anObject = __webpack_require__(1);
@@ -1431,7 +1431,7 @@ module.exports = function (it, TYPE) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // fallback for non-array-like ES3 and non-enumerable old V8 strings
-var cof = __webpack_require__(21);
+var cof = __webpack_require__(20);
 // eslint-disable-next-line no-prototype-builtins
 module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
   return cof(it) == 'String' ? it.split('') : Object(it);
@@ -1450,7 +1450,7 @@ exports.f = {}.propertyIsEnumerable;
 /***/ (function(module, exports, __webpack_require__) {
 
 // getting tag from 19.1.3.6 Object.prototype.toString()
-var cof = __webpack_require__(21);
+var cof = __webpack_require__(20);
 var TAG = __webpack_require__(5)('toStringTag');
 // ES3 wrong here
 var ARG = cof(function () { return arguments; }()) == 'Arguments';
@@ -1478,7 +1478,7 @@ module.exports = function (it) {
 /* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var core = __webpack_require__(19);
+var core = __webpack_require__(18);
 var global = __webpack_require__(2);
 var SHARED = '__core-js_shared__';
 var store = global[SHARED] || (global[SHARED] = {});
@@ -1533,7 +1533,7 @@ exports.f = Object.getOwnPropertySymbols;
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.2.2 IsArray(argument)
-var cof = __webpack_require__(21);
+var cof = __webpack_require__(20);
 module.exports = Array.isArray || function isArray(arg) {
   return cof(arg) == 'Array';
 };
@@ -1545,7 +1545,7 @@ module.exports = Array.isArray || function isArray(arg) {
 
 // 7.2.8 IsRegExp(argument)
 var isObject = __webpack_require__(4);
-var cof = __webpack_require__(21);
+var cof = __webpack_require__(20);
 var MATCH = __webpack_require__(5)('match');
 module.exports = function (it) {
   var isRegExp;
@@ -1831,7 +1831,7 @@ module.exports = function (COLLECTION) {
 // https://tc39.github.io/proposal-setmap-offrom/
 var $export = __webpack_require__(0);
 var aFunction = __webpack_require__(10);
-var ctx = __webpack_require__(20);
+var ctx = __webpack_require__(19);
 var forOf = __webpack_require__(41);
 
 module.exports = function (COLLECTION) {
@@ -1875,7 +1875,7 @@ module.exports = function (it) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var global = __webpack_require__(2);
-var core = __webpack_require__(19);
+var core = __webpack_require__(18);
 var LIBRARY = __webpack_require__(31);
 var wksExt = __webpack_require__(94);
 var defineProperty = __webpack_require__(7).f;
@@ -1930,7 +1930,7 @@ module.exports = {
   set: Object.setPrototypeOf || ('__proto__' in {} ? // eslint-disable-line
     function (test, buggy, set) {
       try {
-        set = __webpack_require__(20)(Function.call, __webpack_require__(16).f(Object.prototype, '__proto__').set, 2);
+        set = __webpack_require__(19)(Function.call, __webpack_require__(16).f(Object.prototype, '__proto__').set, 2);
         set(test, []);
         buggy = !(test instanceof Array);
       } catch (e) { buggy = true; }
@@ -2201,7 +2201,7 @@ module.exports = function (object, index, value) {
 var classof = __webpack_require__(49);
 var ITERATOR = __webpack_require__(5)('iterator');
 var Iterators = __webpack_require__(45);
-module.exports = __webpack_require__(19).getIteratorMethod = function (it) {
+module.exports = __webpack_require__(18).getIteratorMethod = function (it) {
   if (it != undefined) return it[ITERATOR]
     || it['@@iterator']
     || Iterators[classof(it)];
@@ -2287,7 +2287,7 @@ addToUnscopables('entries');
 /* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var ctx = __webpack_require__(20);
+var ctx = __webpack_require__(19);
 var invoke = __webpack_require__(100);
 var html = __webpack_require__(69);
 var cel = __webpack_require__(65);
@@ -2330,7 +2330,7 @@ if (!setTask || !clearTask) {
     delete queue[id];
   };
   // Node.js 0.8-
-  if (__webpack_require__(21)(process) == 'process') {
+  if (__webpack_require__(20)(process) == 'process') {
     defer = function (id) {
       process.nextTick(ctx(run, id, 1));
     };
@@ -2382,7 +2382,7 @@ var macrotask = __webpack_require__(87).set;
 var Observer = global.MutationObserver || global.WebKitMutationObserver;
 var process = global.process;
 var Promise = global.Promise;
-var isNode = __webpack_require__(21)(process) == 'process';
+var isNode = __webpack_require__(20)(process) == 'process';
 
 module.exports = function () {
   var head, last, notify;
@@ -3029,7 +3029,7 @@ module.exports = 1 / $parseFloat(__webpack_require__(71) + '-0') !== -Infinity ?
 /* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var cof = __webpack_require__(21);
+var cof = __webpack_require__(20);
 module.exports = function (it, msg) {
   if (typeof it != 'number' && cof(it) != 'Number') throw TypeError(msg);
   return +it;
@@ -3258,7 +3258,7 @@ module.exports = __webpack_require__(60)(MAP, function (get) {
 var dP = __webpack_require__(7).f;
 var create = __webpack_require__(37);
 var redefineAll = __webpack_require__(42);
-var ctx = __webpack_require__(20);
+var ctx = __webpack_require__(19);
 var anInstance = __webpack_require__(40);
 var forOf = __webpack_require__(41);
 var $iterDefine = __webpack_require__(77);
@@ -3621,7 +3621,7 @@ module.exports = Reflect && Reflect.ownKeys || function ownKeys(it) {
 var isArray = __webpack_require__(53);
 var isObject = __webpack_require__(4);
 var toLength = __webpack_require__(8);
-var ctx = __webpack_require__(20);
+var ctx = __webpack_require__(19);
 var IS_CONCAT_SPREADABLE = __webpack_require__(5)('isConcatSpreadable');
 
 function flattenIntoArray(target, original, source, sourceLen, start, depth, mapper, thisArg) {
@@ -3775,11 +3775,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__modules_scrollAnimate__ = __webpack_require__(336);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__modules_popups__ = __webpack_require__(337);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__modules_backToTop__ = __webpack_require__(338);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__modules_contactUsMap__ = __webpack_require__(339);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__modules_googleMap__ = __webpack_require__(340);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__modules_vueMap__ = __webpack_require__(341);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__modules_module__ = __webpack_require__(343);
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__modules_googleMap__ = __webpack_require__(339);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__modules_vueMap__ = __webpack_require__(340);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__modules_module__ = __webpack_require__(342);
 
 
 
@@ -3796,15 +3794,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 Object(__WEBPACK_IMPORTED_MODULE_5__libs_binder__["a" /* default */])({
-    bounds: {
-        "html": [__WEBPACK_IMPORTED_MODULE_14__modules_module__["a" /* constants */], __WEBPACK_IMPORTED_MODULE_14__modules_module__["k" /* slider */], __WEBPACK_IMPORTED_MODULE_14__modules_module__["f" /* mobileMenu */], __WEBPACK_IMPORTED_MODULE_14__modules_module__["e" /* isDev */], __WEBPACK_IMPORTED_MODULE_14__modules_module__["noDev"], __WEBPACK_IMPORTED_MODULE_14__modules_module__["l" /* tabs */], __WEBPACK_IMPORTED_MODULE_14__modules_module__["m" /* timeline */], __WEBPACK_IMPORTED_MODULE_14__modules_module__["d" /* initMasonry */], __WEBPACK_IMPORTED_MODULE_14__modules_module__["i" /* popupGallerySlider */], __WEBPACK_IMPORTED_MODULE_14__modules_module__["j" /* scrollTo */], __WEBPACK_IMPORTED_MODULE_14__modules_module__["b" /* fixedHeader */], __WEBPACK_IMPORTED_MODULE_11__modules_contactUsMap__["a" /* contactUsMap */], __WEBPACK_IMPORTED_MODULE_12__modules_googleMap__["a" /* googleMap */], __WEBPACK_IMPORTED_MODULE_14__modules_module__["c" /* formSelect */], __WEBPACK_IMPORTED_MODULE_13__modules_vueMap__["a" /* vueMap */], __WEBPACK_IMPORTED_MODULE_14__modules_module__["h" /* playPause */]],
-        ".accordion": __WEBPACK_IMPORTED_MODULE_6__modules_accordion__["a" /* accordion */],
-        ".custom-play-btn": __WEBPACK_IMPORTED_MODULE_7__modules_customYTPlayer__["a" /* customYTPlayer */],
-        ".animated": __WEBPACK_IMPORTED_MODULE_8__modules_scrollAnimate__["a" /* scrollAnimate */],
-        ".popups": __WEBPACK_IMPORTED_MODULE_9__modules_popups__["a" /* popups */],
-        ".to-top": __WEBPACK_IMPORTED_MODULE_10__modules_backToTop__["a" /* backToTop */]
-    },
-    runTests: false
+  bounds: {
+    "html": [__WEBPACK_IMPORTED_MODULE_13__modules_module__["a" /* constants */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["j" /* slider */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["f" /* mobileMenu */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["e" /* isDev */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["k" /* tabs */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["l" /* timeline */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["d" /* initMasonry */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["h" /* popupGallerySlider */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["i" /* scrollTo */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["b" /* fixedHeader */], __WEBPACK_IMPORTED_MODULE_11__modules_googleMap__["a" /* googleMap */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["c" /* formSelect */], __WEBPACK_IMPORTED_MODULE_12__modules_vueMap__["a" /* vueMap */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["g" /* playPause */]],
+    ".accordion": __WEBPACK_IMPORTED_MODULE_6__modules_accordion__["a" /* accordion */],
+    ".custom-play-btn": __WEBPACK_IMPORTED_MODULE_7__modules_customYTPlayer__["a" /* customYTPlayer */],
+    ".animated": __WEBPACK_IMPORTED_MODULE_8__modules_scrollAnimate__["a" /* scrollAnimate */],
+    ".popups": __WEBPACK_IMPORTED_MODULE_9__modules_popups__["a" /* popups */],
+    ".to-top": __WEBPACK_IMPORTED_MODULE_10__modules_backToTop__["a" /* backToTop */]
+  },
+  runTests: false
 });
 
 /***/ }),
@@ -4007,7 +4005,7 @@ __webpack_require__(321);
 __webpack_require__(322);
 __webpack_require__(323);
 __webpack_require__(324);
-module.exports = __webpack_require__(19);
+module.exports = __webpack_require__(18);
 
 
 /***/ }),
@@ -4577,7 +4575,7 @@ $export($export.G + $export.F * (parseFloat != $parseFloat), { parseFloat: $pars
 
 var global = __webpack_require__(2);
 var has = __webpack_require__(14);
-var cof = __webpack_require__(21);
+var cof = __webpack_require__(20);
 var inheritIfRequired = __webpack_require__(72);
 var toPrimitive = __webpack_require__(23);
 var fails = __webpack_require__(3);
@@ -5685,7 +5683,7 @@ $export($export.S, 'Array', { isArray: __webpack_require__(53) });
 
 "use strict";
 
-var ctx = __webpack_require__(20);
+var ctx = __webpack_require__(19);
 var $export = __webpack_require__(0);
 var toObject = __webpack_require__(9);
 var call = __webpack_require__(107);
@@ -5761,7 +5759,7 @@ var toIObject = __webpack_require__(15);
 var arrayJoin = [].join;
 
 // fallback for not array-like strings
-$export($export.P + $export.F * (__webpack_require__(47) != Object || !__webpack_require__(22)(arrayJoin)), 'Array', {
+$export($export.P + $export.F * (__webpack_require__(47) != Object || !__webpack_require__(21)(arrayJoin)), 'Array', {
   join: function join(separator) {
     return arrayJoin.call(toIObject(this), separator === undefined ? ',' : separator);
   }
@@ -5776,7 +5774,7 @@ $export($export.P + $export.F * (__webpack_require__(47) != Object || !__webpack
 
 var $export = __webpack_require__(0);
 var html = __webpack_require__(69);
-var cof = __webpack_require__(21);
+var cof = __webpack_require__(20);
 var toAbsoluteIndex = __webpack_require__(36);
 var toLength = __webpack_require__(8);
 var arraySlice = [].slice;
@@ -5823,7 +5821,7 @@ $export($export.P + $export.F * (fails(function () {
   // V8 bug
   test.sort(null);
   // Old WebKit
-}) || !__webpack_require__(22)($sort)), 'Array', {
+}) || !__webpack_require__(21)($sort)), 'Array', {
   // 22.1.3.25 Array.prototype.sort(comparefn)
   sort: function sort(comparefn) {
     return comparefn === undefined
@@ -5841,7 +5839,7 @@ $export($export.P + $export.F * (fails(function () {
 
 var $export = __webpack_require__(0);
 var $forEach = __webpack_require__(27)(0);
-var STRICT = __webpack_require__(22)([].forEach, true);
+var STRICT = __webpack_require__(21)([].forEach, true);
 
 $export($export.P + $export.F * !STRICT, 'Array', {
   // 22.1.3.10 / 15.4.4.18 Array.prototype.forEach(callbackfn [, thisArg])
@@ -5882,7 +5880,7 @@ module.exports = function (original) {
 var $export = __webpack_require__(0);
 var $map = __webpack_require__(27)(1);
 
-$export($export.P + $export.F * !__webpack_require__(22)([].map, true), 'Array', {
+$export($export.P + $export.F * !__webpack_require__(21)([].map, true), 'Array', {
   // 22.1.3.15 / 15.4.4.19 Array.prototype.map(callbackfn [, thisArg])
   map: function map(callbackfn /* , thisArg */) {
     return $map(this, callbackfn, arguments[1]);
@@ -5899,7 +5897,7 @@ $export($export.P + $export.F * !__webpack_require__(22)([].map, true), 'Array',
 var $export = __webpack_require__(0);
 var $filter = __webpack_require__(27)(2);
 
-$export($export.P + $export.F * !__webpack_require__(22)([].filter, true), 'Array', {
+$export($export.P + $export.F * !__webpack_require__(21)([].filter, true), 'Array', {
   // 22.1.3.7 / 15.4.4.20 Array.prototype.filter(callbackfn [, thisArg])
   filter: function filter(callbackfn /* , thisArg */) {
     return $filter(this, callbackfn, arguments[1]);
@@ -5916,7 +5914,7 @@ $export($export.P + $export.F * !__webpack_require__(22)([].filter, true), 'Arra
 var $export = __webpack_require__(0);
 var $some = __webpack_require__(27)(3);
 
-$export($export.P + $export.F * !__webpack_require__(22)([].some, true), 'Array', {
+$export($export.P + $export.F * !__webpack_require__(21)([].some, true), 'Array', {
   // 22.1.3.23 / 15.4.4.17 Array.prototype.some(callbackfn [, thisArg])
   some: function some(callbackfn /* , thisArg */) {
     return $some(this, callbackfn, arguments[1]);
@@ -5933,7 +5931,7 @@ $export($export.P + $export.F * !__webpack_require__(22)([].some, true), 'Array'
 var $export = __webpack_require__(0);
 var $every = __webpack_require__(27)(4);
 
-$export($export.P + $export.F * !__webpack_require__(22)([].every, true), 'Array', {
+$export($export.P + $export.F * !__webpack_require__(21)([].every, true), 'Array', {
   // 22.1.3.5 / 15.4.4.16 Array.prototype.every(callbackfn [, thisArg])
   every: function every(callbackfn /* , thisArg */) {
     return $every(this, callbackfn, arguments[1]);
@@ -5950,7 +5948,7 @@ $export($export.P + $export.F * !__webpack_require__(22)([].every, true), 'Array
 var $export = __webpack_require__(0);
 var $reduce = __webpack_require__(108);
 
-$export($export.P + $export.F * !__webpack_require__(22)([].reduce, true), 'Array', {
+$export($export.P + $export.F * !__webpack_require__(21)([].reduce, true), 'Array', {
   // 22.1.3.18 / 15.4.4.21 Array.prototype.reduce(callbackfn [, initialValue])
   reduce: function reduce(callbackfn /* , initialValue */) {
     return $reduce(this, callbackfn, arguments.length, arguments[1], false);
@@ -5967,7 +5965,7 @@ $export($export.P + $export.F * !__webpack_require__(22)([].reduce, true), 'Arra
 var $export = __webpack_require__(0);
 var $reduce = __webpack_require__(108);
 
-$export($export.P + $export.F * !__webpack_require__(22)([].reduceRight, true), 'Array', {
+$export($export.P + $export.F * !__webpack_require__(21)([].reduceRight, true), 'Array', {
   // 22.1.3.19 / 15.4.4.22 Array.prototype.reduceRight(callbackfn [, initialValue])
   reduceRight: function reduceRight(callbackfn /* , initialValue */) {
     return $reduce(this, callbackfn, arguments.length, arguments[1], true);
@@ -5986,7 +5984,7 @@ var $indexOf = __webpack_require__(51)(false);
 var $native = [].indexOf;
 var NEGATIVE_ZERO = !!$native && 1 / [1].indexOf(1, -0) < 0;
 
-$export($export.P + $export.F * (NEGATIVE_ZERO || !__webpack_require__(22)($native)), 'Array', {
+$export($export.P + $export.F * (NEGATIVE_ZERO || !__webpack_require__(21)($native)), 'Array', {
   // 22.1.3.11 / 15.4.4.14 Array.prototype.indexOf(searchElement [, fromIndex])
   indexOf: function indexOf(searchElement /* , fromIndex = 0 */) {
     return NEGATIVE_ZERO
@@ -6010,7 +6008,7 @@ var toLength = __webpack_require__(8);
 var $native = [].lastIndexOf;
 var NEGATIVE_ZERO = !!$native && 1 / [1].lastIndexOf(1, -0) < 0;
 
-$export($export.P + $export.F * (NEGATIVE_ZERO || !__webpack_require__(22)($native)), 'Array', {
+$export($export.P + $export.F * (NEGATIVE_ZERO || !__webpack_require__(21)($native)), 'Array', {
   // 22.1.3.14 / 15.4.4.15 Array.prototype.lastIndexOf(searchElement [, fromIndex])
   lastIndexOf: function lastIndexOf(searchElement /* , fromIndex = @[*-1] */) {
     // convert -0 to +0
@@ -6315,7 +6313,7 @@ __webpack_require__(57)('split', 2, function (defined, SPLIT, $split) {
 
 var LIBRARY = __webpack_require__(31);
 var global = __webpack_require__(2);
-var ctx = __webpack_require__(20);
+var ctx = __webpack_require__(19);
 var classof = __webpack_require__(49);
 var $export = __webpack_require__(0);
 var isObject = __webpack_require__(4);
@@ -6536,7 +6534,7 @@ if (!USE_NATIVE) {
 $export($export.G + $export.W + $export.F * !USE_NATIVE, { Promise: $Promise });
 __webpack_require__(43)($Promise, PROMISE);
 __webpack_require__(39)(PROMISE);
-Wrapper = __webpack_require__(19)[PROMISE];
+Wrapper = __webpack_require__(18)[PROMISE];
 
 // statics
 $export($export.S + $export.F * !USE_NATIVE, PROMISE, {
@@ -7585,7 +7583,7 @@ $export($export.S, 'System', { global: __webpack_require__(2) });
 
 // https://github.com/ljharb/proposal-is-error
 var $export = __webpack_require__(0);
-var cof = __webpack_require__(21);
+var cof = __webpack_require__(20);
 
 $export($export.S, 'Error', {
   isError: function isError(it) {
@@ -7783,7 +7781,7 @@ $export($export.S, 'Math', { signbit: function signbit(x) {
 // https://github.com/tc39/proposal-promise-finally
 
 var $export = __webpack_require__(0);
-var core = __webpack_require__(19);
+var core = __webpack_require__(18);
 var global = __webpack_require__(2);
 var speciesConstructor = __webpack_require__(58);
 var promiseResolve = __webpack_require__(113);
@@ -7999,7 +7997,7 @@ $metadata.exp({ metadata: function metadata(metadataKey, metadataValue) {
 var $export = __webpack_require__(0);
 var microtask = __webpack_require__(88)();
 var process = __webpack_require__(2).process;
-var isNode = __webpack_require__(21)(process) == 'process';
+var isNode = __webpack_require__(20)(process) == 'process';
 
 $export($export.G, {
   asap: function asap(fn) {
@@ -8018,7 +8016,7 @@ $export($export.G, {
 // https://github.com/zenparsing/es-observable
 var $export = __webpack_require__(0);
 var global = __webpack_require__(2);
-var core = __webpack_require__(19);
+var core = __webpack_require__(18);
 var microtask = __webpack_require__(88)();
 var OBSERVABLE = __webpack_require__(5)('observable');
 var aFunction = __webpack_require__(10);
@@ -9065,7 +9063,7 @@ for (var collections = getKeys(DOMIterables), i = 0; i < collections.length; i++
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(327);
-module.exports = __webpack_require__(19).RegExp.escape;
+module.exports = __webpack_require__(18).RegExp.escape;
 
 
 /***/ }),
@@ -11829,7 +11827,7 @@ module.exports = function (regExp, replace) {
         return _;
     };
 });
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(18)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(22)))
 
 /***/ }),
 /* 330 */
@@ -11858,7 +11856,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var __WEBPACK_LO
   /*jshint strict: false */ /* globals define, module, require */
   if (true) {
     // AMD
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(18)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (jQuery) {
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(22)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (jQuery) {
       return factory(window, jQuery);
     }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -14245,7 +14243,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 	'use strict';
 
 	if (true) {
-		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(18)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(22)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -15757,21 +15755,21 @@ function binder(_ref) {
 "use strict";
 /* WEBPACK VAR INJECTION */(function($) {/* harmony export (immutable) */ __webpack_exports__["a"] = accordion;
 function accordion() {
-    var accordion = $(".accordion");
-    var accordionItem = accordion.find(".accordion-item");
-    accordionItem.on("click", function () {
-        var $this = $(this);
-        if (window.innerWidth < 768) {
-            setTimeout(function () {
-                $("html, body").animate({
-                    scrollTop: $this.offset().top - $(".header").height()
-                }, 700);
-            }, 500);
-        }
-        $this.toggleClass("expanded").siblings().removeClass("expanded");
-    });
+  var accordion = $(".accordion");
+  var accordionItem = accordion.find(".accordion-item");
+  accordionItem.on("click", function () {
+    var $this = $(this);
+    if (window.innerWidth < 768) {
+      setTimeout(function () {
+        $("html, body").animate({
+          scrollTop: $this.offset().top - $(".header").height()
+        }, 700);
+      }, 500);
+    }
+    $this.toggleClass("expanded").siblings().removeClass("expanded");
+  });
 }
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(18)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(22)))
 
 /***/ }),
 /* 335 */
@@ -15782,16 +15780,16 @@ function accordion() {
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 function customYTPlayer() {
-    var playBtn = document.querySelectorAll(".video .custom-play-btn");
-    [].concat(_toConsumableArray(playBtn)).map(function (item) {
-        item.addEventListener("click", function (event) {
-            event.preventDefault();
-            var poster = item.parentNode;
-            var iframe = poster.parentNode.querySelector("iframe");
-            poster.classList.add("active");
-            iframe.contentWindow.postMessage("{\"event\":\"command\",\"func\":\"" + "playVideo" + "\",\"args\":\"\"}", "*");
-        });
+  var playBtn = document.querySelectorAll(".video .custom-play-btn");
+  [].concat(_toConsumableArray(playBtn)).map(function (item) {
+    item.addEventListener("click", function (event) {
+      event.preventDefault();
+      var poster = item.parentNode;
+      var iframe = poster.parentNode.querySelector("iframe");
+      poster.classList.add("active");
+      iframe.contentWindow.postMessage("{\"event\":\"command\",\"func\":\"" + "playVideo" + "\",\"args\":\"\"}", "*");
     });
+  });
 }
 
 /***/ }),
@@ -15801,29 +15799,28 @@ function customYTPlayer() {
 "use strict";
 /* WEBPACK VAR INJECTION */(function($) {/* harmony export (immutable) */ __webpack_exports__["a"] = scrollAnimate;
 function scrollAnimate() {
-    var elements = $(".animated");
-    var addHeight = $(window).height() * .75;
-    var scrolled = $(window).scrollTop();
-
-    if (!this.isDev) {
-        for (var i = 0; i < elements.length; i++) {
-            var elementPos = $(elements[i]).offset().top;
-            if (elementPos < scrolled + addHeight) {
-                $(elements[i]).addClass("animation");
-            }
-        }
-        $(window).on("scroll", function () {
-            scrolled = $(window).scrollTop();
-            for (var _i = 0; _i < elements.length; _i++) {
-                var _elementPos = $(elements[_i]).offset().top;
-                if (_elementPos < scrolled + addHeight) {
-                    $(elements[_i]).addClass("animation");
-                }
-            }
-        });
+  var elements = $(".animated");
+  var addHeight = $(window).height() * .75;
+  var scrolled = $(window).scrollTop();
+  if (!this.isDev) {
+    for (var i = 0; i < elements.length; i++) {
+      var elementPos = $(elements[i]).offset().top;
+      if (elementPos < scrolled + addHeight) {
+        $(elements[i]).addClass("animation");
+      }
     }
+    $(window).on("scroll", function () {
+      scrolled = $(window).scrollTop();
+      for (var _i = 0; _i < elements.length; _i++) {
+        var _elementPos = $(elements[_i]).offset().top;
+        if (_elementPos < scrolled + addHeight) {
+          $(elements[_i]).addClass("animation");
+        }
+      }
+    });
+  }
 }
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(18)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(22)))
 
 /***/ }),
 /* 337 */
@@ -15848,7 +15845,7 @@ function popups() {
     $(popup).find(".popup-close").focus();
     if ($(popup).hasClass("video-popup")) {
       $(".video-popup.opened iframe")[0].contentWindow.postMessage("{\"event\":\"command\",\"func\":\"" + "playVideo" + "\",\"args\":\"\"}", "*");
-    }
+    };
   });
   this.$document.on("click", ".popup-close", function () {
     setTimeout(closePopup, 200);
@@ -15869,7 +15866,7 @@ function popups() {
     var scrolled = $(window).scrollTop();
     if ($(".popup.opened").hasClass("video-popup")) {
       $(".video-popup.opened iframe")[0].contentWindow.postMessage("{\"event\":\"command\",\"func\":\"" + "stopVideo" + "\",\"args\":\"\"}", "*");
-    }
+    };
     $(".popup").removeClass("opened");
     popupWrap.removeClass("active");
     mainWrap.removeClass("no-scroll");
@@ -15879,7 +15876,7 @@ function popups() {
     $("a[href=\"" + popup + "]\"").focus();
   }
 }
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(18)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(22)))
 
 /***/ }),
 /* 338 */
@@ -15895,237 +15892,19 @@ function backToTop() {
     }, 700);
   });
 }
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(18)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(22)))
 
 /***/ }),
 /* 339 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function($) {/* harmony export (immutable) */ __webpack_exports__["a"] = contactUsMap;
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-function contactUsMap() {
-    if ($("#map").length) {
-        $(window).on("load", function () {
-            var location = $(".map-menu-list"),
-                curLocation = location.children('.active').find("a"),
-                subLocation = $(".map-menu .tab-content-item");
-
-            function createMap(dataLat, dataLng, dataTitle, childCategory, idx) {
-                var $map = $("#map"),
-                    lat = dataLat,
-                    lng = dataLng,
-                    myLatlng = new google.maps.LatLng(lat, lng),
-                    styles = [{
-                    "featureType": "administrative",
-                    "elementType": "all",
-                    "stylers": [{
-                        "visibility": "on"
-                    }, {
-                        "lightness": 33
-                    }]
-                }, {
-                    "featureType": "landscape",
-                    "elementType": "all",
-                    "stylers": [{
-                        "color": "#f7f7f7"
-                    }]
-                }, {
-                    "featureType": "poi.business",
-                    "elementType": "all",
-                    "stylers": [{
-                        "visibility": "off"
-                    }]
-                }, {
-                    "featureType": "poi.park",
-                    "elementType": "geometry",
-                    "stylers": [{
-                        "color": "#deecdb"
-                    }]
-                }, {
-                    "featureType": "poi.park",
-                    "elementType": "labels",
-                    "stylers": [{
-                        "visibility": "on"
-                    }, {
-                        "lightness": "25"
-                    }]
-                }, {
-                    "featureType": "road",
-                    "elementType": "all",
-                    "stylers": [{
-                        "lightness": "25"
-                    }]
-                }, {
-                    "featureType": "road",
-                    "elementType": "labels.icon",
-                    "stylers": [{
-                        "visibility": "off"
-                    }]
-                }, {
-                    "featureType": "road.highway",
-                    "elementType": "geometry",
-                    "stylers": [{
-                        "color": "#ffffff"
-                    }]
-                }, {
-                    "featureType": "road.highway",
-                    "elementType": "labels",
-                    "stylers": [{
-                        "saturation": "-90"
-                    }, {
-                        "lightness": "25"
-                    }]
-                }, {
-                    "featureType": "road.arterial",
-                    "elementType": "all",
-                    "stylers": [{
-                        "visibility": "on"
-                    }]
-                }, {
-                    "featureType": "road.arterial",
-                    "elementType": "geometry",
-                    "stylers": [{
-                        "color": "#ffffff"
-                    }]
-                }, {
-                    "featureType": "road.local",
-                    "elementType": "geometry",
-                    "stylers": [{
-                        "color": "#ffffff"
-                    }]
-                }, {
-                    "featureType": "transit.line",
-                    "elementType": "all",
-                    "stylers": [{
-                        "visibility": "off"
-                    }]
-                }, {
-                    "featureType": "transit.station",
-                    "elementType": "all",
-                    "stylers": [{
-                        "visibility": "off"
-                    }]
-                }, {
-                    "featureType": "water",
-                    "elementType": "all",
-                    "stylers": [{
-                        "visibility": "on"
-                    }, {
-                        "color": "#e0f1f9"
-                    }]
-                }],
-                    mapOptions = {
-                    zoom: 7,
-                    center: myLatlng,
-                    scrollwheel: false,
-                    scaleControl: false,
-                    zoomControl: true,
-                    disableDoubleClickZoom: true,
-                    panControl: false,
-                    mapTypeControl: false,
-                    streetViewControl: false,
-                    overviewMapControl: false,
-                    styles: styles
-                },
-                    map = new google.maps.Map($map[0], mapOptions),
-                    image = {
-                    url: $map.attr('data-image')
-                };
-                var marker = void 0;
-                Array.prototype.forEach.call(childCategory, function (item, i) {
-                    var childItem = childCategory[i];
-                    marker = new google.maps.Marker({
-                        position: {
-                            lat: childItem[0],
-                            lng: childItem[1]
-                        },
-                        map: map,
-                        icon: image,
-                        title: childItem[2]
-                    });
-                    if (i === idx && (typeof idx === "undefined" ? "undefined" : _typeof(idx)) !== ( true ? "undefined" : _typeof(undefined))) {
-                        marker[idx] = new google.maps.InfoWindow({
-                            position: {
-                                lat: childItem[0],
-                                lng: childItem[1]
-                            },
-                            map: map,
-                            icon: image
-                        });
-                        var content = '<div id="map-note-neighborhood">' + '<h6>' + childItem[2] + '</h6>' + '<div id="content-note">' + '<div>2000 East Tremont Avenue</div>' + '<div>Bronx, NY 10462</div>' + '</div>' + '</div>';
-                        marker[idx].setContent(content);
-                        var crctMarker = marker[idx];
-                        correctMarker(crctMarker);
-                    }
-                });
-
-                function correctMarker(marker) {
-                    google.maps.event.addListenerOnce(marker, "domready", function () {
-                        var iw = $(".gm-style-iw");
-                        var iwBg = iw.prev();
-                        iwBg.children(":nth-child(2)").css("display", "none");
-                        iwBg.children(":nth-child(4)").css("display", "none");
-                        iwBg.children(":nth-child(1)").attr("style", function (i, s) {
-                            return s + "display: none !important;";
-                        });
-                        iwBg.children(":nth-child(3)").attr("style", function (i, s) {
-                            return s + "display: none !important;";
-                        });
-                        iw.siblings("div, img").remove();
-                        iw.parent().parent().css({
-                            left: "120px",
-                            top: "70px"
-                        });
-                    });
-                }
-            }
-
-            function getData(locationItem, idx) {
-                var curLat = parseFloat(locationItem.attr("data-lat")),
-                    curLng = parseFloat(locationItem.attr("data-lng")),
-                    curTitle = locationItem.attr("data-title");
-                var childCategory = [];
-                $('.tab-content-item.active').find("a").each(function (index, item) {
-                    var childItem = [];
-                    childItem.push(parseFloat($(this).attr("data-lat")));
-                    childItem.push(parseFloat($(this).attr("data-lng")));
-                    childItem.push($(this).attr("data-title"));
-                    childCategory.push(childItem);
-                }).promise().done(createMap(curLat, curLng, curTitle, childCategory, idx));
-            }
-
-            getData(curLocation);
-
-            location.find("a").on("click", function () {
-                var $this = $(this);
-                getData($this);
-            });
-
-            subLocation.find("a").on("click", function () {
-                var $this = $(this),
-                    $pseudoThis = $(".tab-nav-item.active").find("a"),
-                    $idx = $this.parent("li").index();
-                $this.addClass("active").parent("li").siblings().find("a").removeClass("active");
-                getData($pseudoThis, $idx);
-            });
-        });
-    }
-}
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(18)))
-
-/***/ }),
-/* 340 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* WEBPACK VAR INJECTION */(function($) {/* harmony export (immutable) */ __webpack_exports__["a"] = googleMap;
 function googleMap() {
-  if ($('#map-home').length) {
+  if ($("#map-home").length) {
     var createMap = function createMap() {
       var image = void 0;
-      var iconSrc = $("#map-home").attr('data-image');
+      var iconSrc = $("#map-home").attr("data-image");
       if ($(window).width() >= 1280) {
         image = {
           url: iconSrc
@@ -16136,9 +15915,9 @@ function googleMap() {
           scaledSize: new google.maps.Size(17, 21)
         };
       }
-      var $map = $('#map-home'),
-          longitude = $map.attr('data-longitude'),
-          latitude = $map.attr('data-latitude'),
+      var $map = $("#map-home"),
+          longitude = $map.attr("data-longitude"),
+          latitude = $map.attr("data-latitude"),
           myLatlng = new google.maps.LatLng(longitude, latitude),
           styles = [{ "featureType": "all", "elementType": "all", "stylers": [{ "lightness": "0" }, { "gamma": "0.96" }] }, { "featureType": "all", "elementType": "geometry.fill", "stylers": [{ "hue": "#00ff9c" }, { "visibility": "on" }] }, { "featureType": "all", "elementType": "geometry.stroke", "stylers": [{ "weight": "8.62" }, { "visibility": "simplified" }, { "color": "#0bb5e7" }] }, { "featureType": "all", "elementType": "labels.text", "stylers": [{ "saturation": "-88" }, { "lightness": "-99" }, { "gamma": "0.00" }, { "weight": "0.63" }, { "color": "#ebebeb" }, { "visibility": "on" }] }, { "featureType": "all", "elementType": "labels.text.fill", "stylers": [{ "visibility": "on" }, { "saturation": "-90" }, { "lightness": "-34" }, { "weight": "2.48" }, { "gamma": "0.48" }] }, { "featureType": "administrative", "elementType": "labels.text.fill", "stylers": [{ "color": "#444444" }] }, { "featureType": "landscape", "elementType": "all", "stylers": [{ "color": "#f2f2f2" }] }, { "featureType": "landscape.natural.landcover", "elementType": "geometry.fill", "stylers": [{ "saturation": "-100" }] }, { "featureType": "landscape.natural.terrain", "elementType": "geometry.fill", "stylers": [{ "saturation": "-1" }, { "lightness": "-100" }, { "weight": "0.01" }] }, { "featureType": "poi", "elementType": "all", "stylers": [{ "visibility": "off" }] }, { "featureType": "road", "elementType": "all", "stylers": [{ "saturation": -100 }, { "lightness": 45 }] }, { "featureType": "road", "elementType": "labels.text", "stylers": [{ "lightness": "6" }, { "saturation": "1" }, { "weight": "0.93" }] }, { "featureType": "road.highway", "elementType": "all", "stylers": [{ "visibility": "simplified" }] }, { "featureType": "road.highway", "elementType": "labels.text", "stylers": [{ "lightness": "-33" }] }, { "featureType": "road.highway", "elementType": "labels.text.fill", "stylers": [{ "lightness": "-21" }] }, { "featureType": "road.arterial", "elementType": "labels.text", "stylers": [{ "lightness": "5" }] }, { "featureType": "road.arterial", "elementType": "labels.icon", "stylers": [{ "visibility": "off" }] }, { "featureType": "road.local", "elementType": "labels.text", "stylers": [{ "lightness": "21" }] }, { "featureType": "transit", "elementType": "all", "stylers": [{ "visibility": "off" }] }, { "featureType": "water", "elementType": "all", "stylers": [{ "color": "#96d7f1" }, { "visibility": "on" }] }, { "featureType": "water", "elementType": "geometry.fill", "stylers": [{ "lightness": "63" }, { "hue": "#0061ff" }] }, { "featureType": "water", "elementType": "labels.text", "stylers": [{ "lightness": "65" }] }],
           mapOptions = {
@@ -16148,7 +15927,7 @@ function googleMap() {
         disableDefaultUI: true,
         scrollwheel: false,
         zoomControl: true,
-        gestureHandling: 'cooperative'
+        gestureHandling: "cooperative"
       },
           map = new google.maps.Map($map[0], mapOptions),
           marker = new google.maps.InfoWindow({
@@ -16156,7 +15935,7 @@ function googleMap() {
         map: map,
         icon: image
       }),
-          content = '<div id="map-note">' + '<h5>Parkchester</h5>' + '<div id="content-note">' + '<div>2000 East Tremont Avenue</div>' + '<div>Bronx, NY 10462</div>' + '</div>' + '</div>';
+          content = "<div id='map-note'>" + "<h5>Parkchester</h5>" + "<div id='content-note'>" + "<div>2000 East Tremont Avenue</div>" + "<div>Bronx, NY 10462</div>" + "</div>" + "</div>";
       new google.maps.Marker({
         position: myLatlng,
         map: map,
@@ -16192,15 +15971,15 @@ function googleMap() {
     createMap();
   }
 }
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(18)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(22)))
 
 /***/ }),
-/* 341 */
+/* 340 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function($) {/* harmony export (immutable) */ __webpack_exports__["a"] = vueMap;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_date__ = __webpack_require__(342);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_date__ = __webpack_require__(341);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_date___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_date__);
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
@@ -16321,7 +16100,7 @@ function vueMap() {
       }, {
         item_image: "events3.png",
         item_title: "Christmas Tree Lighting",
-        item_description: "'Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.",
+        item_description: "Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.",
         item_data_start: "2018-04-05",
         item_data_end: "2018-04-10"
       }, {
@@ -16482,7 +16261,6 @@ function vueMap() {
         item_data_end: "2018-12-25"
       }]
     };
-
     var getters = {
       get_mapmenu_list: function get_mapmenu_list(state) {
         return state.data;
@@ -16497,7 +16275,7 @@ function vueMap() {
       },
       filter_events_list: function filter_events_list(state) {
         return function (date_start, date_end) {
-          if (date_end == '') {
+          if (date_end == "") {
             return state.date_events;
           } else {
             var eventArray = [];
@@ -16519,19 +16297,19 @@ function vueMap() {
       getters: getters
     });
 
-    Vue.component('v-select', VueSelect.VueSelect);
+    Vue.component("v-select", VueSelect.VueSelect);
 
-    Vue.component('mapHolder', {
-      template: '#map-holder',
+    Vue.component("mapHolder", {
+      template: "#map-holder",
       data: function data() {
         return {
           mainTab: 0,
           mainCategory: null,
           subIdx: null,
           icon: "/dist/images/mappin.png",
-          searchQuery: '',
+          searchQuery: "",
           arrLocations: [],
-          searchText: '',
+          searchText: "",
           activeFilter: false,
           activeSubIndex: false
         };
@@ -16553,7 +16331,7 @@ function vueMap() {
               arrDrop.push(itm);
             });
           });
-          if (_self.searchText !== '' && _self.searchText !== null) {
+          if (_self.searchText !== "" && _self.searchText !== null) {
             _self.activeFilter = true;
             return arrDrop.filter(function (item) {
               return item.name.toLowerCase().indexOf(_self.searchText.toLowerCase()) >= 0;
@@ -16581,7 +16359,7 @@ function vueMap() {
         },
         triggerFilter: function triggerFilter(parentindex, subindex) {
           this.mainTab = parentindex;
-          this.activeSubIndex = parentindex + '_' + subindex;
+          this.activeSubIndex = parentindex + "_" + subindex;
         },
         initMap: function initMap(locations, subIdx) {
           var _self = this,
@@ -16727,7 +16505,7 @@ function vueMap() {
                 icon: image,
                 title: subItem.title
               });
-              var content = '<div id="map-note-neighborhood">' + '<h6>' + subItem.title + '</h6>' + '<div id="content-note">' + '<div>' + subItem.address + '</div>' + '</div>' + '</div>';
+              var content = "<div id='map-note-neighborhood'>" + "<h6>" + subItem.title + "</h6>" + "<div id='content-note'>" + "<div>" + subItem.address + "</div>" + "</div>" + "</div>";
               marker[subIdx].setContent(content);
               var crctMarker = marker[subIdx];
               _self.correctMarker(crctMarker);
@@ -16759,20 +16537,20 @@ function vueMap() {
       }
     });
 
-    Vue.component('sortHolder', {
-      template: '#sort-holder',
+    Vue.component("sortHolder", {
+      template: "#sort-holder",
       data: function data() {
         return {
           language: "en",
-          selected: '2018-07-01',
-          start: '2018-07-01',
-          pseudo_start: 'Jul 01, 2018',
-          end: '2018-09-01',
-          pseudo_end: 'Sep 01, 2018',
-          range: ['2016-01-01', '2016-01-11'],
-          init: '2016-12-26',
+          selected: "2018-07-01",
+          start: "2018-07-01",
+          pseudo_start: "Jul 01, 2018",
+          end: "2018-09-01",
+          pseudo_end: "Sep 01, 2018",
+          range: ["2016-01-01", "2016-01-11"],
+          init: "2016-12-26",
           event_date: {
-            date: '',
+            date: "",
             range: false
           },
           active: true,
@@ -16819,8 +16597,8 @@ function vueMap() {
       methods: {
         filterDate: function filterDate(val) {
           var dateStr = void 0;
-          var objDate = new Date(val).toString().split(' ');
-          dateStr = objDate[1] + ' ' + objDate[2] + ',' + ' ' + objDate[3];
+          var objDate = new Date(val).toString().split(" ");
+          dateStr = objDate[1] + " " + objDate[2] + "," + " " + objDate[3];
           return dateStr;
         },
         eventsIndex: function eventsIndex() {
@@ -16834,47 +16612,47 @@ function vueMap() {
       }
     });
     new Vue({
-      el: '#app',
+      el: "#app",
       store: store
     });
     new Vue({
-      el: '#sort-events',
+      el: "#sort-events",
       store: store
     });
   }
 }
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(18)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(22)))
 
 /***/ }),
-/* 342 */
+/* 341 */
 /***/ (function(module, exports, __webpack_require__) {
 
 !function(t,e){ true?module.exports=e():"function"==typeof define&&define.amd?define([],e):"object"==typeof exports?exports.datepicker=e():t.datepicker=e()}(window,function(){return function(t){var e={};function n(r){if(e[r])return e[r].exports;var a=e[r]={i:r,l:!1,exports:{}};return t[r].call(a.exports,a,a.exports,n),a.l=!0,a.exports}return n.m=t,n.c=e,n.d=function(t,e,r){n.o(t,e)||Object.defineProperty(t,e,{configurable:!1,enumerable:!0,get:r})},n.r=function(t){Object.defineProperty(t,"__esModule",{value:!0})},n.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return n.d(e,"a",e),e},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.p="",n(n.s=62)}([function(t,e,n){var r=n(20)("wks"),a=n(19),o=n(1).Symbol,i="function"==typeof o;(t.exports=function(t){return r[t]||(r[t]=i&&o[t]||(i?o:a)("Symbol."+t))}).store=r},function(t,e){var n=t.exports="undefined"!=typeof window&&window.Math==Math?window:"undefined"!=typeof self&&self.Math==Math?self:Function("return this")();"number"==typeof __g&&(__g=n)},function(t,e){var n={}.hasOwnProperty;t.exports=function(t,e){return n.call(t,e)}},function(t,e,n){t.exports=!n(25)(function(){return 7!=Object.defineProperty({},"a",{get:function(){return 7}}).a})},function(t,e,n){var r=n(11);t.exports=function(t){if(!r(t))throw TypeError(t+" is not an object!");return t}},function(t,e,n){var r=n(4),a=n(50),o=n(49),i=Object.defineProperty;e.f=n(3)?Object.defineProperty:function(t,e,n){if(r(t),e=o(e,!0),r(n),a)try{return i(t,e,n)}catch(t){}if("get"in n||"set"in n)throw TypeError("Accessors not supported!");return"value"in n&&(t[e]=n.value),t}},function(t,e,n){var r=n(5),a=n(10);t.exports=n(3)?function(t,e,n){return r.f(t,e,a(1,n))}:function(t,e,n){return t[e]=n,t}},function(t,e,n){"use strict";var r=n(58);Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0;var a=r(n(57)),o={data:function(){var t,e,n=new Date;return this.range?(t=this.value[0]?new Date(this.value[0]):n,e=this.value[1]?new Date(this.value[1]):n):t=e=this.value?new Date(this.value):n,{showCancel:!1,panelState:!1,panelType:"date",coordinates:{},year:e.getFullYear(),month:e.getMonth(),date:e.getDate(),tmpYear:e.getFullYear(),tmpMonth:e.getMonth(),tmpStartYear:t.getFullYear(),tmpStartMonth:t.getMonth(),tmpStartDate:t.getDate(),tmpEndYear:e.getFullYear(),tmpEndMonth:e.getMonth(),tmpEndDate:e.getDate(),minYear:Number,minMonth:Number,minDate:Number,maxYear:Number,maxMonth:Number,maxDate:Number,yearList:(0,a.default)({length:12},function(t,e){return(new Date).getFullYear()+e}),monthList:[1,2,3,4,5,6,7,8,9,10,11,12],weekList:[0,1,2,3,4,5,6],rangeStart:!1}},props:{language:{default:"en"},min:{default:"1970-01-01"},max:{default:"3016-01-01"},value:{type:[String,Array],default:""},range:{type:Boolean,default:!1}},methods:{togglePanel:function(){this.panelState=!this.panelState,this.rangeStart=!1},isSelected:function(t,e){switch(t){case"year":return this.range?new Date(e,0).getTime()>=new Date(this.tmpStartYear,0).getTime()&&new Date(e,0).getTime()<=new Date(this.tmpEndYear,0).getTime():e===this.tmpYear;case"month":return this.range?new Date(this.tmpYear,e).getTime()>=new Date(this.tmpStartYear,this.tmpStartMonth).getTime()&&new Date(this.tmpYear,e).getTime()<=new Date(this.tmpEndYear,this.tmpEndMonth).getTime():e===this.tmpMonth&&this.year===this.tmpYear;case"date":if(!this.range)return this.date===e.value&&this.month===this.tmpMonth&&e.currentMonth;var n=this.tmpMonth;return e.previousMonth&&n--,e.nextMonth&&n++,new Date(this.tmpYear,n,e.value).getTime()>=new Date(this.tmpStartYear,this.tmpStartMonth,this.tmpStartDate).getTime()&&new Date(this.tmpYear,n,e.value).getTime()<=new Date(this.tmpEndYear,this.tmpEndMonth,this.tmpEndDate).getTime()}},chType:function(t){this.panelType=t},chYearRange:function(t){this.yearList=t?this.yearList.map(function(t){return t+12}):this.yearList.map(function(t){return t-12})},prevMonthPreview:function(){this.tmpMonth=0===this.tmpMonth?0:this.tmpMonth-1},nextMonthPreview:function(){this.tmpMonth=11===this.tmpMonth?11:this.tmpMonth+1},selectYear:function(t){this.validateYear(t)||(this.tmpYear=t,this.panelType="month")},selectMonth:function(t){this.validateMonth(t)||(this.tmpMonth=t,this.panelType="date")},selectDate:function(t){var e=this;setTimeout(function(){if(!e.validateDate(t))if(t.previousMonth?0===e.tmpMonth?(e.year-=1,e.tmpYear-=1,e.month=e.tmpMonth=11):(e.month=e.tmpMonth-1,e.tmpMonth-=1):t.nextMonth&&(11===e.tmpMonth?(e.year+=1,e.tmpYear+=1,e.month=e.tmpMonth=0):(e.month=e.tmpMonth+1,e.tmpMonth+=1)),e.range){if(e.range&&!e.rangeStart)e.tmpEndYear=e.tmpStartYear=e.tmpYear,e.tmpEndMonth=e.tmpStartMonth=e.tmpMonth,e.tmpEndDate=e.tmpStartDate=t.value,e.rangeStart=!0;else if(e.range&&e.rangeStart){var n,r,a;if(e.tmpEndYear=e.tmpYear,e.tmpEndMonth=e.tmpMonth,e.tmpEndDate=t.value,new Date(e.tmpStartYear,e.tmpStartMonth,e.tmpStartDate).getTime()>new Date(e.tmpEndYear,e.tmpEndMonth,e.tmpEndDate).getTime())n=e.tmpEndYear,r=e.tmpEndMonth,a=e.tmpEndDate,e.tmpEndYear=e.tmpStartYear,e.tmpEndMonth=e.tmpStartMonth,e.tmpEndDate=e.tmpStartDate,e.tmpStartYear=n,e.tmpStartMonth=r,e.tmpStartDate=a;var o=["".concat(e.tmpStartYear,"-").concat(("0"+(e.tmpStartMonth+1)).slice(-2),"-").concat(("0"+e.tmpStartDate).slice(-2)),"".concat(e.tmpEndYear,"-").concat(("0"+(e.tmpEndMonth+1)).slice(-2),"-").concat(("0"+e.tmpEndDate).slice(-2))];e.$emit("input",o),e.rangeStart=!1,e.panelState=!1}}else{e.year=e.tmpYear,e.month=e.tmpMonth,e.date=t.value;var i="".concat(e.tmpYear,"-").concat(("0"+(e.month+1)).slice(-2),"-").concat(("0"+e.date).slice(-2));e.$emit("input",i),e.panelState=!1}},0)},validateYear:function(t){return t>this.maxYear||t<this.minYear},validateMonth:function(t){return!(new Date(this.tmpYear,t).getTime()>=new Date(this.minYear,this.minMonth-1).getTime()&&new Date(this.tmpYear,t).getTime()<=new Date(this.maxYear,this.maxMonth-1).getTime())},validateDate:function(t){var e=this.tmpMonth;return t.previousMonth?e-=1:t.nextMonth&&(e+=1),!(new Date(this.tmpYear,e,t.value).getTime()>=new Date(this.minYear,this.minMonth-1,this.minDate).getTime()&&new Date(this.tmpYear,e,t.value).getTime()<=new Date(this.maxYear,this.maxMonth-1,this.maxDate).getTime())},close:function(t){this.$el.contains(t.target)||(this.panelState=!1,this.rangeStart=!1)},clear:function(){this.$emit("input",this.range?["",""]:"")}},watch:{min:function(t){var e=t.split("-");this.minYear=Number(e[0]),this.minMonth=Number(e[1]),this.minDate=Number(e[2])},max:function(t){var e=t.split("-");this.maxYear=Number(e[0]),this.maxMonth=Number(e[1]),this.maxDate=Number(e[2])},range:function(t,e){t!==e&&(t&&"String"===Object.prototype.toString.call(this.value).slice(8,-1)&&this.$emit("input",["",""]),t||"Array"!==Object.prototype.toString.call(this.value).slice(8,-1)||this.$emit("input",""))}},computed:{dateList:function(){for(var t=new Date(this.tmpYear,this.tmpMonth+1,0).getDate(),e=(0,a.default)({length:t},function(t,e){return{currentMonth:!0,value:e+1}}),n=new Date(this.tmpYear,this.tmpMonth,1).getDay(),r=new Date(this.tmpYear,this.tmpMonth,0).getDate(),o=0,i=n;o<i;o++)e=[{previousMonth:!0,value:r-o}].concat(e);for(var s=e.length,c=1;s<42;s++,c++)e[e.length]={nextMonth:!0,value:c};return e}},filters:{week:function(t,e){switch(e){case"en":return{0:"Su",1:"Mo",2:"Tu",3:"We",4:"Th",5:"Fr",6:"Sa"}[t];case"zh-cn":return{0:"日",1:"一",2:"二",3:"三",4:"四",5:"五",6:"六"}[t];case"uk":return{0:"Пн",1:"Вт",2:"Ср",3:"Чт",4:"Пт",5:"Сб",6:"Нд"}[t];case"es":return{0:"Do",1:"Lu",2:"Ma",3:"Mi",4:"Ju",5:"Vi",6:"Sa"}[t];default:return t}},month:function(t,e){switch(e){case"en":return{1:"Jan",2:"Feb",3:"Mar",4:"Apr",5:"May",6:"Jun",7:"Jul",8:"Aug",9:"Sep",10:"Oct",11:"Nov",12:"Dec"}[t];case"zh-cn":return{1:"一",2:"二",3:"三",4:"四",5:"五",6:"六",7:"七",8:"八",9:"九",10:"十",11:"十一",12:"十二"}[t];case"uk":return{1:"Січень",2:"Лютий",3:"Березень",4:"Квітень",5:"Травень",6:"Червень",7:"Липень",8:"Серпень",9:"Вересень",10:"Жовтень",11:"Листопад",12:"Грудень"}[t];case"es":return{1:"Ene",2:"Feb",3:"Mar",4:"Abr",5:"May",6:"Jun",7:"Jul",8:"Ago",9:"Sep",10:"Oct",11:"Nov",12:"Dic"}[t];default:return t}}},mounted:function(){var t=this;this.$nextTick(function(){t.$el.parentNode.offsetWidth+t.$el.parentNode.offsetLeft-t.$el.offsetLeft<=300?t.coordinates={right:"0",top:"".concat(window.getComputedStyle(t.$el.children[0]).offsetHeight+4,"px")}:t.coordinates={left:"0",top:"".concat(window.getComputedStyle(t.$el.children[0]).offsetHeight+4,"px")};var e=t.min.split("-");t.minYear=Number(e[0]),t.minMonth=Number(e[1]),t.minDate=Number(e[2]);var n=t.max.split("-");if(t.maxYear=Number(n[0]),t.maxMonth=Number(n[1]),t.maxDate=Number(n[2]),t.range){if("Array"!==Object.prototype.toString.call(t.value).slice(8,-1))throw new Error("Binding value must be an array in range mode.");if(t.value.length){var r=t.value[0].split("-"),a=t.value[1].split("-");t.tmpStartYear=Number(r[0]),t.tmpStartMonth=Number(r[1])-1,t.tmpStartDate=Number(r[2]),t.tmpEndYear=Number(a[0]),t.tmpEndMonth=Number(a[1])-1,t.tmpEndDate=Number(a[2])}else t.$emit("input",["",""])}t.value||t.$emit("input",""),window.addEventListener("click",t.close)})},beforeDestroy:function(){window.removeEventListener("click",this.close)}};e.default=o},function(t,e,n){var r=n(20)("keys"),a=n(19);t.exports=function(t){return r[t]||(r[t]=a(t))}},function(t,e){t.exports={}},function(t,e){t.exports=function(t,e){return{enumerable:!(1&t),configurable:!(2&t),writable:!(4&t),value:e}}},function(t,e){t.exports=function(t){return"object"==typeof t?null!==t:"function"==typeof t}},function(t,e){var n=t.exports={version:"2.5.5"};"number"==typeof __e&&(__e=n)},function(t,e){t.exports=function(t){if(void 0==t)throw TypeError("Can't call method on  "+t);return t}},function(t,e){var n=Math.ceil,r=Math.floor;t.exports=function(t){return isNaN(t=+t)?0:(t>0?r:n)(t)}},function(t,e,n){"use strict";n.d(e,"a",function(){return r}),n.d(e,"b",function(){return a});var r=function(){var t=this,e=t.$createElement,r=t._self._c||e;return r("div",{staticClass:"date-picker"},[r("div",{staticClass:"input-wrapper",on:{mouseenter:function(e){t.showCancel=!0},mouseleave:function(e){t.showCancel=!1}}},[r("div",{staticClass:"input",domProps:{textContent:t._s(t.range?t.value[0]+" -- "+t.value[1]:t.value)},on:{click:t.togglePanel}}),t._v(" "),r("transition",{attrs:{name:"fade"}},[r("img",{directives:[{name:"show",rawName:"v-show",value:t.showCancel,expression:"showCancel"}],staticClass:"cancel-btn",attrs:{src:n(30)},on:{click:t.clear}})])],1),t._v(" "),r("transition",{attrs:{name:"toggle"}},[r("div",{directives:[{name:"show",rawName:"v-show",value:t.panelState,expression:"panelState"}],staticClass:"date-panel",style:t.coordinates},[r("div",{directives:[{name:"show",rawName:"v-show",value:"year"!==t.panelType,expression:"panelType !== 'year'"}],staticClass:"panel-header"},[r("div",{staticClass:"arrow-left",on:{click:function(e){t.prevMonthPreview()}}},[t._v("<")]),t._v(" "),r("div",{staticClass:"year-month-box"},[r("div",{staticClass:"year-box",domProps:{textContent:t._s(t.tmpYear)},on:{click:function(e){t.chType("year")}}}),t._v(" "),r("div",{staticClass:"month-box",on:{click:function(e){t.chType("month")}}},[t._v(t._s(t._f("month")(t.tmpMonth+1,t.language)))])]),t._v(" "),r("div",{staticClass:"arrow-right",on:{click:function(e){t.nextMonthPreview()}}},[t._v(">")])]),t._v(" "),r("div",{directives:[{name:"show",rawName:"v-show",value:"year"===t.panelType,expression:"panelType === 'year'"}],staticClass:"panel-header"},[r("div",{staticClass:"arrow-left",on:{click:function(e){t.chYearRange(0)}}},[t._v("<")]),t._v(" "),r("div",{staticClass:"year-range"},[r("span",{domProps:{textContent:t._s(t.yearList[0])}}),t._v(" - "),r("span",{domProps:{textContent:t._s(t.yearList[t.yearList.length-1])}})]),t._v(" "),r("div",{staticClass:"arrow-right",on:{click:function(e){t.chYearRange(1)}}},[t._v(">")])]),t._v(" "),r("div",{directives:[{name:"show",rawName:"v-show",value:"year"===t.panelType,expression:"panelType === 'year'"}],staticClass:"type-year"},[r("ul",{staticClass:"year-list"},t._l(t.yearList,function(e){return r("li",{key:e,class:{selected:t.isSelected("year",e),invalid:t.validateYear(e)},domProps:{textContent:t._s(e)},on:{click:function(n){t.selectYear(e)}}})}))]),t._v(" "),r("div",{directives:[{name:"show",rawName:"v-show",value:"month"===t.panelType,expression:"panelType === 'month'"}],staticClass:"type-month"},[r("ul",{staticClass:"month-list"},t._l(t.monthList,function(e,n){return r("li",{key:e,class:{selected:t.isSelected("month",n),invalid:t.validateMonth(n)},on:{click:function(e){t.selectMonth(n)}}},[t._v("\n                        "+t._s(t._f("month")(e,t.language))+"\n                    ")])}))]),t._v(" "),r("div",{directives:[{name:"show",rawName:"v-show",value:"date"===t.panelType,expression:"panelType === 'date'"}],staticClass:"type-date"},[r("ul",{staticClass:"weeks"},t._l(t.weekList,function(e){return r("li",{key:e},[t._v(t._s(t._f("week")(e,t.language)))])})),t._v(" "),r("ul",{staticClass:"date-list"},t._l(t.dateList,function(e,n){return r("li",{key:n,class:{preMonth:e.previousMonth,nextMonth:e.nextMonth,invalid:t.validateDate(e),firstItem:n%7==0},on:{click:function(n){t.selectDate(e)}}},[r("div",{staticClass:"message",class:{selected:t.isSelected("date",e)}},[r("div",{staticClass:"bg"}),r("span",{domProps:{textContent:t._s(e.value)}})])])}))])])])],1)},a=[];r._withStripped=!0},function(t,e,n){var r=n(13);t.exports=function(t){return Object(r(t))}},function(t,e,n){var r=n(5).f,a=n(2),o=n(0)("toStringTag");t.exports=function(t,e,n){t&&!a(t=n?t:t.prototype,o)&&r(t,o,{configurable:!0,value:e})}},function(t,e){t.exports="constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf".split(",")},function(t,e){var n=0,r=Math.random();t.exports=function(t){return"Symbol(".concat(void 0===t?"":t,")_",(++n+r).toString(36))}},function(t,e,n){var r=n(1),a=r["__core-js_shared__"]||(r["__core-js_shared__"]={});t.exports=function(t){return a[t]||(a[t]={})}},function(t,e,n){var r=n(14),a=Math.min;t.exports=function(t){return t>0?a(r(t),9007199254740991):0}},function(t,e){var n={}.toString;t.exports=function(t){return n.call(t).slice(8,-1)}},function(t,e,n){var r=n(42),a=n(13);t.exports=function(t){return r(a(t))}},function(t,e,n){var r=n(11),a=n(1).document,o=r(a)&&r(a.createElement);t.exports=function(t){return o?a.createElement(t):{}}},function(t,e){t.exports=function(t){try{return!!t()}catch(t){return!0}}},function(t,e,n){var r=n(51);t.exports=function(t,e,n){if(r(t),void 0===e)return t;switch(n){case 1:return function(n){return t.call(e,n)};case 2:return function(n,r){return t.call(e,n,r)};case 3:return function(n,r,a){return t.call(e,n,r,a)}}return function(){return t.apply(e,arguments)}}},function(t,e,n){var r=n(1),a=n(12),o=n(26),i=n(6),s=n(2),c=function(t,e,n){var u,l,f,p=t&c.F,d=t&c.G,h=t&c.S,v=t&c.P,m=t&c.B,g=t&c.W,y=d?a:a[e]||(a[e]={}),x=y.prototype,w=d?r:h?r[e]:(r[e]||{}).prototype;for(u in d&&(n=e),n)(l=!p&&w&&void 0!==w[u])&&s(y,u)||(f=l?w[u]:n[u],y[u]=d&&"function"!=typeof w[u]?n[u]:m&&l?o(f,r):g&&w[u]==f?function(t){var e=function(e,n,r){if(this instanceof t){switch(arguments.length){case 0:return new t;case 1:return new t(e);case 2:return new t(e,n)}return new t(e,n,r)}return t.apply(this,arguments)};return e.prototype=t.prototype,e}(f):v&&"function"==typeof f?o(Function.call,f):f,v&&((y.virtual||(y.virtual={}))[u]=f,t&c.R&&x&&!x[u]&&i(x,u,f)))};c.F=1,c.G=2,c.S=4,c.P=8,c.B=16,c.W=32,c.U=64,c.R=128,t.exports=c},function(t,e,n){"use strict";function r(t,e,n,r,a,o,i,s){var c=typeof(t=t||{}).default;"object"!==c&&"function"!==c||(t=t.default);var u,l="function"==typeof t?t.options:t;if(e&&(l.render=e,l.staticRenderFns=n,l._compiled=!0),r&&(l.functional=!0),o&&(l._scopeId=o),i?(u=function(t){(t=t||this.$vnode&&this.$vnode.ssrContext||this.parent&&this.parent.$vnode&&this.parent.$vnode.ssrContext)||"undefined"==typeof __VUE_SSR_CONTEXT__||(t=__VUE_SSR_CONTEXT__),a&&a.call(this,t),t&&t._registeredComponents&&t._registeredComponents.add(i)},l._ssrRegister=u):a&&(u=s?function(){a.call(this,this.$root.$options.shadowRoot)}:a),u)if(l.functional){l._injectStyles=u;var f=l.render;l.render=function(t,e){return u.call(e),f(t,e)}}else{var p=l.beforeCreate;l.beforeCreate=p?[].concat(p,u):[u]}return{exports:t,options:l}}n.d(e,"a",function(){return r})},function(t,e,n){"use strict";function r(t,e){for(var n=[],r={},a=0;a<e.length;a++){var o=e[a],i=o[0],s={id:t+":"+a,css:o[1],media:o[2],sourceMap:o[3]};r[i]?r[i].parts.push(s):n.push(r[i]={id:i,parts:[s]})}return n}n.r(e),n.d(e,"default",function(){return h});var a="undefined"!=typeof document;if("undefined"!=typeof DEBUG&&DEBUG&&!a)throw new Error("vue-style-loader cannot be used in a non-browser environment. Use { target: 'node' } in your Webpack config to indicate a server-rendering environment.");var o={},i=a&&(document.head||document.getElementsByTagName("head")[0]),s=null,c=0,u=!1,l=function(){},f=null,p="data-vue-ssr-id",d="undefined"!=typeof navigator&&/msie [6-9]\b/.test(navigator.userAgent.toLowerCase());function h(t,e,n,a){u=n,f=a||{};var i=r(t,e);return v(i),function(e){for(var n=[],a=0;a<i.length;a++){var s=i[a];(c=o[s.id]).refs--,n.push(c)}e?v(i=r(t,e)):i=[];for(a=0;a<n.length;a++){var c;if(0===(c=n[a]).refs){for(var u=0;u<c.parts.length;u++)c.parts[u]();delete o[c.id]}}}}function v(t){for(var e=0;e<t.length;e++){var n=t[e],r=o[n.id];if(r){r.refs++;for(var a=0;a<r.parts.length;a++)r.parts[a](n.parts[a]);for(;a<n.parts.length;a++)r.parts.push(g(n.parts[a]));r.parts.length>n.parts.length&&(r.parts.length=n.parts.length)}else{var i=[];for(a=0;a<n.parts.length;a++)i.push(g(n.parts[a]));o[n.id]={id:n.id,refs:1,parts:i}}}}function m(){var t=document.createElement("style");return t.type="text/css",i.appendChild(t),t}function g(t){var e,n,r=document.querySelector("style["+p+'~="'+t.id+'"]');if(r){if(u)return l;r.parentNode.removeChild(r)}if(d){var a=c++;r=s||(s=m()),e=w.bind(null,r,a,!1),n=w.bind(null,r,a,!0)}else r=m(),e=function(t,e){var n=e.css,r=e.media,a=e.sourceMap;r&&t.setAttribute("media",r);f.ssrId&&t.setAttribute(p,e.id);a&&(n+="\n/*# sourceURL="+a.sources[0]+" */",n+="\n/*# sourceMappingURL=data:application/json;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(a))))+" */");if(t.styleSheet)t.styleSheet.cssText=n;else{for(;t.firstChild;)t.removeChild(t.firstChild);t.appendChild(document.createTextNode(n))}}.bind(null,r),n=function(){r.parentNode.removeChild(r)};return e(t),function(r){if(r){if(r.css===t.css&&r.media===t.media&&r.sourceMap===t.sourceMap)return;e(t=r)}else n()}}var y,x=(y=[],function(t,e){return y[t]=e,y.filter(Boolean).join("\n")});function w(t,e,n,r){var a=n?"":r.css;if(t.styleSheet)t.styleSheet.cssText=x(e,a);else{var o=document.createTextNode(a),i=t.childNodes;i[e]&&t.removeChild(i[e]),i.length?t.insertBefore(o,i[e]):t.appendChild(o)}}},function(t,e){t.exports="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACVElEQVR4Xu3b7VHDMBBF0ZcKgEqgA6ADSoAOoBLoAEqACqAEqATogFnGnhFBtqTVfmiT+B8kDtxjOc5Y0QZ7vm32vB8HgMMI+C9wDeAewBuAGwBfwZGOATwCuABwB+Ap7cmdAp8AaCfa3gFcBkagjlcAZ1MPHcyTEgAd+fPkSVERtuMp6QXAVQmAdiSE08AIufiP6TT4c0ovXQUiI1TH0wFeuwxGRGiKLwHQ45EQmuNrAKIgsOJrAUZHYMe3AIyK0BXfCjAaQnc8B2AUBJF4LoA3glh8D4AXgmh8L4A1gni8BIAVgkq8FIA2glq8JIAWgmq8NIA0gnq8BoAUgkm8FkAvglm8JgAXwTReG6AVwTzeAqAWwSXeCqCEQI+nt67p5+wNTHpAerOcGlu6vUZN831703jLETAfuBxCelDNjvz8Ry1HQAnBPN5jBMzvB9vnPP3eZQbKegTk3u3TU8AcwRJg6VJHAG7TcFYAa9d5AnCbi7QAqPmQ4zYDpQ1QE792dVB/T9AEaIl3Q9AC4MS7IGgA9MSbI0gDSMSbIkgCSMabIUgBaMSbIEgAaMarI/QCWMSrIvQAWMarIXABPOJVEDgAnvHiCK0AI8SLIrQAjBQvhlALMGK8CEINwMjx3QglgAjxXQilL0u7zdgwZ4Ca7yytfV0+WjxrJOQAIg37pYFSPRJyAHTkaYHRvLnM2DBPgXS3HELVkhlaUnI0vVLU+KXT4TtZEPb7nNwIoGVzD9NUFS0w2oVlc8/TDPRtzbI5gdEX5yVKnwPilDD/0wMAE25ndvsBgEk4UB+ZTboAAAAASUVORK5CYII="},function(t,e,n){var r=n(0)("iterator"),a=!1;try{var o=[7][r]();o.return=function(){a=!0},Array.from(o,function(){throw 2})}catch(t){}t.exports=function(t,e){if(!e&&!a)return!1;var n=!1;try{var o=[7],i=o[r]();i.next=function(){return{done:n=!0}},o[r]=function(){return i},t(o)}catch(t){}return n}},function(t,e,n){var r=n(22),a=n(0)("toStringTag"),o="Arguments"==r(function(){return arguments}());t.exports=function(t){var e,n,i;return void 0===t?"Undefined":null===t?"Null":"string"==typeof(n=function(t,e){try{return t[e]}catch(t){}}(e=Object(t),a))?n:o?r(e):"Object"==(i=r(e))&&"function"==typeof e.callee?"Arguments":i}},function(t,e,n){var r=n(32),a=n(0)("iterator"),o=n(9);t.exports=n(12).getIteratorMethod=function(t){if(void 0!=t)return t[a]||t["@@iterator"]||o[r(t)]}},function(t,e,n){"use strict";var r=n(5),a=n(10);t.exports=function(t,e,n){e in t?r.f(t,e,a(0,n)):t[e]=n}},function(t,e,n){var r=n(9),a=n(0)("iterator"),o=Array.prototype;t.exports=function(t){return void 0!==t&&(r.Array===t||o[a]===t)}},function(t,e,n){var r=n(4);t.exports=function(t,e,n,a){try{return a?e(r(n)[0],n[1]):e(n)}catch(e){var o=t.return;throw void 0!==o&&r(o.call(t)),e}}},function(t,e,n){"use strict";var r=n(26),a=n(27),o=n(16),i=n(36),s=n(35),c=n(21),u=n(34),l=n(33);a(a.S+a.F*!n(31)(function(t){Array.from(t)}),"Array",{from:function(t){var e,n,a,f,p=o(t),d="function"==typeof this?this:Array,h=arguments.length,v=h>1?arguments[1]:void 0,m=void 0!==v,g=0,y=l(p);if(m&&(v=r(v,h>2?arguments[2]:void 0,2)),void 0==y||d==Array&&s(y))for(n=new d(e=c(p.length));e>g;g++)u(n,g,m?v(p[g],g):p[g]);else for(f=y.call(p),n=new d;!(a=f.next()).done;g++)u(n,g,m?i(f,v,[a.value,g],!0):a.value);return n.length=g,n}})},function(t,e,n){var r=n(2),a=n(16),o=n(8)("IE_PROTO"),i=Object.prototype;t.exports=Object.getPrototypeOf||function(t){return t=a(t),r(t,o)?t[o]:"function"==typeof t.constructor&&t instanceof t.constructor?t.constructor.prototype:t instanceof Object?i:null}},function(t,e,n){var r=n(1).document;t.exports=r&&r.documentElement},function(t,e,n){var r=n(14),a=Math.max,o=Math.min;t.exports=function(t,e){return(t=r(t))<0?a(t+e,0):o(t,e)}},function(t,e,n){var r=n(23),a=n(21),o=n(40);t.exports=function(t){return function(e,n,i){var s,c=r(e),u=a(c.length),l=o(i,u);if(t&&n!=n){for(;u>l;)if((s=c[l++])!=s)return!0}else for(;u>l;l++)if((t||l in c)&&c[l]===n)return t||l||0;return!t&&-1}}},function(t,e,n){var r=n(22);t.exports=Object("z").propertyIsEnumerable(0)?Object:function(t){return"String"==r(t)?t.split(""):Object(t)}},function(t,e,n){var r=n(2),a=n(23),o=n(41)(!1),i=n(8)("IE_PROTO");t.exports=function(t,e){var n,s=a(t),c=0,u=[];for(n in s)n!=i&&r(s,n)&&u.push(n);for(;e.length>c;)r(s,n=e[c++])&&(~o(u,n)||u.push(n));return u}},function(t,e,n){var r=n(43),a=n(18);t.exports=Object.keys||function(t){return r(t,a)}},function(t,e,n){var r=n(5),a=n(4),o=n(44);t.exports=n(3)?Object.defineProperties:function(t,e){a(t);for(var n,i=o(e),s=i.length,c=0;s>c;)r.f(t,n=i[c++],e[n]);return t}},function(t,e,n){var r=n(4),a=n(45),o=n(18),i=n(8)("IE_PROTO"),s=function(){},c=function(){var t,e=n(24)("iframe"),r=o.length;for(e.style.display="none",n(39).appendChild(e),e.src="javascript:",(t=e.contentWindow.document).open(),t.write("<script>document.F=Object<\/script>"),t.close(),c=t.F;r--;)delete c.prototype[o[r]];return c()};t.exports=Object.create||function(t,e){var n;return null!==t?(s.prototype=r(t),n=new s,s.prototype=null,n[i]=t):n=c(),void 0===e?n:a(n,e)}},function(t,e,n){"use strict";var r=n(46),a=n(10),o=n(17),i={};n(6)(i,n(0)("iterator"),function(){return this}),t.exports=function(t,e,n){t.prototype=r(i,{next:a(1,n)}),o(t,e+" Iterator")}},function(t,e,n){t.exports=n(6)},function(t,e,n){var r=n(11);t.exports=function(t,e){if(!r(t))return t;var n,a;if(e&&"function"==typeof(n=t.toString)&&!r(a=n.call(t)))return a;if("function"==typeof(n=t.valueOf)&&!r(a=n.call(t)))return a;if(!e&&"function"==typeof(n=t.toString)&&!r(a=n.call(t)))return a;throw TypeError("Can't convert object to primitive value")}},function(t,e,n){t.exports=!n(3)&&!n(25)(function(){return 7!=Object.defineProperty(n(24)("div"),"a",{get:function(){return 7}}).a})},function(t,e){t.exports=function(t){if("function"!=typeof t)throw TypeError(t+" is not a function!");return t}},function(t,e){t.exports=!0},function(t,e,n){"use strict";var r=n(52),a=n(27),o=n(48),i=n(6),s=n(9),c=n(47),u=n(17),l=n(38),f=n(0)("iterator"),p=!([].keys&&"next"in[].keys()),d=function(){return this};t.exports=function(t,e,n,h,v,m,g){c(n,e,h);var y,x,w,b=function(t){if(!p&&t in _)return _[t];switch(t){case"keys":case"values":return function(){return new n(this,t)}}return function(){return new n(this,t)}},M=e+" Iterator",A="values"==v,S=!1,_=t.prototype,D=_[f]||_["@@iterator"]||v&&_[v],T=D||b(v),C=v?A?b("entries"):T:void 0,E="Array"==e&&_.entries||D;if(E&&(w=l(E.call(new t)))!==Object.prototype&&w.next&&(u(w,M,!0),r||"function"==typeof w[f]||i(w,f,d)),A&&D&&"values"!==D.name&&(S=!0,T=function(){return D.call(this)}),r&&!g||!p&&!S&&_[f]||i(_,f,T),s[e]=T,s[M]=d,v)if(y={values:A?T:b("values"),keys:m?T:b("keys"),entries:C},g)for(x in y)x in _||o(_,x,y[x]);else a(a.P+a.F*(p||S),e,y);return y}},function(t,e,n){var r=n(14),a=n(13);t.exports=function(t){return function(e,n){var o,i,s=String(a(e)),c=r(n),u=s.length;return c<0||c>=u?t?"":void 0:(o=s.charCodeAt(c))<55296||o>56319||c+1===u||(i=s.charCodeAt(c+1))<56320||i>57343?t?s.charAt(c):o:t?s.slice(c,c+2):i-56320+(o-55296<<10)+65536}}},function(t,e,n){"use strict";var r=n(54)(!0);n(53)(String,"String",function(t){this._t=String(t),this._i=0},function(){var t,e=this._t,n=this._i;return n>=e.length?{value:void 0,done:!0}:(t=r(e,n),this._i+=t.length,{value:t,done:!1})})},function(t,e,n){n(55),n(37),t.exports=n(12).Array.from},function(t,e,n){t.exports=n(56)},function(t,e){t.exports=function(t){return t&&t.__esModule?t:{default:t}}},function(t,e){t.exports=function(t){var e=[];return e.toString=function(){return this.map(function(e){var n=function(t,e){var n=t[1]||"",r=t[3];if(!r)return n;if(e&&"function"==typeof btoa){var a=(i=r,"/*# sourceMappingURL=data:application/json;charset=utf-8;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(i))))+" */"),o=r.sources.map(function(t){return"/*# sourceURL="+r.sourceRoot+t+" */"});return[n].concat(o).concat([a]).join("\n")}var i;return[n].join("\n")}(e,t);return e[2]?"@media "+e[2]+"{"+n+"}":n}).join("")},e.i=function(t,n){"string"==typeof t&&(t=[[null,t,""]]);for(var r={},a=0;a<this.length;a++){var o=this[a][0];"number"==typeof o&&(r[o]=!0)}for(a=0;a<t.length;a++){var i=t[a];"number"==typeof i[0]&&r[i[0]]||(n&&!i[2]?i[2]=n:n&&(i[2]="("+i[2]+") and ("+n+")"),e.push(i))}},e}},function(t,e,n){(t.exports=n(59)(!1)).push([t.i,"\nul[data-v-89588f16] {\n  padding: 0;\n  margin: 0;\n  list-style: none;\n}\n.date-picker[data-v-89588f16] {\n  position: relative;\n  height: 32px;\n}\n.input-wrapper[data-v-89588f16] {\n  border: 1px solid #ccc;\n  border-radius: 2px;\n  vertical-align: middle;\n  display: flex;\n  justify-content: space-between;\n  flex-flow: row nowrap;\n  align-items: center;\n  padding: 6px 10px 6px 4px;\n  height: 32px;\n  box-sizing: border-box;\n}\n.input[data-v-89588f16] {\n  height: 100%;\n  width: 100%;\n  font-size: inherit;\n  padding-left: 4px;\n  box-sizing: border-box;\n  outline: none;\n}\n.cancel-btn[data-v-89588f16] {\n  height: 14px;\n  width: 14px;\n}\n.date-panel[data-v-89588f16] {\n  position: absolute;\n  z-index: 5000;\n  border: 1px solid #eee;\n  width: 320px;\n  padding: 5px 10px 10px;\n  box-sizing: border-box;\n  background-color: #fff;\n  transform: translateY(4px);\n}\n.panel-header[data-v-89588f16] {\n  display: flex;\n  flex-flow: row nowrap;\n  width: 100%;\n}\n.arrow-left[data-v-89588f16],\n.arrow-right[data-v-89588f16] {\n  flex: 1;\n  font-size: 20px;\n  line-height: 2;\n  background-color: #fff;\n  text-align: center;\n  cursor: pointer;\n}\n.year-range[data-v-89588f16] {\n  font-size: 20px;\n  line-height: 2;\n  flex: 3;\n  display: flex;\n  justify-content: center;\n}\n.year-month-box[data-v-89588f16] {\n  flex: 3;\n  display: flex;\n  flex-flow: row nowrap;\n  justify-content: space-around;\n}\n.type-year[data-v-89588f16],\n.type-month[data-v-89588f16],\n.date-list[data-v-89588f16] {\n  background-color: #fff;\n}\n.year-box[data-v-89588f16],\n.month-box[data-v-89588f16] {\n  transition: all ease .1s;\n  font-family: Roboto, sans-serif;\n  flex: 1;\n  text-align: center;\n  font-size: 20px;\n  line-height: 2;\n  cursor: pointer;\n  background-color: #fff;\n}\n.year-list[data-v-89588f16],\n.month-list[data-v-89588f16] {\n  display: flex;\n  flex-flow: row wrap;\n  justify-content: space-between;\n}\n.year-list li[data-v-89588f16],\n.month-list li[data-v-89588f16] {\n  font-family: Roboto, sans-serif;\n  transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1) 0ms;\n  cursor: pointer;\n  text-align: center;\n  font-size: 20px;\n  width: 33%;\n  padding: 10px 0;\n}\n.year-list li[data-v-89588f16]:hover,\n.month-list li[data-v-89588f16]:hover {\n  background-color: #6ac1c9;\n  color: #fff;\n}\n.year-list li.selected[data-v-89588f16],\n.month-list li.selected[data-v-89588f16] {\n  background-color: #0097a7;\n  color: #fff;\n}\n.year-list li.invalid[data-v-89588f16],\n.month-list li.invalid[data-v-89588f16] {\n  cursor: not-allowed;\n  color: #ccc;\n}\n.date-list[data-v-89588f16] {\n  display: flex;\n  flex-flow: row wrap;\n  justify-content: space-between;\n}\n.date-list .valid[data-v-89588f16]:hover {\n  background-color: #eee;\n}\n.date-list li[data-v-89588f16] {\n  transition: all ease .1s;\n  cursor: pointer;\n  box-sizing: border-box;\n  border-bottom: 1px solid #fff;\n  position: relative;\n  margin: 2px;\n}\n.date-list li[data-v-89588f16]:not(.firstItem) {\n  margin-left: 10px;\n}\n.date-list li .message[data-v-89588f16] {\n  font-family: Roboto, sans-serif;\n  font-weight: 300;\n  font-size: 14px;\n  position: relative;\n  height: 30px;\n}\n.date-list li .message.selected .bg[data-v-89588f16] {\n  background-color: #0097a7;\n}\n.date-list li .message.selected span[data-v-89588f16] {\n  color: #fff;\n}\n.date-list li .message:not(.selected) .bg[data-v-89588f16] {\n  transform: scale(0);\n  opacity: 0;\n}\n.date-list li .message:not(.selected):hover .bg[data-v-89588f16] {\n  background-color: #0097a7;\n  transform: scale(1);\n  opacity: .6;\n}\n.date-list li .message:not(.selected):hover span[data-v-89588f16] {\n  color: #fff;\n}\n.date-list li .message .bg[data-v-89588f16] {\n  height: 30px;\n  width: 100%;\n  transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;\n  border-radius: 50%;\n  position: absolute;\n  z-index: 10;\n  top: 0;\n  left: 0;\n}\n.date-list li .message span[data-v-89588f16] {\n  position: absolute;\n  z-index: 20;\n  left: 50%;\n  top: 50%;\n  transform: translate3d(-50%, -50%, 0);\n}\n.date-list li.invalid[data-v-89588f16] {\n  cursor: not-allowed;\n  color: #ccc;\n}\n.weeks[data-v-89588f16] {\n  display: flex;\n  flex-flow: row wrap;\n  justify-content: space-between;\n}\n.weeks li[data-v-89588f16] {\n  font-weight: 600;\n}\n.weeks[data-v-89588f16],\n.date-list[data-v-89588f16] {\n  width: 100%;\n  text-align: center;\n}\n.weeks .preMonth[data-v-89588f16],\n.date-list .preMonth[data-v-89588f16],\n.weeks .nextMonth[data-v-89588f16],\n.date-list .nextMonth[data-v-89588f16] {\n  color: #ccc;\n}\n.weeks li[data-v-89588f16],\n.date-list li[data-v-89588f16] {\n  font-family: Roboto;\n  width: 30px;\n  height: 30px;\n  text-align: center;\n  line-height: 30px;\n}\n.toggle-enter[data-v-89588f16],\n.toggle-leave-active[data-v-89588f16] {\n  opacity: 0;\n  transform: translateY(-10px);\n}\n.toggle-enter-active[data-v-89588f16],\n.toggle-leave-active[data-v-89588f16] {\n  transition: all ease .2s;\n}\n.fade-enter[data-v-89588f16],\n.fade-leave-active[data-v-89588f16] {\n  opacity: 0;\n  transform: scale3d(0, 0, 0);\n}\n.fade-enter-active[data-v-89588f16],\n.fade-leave-active[data-v-89588f16] {\n  transition: all ease .1s;\n}\n",""])},function(t,e,n){var r=n(60);"string"==typeof r&&(r=[[t.i,r,""]]),r.locals&&(t.exports=r.locals);(0,n(29).default)("475e419f",r,!1,{})},function(t,e,n){"use strict";n.r(e);var r=n(7),a=n.n(r);for(var o in r)"default"!==o&&function(t){n.d(e,t,function(){return r[t]})}(o);var i=n(15),s=n(28),c=!1;var u=function(t){c||n(61)},l=Object(s.a)(a.a,i.a,i.b,!1,u,"data-v-89588f16",null);l.options.__file="src/Datepicker.vue",e.default=l.exports}]).default});
 
 /***/ }),
-/* 343 */
+/* 342 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function($) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return constants; });
-/* harmony export (immutable) */ __webpack_exports__["k"] = slider;
-/* harmony export (immutable) */ __webpack_exports__["i"] = popupGallerySlider;
+/* harmony export (immutable) */ __webpack_exports__["j"] = slider;
+/* harmony export (immutable) */ __webpack_exports__["h"] = popupGallerySlider;
 /* unused harmony export photoGallerySlider */
-/* harmony export (immutable) */ __webpack_exports__["m"] = timeline;
+/* harmony export (immutable) */ __webpack_exports__["l"] = timeline;
 /* harmony export (immutable) */ __webpack_exports__["f"] = mobileMenu;
 /* harmony export (immutable) */ __webpack_exports__["e"] = isDev;
-/* harmony export (immutable) */ __webpack_exports__["l"] = tabs;
+/* harmony export (immutable) */ __webpack_exports__["k"] = tabs;
 /* unused harmony export gallery */
 /* unused harmony export wrapperGallery */
 /* unused harmony export checkViewPort */
 /* harmony export (immutable) */ __webpack_exports__["d"] = initMasonry;
-/* harmony export (immutable) */ __webpack_exports__["j"] = scrollTo;
+/* harmony export (immutable) */ __webpack_exports__["i"] = scrollTo;
 /* harmony export (immutable) */ __webpack_exports__["b"] = fixedHeader;
 /* harmony export (immutable) */ __webpack_exports__["c"] = formSelect;
-/* harmony export (immutable) */ __webpack_exports__["h"] = playPause;
+/* harmony export (immutable) */ __webpack_exports__["g"] = playPause;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_polyfill__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_polyfill___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_polyfill__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__popupGallery__ = __webpack_require__(344);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__popupGallery__ = __webpack_require__(343);
 
 
 // these properties will be available from anywhere via this.property
@@ -16889,52 +16667,52 @@ var constants = {
 };
 
 function slider() {
-  $('.residents-holder').slick({
+  $(".residents-holder").slick({
     dots: true,
     infinite: false,
     speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
-    appendArrows: $('.custom-controls'),
-    appendDots: $('.custom-controls')
+    appendArrows: $(".custom-controls"),
+    appendDots: $(".custom-controls")
   });
-  $('.gallery-features').slick({
+  $(".gallery-features").slick({
     dots: true,
     infinite: false,
     speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
-    appendArrows: $('.features-controls'),
-    appendDots: $('.features-controls')
+    appendArrows: $(".features-controls"),
+    appendDots: $(".features-controls")
   });
-  $('.gallery-community').slick({
+  $(".gallery-community").slick({
     dots: true,
     infinite: false,
     speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
-    appendArrows: $('.community-controls'),
-    appendDots: $('.community-controls')
+    appendArrows: $(".community-controls"),
+    appendDots: $(".community-controls")
   });
-  $('.gallery-contemporary').slick({
+  $(".gallery-contemporary").slick({
     dots: true,
     infinite: false,
     speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
-    appendArrows: $('.contemporary-controls'),
-    appendDots: $('.contemporary-controls')
+    appendArrows: $(".contemporary-controls"),
+    appendDots: $(".contemporary-controls")
   });
-  $('.timeline-slider').slick({
+  $(".timeline-slider").slick({
     dots: true,
     infinite: false,
     speed: 500,
     fade: true,
-    cssEase: 'linear',
+    cssEase: "linear",
     slidesToShow: 1,
     slidesToScroll: 1
   });
-  $('.visual-bedroom').slick({
+  $(".visual-bedroom").slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     mobileFirst: true,
@@ -16947,39 +16725,39 @@ function slider() {
       settings: "unslick"
     }]
   });
-  $('.large-sync').slick({
+  $(".large-sync").slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
     fade: true,
-    asNavFor: '.small-sync'
+    asNavFor: ".small-sync"
   });
-  $('.small-sync').slick({
+  $(".small-sync").slick({
     slidesToShow: 3,
     slidesToScroll: 1,
-    asNavFor: '.large-sync',
+    asNavFor: ".large-sync",
     dots: true,
     centerMode: true,
     focusOnSelect: true,
     variableWidth: true
   });
-  $('.large-slider').slick({
+  $(".large-slider").slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
-    asNavFor: '.small-slider',
+    asNavFor: ".small-slider",
     fade: true
   });
-  $('.small-slider').slick({
+  $(".small-slider").slick({
     dots: false,
     vertical: true,
     slidesToShow: 4,
     slidesToScroll: 1,
     verticalSwiping: true,
     infinite: true,
-    asNavFor: '.large-slider',
-    prevArrow: '<button type="button" class="slick-prev">Up</button>',
-    nextArrow: '<button type="button" class="slick-next">Down</button>',
+    asNavFor: ".large-slider",
+    prevArrow: "<button type='button' class='slick-prev'>Up</button>",
+    nextArrow: "<button type='button' class='slick-next'>Down</button>",
     focusOnSelect: true,
     responsive: [{
       breakpoint: 1280,
@@ -16991,14 +16769,14 @@ function slider() {
         centerMode: true,
         slidesToScroll: 1,
         slidesToShow: 3,
-        prevArrow: '<button type="button" class="slick-prev">Prev</button>',
-        nextArrow: '<button type="button" class="slick-next">Next</button>'
+        prevArrow: "<button type='button' class='slick-prev'>Prev</button>",
+        nextArrow: "<button type='button' class='slick-next'>Next</button>"
       }
     }]
   });
   //timeline slide
-  $('.timeline-slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-    $('.part[data-history=' + nextSlide + ']').click();
+  $(".timeline-slider").on("beforeChange", function (event, slick, currentSlide, nextSlide) {
+    $(".part[data-history=" + nextSlide + "]").click();
   });
 }
 
@@ -17006,26 +16784,26 @@ function popupGallerySlider() {
   var clickCurrent = void 0,
       clickCurrentParent = void 0,
       finalCurrent = void 0;
-  var item = $('.photo-gallery .item'),
-      wrapperPopup = $('.popups'),
-      galleryPopup = $('.gallery-popup'),
-      galleryPopupWrapper = $('.popup-gallery-slider');
+  var item = $(".photo-gallery .item"),
+      wrapperPopup = $(".popups"),
+      galleryPopup = $(".gallery-popup"),
+      galleryPopupWrapper = $(".popup-gallery-slider");
 
-  item.on('click', function () {
+  item.on("click", function () {
     var wWidth = checkViewPort().width;
     clickCurrent = $(this).index();
-    clickCurrentParent = $(this).closest('.wrap-items').index();
+    clickCurrentParent = $(this).closest(".wrap-items").index();
     finalCurrent = 9 * clickCurrentParent + clickCurrent;
-    item.clone().attr('style', '').appendTo(galleryPopupWrapper);
-    wrapperPopup.addClass('active');
-    galleryPopup.addClass('opened');
+    item.clone().attr("style", "").appendTo(galleryPopupWrapper);
+    wrapperPopup.addClass("active");
+    galleryPopup.addClass("opened");
     if (wWidth >= 1280) {
       Object(__WEBPACK_IMPORTED_MODULE_1__popupGallery__["a" /* popupGallery */])(finalCurrent);
     } else {
       Object(__WEBPACK_IMPORTED_MODULE_1__popupGallery__["a" /* popupGallery */])(clickCurrent);
     }
   });
-  $('.popup-close').on('click', function (event) {
+  $(".popup-close").on("click", function (event) {
     event.preventDefault();
     var wWidth = checkViewPort().width;
     var popupActiveIdx = galleryPopupWrapper.find(".slick-current").index();
@@ -17041,15 +16819,15 @@ function popupGallerySlider() {
       }
       $(".photo-gallery-controls .slick-dots").find("li").eq(photoGalleryIdx).click();
     }
-    galleryPopupWrapper.slick('unslick');
+    galleryPopupWrapper.slick("unslick");
     galleryPopupWrapper.empty();
   });
 }
 //photo gallery
 function photoGallerySlider() {
-  $('.photo-gallery').slick({
-    appendArrows: $('.custom-controls'),
-    appendDots: $('.custom-controls'),
+  $(".photo-gallery").slick({
+    appendArrows: $(".custom-controls"),
+    appendDots: $(".custom-controls"),
     infinite: false,
     speed: 200,
     slidesToShow: 1,
@@ -17088,44 +16866,43 @@ function photoGallerySlider() {
 }
 
 function timeline() {
-  $('.chapter').on('click', function (e) {
-    if (!$(this).hasClass('active')) {
-      $('.chapter.active').removeClass('active');
-      $(this).addClass('active');
+  $(".chapter").on("click", function (e) {
+    if (!$(this).hasClass("active")) {
+      $(".chapter.active").removeClass("active");
+      $(this).addClass("active");
     }
-    $(this).removeClass('past');
-    $(this).prevAll().addClass('past');
+    $(this).removeClass("past");
+    $(this).prevAll().addClass("past");
     $(this).nextAll().each(function () {
-      $(this).removeClass('active').removeClass('past');
-      $(this).find('.active, .past').removeClass('active').removeClass('past');
+      $(this).removeClass("active").removeClass("past");
+      $(this).find(".active, .past").removeClass("active").removeClass("past");
     });
   });
 
-  $('.part').on('click', function (e) {
+  $(".part").on("click", function (e) {
     var $this = $(this),
-        $attr = $this.data('history');
-    $('.timeline-slider .slick-dots li').eq($attr).children().click();
-
-    if (!$this.hasClass('active')) {
-      $('.part.active').removeClass('active');
-      $this.addClass('active');
-      $this.parent().trigger('click');
-      $this.removeClass('past');
-      $this.prevAll().addClass('past');
-      $this.nextAll().removeClass('past');
+        $attr = $this.data("history");
+    $(".timeline-slider .slick-dots li").eq($attr).children().click();
+    if (!$this.hasClass("active")) {
+      $(".part.active").removeClass("active");
+      $this.addClass("active");
+      $this.parent().trigger("click");
+      $this.removeClass("past");
+      $this.prevAll().addClass("past");
+      $this.nextAll().removeClass("past");
     }
   });
 }
 
 function mobileMenu() {
-  $('.menu-button').on('click', function () {
-    $('.header-content').addClass('active-menu');
+  $(".menu-button").on("click", function () {
+    $(".header-content").addClass("active-menu");
   });
-  $('.close-menu').on('click', function () {
-    $('.header-content').removeClass('active-menu');
+  $(".close-menu").on("click", function () {
+    $(".header-content").removeClass("active-menu");
   });
-  $('.parent-menu > a').on('click', function () {
-    $(this).toggleClass('active').next().slideToggle();
+  $(".parent-menu > a").on("click", function () {
+    $(this).toggleClass("active").next().slideToggle();
   });
 }
 
@@ -17134,51 +16911,50 @@ function isDev() {
 }
 
 function tabs() {
-  $('.tab-nav a').on('click', function (event) {
+  $(".tab-nav a").on("click", function (event) {
     $(this).parent().addClass("active").siblings(".tab-nav-item").removeClass("active");
-    var attr = $(this).attr('href');
-    $(attr).addClass('active').siblings(".tab-content-item").removeClass("active");
+    var attr = $(this).attr("href");
+    $(attr).addClass("active").siblings(".tab-content-item").removeClass("active");
     event.preventDefault();
   });
 }
 
 function gallery() {
-  $('.gallery-holder').masonry({
-    itemSelector: '.item',
-    columnWidth: '.item-size',
+  $(".gallery-holder").masonry({
+    itemSelector: ".item",
+    columnWidth: ".item-size",
     gutter: 30,
     percentPosition: true
   });
 }
 
 function wrapperGallery() {
-  // $(".photo-gallery").slick('unslick');
-  var context = $('.photo-gallery'),
+  var context = $(".photo-gallery"),
       wrapperCounter = 0;
-  while (context.children('div:not(.wrap-items)').length) {
-    context.children('div:not(.wrap-items):lt(9)').wrapAll('<div class="wrap-items">');
+  while (context.children("div:not(.wrap-items)").length) {
+    context.children("div:not(.wrap-items):lt(9)").wrapAll("<div class='wrap-items'>");
     wrapperCounter++;
   }
-  if (wrapperCounter === context.children('.wrap-items').length) {
+  if (wrapperCounter === context.children(".wrap-items").length) {
     photoGallerySlider();
   }
 }
 
 function checkViewPort() {
   var e = window,
-      propWidth = 'inner';
-  if (!('innerWidth' in window)) {
-    propWidth = 'client';
+      propWidth = "inner";
+  if (!("innerWidth" in window)) {
+    propWidth = "client";
     e = document.documentElement || document.body;
   }
   return {
-    width: e[propWidth + 'Width'],
-    height: e[propWidth + 'Height']
+    width: e[propWidth + "Width"],
+    height: e[propWidth + "Height"]
   };
 }
 
 function initMasonry() {
-  $(window).on('load', function () {
+  $(window).on("load", function () {
     var wWidth = checkViewPort().width;
     var resizeId = void 0;
     if (wWidth >= 1280) {
@@ -17186,9 +16962,6 @@ function initMasonry() {
         wrapperGallery();
       }, 100);
     } else {
-      // setTimeout(() => {
-      //   photoGallerySlider();
-      // }, 100)
       clearTimeout(resizeId);
       resizeId = setTimeout(photoGallerySlider, 500);
     }
@@ -17196,13 +16969,13 @@ function initMasonry() {
 }
 
 function scrollTo() {
-  if ($('.scroll-to').length) {
-    var btn = $('.scroll-to'),
-        parentBtn = $('.scroll-to').parent(),
+  if ($(".scroll-to").length) {
+    var btn = $(".scroll-to"),
+        parentBtn = $(".scroll-to").parent(),
         parentBtnOffsetTop = parentBtn.next().offset().top,
-        headerHeight = $('.header').outerHeight();
-    $('.scroll-to').on('click', function () {
-      $('html, body').animate({
+        headerHeight = $(".header").outerHeight();
+    $(".scroll-to").on("click", function () {
+      $("html, body").animate({
         scrollTop: parentBtnOffsetTop - headerHeight
       }, 1000);
     });
@@ -17210,15 +16983,15 @@ function scrollTo() {
 }
 
 function fixedHeader() {
-  var header = $('.header'),
+  var header = $(".header"),
       headerScrollTop = header.scrollTop();
-  $(window).on('load scroll', function () {
-    $(window).scrollTop() > headerScrollTop ? header.addClass('fixed') : header.removeClass('fixed');
+  $(window).on("load scroll", function () {
+    $(window).scrollTop() > headerScrollTop ? header.addClass("fixed") : header.removeClass("fixed");
   });
 }
 
 function formSelect() {
-  jcf.setOptions('Select', {
+  jcf.setOptions("Select", {
     wrapNativeOnMobile: false,
     wrapNative: false,
     maxVisibleItems: 7
@@ -17240,17 +17013,17 @@ function playPause() {
     }
   });
 }
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(18)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(22)))
 
 /***/ }),
-/* 344 */
+/* 343 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function($) {/* harmony export (immutable) */ __webpack_exports__["a"] = popupGallery;
 function popupGallery(finalCurrent) {
   var slider = $(".popup-gallery-slider");
-  slider.not('.slick-initialized').slick({
+  slider.not(".slick-initialized").slick({
     infinite: false,
     centerMode: true,
     centerPadding: "20px",
@@ -17262,7 +17035,7 @@ function popupGallery(finalCurrent) {
     useCss: false,
     mobileFirst: true,
     initialSlide: finalCurrent,
-    appendArrows: $('.popup-controls'),
+    appendArrows: $(".popup-controls"),
     focusOnSelect: true,
     responsive: [{
       breakpoint: 1023,
@@ -17283,7 +17056,7 @@ function popupGallery(finalCurrent) {
     }]
   });
 }
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(18)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(22)))
 
 /***/ })
 /******/ ]);

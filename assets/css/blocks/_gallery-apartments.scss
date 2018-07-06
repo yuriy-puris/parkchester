@@ -29,8 +29,8 @@
   }
 }
 .gallery-wrap {
-  margin: 0 0 50px;
-  @include media(">=xtablet") {
+  margin: 0 0 20px;
+  @include media('>=desktop') {
     margin: 0;
   }
 }

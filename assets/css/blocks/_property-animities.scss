@@ -139,3 +139,17 @@
     }
   }
 }
+.no-dev {
+  .amenities-list {
+    a {
+      span {
+        transition: color .3s;
+      }
+      &:hover {
+        span {
+          color: $color-gold;
+        }
+      }
+    }
+  }
+}

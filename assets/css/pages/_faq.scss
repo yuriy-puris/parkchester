@@ -1,9 +1,14 @@
 .faq-page {
+    border-bottom: 1px solid $color-light-grey;
+    padding-bottom: 0;
+    margin-bottom: 60px;
+    @include media('>=desktop') {
+        margin-bottom: 100px;
+    }
     .questions-group {
         width: 100%;
         max-width: 970px;
-        margin: 0 auto 70px;
-        border-bottom: 1px solid $color-light-grey;
+        margin: auto;
     }
 }
 

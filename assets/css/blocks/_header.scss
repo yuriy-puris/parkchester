@@ -129,7 +129,15 @@
         overflow: visible;
         transform: translateX(0);
         transition: transform 0s;
+        text-align: right;
         @include clearfix;
+    }
+    .btn {
+        &.btn-shedule {
+            @include media(">=desktop") {
+                margin-right: 0;
+            }
+        }
     }
     & > ul {
         border: 1px solid lighten($color-black, 80%);
@@ -138,12 +146,13 @@
         margin: 30px 0 40px;
         min-height: 55vh;
         @include media(">=desktop") {
-            float: left;
+            display: inline-block;
             border-color: transparent;
             min-height: auto;
             padding: 0;
-            margin: 28px 0 0;
+            margin: 25px 0 0;
             vertical-align: middle;
+            text-align: left;
             @include clearfix;
         }
         & > li {
@@ -153,6 +162,9 @@
             > a {
                 @include media(">=desktop") {
                     padding: 0 19px;
+                }
+                @include media(">=xdesktop") {
+                    padding: 0 30px;
                 }
             }
         }
@@ -170,9 +182,6 @@
             &:hover {
                 color: $color-gold;
             }
-        }
-        & + .btn {
-            margin-right: 0;
         }
     }
     .sub-memu {
@@ -231,9 +240,9 @@
             display: inline-block;
             margin: 15px 5px 0;
             padding: 10px 25px;
-            float: right;
             min-width: 143px;
             max-width: inherit;
+            vertical-align: top;
         }
         &.btn-apply {
             @include media(">=desktop") {

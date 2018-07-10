@@ -19,7 +19,13 @@
         }
     }
 }
-
+.video-large {
+    .custom-play-btn {
+        @include media('>=desktop') {
+            opacity: 1;
+        }
+    }
+}
 .no-dev {
     .video {
         .custom-play-btn {
@@ -52,6 +58,11 @@
                 transform: translate(-50%, -50%) scale(1);
                 opacity: 1;
             }
+        }
+    }
+    .video-large {
+        .custom-play-btn {
+            opacity: 1;
         }
     }
 }

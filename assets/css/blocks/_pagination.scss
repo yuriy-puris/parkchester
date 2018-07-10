@@ -1,7 +1,7 @@
 .wrap-wp-pagenavi {
   font-size: 0;
   display: table;
-  margin: 45px 0 95px 0;
+  margin: auto;
   a, span {
     @include font-regular;
     display: inline-block;
@@ -10,7 +10,10 @@
     color: $color-black;
     text-align: center;
     cursor: pointer;
-    margin: 0 15px;
+    margin: 0 7px;
+    @include media('>=desktop') {
+      margin: 0 15px;  
+    }
   }
   .extend {
     letter-spacing: 2px;

@@ -238,6 +238,8 @@
         &.btn-apply {
             @include media(">=desktop") {
                 min-width: 113px;
+                margin: 16px 5px 0;
+                padding: 9px 15px;
             }   
         }
     }

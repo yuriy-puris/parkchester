@@ -111,9 +111,11 @@
           <file leaf-file-name="vue-neighborhood.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/assets/html/vue-neighborhood.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="278">
+                <state relative-caret-position="385">
                   <caret line="172" column="8" lean-forward="true" selection-start-line="172" selection-start-column="8" selection-end-line="172" selection-end-column="8" />
-                  <folding />
+                  <folding>
+                    <element signature="e#7617#9326#0" expanded="false" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -135,11 +137,11 @@
           <file leaf-file-name="vueMap.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/assets/js/modules/vueMap.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="268" column="28" lean-forward="true" selection-start-line="268" selection-start-column="28" selection-end-line="268" selection-end-column="28" />
+                <state relative-caret-position="340">
+                  <caret line="306" column="25" lean-forward="true" selection-start-line="306" selection-start-column="25" selection-end-line="306" selection-end-column="25" />
                   <folding>
                     <element signature="e#157#14926#0" expanded="false" />
-                    <element signature="e#18131#21602#0" expanded="false" />
+                    <element signature="e#18115#21586#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -284,8 +286,8 @@
         <option value="$PROJECT_DIR$/.eslintrc.json" />
         <option value="$PROJECT_DIR$/assets/css/blocks/_park-apartments.scss" />
         <option value="$PROJECT_DIR$/assets/css/libs/_styleguide.scss" />
-        <option value="$PROJECT_DIR$/assets/html/vue-neighborhood.html" />
         <option value="$PROJECT_DIR$/assets/js/modules/vueMap.js" />
+        <option value="$PROJECT_DIR$/assets/html/vue-neighborhood.html" />
       </list>
     </option>
   </component>
@@ -447,12 +449,12 @@
       <workItem from="1531385527203" duration="69000" />
       <workItem from="1531385621820" duration="41000" />
       <workItem from="1531467293559" duration="2840000" />
-      <workItem from="1531478635334" duration="965000" />
+      <workItem from="1531478635334" duration="1764000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98183000" />
+    <option name="totallyTimeSpent" value="98982000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="263" y="35" width="1865" height="1092" extended-state="6" />
@@ -465,7 +467,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30052355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2816754" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -835,21 +837,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/html/vue-neighborhood.html">
+    <entry file="file://$PROJECT_DIR$/assets/js/modules/vueMap.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="172" column="8" lean-forward="true" selection-start-line="172" selection-start-column="8" selection-end-line="172" selection-end-column="8" />
-          <folding />
+        <state relative-caret-position="340">
+          <caret line="306" column="25" lean-forward="true" selection-start-line="306" selection-start-column="25" selection-end-line="306" selection-end-column="25" />
+          <folding>
+            <element signature="e#157#14926#0" expanded="false" />
+            <element signature="e#18115#21586#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/modules/vueMap.js">
+    <entry file="file://$PROJECT_DIR$/assets/html/vue-neighborhood.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="268" column="28" lean-forward="true" selection-start-line="268" selection-start-column="28" selection-end-line="268" selection-end-column="28" />
+        <state relative-caret-position="385">
+          <caret line="172" column="8" lean-forward="true" selection-start-line="172" selection-start-column="8" selection-end-line="172" selection-end-column="8" />
           <folding>
-            <element signature="e#157#14926#0" expanded="false" />
-            <element signature="e#18131#21602#0" expanded="false" />
+            <element signature="e#7617#9326#0" expanded="false" />
           </folding>
         </state>
       </provider>

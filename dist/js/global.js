@@ -16252,7 +16252,7 @@ function vueMap() {
           mainTab: 0,
           mainCategory: null,
           subIdx: null,
-          icon: "/dist/images/mappin.png",
+          icon: markerPin,
           searchQuery: "",
           arrLocations: [],
           searchText: "",

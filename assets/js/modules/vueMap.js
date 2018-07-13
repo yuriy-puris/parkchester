@@ -3,74 +3,7 @@ export function vueMap() {
   if($("#app").length) {
 
     const state = {
-      data: [
-        {
-          name: "Parks1",
-          latitude: "40.0040",
-          longtitude: "-73.0040",
-          title: "Parks",
-          subList: [
-            {
-              name: "Yankees",
-              latitude: "40.0040",
-              longtitude: "-73.0040",
-              title: "Fitness Centers1",
-              address: "2001 East Tremont Avenue Bronx, NY 10462"
-            },
-            {
-              name: "Parks",
-              latitude: "40.0040",
-              longtitude: "-74.0040",
-              title: "Fitness Centers3",
-              address: "2002 East Tremont Avenue Bronx, NY 10462"
-            },
-            {
-              name: "Fitness Centers1",
-              latitude: "40.0040",
-              longtitude: "-75.0040",
-              title: "Fitness Centers1",
-              address: "2003 East Tremont Avenue Bronx, NY 10462"
-            }
-          ]
-        },
-        {
-          name: "Culture",
-          latitude: "40.0040",
-          longtitude: "-73.0040",
-          title: "Parks",
-          subList: [
-            {
-              name: "Yankees",
-              latitude: "40.0040",
-              longtitude: "-73.0040",
-              title: "Fitness Centers1",
-              address: "2004 East Tremont Avenue Bronx, NY 10462"
-            },
-            {
-              name: "Parks",
-              latitude: "40.0040",
-              longtitude: "-74.0040",
-              title: "Fitness Centers3",
-              address: "2005 East Tremont Avenue Bronx, NY 10462"
-            },
-          ]
-        },
-        {
-          name: "Culture3",
-          latitude: "40.0040",
-          longtitude: "-73.0040",
-          title: "Parks",
-          subList: [
-            {
-              name: "Fitness Centers1",
-              latitude: "40.0040",
-              longtitude: "-71.0040",
-              title: "Fitness Centers1",
-              address: "2006 East Tremont Avenue Bronx, NY 10462"
-            },
-          ]
-        }
-      ],
+      data: markerCollection,
       date_events: [
         {
           item_image: "events1.png",

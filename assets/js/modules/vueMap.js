@@ -257,7 +257,8 @@ export function vueMap() {
           item_data_start: "2018-12-20",
           item_data_end: "2018-12-25",
         },
-      ]
+      ],
+      list_events: null,
     };
     const getters = {
       get_mapmenu_list: state => {
@@ -284,11 +285,29 @@ export function vueMap() {
         }
       }
     };
+    const actions = {
+      load_events_list: async ({ commit }, query) => {
+      let url = "http://parkchester-dev.bigdropinc.net/wp-json/wp/v2/neighborhood_events/from/"+query.from+"/to/"+query.to+"/per_paged/"+query.per_paged+"/page/"+query.page+"";
+      console.log(url)
+      await fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          commit('setEventList', { events: data.events })
+        })
+      }
+    };
+    const mutations = {
+      setEventList: (state, { events }) => {
+        state.list_events = events;
+      }
+    };
 
     Vue.use(Vuex);
 
     const store = new Vuex.Store({
       state,
+      actions,
+      mutations,
       getters
     });
 
@@ -583,42 +602,62 @@ export function vueMap() {
           active: true,
           activeIndex: 9,
           activeViewMore: true,
-          notEvents: false
+          notEvents: false,
+          per_paged: 9,
+          page: 1,
         };
       },
       components: { datepicker },
       computed: {
         getEvents() {
-          let countIdx;
-          let countEvents = this.$store.getters.filter_events_list(this.start, this.end);
-          countEvents.forEach((item, index) => {
-            countIdx = index;
-          });
-          if (countIdx < this.activeIndex) {
-            this.activeViewMore = false;
-          } else {
-            this.activeViewMore = true;
-          }
-          if ( countEvents.length === 0 ) {
-            this.notEvents = true;
-            this.activeViewMore = false;
-          } else {
-            this.notEvents = false;
-            return this.$store.getters.filter_events_list(this.start, this.end);
-          }
+          // let countIdx;
+          // let countEvents = this.$store.getters.filter_events_list(this.start, this.end);
+          // countEvents.forEach((item, index) => {
+          //   countIdx = index;
+          // });
+          // if (countIdx < this.activeIndex) {
+          //   this.activeViewMore = false;
+          // } else {
+          //   this.activeViewMore = true;
+          // }
+          // if ( countEvents.length === 0 ) {
+          //   this.notEvents = true;
+          //   this.activeViewMore = false;
+          // } else {
+          //   this.notEvents = false;
+          //   return this.$store.getters.filter_events_list(this.start, this.end);
+          // }
+          return this.$store.state.list_events
         },
       },
       watch: {
         start: function() {
+          let query = {
+            from: String(Date.parse(this.start)).split("").slice(0, -3).join(""),
+            to: String(Date.parse(this.end)).split("").slice(0, -3).join(""),
+            per_paged: this.per_paged,
+            page: this.page
+          };
+          this.$store.dispatch('load_events_list', query);
           let start = this.filterDate(this.start);
           this.pseudo_start = start;
           return this.pseudo_start;
         },
         end: function() {
+          let query = {
+            from: String(Date.parse(this.start)).split("").slice(0, -3).join(""),
+            to: String(Date.parse(this.end)).split("").slice(0, -3).join(""),
+            per_paged: this.per_paged,
+            page: this.page
+          };
+          this.$store.dispatch('load_events_list', query);
           let end = this.filterDate(this.end);
           this.pseudo_end = end;
           return this.pseudo_end;
         }
+      },
+      created() {
+        this.loadEvent();
       },
       methods: {
         filterDate(val) {
@@ -634,6 +673,15 @@ export function vueMap() {
           });
           this.activeIndex = idx;
           this.activeViewMore = false;
+        },
+        loadEvent() {
+          let query = {
+            from: Date.parse(this.start),
+            to: Date.parse(this.end),
+            per_paged: this.per_paged,
+            page: this.page
+          };
+          this.$store.dispatch('load_events_list', query);
         }
       }
     });

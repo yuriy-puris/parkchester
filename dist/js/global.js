@@ -15983,8 +15983,12 @@ function googleMap() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_date___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_date__);
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
+
 
 function vueMap() {
+  var _this = this;
+
   if ($("#app").length) {
 
     var state = {
@@ -16205,7 +16209,8 @@ function vueMap() {
         item_description: "Tis the Season!  Come and enjoy the annual Christmas Tree Lighting with Dickensian Carolers, hot beverages, cookies and more from 6:30-7pm! All activities take place on the Metropolitan Oval.",
         item_data_start: "2018-12-20",
         item_data_end: "2018-12-25"
-      }]
+      }],
+      list_events: null
     };
     var getters = {
       get_mapmenu_list: function get_mapmenu_list(state) {
@@ -16235,11 +16240,52 @@ function vueMap() {
         };
       }
     };
+    var actions = {
+      load_events_list: function () {
+        var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(_ref2, query) {
+          var commit = _ref2.commit;
+          var url;
+          return regeneratorRuntime.wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  url = "http://parkchester-dev.bigdropinc.net/wp-json/wp/v2/neighborhood_events/from/" + query.from + "/to/" + query.to + "/per_paged/" + query.per_paged + "/page/" + query.page + "";
+
+                  console.log(url);
+                  _context.next = 4;
+                  return fetch(url).then(function (response) {
+                    return response.json();
+                  }).then(function (data) {
+                    commit('setEventList', { events: data.events });
+                  });
+
+                case 4:
+                case "end":
+                  return _context.stop();
+              }
+            }
+          }, _callee, _this);
+        }));
+
+        return function load_events_list(_x, _x2) {
+          return _ref.apply(this, arguments);
+        };
+      }()
+    };
+    var mutations = {
+      setEventList: function setEventList(state, _ref3) {
+        var events = _ref3.events;
+
+        state.list_events = events;
+      }
+    };
 
     Vue.use(Vuex);
 
     var store = new Vuex.Store({
       state: state,
+      actions: actions,
+      mutations: mutations,
       getters: getters
     });
 
@@ -16502,44 +16548,65 @@ function vueMap() {
           active: true,
           activeIndex: 9,
           activeViewMore: true,
-          notEvents: false
+          notEvents: false,
+          per_paged: 9,
+          page: 1
         };
       },
 
       components: { datepicker: __WEBPACK_IMPORTED_MODULE_0_vue_date___default.a },
       computed: {
         getEvents: function getEvents() {
-          var countIdx = void 0;
-          var countEvents = this.$store.getters.filter_events_list(this.start, this.end);
-          countEvents.forEach(function (item, index) {
-            countIdx = index;
-          });
-          if (countIdx < this.activeIndex) {
-            this.activeViewMore = false;
-          } else {
-            this.activeViewMore = true;
-          }
-          if (countEvents.length === 0) {
-            this.notEvents = true;
-            this.activeViewMore = false;
-          } else {
-            this.notEvents = false;
-            return this.$store.getters.filter_events_list(this.start, this.end);
-          }
+          // let countIdx;
+          // let countEvents = this.$store.getters.filter_events_list(this.start, this.end);
+          // countEvents.forEach((item, index) => {
+          //   countIdx = index;
+          // });
+          // if (countIdx < this.activeIndex) {
+          //   this.activeViewMore = false;
+          // } else {
+          //   this.activeViewMore = true;
+          // }
+          // if ( countEvents.length === 0 ) {
+          //   this.notEvents = true;
+          //   this.activeViewMore = false;
+          // } else {
+          //   this.notEvents = false;
+          //   return this.$store.getters.filter_events_list(this.start, this.end);
+          // }
+          return this.$store.state.list_events;
         }
       },
       watch: {
         start: function start() {
+          var query = {
+            from: String(Date.parse(this.start)).split("").slice(0, -3).join(""),
+            to: String(Date.parse(this.end)).split("").slice(0, -3).join(""),
+            per_paged: this.per_paged,
+            page: this.page
+          };
+          this.$store.dispatch('load_events_list', query);
           var start = this.filterDate(this.start);
           this.pseudo_start = start;
           return this.pseudo_start;
         },
         end: function end() {
+          var query = {
+            from: String(Date.parse(this.start)).split("").slice(0, -3).join(""),
+            to: String(Date.parse(this.end)).split("").slice(0, -3).join(""),
+            per_paged: this.per_paged,
+            page: this.page
+          };
+          this.$store.dispatch('load_events_list', query);
           var end = this.filterDate(this.end);
           this.pseudo_end = end;
           return this.pseudo_end;
         }
       },
+      created: function created() {
+        this.loadEvent();
+      },
+
       methods: {
         filterDate: function filterDate(val) {
           var dateStr = void 0;
@@ -16554,6 +16621,15 @@ function vueMap() {
           });
           this.activeIndex = idx;
           this.activeViewMore = false;
+        },
+        loadEvent: function loadEvent() {
+          var query = {
+            from: Date.parse(this.start),
+            to: Date.parse(this.end),
+            per_paged: this.per_paged,
+            page: this.page
+          };
+          this.$store.dispatch('load_events_list', query);
         }
       }
     });

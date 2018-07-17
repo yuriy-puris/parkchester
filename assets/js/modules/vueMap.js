@@ -288,27 +288,32 @@ export function vueMap() {
       }
     };
     const actions = {
-      load_events_list: async ({ commit }, query) => {
-      let url = "http://parkchester-dev.bigdropinc.net/wp-json/wp/v2/neighborhood_events/from/"+query.from+"/to/"+query.to+"/per_paged/"+query.per_paged+"/page/"+query.page+"";
-      await fetch(url)
-        .then(response => response.json())
-        .then(data => {
-          data.events.sort((a,b) => {
-            return Date.parse(a.date_from) > Date.parse(b.date_from)
-          })
-          commit('setEventList', { events: data.events, events_length: data.events.length })
-        })
+      load_events_list: ({ commit }, query) => {
+        let url = "http://parkchester-dev.bigdropinc.net/wp-json/wp/v2/neighborhood_events/from/"+query.from+"/to/"+query.to+"/per_paged/"+query.per_paged+"/page/"+query.page+"";
+        fetch(url)
+          .then(response => response.json())
+          .then(data => {
+            data.events.sort((a,b) => {
+              return Date.parse(a.date_from) > Date.parse(b.date_from);
+            });
+            commit("setEventList", { events: data.events, events_length: data.events.length });
+          });
       }
     };
     const mutations = {
       setEventList: (state, { events, events_length }) => {
         if ( state.list_events !== null && state.list_events.length == events_length ) {
-          state.activeMore = false
+          state.activeMore = false;
         } else {
-          state.activeMore = true
+          state.activeMore = true;
         }
         state.list_events = events;
-        events_length == 0 ? state.emptyEvents = true : false;
+        if (events_length == 0) {
+          state.emptyEvents = true;
+          state.activeMore = false;
+        } else {
+          state.emptyEvents = false;
+        }
       }
     };
 
@@ -619,7 +624,7 @@ export function vueMap() {
       components: { datepicker },
       computed: {
         getEvents() {
-          return this.$store.state.list_events
+          return this.$store.state.list_events;
         },
         notEvents() {
           return store.state.emptyEvents;
@@ -636,7 +641,7 @@ export function vueMap() {
             per_paged: this.per_paged,
             page: this.page
           };
-          this.$store.dispatch('load_events_list', query);
+          this.$store.dispatch("load_events_list", query);
           let start = this.filterDate(this.start);
           this.pseudo_start = start;
           this.activeIndex = 9;
@@ -650,7 +655,7 @@ export function vueMap() {
             per_paged: this.per_paged,
             page: this.page
           };
-          this.$store.dispatch('load_events_list', query);
+          this.$store.dispatch("load_events_list", query);
           let end = this.filterDate(this.end);
           let idx;
           this.$store.getters.get_events.forEach((item, index) => {
@@ -683,7 +688,7 @@ export function vueMap() {
             per_paged: next_items,
             page: this.page
           };
-          this.$store.dispatch('load_events_list', query);
+          this.$store.dispatch("load_events_list", query);
         },
         loadEvent() {
           let query = {
@@ -692,7 +697,7 @@ export function vueMap() {
             per_paged: this.per_paged,
             page: this.page
           };
-          this.$store.dispatch('load_events_list', query);
+          this.$store.dispatch("load_events_list", query);
         },
       }
     });

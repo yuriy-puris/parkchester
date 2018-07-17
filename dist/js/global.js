@@ -15983,12 +15983,8 @@ function googleMap() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_date___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_date__);
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
-
 
 function vueMap() {
-  var _this = this;
-
   if ($("#app").length) {
 
     var state = {
@@ -16243,42 +16239,24 @@ function vueMap() {
       }
     };
     var actions = {
-      load_events_list: function () {
-        var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(_ref2, query) {
-          var commit = _ref2.commit;
-          var url;
-          return regeneratorRuntime.wrap(function _callee$(_context) {
-            while (1) {
-              switch (_context.prev = _context.next) {
-                case 0:
-                  url = "http://parkchester-dev.bigdropinc.net/wp-json/wp/v2/neighborhood_events/from/" + query.from + "/to/" + query.to + "/per_paged/" + query.per_paged + "/page/" + query.page + "";
-                  _context.next = 3;
-                  return fetch(url).then(function (response) {
-                    return response.json();
-                  }).then(function (data) {
-                    data.events.sort(function (a, b) {
-                      return Date.parse(a.date_from) > Date.parse(b.date_from);
-                    });
-                    commit('setEventList', { events: data.events, events_length: data.events.length });
-                  });
+      load_events_list: function load_events_list(_ref, query) {
+        var commit = _ref.commit;
 
-                case 3:
-                case "end":
-                  return _context.stop();
-              }
-            }
-          }, _callee, _this);
-        }));
-
-        return function load_events_list(_x, _x2) {
-          return _ref.apply(this, arguments);
-        };
-      }()
+        var url = "http://parkchester-dev.bigdropinc.net/wp-json/wp/v2/neighborhood_events/from/" + query.from + "/to/" + query.to + "/per_paged/" + query.per_paged + "/page/" + query.page + "";
+        fetch(url).then(function (response) {
+          return response.json();
+        }).then(function (data) {
+          data.events.sort(function (a, b) {
+            return Date.parse(a.date_from) > Date.parse(b.date_from);
+          });
+          commit("setEventList", { events: data.events, events_length: data.events.length });
+        });
+      }
     };
     var mutations = {
-      setEventList: function setEventList(state, _ref3) {
-        var events = _ref3.events,
-            events_length = _ref3.events_length;
+      setEventList: function setEventList(state, _ref2) {
+        var events = _ref2.events,
+            events_length = _ref2.events_length;
 
         if (state.list_events !== null && state.list_events.length == events_length) {
           state.activeMore = false;
@@ -16286,7 +16264,12 @@ function vueMap() {
           state.activeMore = true;
         }
         state.list_events = events;
-        events_length == 0 ? state.emptyEvents = true : false;
+        if (events_length == 0) {
+          state.emptyEvents = true;
+          state.activeMore = false;
+        } else {
+          state.emptyEvents = false;
+        }
       }
     };
 
@@ -16583,7 +16566,7 @@ function vueMap() {
             per_paged: this.per_paged,
             page: this.page
           };
-          this.$store.dispatch('load_events_list', query);
+          this.$store.dispatch("load_events_list", query);
           var start = this.filterDate(this.start);
           this.pseudo_start = start;
           this.activeIndex = 9;
@@ -16597,7 +16580,7 @@ function vueMap() {
             per_paged: this.per_paged,
             page: this.page
           };
-          this.$store.dispatch('load_events_list', query);
+          this.$store.dispatch("load_events_list", query);
           var end = this.filterDate(this.end);
           var idx = void 0;
           this.$store.getters.get_events.forEach(function (item, index) {
@@ -16631,7 +16614,7 @@ function vueMap() {
             per_paged: next_items,
             page: this.page
           };
-          this.$store.dispatch('load_events_list', query);
+          this.$store.dispatch("load_events_list", query);
         },
         loadEvent: function loadEvent() {
           var query = {
@@ -16640,7 +16623,7 @@ function vueMap() {
             per_paged: this.per_paged,
             page: this.page
           };
-          this.$store.dispatch('load_events_list', query);
+          this.$store.dispatch("load_events_list", query);
         }
       }
     });

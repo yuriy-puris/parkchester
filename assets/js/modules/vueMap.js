@@ -259,6 +259,8 @@ export function vueMap() {
         },
       ],
       list_events: null,
+      emptyEvents: false,
+      activeMore: true
     };
     const getters = {
       get_mapmenu_list: state => {
@@ -268,7 +270,7 @@ export function vueMap() {
         return state.data[id];
       },
       get_events: state => {
-        return state.date_events;
+        return state.list_events;
       },
       filter_events_list: (state) => (date_start, date_end) => {
         if(date_end == "") {
@@ -288,17 +290,25 @@ export function vueMap() {
     const actions = {
       load_events_list: async ({ commit }, query) => {
       let url = "http://parkchester-dev.bigdropinc.net/wp-json/wp/v2/neighborhood_events/from/"+query.from+"/to/"+query.to+"/per_paged/"+query.per_paged+"/page/"+query.page+"";
-      console.log(url)
       await fetch(url)
         .then(response => response.json())
         .then(data => {
-          commit('setEventList', { events: data.events })
+          data.events.sort((a,b) => {
+            return Date.parse(a.date_from) > Date.parse(b.date_from)
+          })
+          commit('setEventList', { events: data.events, events_length: data.events.length })
         })
       }
     };
     const mutations = {
-      setEventList: (state, { events }) => {
+      setEventList: (state, { events, events_length }) => {
+        if ( state.list_events !== null && state.list_events.length == events_length ) {
+          state.activeMore = false
+        } else {
+          state.activeMore = true
+        }
         state.list_events = events;
+        events_length == 0 ? state.emptyEvents = true : false;
       }
     };
 
@@ -602,7 +612,6 @@ export function vueMap() {
           active: true,
           activeIndex: 9,
           activeViewMore: true,
-          notEvents: false,
           per_paged: 9,
           page: 1,
         };
@@ -610,25 +619,14 @@ export function vueMap() {
       components: { datepicker },
       computed: {
         getEvents() {
-          // let countIdx;
-          // let countEvents = this.$store.getters.filter_events_list(this.start, this.end);
-          // countEvents.forEach((item, index) => {
-          //   countIdx = index;
-          // });
-          // if (countIdx < this.activeIndex) {
-          //   this.activeViewMore = false;
-          // } else {
-          //   this.activeViewMore = true;
-          // }
-          // if ( countEvents.length === 0 ) {
-          //   this.notEvents = true;
-          //   this.activeViewMore = false;
-          // } else {
-          //   this.notEvents = false;
-          //   return this.$store.getters.filter_events_list(this.start, this.end);
-          // }
           return this.$store.state.list_events
         },
+        notEvents() {
+          return store.state.emptyEvents;
+        },
+        activeMore() {
+          return store.state.activeMore;
+        }
       },
       watch: {
         start: function() {
@@ -641,6 +639,8 @@ export function vueMap() {
           this.$store.dispatch('load_events_list', query);
           let start = this.filterDate(this.start);
           this.pseudo_start = start;
+          this.activeIndex = 9;
+          this.activeViewMore = true;
           return this.pseudo_start;
         },
         end: function() {
@@ -652,7 +652,13 @@ export function vueMap() {
           };
           this.$store.dispatch('load_events_list', query);
           let end = this.filterDate(this.end);
+          let idx;
+          this.$store.getters.get_events.forEach((item, index) => {
+            idx = index;
+          });
           this.pseudo_end = end;
+          this.activeIndex = 9;
+          this.activeViewMore = true;
           return this.pseudo_end;
         }
       },
@@ -667,22 +673,27 @@ export function vueMap() {
           return dateStr;
         },
         eventsIndex() {
-          let idx;
-          this.$store.getters.get_events.forEach((item, index) => {
-            idx = index;
-          });
-          this.activeIndex = idx;
-          this.activeViewMore = false;
+          this.per_paged += 9;
+          let idx,
+            next_items = this.per_paged;
+          this.activeIndex = next_items;
+          let query = {
+            from: String(Date.parse(this.start)).split("").slice(0, -3).join(""),
+            to: String(Date.parse(this.end)).split("").slice(0, -3).join(""),
+            per_paged: next_items,
+            page: this.page
+          };
+          this.$store.dispatch('load_events_list', query);
         },
         loadEvent() {
           let query = {
-            from: Date.parse(this.start),
-            to: Date.parse(this.end),
+            from: String(Date.parse(this.start)).split("").slice(0, -3).join(""),
+            to: String(Date.parse(this.end)).split("").slice(0, -3).join(""),
             per_paged: this.per_paged,
             page: this.page
           };
           this.$store.dispatch('load_events_list', query);
-        }
+        },
       }
     });
     new Vue({

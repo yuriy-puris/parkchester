@@ -78,7 +78,9 @@
 										<span class="datepicker-placeholder">{{ pseudo_end }}</span>
 									</div>
 								</div>
-							<div class="events-holder">
+							<div
+								class="events-holder"
+								v-show="!notEvents">
 								<div
 									v-for="(item, index) in getEvents"
 									v-if="index < activeIndex"
@@ -93,9 +95,10 @@
 										<span class="date-end">{{ filterDate(item.date_to) }}</span>
 									</div>
 								</div>
-								<div v-if="notEvents" class="not-events">No Current Events, Check Back Soon</div>
 							</div>
+							<div v-if="notEvents" class="not-events">No Current Events, Check Back Soon</div>
 							<a
+								v-if="activeMore"
 								href="javascript:void(0)"
 								:class="['btn', 'btn-apply', { active:  activeViewMore}]"
 								@click="eventsIndex()">View More</a>

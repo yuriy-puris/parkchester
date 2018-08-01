@@ -1,4 +1,5 @@
 import datepicker from "vue-date";
+import axios from "axios";
 export function vueMap() {
   if($("#app").length) {
 
@@ -290,13 +291,12 @@ export function vueMap() {
     const actions = {
       load_events_list: ({ commit }, query) => {
         let url = "http://parkchester-dev.bigdropinc.net/wp-json/wp/v2/neighborhood_events/from/"+query.from+"/to/"+query.to+"/per_paged/"+query.per_paged+"/page/"+query.page+"";
-        fetch(url)
-          .then(response => response.json())
+        axios.get(url)
           .then(data => {
-            data.events.sort((a,b) => {
+            data.data.events.sort((a,b) => {
               return Date.parse(a.date_from) > Date.parse(b.date_from);
             });
-            commit("setEventList", { events: data.events, events_length: data.events.length });
+            commit("setEventList", { events: data.data.events, events_length: data.data.events.length });
           });
       }
     };

@@ -6,15 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b6f316f8-c348-4913-8a33-69cbd9e767bb" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/assets/css/blocks/_photo-gallery.scss" afterPath="$PROJECT_DIR$/assets/css/blocks/_photo-gallery.scss" />
-      <change beforePath="$PROJECT_DIR$/assets/css/pages/_page-photogallery.scss" afterPath="$PROJECT_DIR$/assets/css/pages/_page-photogallery.scss" />
-      <change beforePath="$PROJECT_DIR$/assets/html/photo-gallery.html" afterPath="$PROJECT_DIR$/assets/html/photo-gallery.html" />
       <change beforePath="$PROJECT_DIR$/assets/html/templates/map-home.html" afterPath="$PROJECT_DIR$/assets/html/templates/map-home.html" />
-      <change beforePath="$PROJECT_DIR$/assets/js/modules/module.js" afterPath="$PROJECT_DIR$/assets/js/modules/module.js" />
       <change beforePath="$PROJECT_DIR$/assets/js/modules/vueMap.js" afterPath="$PROJECT_DIR$/assets/js/modules/vueMap.js" />
-      <change beforePath="$PROJECT_DIR$/dist/css/style.css" afterPath="$PROJECT_DIR$/dist/css/style.css" />
-      <change beforePath="$PROJECT_DIR$/dist/html/home.html" afterPath="$PROJECT_DIR$/dist/html/home.html" />
-      <change beforePath="$PROJECT_DIR$/dist/html/photo-gallery.html" afterPath="$PROJECT_DIR$/dist/html/photo-gallery.html" />
       <change beforePath="$PROJECT_DIR$/dist/js/global.js" afterPath="$PROJECT_DIR$/dist/js/global.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -31,11 +24,21 @@
     <splitter split-orientation="horizontal" split-proportion="0.43693107">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="vue-neighborhood.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="vue-neighborhood.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/assets/html/vue-neighborhood.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="326">
                   <caret line="120" column="43" lean-forward="true" selection-start-line="120" selection-start-column="43" selection-end-line="120" selection-end-column="43" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="map-home.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/assets/html/templates/map-home.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="54">
+                  <caret line="3" column="139" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="6" />
                   <folding />
                 </state>
               </provider>
@@ -60,8 +63,8 @@
           <file leaf-file-name="vueMap.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/assets/js/modules/vueMap.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="258">
-                  <caret line="355" column="23" lean-forward="true" selection-start-line="355" selection-start-column="23" selection-end-line="355" selection-end-column="23" />
+                <state relative-caret-position="474">
+                  <caret line="363" column="37" lean-forward="true" selection-start-line="363" selection-start-column="37" selection-end-line="363" selection-end-column="37" />
                   <folding>
                     <element signature="e#0#34#0" expanded="true" />
                   </folding>
@@ -75,7 +78,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>@@include(&quot;pagination.html&quot;)</find>
       <find>wp-pagenavi</find>
       <find>h6</find>
       <find>gallery-holder</find>
@@ -105,6 +107,7 @@
       <find>work-time</find>
       <find>map-home</find>
       <find>activeFilter</find>
+      <find>search</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/dist/html</dir>
@@ -169,8 +172,8 @@
         <option value="$PROJECT_DIR$/assets/css/blocks/_photo-gallery.scss" />
         <option value="$PROJECT_DIR$/assets/css/pages/_page-photogallery.scss" />
         <option value="$PROJECT_DIR$/assets/js/modules/module.js" />
-        <option value="$PROJECT_DIR$/assets/html/templates/map-home.html" />
         <option value="$PROJECT_DIR$/assets/js/modules/vueMap.js" />
+        <option value="$PROJECT_DIR$/assets/html/templates/map-home.html" />
       </list>
     </option>
   </component>
@@ -376,12 +379,12 @@
       <workItem from="1533277304300" duration="5365000" />
       <workItem from="1533285117527" duration="17628000" />
       <workItem from="1533536556875" duration="28284000" />
-      <workItem from="1533622585471" duration="9605000" />
+      <workItem from="1533622585471" duration="9874000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="211173000" />
+    <option name="totallyTimeSpent" value="211442000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2487" y="-4" width="1865" height="1092" extended-state="6" />
@@ -754,26 +757,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/html/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="30" lean-forward="false" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/modules/module.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="53">
           <caret line="311" column="4" lean-forward="true" selection-start-line="311" selection-start-column="4" selection-end-line="311" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/html/templates/map-home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="87" lean-forward="true" selection-start-line="14" selection-start-column="87" selection-end-line="14" selection-end-column="87" />
           <folding />
         </state>
       </provider>
@@ -796,6 +783,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/modules/vueMap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="363" column="37" lean-forward="true" selection-start-line="363" selection-start-column="37" selection-end-line="363" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/html/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="31" lean-forward="false" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/html/vue-neighborhood.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="326">
@@ -804,13 +809,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/modules/vueMap.js">
+    <entry file="file://$PROJECT_DIR$/assets/html/templates/map-home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="355" column="23" lean-forward="true" selection-start-line="355" selection-start-column="23" selection-end-line="355" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="54">
+          <caret line="3" column="139" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>

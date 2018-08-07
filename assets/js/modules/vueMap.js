@@ -363,11 +363,12 @@ export function vueMap() {
             let res_arr = arrDrop.filter(item => {
               return item.name.toLowerCase().indexOf(_self.searchText.toLowerCase()) >= 0;
             });
-            if(res_arr.length > 0){
-                _self.activeFilter = true;
-            }else{
-                _self.activeFilter = false;
-            }
+            // if(res_arr.length > 0){
+            //     _self.activeFilter = true;
+            // }else{
+            //     _self.activeFilter = false;
+            // }
+              _self.activeFilter = (res_arr.length > 0) ? true : false;
 
             return res_arr;
           } else {

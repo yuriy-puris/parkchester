@@ -8,6 +8,8 @@
     height: 240px;
     margin: 0 15px;
     @include media('>=desktop') {
+      display: inline-block;
+      vertical-align: top;
       break-inside: avoid;
       -webkit-column-break-inside: avoid;
       page-break-inside: avoid;
@@ -69,6 +71,7 @@
     opacity: 0;
   }
 }
+
 .photo-gallery-controls {
   width: 140px;
   padding: 0;
@@ -89,9 +92,9 @@
     }
   }
   .slick-dots {
-    display: none!important;
+    display: none !important;
     @include media('>=desktop') {
-      display: block!important;
+      display: block !important;
     }
   }
 }

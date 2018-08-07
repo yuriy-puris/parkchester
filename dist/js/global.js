@@ -17192,10 +17192,17 @@ function vueMap() {
             });
           });
           if (_self.searchText !== "" && _self.searchText !== null) {
-            _self.activeFilter = true;
-            return arrDrop.filter(function (item) {
+
+            var res_arr = arrDrop.filter(function (item) {
               return item.name.toLowerCase().indexOf(_self.searchText.toLowerCase()) >= 0;
             });
+            if (res_arr.length > 0) {
+              _self.activeFilter = true;
+            } else {
+              _self.activeFilter = false;
+            }
+
+            return res_arr;
           } else {
             _self.activeFilter = false;
           }
@@ -18740,6 +18747,7 @@ function initMasonry() {
     if (wWidth >= 1280) {
       setTimeout(function () {
         wrapperGallery();
+        $('.page-photogallery').removeClass('hidden-gallery');
       }, 100);
     } else {
       clearTimeout(resizeId);

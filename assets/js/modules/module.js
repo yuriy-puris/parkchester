@@ -319,6 +319,7 @@ export function initMasonry () {
     if( wWidth >= 1280 ) {
       setTimeout(() => {
         wrapperGallery();
+        $('.page-photogallery').removeClass('hidden-gallery');
       }, 100);
     } else {
       clearTimeout(resizeId);

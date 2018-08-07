@@ -359,10 +359,17 @@ export function vueMap() {
             });
           });
           if ( _self.searchText !== "" && _self.searchText !== null ) {
-            _self.activeFilter = true;
-            return arrDrop.filter(item => {
+
+            let res_arr = arrDrop.filter(item => {
               return item.name.toLowerCase().indexOf(_self.searchText.toLowerCase()) >= 0;
             });
+            if(res_arr.length > 0){
+                _self.activeFilter = true;
+            }else{
+                _self.activeFilter = false;
+            }
+
+            return res_arr;
           } else {
             _self.activeFilter = false;
           }

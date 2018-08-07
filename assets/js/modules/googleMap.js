@@ -77,4 +77,55 @@ export function googleMap() {
     }
     createMap();
   }
+
+    // let pageMaps = $('.map');
+    //
+    // pageMaps.map(function () {
+    //     let mapElem = this;
+    //     let mapCoords = {
+    //         lng: $(this).data('lng'),
+    //         lat: $(this).data('lat')
+    //     };
+    //     let mapZoom = $(this).data('zoom');
+    //     let mapPin = '' + $(this).data('pin');
+    //     let mapOptions = {
+    //         zoom: mapZoom,
+    //         center: mapCoords,
+    //         scaleControl: false,
+    //         streetViewControl: false,
+    //         fullscreenControl: false,
+    //         mapTypeControl: false,
+    //     };
+    //     let createdMap = new google.maps.Map(mapElem, mapOptions);
+    //
+    //     let h2 = this.previousElementSibling.children.item(0).innerHTML;
+    //     let adress = this.previousElementSibling.children.item(1).innerHTML;
+    //
+    //     addMarkers(mapCoords, createdMap, mapPin);
+    //
+    //     if ($(this).data('markers')) {
+    //         let markers = $(this).data('markers').split("; ");
+    //         for (let i = 0; i < markers.length; i++) {
+    //             let additionalMarkers = eval('(' + markers[i] + ')');
+    //             addMarkers(additionalMarkers, createdMap, mapPin);
+    //         }
+    //     }
+    //
+    //     function addMarkers(coords, map, pin) {
+    //         let marker = new google.maps.Marker({
+    //             position: coords,
+    //             map: map,
+    //             icon: pin,
+    //         });
+    //
+    //         let info = new google.maps.InfoWindow({
+    //             content: '<h2>' + h2 + '</h2>' + adress,
+    //         });
+    //
+    //         marker.addListener('click', function () {
+    //             info.open(map, marker);
+    //         });
+    //     }
+    //
+    // });
 }

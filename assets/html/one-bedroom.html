@@ -3,48 +3,73 @@
 @@include("head.html", {"title": "Parkchester"})
 <body>
 <div class="wrapper">
-	@@include("header.html")
+    @@include("header.html")
 
-	<main class="main">
-		<section class="page-onebedroom">
-			<h1>One Bedroom</h1>
-			<div class="h5">Contemporary Collection</div>
-			<div class="section">
-		<div class="container">
-			<div class="backlink-holder">
-					<a href="javascript:void(0)" class="back-link">Apartments Index</a>
-			</div>
-			<div class="divided-section">
-				<div class="gallery-wrap">
-						<div class="gallery-apartments gallery-contemporary">
-								<div class="item" style="background-image: url('/dist/images/apartmentsslide.png')"></div>
-								<div class="item" style="background-image: url('/dist/images/apartmentsslide.png')"></div>
-								<div class="item" style="background-image: url('/dist/images/apartmentsslide.png')"></div>
-						</div>
-						<div class="custom-controls contemporary-controls"></div>
-				</div>
-					<div class="content content-section">
-						<p>The one bedroom Contemporary Apartment has ample space, lots of sun, traditional styling and best of all - the most up-to-date kitchen finish and modern appliances. Select from one of the two kitchen choices in either Warm Cherry with matching rose-toned granite countertops or Arctic Ribbon with sleet off-white and grey cabinets complemented by slate grey granit countertops. The second kitchen finish features Warm Cherry cabinets with matching rose-toned granite countertops for a classically elegant look.</p>
-						<p>One bedroom range in size from 506 to 705 square feed and rent for $1,290 to $1,415.</p>
-						<h4>APARTMENT FEATURES</h4>
-						<ul>
-							<li>Elegant windowed kitchens with two finishes: Cherry cabinets with rose-toned granite countertops and grey with off-white cabinets with slate grey granite countertops</li>
-							<li>New appliances with stainless steel accents</li>
-							<li>Spacious living area</li>
-							<li>Generous Closets</li>
-							<li>Big windows with bright light</li>
-						</ul>
-						<a href="javascript:void(0)" class="btn btn-shedule">Schedule a Tour</a>
-						<a href="javascript:void(0)" class="btn btn-apply">Apply Now</a>
-					</div>
-			</div>
-	</div>
-</div>
-			@@include("property-amenities.html")
-		</section>	
-	</main>
+    <main class="main">
+        <section class="page-onebedroom">
+            <h1>One Bedroom</h1>
+            <div class="h5">Contemporary Collection</div>
+            <div class="section">
+                <div class="container">
+                    <div class="backlink-holder">
+                        <a href="javascript:void(0)" class="back-link">Apartments Index</a>
+                    </div>
+                    <div class="divided-section">
+                        <div class="gallery-wrap">
+                            <div class="gallery-apartments gallery-contemporary">
+                                <div class="item video">
+                                    <iframe width="560" height="315"
+                                            src="https://www.youtube.com/embed/hjlH78naTuU?enablejsapi=1&amp;rel=0&amp;showinfo=0"
+                                            frameborder="0" allow="autoplay; encrypted-media"
+                                            allowfullscreen=""></iframe>
+                                    <div class="video-poster"
+                                         style="background-image: url('../images/video-poster.jpg');">
+                                        <a href="javascript:void(0)" class="custom-play-btn" data-first-row="Play"
+                                           data-second-row="Video">Play video
+                                            <img src="../images/play.svg" alt="play">
+                                        </a>
+                                    </div>
+                                </div>
 
-	@@include("footer.html")
+
+                                <div class="item"
+                                     style="background-image: url('/dist/images/apartmentsslide.png')"></div>
+                                <div class="item"
+                                     style="background-image: url('/dist/images/apartmentsslide.png')"></div>
+                                <div class="item"
+                                     style="background-image: url('/dist/images/apartmentsslide.png')"></div>
+                            </div>
+                            <div class="custom-controls contemporary-controls"></div>
+                        </div>
+                        <div class="content content-section">
+                            <p>The one bedroom Contemporary Apartment has ample space, lots of sun, traditional styling
+                                and best of all - the most up-to-date kitchen finish and modern appliances. Select from
+                                one of the two kitchen choices in either Warm Cherry with matching rose-toned granite
+                                countertops or Arctic Ribbon with sleet off-white and grey cabinets complemented by
+                                slate grey granit countertops. The second kitchen finish features Warm Cherry cabinets
+                                with matching rose-toned granite countertops for a classically elegant look.</p>
+                            <p>One bedroom range in size from 506 to 705 square feed and rent for $1,290 to $1,415.</p>
+                            <h4>APARTMENT FEATURES</h4>
+                            <ul>
+                                <li>Elegant windowed kitchens with two finishes: Cherry cabinets with rose-toned granite
+                                    countertops and grey with off-white cabinets with slate grey granite countertops
+                                </li>
+                                <li>New appliances with stainless steel accents</li>
+                                <li>Spacious living area</li>
+                                <li>Generous Closets</li>
+                                <li>Big windows with bright light</li>
+                            </ul>
+                            <a href="javascript:void(0)" class="btn btn-shedule">Schedule a Tour</a>
+                            <a href="javascript:void(0)" class="btn btn-apply">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @@include("property-amenities.html")
+        </section>
+    </main>
+
+    @@include("footer.html")
 </div>
 @@include("scripts.html")
 </body>

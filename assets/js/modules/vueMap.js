@@ -290,7 +290,7 @@ export function vueMap() {
     };
     const actions = {
       load_events_list: ({ commit }, query) => {
-        let url = "http://parkchester-dev.bigdropinc.net/wp-json/wp/v2/neighborhood_events/from/"+query.from+"/to/"+query.to+"/per_paged/"+query.per_paged+"/page/"+query.page+"";
+        let url = api_url+"wp-json/wp/v2/neighborhood_events/from/"+query.from+"/to/"+query.to+"/per_paged/"+query.per_paged+"/page/"+query.page+"";
         axios.get(url)
           .then(data => {
             data.data.events.sort((a,b) => {
@@ -625,7 +625,7 @@ export function vueMap() {
           active: true,
           activeIndex: 9,
           activeViewMore: true,
-          per_paged: 9,
+          per_paged: 6,
           page: 1,
         };
       },
@@ -699,6 +699,7 @@ export function vueMap() {
           this.$store.dispatch("load_events_list", query);
         },
         loadEvent() {
+
           let query = {
             from: String(Date.parse(this.start)).split("").slice(0, -3).join(""),
             to: String(Date.parse(this.end)).split("").slice(0, -3).join(""),
@@ -706,6 +707,7 @@ export function vueMap() {
             page: this.page
           };
           this.$store.dispatch("load_events_list", query);
+          console.log(this.$store.state);
         },
       }
     });

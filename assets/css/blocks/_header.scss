@@ -1,415 +1,437 @@
 .header {
-    background: $color-white;
-    padding: 10px 10px 40px;
-    position: fixed;
-    width: 100%;
+  background: $color-white;
+  padding: 10px 10px 40px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 6;
+  transition: all .3s;
+  @include media(">=desktop") {
+    padding: 20px 50px;
+  }
+  &.fixed {
+    @include media(">=desktop") {
+      padding: 10px 50px;
+      .header-contact {
+        margin: -5px 0 5px;
+      }
+    }
+  }
+}
+
+.mainlogo {
+  display: block;
+  overflow: hidden;
+  width: 113px;
+  height: 55px;
+  position: absolute;
+  left: 50%;
+  top: 10px;
+  transform: translateX(-50%);
+  @include media(">=desktop") {
+    width: 165px;
+    height: 80px;
+    float: left;
+    position: relative;
+    transform: translateX(0);
+    left: auto;
+    top: auto;
+  }
+  a {
+    display: block;
+  }
+}
+
+.header-content {
+  @include media(">=desktop") {
+    float: right;
+    width: calc(100% - 165px);
+    padding: 0 0 0 35px;
+  }
+  &::after {
+    content: '';
+    background: #060707;
+    position: absolute;
     top: 0;
     left: 0;
-    z-index: 6;
-    transition: all .3s;
-    @include media(">=desktop") {
-        padding: 20px 50px;
+    z-index: 2;
+    transition: opacity .4s;
+    opacity: 0;
+    visibility: hidden;
+  }
+  &.active-menu {
+    &::after {
+      height: 100vh;
+      width: 100%;
+      opacity: .5;
+      visibility: visible;
     }
-    &.fixed {
-        @include media(">=desktop") {
-            padding: 10px 50px;
-            .header-contact {
-                margin: -5px 0 5px;
-            }
-        }
+    .main-menu {
+      transform: translateX(0);
     }
+  }
 }
-.mainlogo {
+
+.menu-button {
+  float: left;
+  display: block;
+  width: 15px;
+  height: 12px;
+  margin: 7px 0 0;
+  text-indent: -9999px;
+  position: relative;
+  @include media(">=desktop") {
+    display: none;
+  }
+  span {
     display: block;
-    overflow: hidden;
-    width: 113px;
-    height: 55px;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    background: $color-black;
     position: absolute;
-    left: 50%;
-    top: 10px;
-    transform: translateX(-50%);
+    &:first-child {
+      top: 0;
+    }
+    &:nth-child(2) {
+      top: 50%;
+      transform: translateY(-50%);
+      width: 70%;
+    }
+    &:last-child {
+      bottom: 0;
+    }
+  }
+}
+
+.main-menu {
+  @include font-medium;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow-y: auto;
+  max-height: 100vh;
+  height: 100vh;
+  width: 80%;
+  background: $color-white;
+  text-transform: uppercase;
+  z-index: 3;
+  padding: 20px 20px;
+  transform: translateX(-100%);
+  transition: transform .3s;
+  @include media(">=desktop") {
+    font-size: 14px;
+    line-height: 15px;
+    position: relative;
+    height: auto;
+    width: 100%;
+    left: auto;
+    border: 1px solid lighten($color-black, 80%);
+    border-color: lighten($color-black, 80%) transparent transparent;
+    padding: 0 0 0 20px;
+    overflow: visible;
+    transform: translateX(0);
+    transition: transform 0s;
+    text-align: right;
+    @include clearfix;
+  }
+  .btn {
+    &.btn-shedule {
+      @include media(">=desktop") {
+        margin-right: 0;
+      }
+    }
+  }
+  .active {
+    >a {
+      color: $color-gold;
+    }
+  }
+  & > ul {
+    border: 1px solid lighten($color-black, 80%);
+    border-color: lighten($color-black, 80%) transparent;
+    padding: 40px 0 0;
+    margin: 30px 0 40px;
+    min-height: 55vh;
     @include media(">=desktop") {
-        width: 165px;
-        height: 80px;
+      display: inline-block;
+      border-color: transparent;
+      min-height: auto;
+      padding: 0;
+      margin: 25px 0 0;
+      vertical-align: middle;
+      text-align: left;
+      @include clearfix;
+    }
+    & > li {
+      @include media(">=desktop") {
         float: left;
-        position: relative;
-        transform: translateX(0);
-        left: auto;
-        top: auto;
+      }
+      &.active {
+        > a {
+          &:before {
+            @include media(">=desktop") {
+              width: 100%;
+              right: auto;
+              left: 0;
+            }
+          }
+        }
+      }
+      &.parent-menu {
+        > a {
+          @include media(">=desktop") {
+            padding-right: 19px;
+            margin-right: 0;
+          }
+          @include media(">=xdesktop") {
+            padding-right: 30px;
+            margin-right: 0;
+          }
+        }
+      }
+      > a {
+        &:before {
+          content: "";
+          position: absolute;
+          bottom: -7px;
+          background: $color-gold;
+          height: 2px;
+          left: auto;
+          right: 0;
+          width: 0;
+          -webkit-transition: all .5s cubic-bezier(.23, 1, .32, 1);
+          transition: all .5s cubic-bezier(.23, 1, .32, 1);
+        }
+        &:hover {
+          &:before {
+            @include media(">=desktop") {
+              width: 100%;
+              right: auto;
+              left: 0;
+            }
+          }
+        }
+        @include media(">=desktop") {
+          //padding: 0 19px;
+          margin: 0 19px;
+          line-height: 19px;
+        }
+        @include media(">=xdesktop") {
+          //padding: 0 30px;
+          margin: 0 30px;
+        }
+      }
+    }
+    li {
+      margin: 0 0 30px;
+      @include media(">=desktop") {
+        margin: 0;
+      }
     }
     a {
-        display: block;
+      color: $color-black;
+      display: inline-block;
+      position: relative;
+      transition: all .3s;
+      &:hover {
+        color: $color-gold;
+      }
     }
-}
-.header-content {
+  }
+  .sub-memu {
+    @include font-regular;
+    font-size: 12px;
+    line-height: 14px;
+    display: none;
+    padding: 30px 0 0;
+    text-transform: none;
     @include media(">=desktop") {
-        float: right;
-        width: calc(100% - 165px);
-        padding: 0 0 0 35px;
+      font-size: 13px;
+      box-shadow: 7px 7px 15px 0 rgba(0, 0, 0, .15);
+      display: block;
+      position: absolute;
+      background: $color-white;
+      top: calc(100% + 7px);
+      left: 0;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity .3s;
+      padding: 30px 20px 30px 30px;
+      min-width: 200px;
+      margin-top: 18px;
     }
     &::after {
+      @include media(">=desktop") {
         content: '';
-        background: #060707;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 2;
-        transition: opacity .4s;
-        opacity: 0;
-        visibility: hidden;
+        @include pos(absolute, -18px, 0);
+        height: 18px;
+        width: 100%;
+        background: inherit;
+      }
     }
-    &.active-menu {
-        &::after {
-            height: 100vh;
-            width: 100%;
-            opacity: .5;
-            visibility: visible;
-        }
-        .main-menu {
-            transform: translateX(0);
-        }
+    li {
+      margin: 0 0 15px;
+      &:last-child {
+        margin: 0;
+      }
     }
-}
-.menu-button {
-    float: left;
+    .active {
+      color: $color-gold;
+    }
+  }
+  .btn {
+    text-transform: none;
+    font-size: 12px;
+    padding-top: 11px;
+    padding-bottom: 11px;
     display: block;
-    width: 15px;
-    height: 12px;
-    margin: 7px 0 0;
-    text-indent: -9999px;
+    max-width: 125px;
+    min-width: 125px;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 0 10px;
+    @include media(">=desktop") {
+      display: inline-block;
+      margin: 15px 5px 0;
+      padding: 10px 25px;
+      min-width: 143px;
+      max-width: inherit;
+      vertical-align: top;
+    }
+    &.btn-apply {
+      @include media(">=desktop") {
+        min-width: 113px;
+        margin: 16px 5px 0;
+        padding: 9px 15px;
+      }
+    }
+  }
+  .parent-menu {
     position: relative;
-    @include media(">=desktop") {
-        display: none;
-    }
-    span {
-        display: block;
-        width: 100%;
-        height: 2px;
-        left: 0;
-        background: $color-black;
-        position: absolute;
-        &:first-child {
-            top: 0;
-        }
-        &:nth-child(2) {
-            top: 50%;
-            transform: translateY(-50%);
-            width: 70%;
-        }
-        &:last-child {
-            bottom: 0;
-        }
-    }
-}
-.main-menu {
-    @include font-medium;
-    position: fixed;
-    left: 0;
-    top: 0;
-    overflow-y: auto;
-    max-height: 100vh;
-    height: 100vh;
-    width: 80%;
-    background: $color-white;
-    text-transform: uppercase;
-    z-index: 3;
-    padding: 20px 20px;
-    transform: translateX(-100%);
-    transition: transform .3s;
-    @include media(">=desktop") {
-        font-size: 14px;
-        line-height: 15px;
-        position: relative;
-        height: auto;
-        width: 100%;
-        left: auto;
-        border: 1px solid lighten($color-black, 80%);
-        border-color: lighten($color-black, 80%) transparent transparent;
-        padding: 0 0 0 20px;
-        overflow: visible;
-        transform: translateX(0);
-        transition: transform 0s;
-        text-align: right;
-        @include clearfix;
-    }
-    .btn {
-        &.btn-shedule {
-            @include media(">=desktop") {
-                margin-right: 0;
-            }
-        }
-    }
-    & > ul {
-        border: 1px solid lighten($color-black, 80%);
-        border-color: lighten($color-black, 80%) transparent;
-        padding: 40px 0 0;
-        margin: 30px 0 40px;
-        min-height: 55vh;
-        @include media(">=desktop") {
-            display: inline-block;
-            border-color: transparent;
-            min-height: auto;
-            padding: 0;
-            margin: 25px 0 0;
-            vertical-align: middle;
-            text-align: left;
-            @include clearfix;
-        }
-        & > li {
-            @include media(">=desktop") {
-                float: left;
-            }
-            &.parent-menu {
-                > a {
-                    @include media(">=desktop") {
-                        padding-right: 19px;
-                        margin-right: 0;
-                    }
-                    @include media(">=xdesktop") {
-                        padding-right: 30px;
-                        margin-right: 0;
-                    }
-                }
-            }
-            > a {
-                &:before {
-                    content: "";
-                    position: absolute;
-                    bottom: -7px;
-                    background: $color-gold;
-                    height: 2px;
-                    left: auto;
-                    right: 0;
-                    width: 0;
-                    -webkit-transition: all .5s cubic-bezier(.23,1,.32,1);
-                    transition: all .5s cubic-bezier(.23,1,.32,1);
-                }
-                &:hover {
-                    &:before {
-                        @include media(">=desktop") {
-                            width: 100%;
-                            right: auto;
-                            left: 0;
-                        }
-                    }
-                }
-                @include media(">=desktop") {
-                    //padding: 0 19px;
-                    margin: 0 19px;
-                }
-                @include media(">=xdesktop") {
-                    //padding: 0 30px;
-                    margin: 0 30px;
-                }
-            }
-        }
-        li {
-            margin: 0 0 30px;
-            @include media(">=desktop") {
-                margin: 0;
-                padding: 2px 0;
-            }
-        }
-        a {
-            color: $color-black;
-            display: inline-block;
-            position: relative;
-            transition: all .3s;
-            &:hover {
-                color: $color-gold;
-            }
-        }
-    }
-    .sub-memu {
-        @include font-regular;
-        font-size: 12px;
-        line-height: 14px;
-        display: none;
-        padding: 30px 0 0;
-        text-transform: none;
-        @include media(">=desktop") {
-            font-size: 13px;
-            box-shadow: 7px 7px 15px 0 rgba(0,0,0, .15);
-            display: block;
-            position: absolute;
-            background: $color-white;
-            top: calc(100% + 5px);
-            left: 0;
-            visibility: hidden;
-            opacity: 0;
-            transition: opacity .3s;
-            padding: 30px 20px 30px 30px;
-            min-width: 200px;
-            margin-top: 18px;
-        }
+    cursor: pointer;
+    > a {
+      &::after {
+        content: '';
+        @include pos(absolute, 40%, null, null, -14px);
+        @include arrow;
+        transform: translateY(-50%) rotateZ(45deg);
+        transition: transform .3s;
+      }
+      @include media(">=desktop") {
         &::after {
-            @include media(">=desktop") {
-                content: '';
-                @include pos(absolute, -18px, 0);
-                height: 18px;
-                width: 100%;
-                background: inherit;
-            }
+          @include pos(absolute, 40%, null, null, 7px);
         }
-        li {
-            margin: 0 0 15px;
-            &:last-child {
-                margin: 0;
-            }
-        }
-        .active {
-            color: $color-gold;
-        }
-    }
-    .btn {
-        text-transform: none;
-        font-size: 12px;
-        padding-top: 11px;
-        padding-bottom: 11px;
-        display: block;
-        max-width: 125px;
-        min-width: 125px;
-        padding-left: 0;
-        padding-right: 0;
-        margin: 0 0 10px;
-        @include media(">=desktop") {
-            display: inline-block;
-            margin: 15px 5px 0;
-            padding: 10px 25px;
-            min-width: 143px;
-            max-width: inherit;
-            vertical-align: top;
-        }
-        &.btn-apply {
-            @include media(">=desktop") {
-                min-width: 113px;
-                margin: 16px 5px 0;
-                padding: 9px 15px;
-            }   
-        }
-    }
-    .parent-menu {
-        position: relative;
-        cursor: pointer;
-        > a {
-            &::after {
-                content: '';
-                @include pos(absolute, 40%, null, null, -14px);
-                @include arrow;
-                transform: translateY(-50%) rotateZ(45deg);
-                transition: transform .3s;
-            }
-            @include media(">=desktop") {
-                &::after {
-                    @include pos(absolute, 40%, null, null, 7px);
-                }
-            }
-            &.active {
-                &::after {
-                    transform: translateY(0) rotateZ(-135deg);
-                }
-            }
-        }
-    }
-    .close-menu {
-        display: inline-block;
-        text-indent: -9999px;
-        overflow: hidden;
-        position: relative;
-        width: 15px;
-        height: 16px;
-        top: -7px;
-        @include media(">=desktop") {
-            display: none;
-        }
-        &::after,
-        &::before {
-            content: '';
-            position: absolute;
-            top: 5px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: $color-black;
-        }
-        &::before {
-            transform: rotateZ(45deg);
-        }
+      }
+      &.active {
         &::after {
-            transform: rotateZ(-45deg);
+          transform: translateY(0) rotateZ(-135deg);
         }
+      }
     }
+  }
+  .close-menu {
+    display: inline-block;
+    text-indent: -9999px;
+    overflow: hidden;
+    position: relative;
+    width: 15px;
+    height: 16px;
+    top: -7px;
+    @include media(">=desktop") {
+      display: none;
+    }
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      top: 5px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: $color-black;
+    }
+    &::before {
+      transform: rotateZ(45deg);
+    }
+    &::after {
+      transform: rotateZ(-45deg);
+    }
+  }
 }
+
 .no-dev {
-    .parent-menu {
-        &:hover {
-            > a {
-                color: $color-gold;
-                &::after {
-                    transform: translateY(0) rotateZ(-135deg);
-                }
-            }
-            ul {
-                visibility: visible;
-                opacity: 1;
-            }
+  .parent-menu {
+    &:hover {
+      > a {
+        color: $color-gold;
+        &::after {
+          transform: translateY(0) rotateZ(-135deg);
         }
+      }
+      ul {
+        visibility: visible;
+        opacity: 1;
+      }
     }
+  }
 }
+
 .header-contact {
-    text-align: right;
-    @include media(">=desktop") {
-        margin: -5px 0 15px;
-        transition: margin .3s;
+  text-align: right;
+  @include media(">=desktop") {
+    margin: -5px 0 15px;
+    transition: margin .3s;
+  }
+  a {
+    display: inline-block;
+    font-size: 0;
+    vertical-align: middle;
+    position: relative;
+    min-height: 15px;
+    &:not(:last-child) {
+      margin: 0 20px 0 0;
+      @include media(">=desktop") {
+        margin: 0 50px 0 0;
+      }
+      &::after {
+        content: '';
+        @include pos(absolute, 50%, null, 50%, -12px);
+        height: 11px;
+        width: 2px;
+        background: lighten($color-black, 80%);
+        transform: translateY(-50%);
+        @include media(">=desktop") {
+          @include pos(absolute, 50%, null, 50%, -29px);
+        }
+      }
     }
-    a {
-        display: inline-block;
-        font-size: 0;
-        vertical-align: middle;
-        position: relative;
-        min-height: 15px;
-        &:not(:last-child) {
-            margin: 0 20px 0 0;
-            @include media(">=desktop") {
-                margin: 0 50px 0 0;
-            }
-            &::after {
-                content: '';
-                @include pos(absolute, 50%, null, 50%, -12px);
-                height: 11px;
-                width: 2px;
-                background: lighten($color-black, 80%);
-                transform: translateY(-50%);
-                @include media(">=desktop") {
-                    @include pos(absolute, 50%, null, 50%, -29px);
-                }
-            }
-        }
+  }
+  .call-link {
+    @include font-regular;
+    color: $color-black;
+    width: 12px;
+    @include media(">=xtablet") {
+      width: auto;
+      font-size: 13px;
+      line-height: 14px;
     }
-    .call-link {
-        @include font-regular;
-        color: $color-black;
-        width: 12px;
-        @include media(">=xtablet") {
-            width: auto;
-            font-size: 13px;
-            line-height: 14px;
-        }
-        svg {
-            vertical-align: middle;
-        }
+    svg {
+      vertical-align: middle;
     }
-    .portal-link {
-        @include font-regular;
-        color: $color-black;
-        width: 15px;
-        @include media(">=xtablet") {
-            width: auto;
-            font-size: 13px;
-            line-height: 14px;
-        }
-        svg {
-            vertical-align: middle;
-        }
+  }
+  .portal-link {
+    @include font-regular;
+    color: $color-black;
+    width: 15px;
+    @include media(">=xtablet") {
+      width: auto;
+      font-size: 13px;
+      line-height: 14px;
     }
+    svg {
+      vertical-align: middle;
+    }
+  }
 }

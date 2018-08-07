@@ -113,6 +113,7 @@
   text-transform: uppercase;
   padding: 5px 0;
   margin: 0 0 5px;
+  position: relative;
   @include media('>=desktop') {
     font-size: 16px;
     margin: 0 0 30px;
@@ -133,11 +134,21 @@
     }
     &.active {
       a {
-        border-color: $color-gold;
-        color: $color-gold;
+        //border-color: $color-gold;
+        //color: $color-gold;
       }
     }
   }
+}
+.js-tab-underline {
+  font-size: 0;
+  width: 1px;
+  height: 3px;
+  left: 15px;
+  bottom: 1px;
+  position: absolute;
+  background: $color-gold;
+  transition: .5s ease;
 }
 .tabs-content {
   position: relative;

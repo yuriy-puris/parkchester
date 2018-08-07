@@ -16814,6 +16814,7 @@ function googleMap() {
         map: map,
         icon: image
       });
+
       marker.setContent(content);
       google.maps.event.addListenerOnce(marker, "domready", function () {
         var iw = $(".gm-style-iw");
@@ -18679,8 +18680,9 @@ function mobileMenu() {
   $(".close-menu").on("click", function () {
     $(".header-content").removeClass("active-menu");
   });
-  $(".parent-menu > a").on("click", function () {
-    $(this).toggleClass("active").next().slideToggle();
+  $(".parent-menu").on("click", function () {
+    $(this).find(">a").toggleClass("active").next().slideToggle();
+    // console.log($(this).find(">a"));
   });
 }
 

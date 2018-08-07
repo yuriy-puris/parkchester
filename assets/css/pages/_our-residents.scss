@@ -6,6 +6,7 @@
         }
         p {
             margin-bottom: 0;
+            font-size: 14px;
         }
     }
     .videos-list {
@@ -25,15 +26,15 @@
         .videos-list {
             .video-wrap {
                 width: 100%;
-                max-width: 370px;
+                max-width: 85%;
                 margin: 0 auto;
-                overflow: hidden;
+                // overflow: hidden;
             }
             .video {
                 position: relative;
-                height: 270px;
+                height: 450px;
                 iframe {
-                    @include pos(absolute, 0, center);
+                    @include pos(absolute, 0, 0);
                     width: 370px;
                     height: 270px;
                 }
@@ -52,6 +53,7 @@
         .videos-list {
             @include flex(row, $fw: wrap);
             .video-wrap {
+                max-width: 370px;
                 margin: 0 30px 0 0;
                 flex-shrink: 0;
                 &:nth-child(3n) {
@@ -59,6 +61,7 @@
                 }
             }
             .video {
+                height: 270px;
                 .custom-play-btn {
                     &:before,
                     &:after {

@@ -7,7 +7,7 @@
         margin: 0 0 0 30px;
       }
       .gallery-apartments {
-        margin: 0 0 30px 30px;
+        margin: 0 0 30px;
       }
     }
   }
@@ -29,7 +29,7 @@
       display: inline-block;
       margin: 0 0 20px;
       @include media('>=desktop') {
-        margin: 0 0 40px;
+        // margin: 0 0 40px;
       }
     }
   }

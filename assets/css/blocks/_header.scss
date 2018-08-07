@@ -159,12 +159,47 @@
             @include media(">=desktop") {
                 float: left;
             }
+            &.parent-menu {
+                > a {
+                    @include media(">=desktop") {
+                        padding-right: 19px;
+                        margin-right: 0;
+                    }
+                    @include media(">=xdesktop") {
+                        padding-right: 30px;
+                        margin-right: 0;
+                    }
+                }
+            }
             > a {
+                &:before {
+                    content: "";
+                    position: absolute;
+                    bottom: -7px;
+                    background: $color-gold;
+                    height: 2px;
+                    left: auto;
+                    right: 0;
+                    width: 0;
+                    -webkit-transition: all .5s cubic-bezier(.23,1,.32,1);
+                    transition: all .5s cubic-bezier(.23,1,.32,1);
+                }
+                &:hover {
+                    &:before {
+                        @include media(">=desktop") {
+                            width: 100%;
+                            right: auto;
+                            left: 0;
+                        }
+                    }
+                }
                 @include media(">=desktop") {
-                    padding: 0 19px;
+                    //padding: 0 19px;
+                    margin: 0 19px;
                 }
                 @include media(">=xdesktop") {
-                    padding: 0 30px;
+                    //padding: 0 30px;
+                    margin: 0 30px;
                 }
             }
         }
@@ -172,6 +207,7 @@
             margin: 0 0 30px;
             @include media(">=desktop") {
                 margin: 0;
+                padding: 2px 0;
             }
         }
         a {
@@ -197,7 +233,7 @@
             display: block;
             position: absolute;
             background: $color-white;
-            top: 100%;
+            top: calc(100% + 5px);
             left: 0;
             visibility: hidden;
             opacity: 0;
@@ -254,6 +290,7 @@
     }
     .parent-menu {
         position: relative;
+        cursor: pointer;
         > a {
             &::after {
                 content: '';

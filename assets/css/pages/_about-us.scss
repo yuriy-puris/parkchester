@@ -1,11 +1,15 @@
 .services {
   @include media(">=tablet") {
-    margin-bottom: 100px;
+    //margin-bottom: 100px;
   }
   .service-block {
     @include media(">=tablet") {
       margin-bottom: 60px;
     }
+  }
+  .content {
+    font-size: 14px;
+    line-height: 24px;
   }
   .service-bg {
     width: 100%;
@@ -25,11 +29,11 @@
     margin-bottom: 30px;
     padding-bottom: 30px;
     border-bottom: 1px solid $color-light-grey;
-    p {
+    ul {
       @include flex(row);
       margin-bottom: 0;
     }
-    span {
+    li {
       display: inline-block;
       vertical-align: top;
       width: 50%;
@@ -110,6 +114,9 @@
     padding-left: 30px;
     text-align: left;
     text-transform: uppercase;
+    @include font-medium;
+    font-size: 16px;
+    line-height: 19px;
   }
 }
 

@@ -45,6 +45,7 @@ export function googleMap() {
         map: map,
         icon: image,
       });
+
       marker.setContent(content);
       google.maps.event.addListenerOnce(marker, "domready", function () {
         let iw = $(".gm-style-iw");

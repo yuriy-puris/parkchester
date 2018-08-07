@@ -1,6 +1,14 @@
 .page-careers {
   margin-bottom: 0;
   padding-bottom: 0;
+  .content-section {
+    p {
+      a {
+        @include font-medium;
+        color: #bd9042;
+      }
+    }
+  }
   .section {
     padding: 0;
     border-color: transparent;

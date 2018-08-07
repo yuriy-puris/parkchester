@@ -9,6 +9,9 @@
         &:hover {
             color: $color-gold;
         }
+        &+a {
+            margin-left: 10px;
+        }
     }
     .footer-nav {
         .h6 {

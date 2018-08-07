@@ -11,8 +11,9 @@
       padding: 0 0 100px;
       margin: 0 0 100px;
     }
-  }  
+  }
 }
+
 .map-holder {
   @include media('>=tablet') {
     display: flex;
@@ -24,6 +25,7 @@
     }
   }
 }
+
 .map-menu {
   @include media('>=desktop') {
     width: calc(100% - 770px);
@@ -56,7 +58,7 @@
     }
   }
   .tab-content-item {
-    @include font-medium;
+    @include font-regular;
     font-size: 13px;
     line-height: 16px;
     @include media('>=desktop') {
@@ -70,11 +72,14 @@
     transition: color .3s;
     display: block;
     a {
+      &:hover {
+        opacity: 0.3;
+      }
       &.active {
         color: $color-gold;
         & + ul {
           opacity: 1;
-          visibility: visible;  
+          visibility: visible;
         }
       }
     }
@@ -89,9 +94,20 @@
     @include media('>=desktop') {
       width: 50%;
       padding: 0 15px 0 0;
-    } 
+    }
     & > li {
       text-transform: uppercase;
+      a {
+        &:hover {
+          opacity: 0.3;
+        }
+      }
+      &.active {
+        a {
+          border: 0;
+        }
+      }
+
     }
     ul {
       @include font-regular;
@@ -121,8 +137,9 @@
       }
     }
   }
-  
+
 }
+
 .map-menu-title {
   color: $color-gold;
   @include font-bold;
@@ -134,14 +151,13 @@
   border-bottom: 1px solid $color-light-grey;
 }
 
-
 //sutom infoWindow
 #map-note-neighborhood {
   h6 {
     text-transform: uppercase;
     color: $color-white;
     margin-bottom: 10px;
-  } 
+  }
   #content-note {
     @include font-light;
     font-size: 14px;
@@ -150,6 +166,7 @@
     text-align: left;
   }
 }
+
 #map {
   width: 100%;
   height: 200px;
@@ -161,28 +178,30 @@
     height: 600px;
   }
   .gm-style-iw {
-    min-width: 200px!important;
+    min-width: 200px !important;
   }
   .gm-style .gm-style-iw {
     font-size: 16px;
     line-height: 16px;
     color: $color-light-yellow;
     background: $color-gold;
-    width: auto!important;
+    width: auto !important;
     padding: 20px;
     div div {
-      overflow: hidden!important;
+      overflow: hidden !important;
     }
-  }    
-  
+  }
+
   /*style the p tag*/
   .gm-style .gm-style-iw #google-popup p {
     padding: 10px;
   }
 }
+
 .search-landmarks {
   margin: 0 0 60px;
 }
+
 .search-form {
   max-width: 569px;
   margin: auto;
@@ -198,6 +217,7 @@
   }
   input {
     margin: 0;
+    line-height: 20px;
   }
   label {
     font-size: 14px;
@@ -209,6 +229,7 @@
     }
   }
 }
+
 .search-dropdown {
   @include font-light;
   font-size: 14px;
@@ -234,9 +255,12 @@
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+
+.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */
+{
   opacity: 0;
 }
+
 .date-range {
   button {
     background: transparent;
@@ -251,6 +275,7 @@
     padding: 0;
   }
 }
+
 .date-picker-header {
   .btn--icon {
     &:hover {
@@ -281,10 +306,11 @@
     }
   }
 }
+
 .datepicker {
   font-size: 12px;
   text-align: right;
-  margin: 50px 0 50px;
+  margin: 50px 0 15px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -313,21 +339,21 @@
       width: 170px;
     }
     &:last-child {
-      margin-right: 0!important;
+      margin-right: 0 !important;
     }
   }
   .date-panel {
     right: 0;
-    left: auto!important;
+    left: auto !important;
   }
   .input-wrapper {
-    padding: 0!important;
+    padding: 0 !important;
     @include font-light();
-    border-color: transparent transparent $color-light-grey!important;
+    border-color: transparent transparent $color-light-grey !important;
     cursor: pointer;
     .input {
       line-height: 20px;
-      padding: 5px 30px 5px 10px!important;
+      padding: 5px 30px 5px 10px !important;
       position: relative;
     }
   }
@@ -346,7 +372,7 @@
     .datepicker-placeholder {
       @include font-light();
       border: 1px solid;
-      border-color: transparent transparent $color-light-grey!important;
+      border-color: transparent transparent $color-light-grey !important;
       background: $color-white;
       position: absolute;
       top: 0;
@@ -355,7 +381,7 @@
       height: 32px;
       pointer-events: none;
       line-height: 20px;
-      padding: 5px 30px 5px 10px!important;
+      padding: 5px 30px 5px 10px !important;
       text-align: left;
       &::after {
         content: '';
@@ -370,100 +396,123 @@
     }
   }
   .cancel-btn {
-    display: none!important;
+    display: none !important;
   }
 }
-.year-box[data-v-89588f16], 
+
+.year-box[data-v-89588f16],
 .month-box[data-v-89588f16] {
-  font-size: 14px!important;
-  line-height: 14px!important;
+  font-size: 14px !important;
+  line-height: 14px !important;
 }
+
 .year-month-box[data-v-89588f16] {
-  align-items: center!important;
+  align-items: center !important;
 }
+
 .arrow-left[data-v-89588f16] {
-  font-size: 15px!important;
-  text-align: left!important;
+  font-size: 15px !important;
+  text-align: left !important;
 }
+
 .arrow-right[data-v-89588f16] {
-  font-size: 15px!important;
-  text-align: right!important;
+  font-size: 15px !important;
+  text-align: right !important;
 }
+
 .date-list li .message span[data-v-89588f16] {
   @include font-regular();
-  font-size: 10px!important;
+  font-size: 10px !important;
 }
+
 .weeks li[data-v-89588f16] {
   color: rgba(6, 7, 7, 0.3);
   @include font-regular();
-  font-size: 10px!important;
+  font-size: 10px !important;
   text-transform: uppercase;
 }
+
 .date-list li .message.selected .bg[data-v-89588f16] {
-  background: $color-light-yellow!important;
+  background: $color-light-yellow !important;
 }
+
 .date-list li .message .bg[data-v-89588f16] {
-  border-radius: 0!important;
+  border-radius: 0 !important;
 }
+
 .date-list li .message.selected span[data-v-89588f16] {
-  color: $color-black!important;
+  color: $color-black !important;
 }
-.weeks .preMonth[data-v-89588f16], 
-.date-list .preMonth[data-v-89588f16], 
-.weeks .nextMonth[data-v-89588f16], 
+
+.weeks .preMonth[data-v-89588f16],
+.date-list .preMonth[data-v-89588f16],
+.weeks .nextMonth[data-v-89588f16],
 .date-list .nextMonth[data-v-89588f16] {
-  color: $color-white!important;
+  color: $color-white !important;
 }
+
 .date-list li .message:not(.selected):hover .bg[data-v-89588f16] {
-  background: $color-light-yellow!important;
+  background: $color-light-yellow !important;
   transform: scale(1);
   opacity: .6;
 }
+
 .date-list li.preMonth .message:not(.selected):hover .bg[data-v-89588f16],
 .date-list li.nextMonth .message:not(.selected):hover .bg[data-v-89588f16] {
   opacity: 0;
 }
+
 .date-list li.preMonth,
 .date-list li.nextMonth {
   pointer-events: none;
 }
+
 .date-list li.preMonth .message:not(.selected):hover,
 .date-list li.nextMonth .message:not(.selected):hover {
   cursor: not-allowed;
 }
+
 .date-list li:not(.preMonth) .message:not(.selected):hover span[data-v-89588f16],
 .date-list li:not(.nextMonth) .message:not(.selected):hover span[data-v-89588f16] {
-  color: $color-black!important;
+  color: $color-black !important;
 }
+
 .date-list li.invalid[data-v-89588f16] {
-  color: $color-white!important;
+  color: $color-white !important;
 }
-.year-list li.selected[data-v-89588f16], 
+
+.year-list li.selected[data-v-89588f16],
 .month-list li.selected[data-v-89588f16],
-.year-list li[data-v-89588f16]:hover, 
+.year-list li[data-v-89588f16]:hover,
 .month-list li[data-v-89588f16]:hover {
-  background-color: $color-light-yellow!important;
-  color: $color-black!important;
+  background-color: $color-light-yellow !important;
+  color: $color-black !important;
 }
-.year-list li[data-v-89588f16], 
+
+.year-list li[data-v-89588f16],
 .month-list li[data-v-89588f16] {
-  font-size: 15px!important;
+  font-size: 15px !important;
 }
+
 .date-list li .message span[data-v-89588f16] {
-  position: relative!important;
-  left: 0!important;
-  top: 0!important;
-  transform: none!important;
+  position: relative !important;
+  left: 0 !important;
+  top: 0 !important;
+  transform: none !important;
 }
+
 .date-list li .message[data-v-89588f16] {
   line-height: 28px;
 }
+
 .panel-header {
   border-bottom: 1px solid $color-light-grey;
 }
+
 .date-list li[data-v-89588f16]:not(.firstItem) {
-  margin-left: 0!important;
+  margin-left: 0 !important;
 }
+
 .date-panel {
-  padding: 30px 30px 0!important;
+  padding: 30px 30px 0 !important;
 }

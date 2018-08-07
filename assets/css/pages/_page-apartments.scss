@@ -20,6 +20,9 @@
     strong {
       text-transform: uppercase;
       margin: 0 0 20px;
+      font-size: 16px;
+      line-height: 16px;
+      margin-top: 5px;
     }
     .btn {
       @include font-light;

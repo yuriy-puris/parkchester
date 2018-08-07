@@ -13,8 +13,11 @@
   }
   h6, .h6 {
     margin-bottom: 15px;
+    text-transform: none;
+    @include font-medium;
     @include media('>=desktop') {
       font-size: 18px;
+      line-height: initial;
     }
   }
   .section {

@@ -16,6 +16,10 @@
     }
   }
   .large-sync {
+    p {
+      font-size: 14px;
+      line-height: 24px;
+    }
     @include media('>=xtablet') {
       width: 49%;
     }

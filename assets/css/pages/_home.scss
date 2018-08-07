@@ -1,0 +1,18 @@
+.main.homepage {
+  padding-bottom: 0;
+}
+.homepage {
+  .more-info {
+    border-bottom: 0;
+  }
+  .moreinfo-bg {
+    margin-bottom: 3px;
+    @include media('>=xtablet') {
+      margin-bottom: 0;
+      min-height: 480px;
+    }
+    @include media('>=desktop') {
+      min-height: 471px;
+    }
+  }
+}

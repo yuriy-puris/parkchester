@@ -279,7 +279,7 @@ export function tabs() {
         let underline = $('.js-tab-underline');
         let activeLink = $('.tab-nav .active a');
 
-        underline.css('width', activeLink.outerWidth());
+        underline.css('width', activeLink.innerWidth());
         underline.css('left', activeLink.position().left);
     }
 

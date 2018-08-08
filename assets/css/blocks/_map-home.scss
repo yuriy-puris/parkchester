@@ -21,19 +21,20 @@
     }
   }
 }
-#map-note {
+.map-note {
   h5 {
    text-align-last: left; 
    padding: 0 0 0 20px;
    margin: 0 0 5px;
   }
-  #content-note {
+  .content-note {
     @include font-medium;
     font-size: 12px;
     line-height: 20px;
     padding: 10px;
     background: $color-white;
     text-align: left;
+    max-width: 230px;
     @include media('>=desktop') {
       font-size: 14px;
       line-height: 24px;

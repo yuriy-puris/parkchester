@@ -108,7 +108,19 @@
         }
       }
     }
-    svg {
+    //svg {
+    //  vertical-align: middle;
+    //  width: 30px;
+    //  height: 30px;
+    //  margin: 0 0 10px;
+    //  @include media(">=xtablet") {
+    //    width: 50px;
+    //    min-width: 50px;
+    //    height: 50px;
+    //    margin: 0 30px 0 0;
+    //  }
+    //}
+    img {
       vertical-align: middle;
       width: 30px;
       height: 30px;

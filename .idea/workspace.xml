@@ -7,39 +7,12 @@
     <list default="true" id="b6f316f8-c348-4913-8a33-69cbd9e767bb" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/assets/css/blocks/_amenities.scss" afterPath="$PROJECT_DIR$/assets/css/blocks/_amenities.scss" />
-      <change beforePath="$PROJECT_DIR$/assets/css/blocks/_gallery.scss" afterPath="$PROJECT_DIR$/assets/css/blocks/_gallery.scss" />
-      <change beforePath="$PROJECT_DIR$/assets/css/blocks/_header.scss" afterPath="$PROJECT_DIR$/assets/css/blocks/_header.scss" />
-      <change beforePath="$PROJECT_DIR$/assets/css/blocks/_more-info.scss" afterPath="$PROJECT_DIR$/assets/css/blocks/_more-info.scss" />
-      <change beforePath="$PROJECT_DIR$/assets/css/blocks/_neighborhood-map.scss" afterPath="$PROJECT_DIR$/assets/css/blocks/_neighborhood-map.scss" />
-      <change beforePath="$PROJECT_DIR$/assets/css/blocks/_photogallery-slider.scss" afterPath="$PROJECT_DIR$/assets/css/blocks/_photogallery-slider.scss" />
-      <change beforePath="$PROJECT_DIR$/assets/css/libs/_styleguide.scss" afterPath="$PROJECT_DIR$/assets/css/libs/_styleguide.scss" />
-      <change beforePath="$PROJECT_DIR$/assets/css/pages/_home.scss" afterPath="$PROJECT_DIR$/assets/css/pages/_home.scss" />
-      <change beforePath="$PROJECT_DIR$/assets/css/pages/_one-bedroom.scss" afterPath="$PROJECT_DIR$/assets/css/pages/_one-bedroom.scss" />
+      <change beforePath="$PROJECT_DIR$/assets/css/blocks/_property-animities.scss" afterPath="$PROJECT_DIR$/assets/css/blocks/_property-animities.scss" />
       <change beforePath="$PROJECT_DIR$/assets/html/templates/amenities.html" afterPath="$PROJECT_DIR$/assets/html/templates/amenities.html" />
-      <change beforePath="$PROJECT_DIR$/assets/html/templates/header.html" afterPath="$PROJECT_DIR$/assets/html/templates/header.html" />
       <change beforePath="$PROJECT_DIR$/assets/html/templates/property-amenities.html" afterPath="$PROJECT_DIR$/assets/html/templates/property-amenities.html" />
-      <change beforePath="$PROJECT_DIR$/assets/js/modules/googleMap.js" afterPath="$PROJECT_DIR$/assets/js/modules/googleMap.js" />
-      <change beforePath="$PROJECT_DIR$/assets/js/modules/module.js" afterPath="$PROJECT_DIR$/assets/js/modules/module.js" />
       <change beforePath="$PROJECT_DIR$/dist/css/style.css" afterPath="$PROJECT_DIR$/dist/css/style.css" />
-      <change beforePath="$PROJECT_DIR$/dist/html/about-us.html" afterPath="$PROJECT_DIR$/dist/html/about-us.html" />
-      <change beforePath="$PROJECT_DIR$/dist/html/amenities.html" afterPath="$PROJECT_DIR$/dist/html/amenities.html" />
-      <change beforePath="$PROJECT_DIR$/dist/html/apartments.html" afterPath="$PROJECT_DIR$/dist/html/apartments.html" />
-      <change beforePath="$PROJECT_DIR$/dist/html/careers.html" afterPath="$PROJECT_DIR$/dist/html/careers.html" />
-      <change beforePath="$PROJECT_DIR$/dist/html/error-page.html" afterPath="$PROJECT_DIR$/dist/html/error-page.html" />
-      <change beforePath="$PROJECT_DIR$/dist/html/faq.html" afterPath="$PROJECT_DIR$/dist/html/faq.html" />
-      <change beforePath="$PROJECT_DIR$/dist/html/history.html" afterPath="$PROJECT_DIR$/dist/html/history.html" />
       <change beforePath="$PROJECT_DIR$/dist/html/home.html" afterPath="$PROJECT_DIR$/dist/html/home.html" />
-      <change beforePath="$PROJECT_DIR$/dist/html/neighborhood.html" afterPath="$PROJECT_DIR$/dist/html/neighborhood.html" />
       <change beforePath="$PROJECT_DIR$/dist/html/one-bedroom.html" afterPath="$PROJECT_DIR$/dist/html/one-bedroom.html" />
-      <change beforePath="$PROJECT_DIR$/dist/html/our-residents.html" afterPath="$PROJECT_DIR$/dist/html/our-residents.html" />
-      <change beforePath="$PROJECT_DIR$/dist/html/photo-gallery.html" afterPath="$PROJECT_DIR$/dist/html/photo-gallery.html" />
-      <change beforePath="$PROJECT_DIR$/dist/html/press.html" afterPath="$PROJECT_DIR$/dist/html/press.html" />
-      <change beforePath="$PROJECT_DIR$/dist/html/privacy-policy.html" afterPath="$PROJECT_DIR$/dist/html/privacy-policy.html" />
-      <change beforePath="$PROJECT_DIR$/dist/html/shedule-page.html" afterPath="$PROJECT_DIR$/dist/html/shedule-page.html" />
-      <change beforePath="$PROJECT_DIR$/dist/html/styleguide.html" afterPath="$PROJECT_DIR$/dist/html/styleguide.html" />
-      <change beforePath="$PROJECT_DIR$/dist/html/vue-neighborhood.html" afterPath="$PROJECT_DIR$/dist/html/vue-neighborhood.html" />
-      <change beforePath="$PROJECT_DIR$/dist/images/shop.svg" afterPath="$PROJECT_DIR$/dist/images/shop.svg" />
-      <change beforePath="$PROJECT_DIR$/dist/js/global.js" afterPath="$PROJECT_DIR$/dist/js/global.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -52,40 +25,27 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.38613233">
+    <splitter split-orientation="horizontal" split-proportion="0.49491096">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/assets/html/home.html">
+          <file leaf-file-name="property-amenities.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/assets/html/templates/property-amenities.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="234">
-                  <caret line="13" column="26" lean-forward="false" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+                <state relative-caret-position="-153">
+                  <caret line="46" column="45" lean-forward="false" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="amenities.html" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/assets/html/templates/amenities.html">
+          <file leaf-file-name="_property-animities.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/assets/css/blocks/_property-animities.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="135">
-                  <caret line="279" column="44" lean-forward="false" selection-start-line="279" selection-start-column="34" selection-end-line="279" selection-end-column="44" />
+                <state relative-caret-position="290">
+                  <caret line="68" column="7" lean-forward="false" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="7" />
                   <folding>
-                    <element signature="n#li#2;n#ul#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="false" />
-                    <element signature="n#li#4;n#ul#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="false" />
-                    <element signature="n#li#5;n#ul#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="false" />
-                    <element signature="n#a#0;n#li#5;n#ul#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="false" />
+                    <element signature="e#2427#2468#0" expanded="false" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="_home.scss" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/assets/css/pages/_home.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
-                  <caret line="15" column="18" lean-forward="false" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -94,26 +54,6 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="_photogallery-slider.scss" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/assets/css/blocks/_photogallery-slider.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="310">
-                  <caret line="60" column="20" lean-forward="false" selection-start-line="60" selection-start-column="19" selection-end-line="60" selection-end-column="20" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="_styleguide.scss" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/assets/css/libs/_styleguide.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="12726">
-                  <caret line="707" column="13" lean-forward="false" selection-start-line="707" selection-start-column="13" selection-end-line="707" selection-end-column="13" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="_more-info.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/assets/css/blocks/_more-info.scss">
               <provider selected="true" editor-type-id="text-editor">
@@ -124,11 +64,31 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="_amenities.scss" pinned="false" current-in-tab="true">
+          <file leaf-file-name="_amenities.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/assets/css/blocks/_amenities.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="205">
-                  <caret line="100" column="29" lean-forward="false" selection-start-line="100" selection-start-column="29" selection-end-line="100" selection-end-column="29" />
+                <state relative-caret-position="421">
+                  <caret line="110" column="4" lean-forward="false" selection-start-line="110" selection-start-column="6" selection-end-line="121" selection-end-column="7" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/assets/html/home.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="180">
+                  <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="amenities.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/assets/html/templates/amenities.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="637">
+                  <caret line="68" column="78" lean-forward="true" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="78" />
                   <folding />
                 </state>
               </provider>
@@ -147,8 +107,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>search</find>
-      <find>On-street parking</find>
       <find>tab-nav-item</find>
       <find>load_events_list</find>
       <find>calc</find>
@@ -177,6 +135,8 @@
       <find>&lt;polygon id=&quot;path-1&quot; points=&quot;58.7113636</find>
       <find>\&lt;path d\=\&quot;M12\.5237727\,24\.3842727 L3\.34104545\,24\.3842727 C2\.87059091\,24\.3842727 2\.48877273\,24\.7660909 2\.48877273\,25\.2365455 C2\.48877273\,25\.707 2\.87059091\,26\.0888182 3\.34104545\,26\.0888182 L12\.5237727\,26\.0888182 C14\.0074091\,26\.0888182 15\.2155909\,27\.2956364 15\.2155909\,28\.7806364 C15\.2155909\,29\.1038182 14\.9510455\,29\.367 14\.6278636\,29\.367 L3\.01922727\,29\.367 C2\.54877273\,29\.367 2\.16695455\,29\.7488182 2\.16695455\,30\.2192727 C2\.16695455\,30\.6897273 2\.54877273\,31\.0715455 3\.01922727\,31\.0715455 L14\.6278636\,31\.0715455 C15\.8919545\,31\.0715455 16\.9201364\,30\.0433636 16\.9201364\,28\.7806364 C16\.9201364\,26\.3560909 14\.9469545\,24\.3842727 12\.5237727\,24\.3842727\&quot; id\=\&quot;Fill\-1\&quot; fill\=\&quot;\#BE913A\&quot;\&gt;\&lt;\/path\&gt;\n\	\	\	\	\	\	\	\	\	\	\	\	\	\	\&lt;p</find>
       <find>&lt;path d=&quot;M55.6881818,29.3674091 L44.0795455,29.3674091 C43.7563636,29.3674091 43.4918182,29.1042273 43.4918182,28.7796818 C43.4918182,27.2960455 44.6986364,26.0892273 46.1836364,2</find>
+      <find>svg</find>
+      <find>amenities-holder</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/dist/html</dir>
@@ -224,7 +184,6 @@
         <option value="$PROJECT_DIR$/assets/html/templates/park-apartments.html" />
         <option value="$PROJECT_DIR$/assets/html/vue-neighborhood.html" />
         <option value="$PROJECT_DIR$/assets/html/one-bedroom.html" />
-        <option value="$PROJECT_DIR$/assets/css/blocks/_property-animities.scss" />
         <option value="$PROJECT_DIR$/assets/css/blocks/_park-apartments.scss" />
         <option value="$PROJECT_DIR$/assets/css/blocks/_map-home.scss" />
         <option value="$PROJECT_DIR$/assets/html/templates/map-home.html" />
@@ -242,8 +201,9 @@
         <option value="$PROJECT_DIR$/assets/js/modules/googleMap.js" />
         <option value="$PROJECT_DIR$/dist/images/shop.svg" />
         <option value="$PROJECT_DIR$/assets/html/templates/amenities.html" />
-        <option value="$PROJECT_DIR$/assets/html/templates/property-amenities.html" />
         <option value="$PROJECT_DIR$/assets/css/blocks/_amenities.scss" />
+        <option value="$PROJECT_DIR$/assets/css/blocks/_property-animities.scss" />
+        <option value="$PROJECT_DIR$/assets/html/templates/property-amenities.html" />
       </list>
     </option>
   </component>
@@ -433,12 +393,12 @@
       <workItem from="1533536556875" duration="28284000" />
       <workItem from="1533622585471" duration="17398000" />
       <workItem from="1533644315502" duration="9559000" />
-      <workItem from="1533708575286" duration="20369000" />
+      <workItem from="1533708575286" duration="22663000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="248894000" />
+    <option name="totallyTimeSpent" value="251188000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1977" y="-4" width="1863" height="1084" extended-state="6" />
@@ -582,20 +542,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/html/templates/park-apartments.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/blocks/_property-animities.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="119" column="16" lean-forward="false" selection-start-line="119" selection-start-column="16" selection-end-line="119" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/blocks/_park-apartments.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -682,14 +628,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="466">
           <caret line="328" column="3" lean-forward="true" selection-start-line="328" selection-start-column="3" selection-end-line="328" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/html/vue-neighborhood.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="30" column="44" lean-forward="false" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
           <folding />
         </state>
       </provider>
@@ -818,43 +756,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/html/templates/property-amenities.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="210" column="18" lean-forward="true" selection-start-line="210" selection-start-column="18" selection-end-line="210" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/html/one-bedroom.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="19" column="56" lean-forward="true" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/html/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="26" lean-forward="false" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/html/templates/amenities.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="279" column="44" lean-forward="false" selection-start-line="279" selection-start-column="34" selection-end-line="279" selection-end-column="44" />
-          <folding>
-            <element signature="n#li#2;n#ul#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#li#4;n#ul#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#li#5;n#ul#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#a#0;n#li#5;n#ul#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/blocks/_gallery.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -871,10 +772,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/html/templates/park-apartments.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="54" column="64" lean-forward="false" selection-start-line="54" selection-start-column="61" selection-end-line="54" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/html/one-bedroom.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="637">
+          <caret line="67" column="28" lean-forward="false" selection-start-line="67" selection-start-column="28" selection-end-line="67" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/html/vue-neighborhood.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="144" column="35" lean-forward="true" selection-start-line="144" selection-start-column="35" selection-end-line="144" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/blocks/_amenities.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="100" column="29" lean-forward="false" selection-start-line="100" selection-start-column="29" selection-end-line="100" selection-end-column="29" />
+        <state relative-caret-position="421">
+          <caret line="110" column="4" lean-forward="false" selection-start-line="110" selection-start-column="6" selection-end-line="121" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/blocks/_property-animities.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="68" column="7" lean-forward="false" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="7" />
+          <folding>
+            <element signature="e#2427#2468#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/html/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/html/templates/amenities.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="637">
+          <caret line="68" column="78" lean-forward="true" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/html/templates/property-amenities.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-153">
+          <caret line="46" column="45" lean-forward="false" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
           <folding />
         </state>
       </provider>

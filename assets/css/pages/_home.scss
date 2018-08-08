@@ -1,5 +1,15 @@
 .main.homepage {
   padding-bottom: 0;
+  .section {
+    margin-bottom: 0;
+    @include media(">=tablet") {
+      //margin-bottom: 60px;
+    }
+    @include media(">=desktop") {
+      margin-bottom: 100px;
+      padding: 0 0 100px;
+    }
+  }
 }
 .homepage {
   .more-info {

@@ -168,7 +168,7 @@ export function googleMap() {
                     } else {
                         iw.parent().parent().css({
                             left: "75px",
-                            top: "110px"
+                            top: "125px"
                         });
                     }
                 });

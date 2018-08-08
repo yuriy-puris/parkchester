@@ -87,7 +87,7 @@ export function slider() {
         slidesToScroll: 1,
         asNavFor: ".large-sync",
         dots: true,
-        centerMode: true,
+        // centerMode: true,
         focusOnSelect: true,
         variableWidth: true,
     });
@@ -115,13 +115,26 @@ export function slider() {
                 settings: {
                     vertical: false,
                     verticalSwiping: false,
-                    variableWidth: true,
-                    infinite: true,
-                    centerMode: true,
                     slidesToScroll: 1,
                     slidesToShow: 3,
                     prevArrow: "<button type='button' class='slick-prev'>Prev</button>",
                     nextArrow: "<button type='button' class='slick-next'>Next</button>"
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                    vertical: false,
+                    verticalSwiping: false,
+                }
+            },
+            {
+                breakpoint: 425,
+                settings: {
+                    slidesToShow: 1,
+                    vertical: false,
+                    verticalSwiping: false,
                 }
             }
         ]
@@ -262,9 +275,10 @@ export function mobileMenu() {
     });
 
     if ($(window).width() < 1280) {
-        $(".parent-menu").on("click", function () {
-            $(this).find(">a").toggleClass("active").next().slideToggle();
-            // console.log($(this).find(">a"));
+        $(".parent-menu").on("click", function (e) {
+            if(e.target == this) {
+                $(this).find(">a").toggleClass("active").next().slideToggle();
+            }
         });
     }
 }

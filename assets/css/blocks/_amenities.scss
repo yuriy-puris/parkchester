@@ -98,7 +98,7 @@
       text-align: left;
       padding: 20px 20px;
     }
-    @include media(">=desktop") {
+    @include media(">=xtablet") {
       &:hover {
         border-color: $color-gold;
         color: $color-gold;

@@ -6,13 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b6f316f8-c348-4913-8a33-69cbd9e767bb" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/assets/css/blocks/_amenities.scss" afterPath="$PROJECT_DIR$/assets/css/blocks/_amenities.scss" />
-      <change beforePath="$PROJECT_DIR$/assets/css/blocks/_property-animities.scss" afterPath="$PROJECT_DIR$/assets/css/blocks/_property-animities.scss" />
-      <change beforePath="$PROJECT_DIR$/assets/html/templates/amenities.html" afterPath="$PROJECT_DIR$/assets/html/templates/amenities.html" />
-      <change beforePath="$PROJECT_DIR$/assets/html/templates/property-amenities.html" afterPath="$PROJECT_DIR$/assets/html/templates/property-amenities.html" />
-      <change beforePath="$PROJECT_DIR$/dist/css/style.css" afterPath="$PROJECT_DIR$/dist/css/style.css" />
-      <change beforePath="$PROJECT_DIR$/dist/html/home.html" afterPath="$PROJECT_DIR$/dist/html/home.html" />
-      <change beforePath="$PROJECT_DIR$/dist/html/one-bedroom.html" afterPath="$PROJECT_DIR$/dist/html/one-bedroom.html" />
+      <change beforePath="$PROJECT_DIR$/assets/js/modules/vueMap.js" afterPath="$PROJECT_DIR$/assets/js/modules/vueMap.js" />
+      <change beforePath="$PROJECT_DIR$/assets/js/modules/vueStateMap.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/js/global.js" afterPath="$PROJECT_DIR$/dist/js/global.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,14 +21,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.49491096">
+    <splitter split-orientation="horizontal" split-proportion="0.39249364">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="property-amenities.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/assets/html/templates/property-amenities.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-153">
-                  <caret line="46" column="45" lean-forward="false" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
+                <state relative-caret-position="-113">
+                  <caret line="53" column="53" lean-forward="false" selection-start-line="53" selection-start-column="53" selection-end-line="53" selection-end-column="53" />
                   <folding />
                 </state>
               </provider>
@@ -54,6 +50,16 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="vue-neighborhood.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/assets/html/vue-neighborhood.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="352">
+                  <caret line="55" column="14" lean-forward="true" selection-start-line="55" selection-start-column="14" selection-end-line="55" selection-end-column="14" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="_more-info.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/assets/css/blocks/_more-info.scss">
               <provider selected="true" editor-type-id="text-editor">
@@ -84,11 +90,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="amenities.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="amenities.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/assets/html/templates/amenities.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="637">
-                  <caret line="68" column="78" lean-forward="true" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="78" />
+                <state relative-caret-position="360">
+                  <caret line="20" column="59" lean-forward="true" selection-start-line="20" selection-start-column="59" selection-end-line="20" selection-end-column="59" />
                   <folding />
                 </state>
               </provider>
@@ -200,10 +206,10 @@
         <option value="$PROJECT_DIR$/assets/css/blocks/_more-info.scss" />
         <option value="$PROJECT_DIR$/assets/js/modules/googleMap.js" />
         <option value="$PROJECT_DIR$/dist/images/shop.svg" />
-        <option value="$PROJECT_DIR$/assets/html/templates/amenities.html" />
         <option value="$PROJECT_DIR$/assets/css/blocks/_amenities.scss" />
         <option value="$PROJECT_DIR$/assets/css/blocks/_property-animities.scss" />
         <option value="$PROJECT_DIR$/assets/html/templates/property-amenities.html" />
+        <option value="$PROJECT_DIR$/assets/html/templates/amenities.html" />
       </list>
     </option>
   </component>
@@ -393,19 +399,18 @@
       <workItem from="1533536556875" duration="28284000" />
       <workItem from="1533622585471" duration="17398000" />
       <workItem from="1533644315502" duration="9559000" />
-      <workItem from="1533708575286" duration="22663000" />
+      <workItem from="1533708575286" duration="24806000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="251188000" />
+    <option name="totallyTimeSpent" value="253331000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1977" y="-4" width="1863" height="1084" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14565217" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14565217" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -579,8 +584,8 @@
           <caret line="6" column="29" lean-forward="true" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
           <folding>
             <element signature="e#0#34#0" expanded="false" />
-            <marker date="1533642885470" expanded="true" signature="24431:24645" ph="..." />
-            <marker date="1533642885470" expanded="true" signature="24530:24616" ph="..." />
+            <marker date="1533738784205" expanded="true" signature="24431:24645" ph="..." />
+            <marker date="1533738784205" expanded="true" signature="24530:24616" ph="..." />
           </folding>
         </state>
       </provider>
@@ -788,14 +793,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/html/vue-neighborhood.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="144" column="35" lean-forward="true" selection-start-line="144" selection-start-column="35" selection-end-line="144" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/blocks/_amenities.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="421">
@@ -822,18 +819,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/html/templates/amenities.html">
+    <entry file="file://$PROJECT_DIR$/assets/html/templates/property-amenities.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="637">
-          <caret line="68" column="78" lean-forward="true" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="78" />
+        <state relative-caret-position="-113">
+          <caret line="53" column="53" lean-forward="false" selection-start-line="53" selection-start-column="53" selection-end-line="53" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/html/templates/property-amenities.html">
+    <entry file="file://$PROJECT_DIR$/assets/html/templates/amenities.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153">
-          <caret line="46" column="45" lean-forward="false" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
+        <state relative-caret-position="360">
+          <caret line="20" column="59" lean-forward="true" selection-start-line="20" selection-start-column="59" selection-end-line="20" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/html/vue-neighborhood.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="55" column="14" lean-forward="true" selection-start-line="55" selection-start-column="14" selection-end-line="55" selection-end-column="14" />
           <folding />
         </state>
       </provider>

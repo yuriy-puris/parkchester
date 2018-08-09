@@ -276,9 +276,10 @@ export function mobileMenu() {
 
     if ($(window).width() < 1280) {
         $(".parent-menu").on("click", function (e) {
-            if(e.target == this) {
-                $(this).find(">a").toggleClass("active").next().slideToggle();
-            }
+            // if(e.target == this) {
+            e.preventDefault();
+            $(this).find(">a").toggleClass("active").next().slideToggle();
+            // }
         });
     }
 }

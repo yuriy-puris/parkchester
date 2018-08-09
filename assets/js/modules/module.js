@@ -290,7 +290,7 @@ export function isDev() {
 
 export function tabs() {
 
-    if($('main').hasClass('homepage')) {
+    if ($('main').hasClass('homepage')) {
         let underline = $('.js-tab-underline');
         let activeLink = $('.tab-nav .active a');
 
@@ -299,17 +299,18 @@ export function tabs() {
     }
 
     $(".tab-nav a").on("click", function (event) {
-        event.preventDefault();
         $(this).parent().addClass("active").siblings(".tab-nav-item").removeClass("active");
 
-        $('main').hasClass('homepage') ? $('.js-tab-underline').css('left', $(this).position().left) : false;
-
+        $('main').hasClass('homepage') ? $('.js-tab-underline').css({
+            'left': $(this).position().left,
+            'width': $(this).innerWidth()
+        }) : false;
+        // console.log($(this).innerWidth());
         let attr = $(this).attr("href");
         $(attr).addClass("active").siblings(".tab-content-item").removeClass("active");
         event.preventDefault();
     });
 }
-
 
 
 export function gallery() {

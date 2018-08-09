@@ -97,12 +97,16 @@
         }
         .footer-bottom {
             position: relative;
-            @include flex(row, space-between);
+            //@include flex(row, space-between);
             padding-top: 28px;
             font-size: 13px;
             line-height: 24px;
             p {
                 margin-bottom: 0;
+                float: left;
+            }
+            .footer-links {
+                float: right;
             }
         }
         .to-top {

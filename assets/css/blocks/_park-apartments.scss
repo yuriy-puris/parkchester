@@ -148,7 +148,8 @@
   bottom: 1px;
   position: absolute;
   background: $color-gold;
-  transition: .5s ease;
+  //transition: .5s ease;
+  transition: left .5s, width .5s;
 }
 .tabs-content {
   position: relative;

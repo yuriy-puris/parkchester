@@ -5,34 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6f316f8-c348-4913-8a33-69cbd9e767bb" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/assets/css/blocks/_YTPlayer.scss" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/assets/css/blocks/_intro-home.scss" afterPath="$PROJECT_DIR$/assets/css/blocks/_intro-home.scss" />
-      <change beforePath="$PROJECT_DIR$/assets/css/style.scss" afterPath="$PROJECT_DIR$/assets/css/style.scss" />
       <change beforePath="$PROJECT_DIR$/assets/html/templates/intro-home.html" afterPath="$PROJECT_DIR$/assets/html/templates/intro-home.html" />
-      <change beforePath="$PROJECT_DIR$/assets/html/templates/scripts.html" afterPath="$PROJECT_DIR$/assets/html/templates/scripts.html" />
-      <change beforePath="$PROJECT_DIR$/assets/js/global.js" afterPath="$PROJECT_DIR$/assets/js/global.js" />
-      <change beforePath="$PROJECT_DIR$/assets/js/modules/module.js" afterPath="$PROJECT_DIR$/assets/js/modules/module.js" />
-      <change beforePath="$PROJECT_DIR$/assets/js/modules/popups.js" afterPath="$PROJECT_DIR$/assets/js/modules/popups.js" />
-      <change beforePath="$PROJECT_DIR$/dist/css/style.css" afterPath="$PROJECT_DIR$/dist/css/style.css" />
-      <change beforePath="$PROJECT_DIR$/dist/html/about-us.html" afterPath="$PROJECT_DIR$/dist/html/about-us.html" />
-      <change beforePath="$PROJECT_DIR$/dist/html/amenities.html" afterPath="$PROJECT_DIR$/dist/html/amenities.html" />
-      <change beforePath="$PROJECT_DIR$/dist/html/apartments.html" afterPath="$PROJECT_DIR$/dist/html/apartments.html" />
-      <change beforePath="$PROJECT_DIR$/dist/html/careers.html" afterPath="$PROJECT_DIR$/dist/html/careers.html" />
-      <change beforePath="$PROJECT_DIR$/dist/html/error-page.html" afterPath="$PROJECT_DIR$/dist/html/error-page.html" />
-      <change beforePath="$PROJECT_DIR$/dist/html/faq.html" afterPath="$PROJECT_DIR$/dist/html/faq.html" />
-      <change beforePath="$PROJECT_DIR$/dist/html/history.html" afterPath="$PROJECT_DIR$/dist/html/history.html" />
       <change beforePath="$PROJECT_DIR$/dist/html/home.html" afterPath="$PROJECT_DIR$/dist/html/home.html" />
-      <change beforePath="$PROJECT_DIR$/dist/html/neighborhood.html" afterPath="$PROJECT_DIR$/dist/html/neighborhood.html" />
-      <change beforePath="$PROJECT_DIR$/dist/html/one-bedroom.html" afterPath="$PROJECT_DIR$/dist/html/one-bedroom.html" />
-      <change beforePath="$PROJECT_DIR$/dist/html/our-residents.html" afterPath="$PROJECT_DIR$/dist/html/our-residents.html" />
-      <change beforePath="$PROJECT_DIR$/dist/html/photo-gallery.html" afterPath="$PROJECT_DIR$/dist/html/photo-gallery.html" />
-      <change beforePath="$PROJECT_DIR$/dist/html/press.html" afterPath="$PROJECT_DIR$/dist/html/press.html" />
-      <change beforePath="$PROJECT_DIR$/dist/html/privacy-policy.html" afterPath="$PROJECT_DIR$/dist/html/privacy-policy.html" />
-      <change beforePath="$PROJECT_DIR$/dist/html/shedule-page.html" afterPath="$PROJECT_DIR$/dist/html/shedule-page.html" />
-      <change beforePath="$PROJECT_DIR$/dist/html/styleguide.html" afterPath="$PROJECT_DIR$/dist/html/styleguide.html" />
-      <change beforePath="$PROJECT_DIR$/dist/html/vue-neighborhood.html" afterPath="$PROJECT_DIR$/dist/html/vue-neighborhood.html" />
-      <change beforePath="$PROJECT_DIR$/dist/js/global.js" afterPath="$PROJECT_DIR$/dist/js/global.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -52,7 +26,7 @@
             <entry file="file://$PROJECT_DIR$/assets/html/templates/intro-home.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="180">
-                  <caret line="10" column="59" lean-forward="false" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="59" />
+                  <caret line="10" column="58" lean-forward="false" selection-start-line="10" selection-start-column="58" selection-end-line="10" selection-end-column="58" />
                   <folding />
                 </state>
               </provider>
@@ -429,12 +403,12 @@
       <workItem from="1533708575286" duration="25600000" />
       <workItem from="1533794943363" duration="14330000" />
       <workItem from="1533881681465" duration="6937000" />
-      <workItem from="1533891103260" duration="8870000" />
+      <workItem from="1533891103260" duration="8917000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="284262000" />
+    <option name="totallyTimeSpent" value="284309000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1977" y="-4" width="1863" height="1084" extended-state="6" />
@@ -831,7 +805,7 @@
     <entry file="file://$PROJECT_DIR$/assets/html/templates/intro-home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="10" column="59" lean-forward="false" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="59" />
+          <caret line="10" column="58" lean-forward="false" selection-start-line="10" selection-start-column="58" selection-end-line="10" selection-end-column="58" />
           <folding />
         </state>
       </provider>

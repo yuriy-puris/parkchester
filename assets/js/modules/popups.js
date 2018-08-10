@@ -20,17 +20,17 @@ export function popups() {
   this.$document.on("click", ".popup-close", function () {
     setTimeout(closePopup, 200);
   });
-  $(".popups").on("click", function (event) {
-    if ($(event.target).hasClass("video-popup")) {
-      if (!$(event.target).closest(".popup-content").length) {
-        setTimeout(closePopup, 200);
-      }
-    } else {
-      if (!$(event.target).closest(".popup").length) {
-        setTimeout(closePopup, 200);
-      }
-    }
-  });
+  // $(".popups").on("click", function (event) {
+  //   if ($(event.target).hasClass("video-popup")) {
+  //     if (!$(event.target).closest(".popup-content").length) {
+  //       setTimeout(closePopup, 200);
+  //     }
+  //   } else {
+  //     if (!$(event.target).closest(".popup").length) {
+  //       setTimeout(closePopup, 200);
+  //     }
+  //   }
+  // });
 
   function closePopup() {
     let scrolled = $(window).scrollTop();

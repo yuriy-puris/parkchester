@@ -159,15 +159,16 @@
 
 	<main class="main homepage">
 		<div class="intro-home">
-			<video id="home-video" class="bg-video" autoplay loop>
-				<source src="/dist/images/Parkchester Brand.mp4" type="video/mp4">
-			</video>
-			<div class="intro-content">
-				<div class="h5">Life in Parkchester</div>
-				<div class="h1">Welcome Home</div>
-			</div>
-			<a href="javascript:void(0)" class="btn scroll-to" accesskey=“s”>Skip to content</a>
-			<a href="javascript:void(0)" class="play-pause-button play">Pause</a>
+		    <div class="video-wrap">
+		        <div id="intro-video" class="player"
+		             data-property="{videoURL:'https://youtu.be/LTvFsTbyILg', mute:true, startAt:0, opacity:1}"></div>
+		    </div>
+		    <div class="intro-content">
+		        <div class="h5">Life in Parkchester</div>
+		        <div class="h1">Welcome Home</div>
+		    </div>
+		    <a href="javascript:void(0)" class="btn scroll-to" accesskey=“s”>Skip to content</a>
+		    <a href="javascript:void(0)" class="play-pause-button play">Pause</a>
 		</div>
 		<div class="section apartments-holder">
 			<div class="container">
@@ -579,7 +580,9 @@
 
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mb.YTPlayer/3.2.5/jquery.mb.YTPlayer.min.js"></script>
 <script type='text/javascript' src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDxqzP5BG8HA0OazvwWYLz1GigjngwvZXA'></script>
+<!--<script src="../../../assets/js/libs/jquery.mb.YTPlayer.js"></script>-->
 <script src="../js/global.js"></script>
 </body>
 </html>

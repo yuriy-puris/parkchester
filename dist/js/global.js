@@ -4667,15 +4667,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 Object(__WEBPACK_IMPORTED_MODULE_5__libs_binder__["a" /* default */])({
-  bounds: {
-    "html": [__WEBPACK_IMPORTED_MODULE_13__modules_module__["a" /* constants */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["j" /* slider */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["f" /* mobileMenu */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["e" /* isDev */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["k" /* tabs */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["l" /* timeline */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["d" /* initMasonry */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["h" /* popupGallerySlider */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["i" /* scrollTo */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["b" /* fixedHeader */], __WEBPACK_IMPORTED_MODULE_11__modules_googleMap__["a" /* googleMap */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["c" /* formSelect */], __WEBPACK_IMPORTED_MODULE_12__modules_vueMap__["a" /* vueMap */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["g" /* playPause */]],
-    ".accordion": __WEBPACK_IMPORTED_MODULE_6__modules_accordion__["a" /* accordion */],
-    ".custom-play-btn": __WEBPACK_IMPORTED_MODULE_7__modules_customYTPlayer__["a" /* customYTPlayer */],
-    ".animated": __WEBPACK_IMPORTED_MODULE_8__modules_scrollAnimate__["a" /* scrollAnimate */],
-    ".popups": __WEBPACK_IMPORTED_MODULE_9__modules_popups__["a" /* popups */],
-    ".to-top": __WEBPACK_IMPORTED_MODULE_10__modules_backToTop__["a" /* backToTop */]
-  },
-  runTests: false
+    bounds: {
+        "html": [__WEBPACK_IMPORTED_MODULE_13__modules_module__["a" /* constants */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["j" /* slider */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["f" /* mobileMenu */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["e" /* isDev */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["k" /* tabs */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["l" /* timeline */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["d" /* initMasonry */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["h" /* popupGallerySlider */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["i" /* scrollTo */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["b" /* fixedHeader */], __WEBPACK_IMPORTED_MODULE_11__modules_googleMap__["a" /* googleMap */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["c" /* formSelect */], __WEBPACK_IMPORTED_MODULE_12__modules_vueMap__["a" /* vueMap */]],
+        "#intro-video": __WEBPACK_IMPORTED_MODULE_13__modules_module__["g" /* playVideo */],
+        ".accordion": __WEBPACK_IMPORTED_MODULE_6__modules_accordion__["a" /* accordion */],
+        ".custom-play-btn": __WEBPACK_IMPORTED_MODULE_7__modules_customYTPlayer__["a" /* customYTPlayer */],
+        ".animated": __WEBPACK_IMPORTED_MODULE_8__modules_scrollAnimate__["a" /* scrollAnimate */],
+        ".popups": __WEBPACK_IMPORTED_MODULE_9__modules_popups__["a" /* popups */],
+        ".to-top": __WEBPACK_IMPORTED_MODULE_10__modules_backToTop__["a" /* backToTop */]
+    },
+    runTests: false
 });
 
 /***/ }),
@@ -16723,17 +16724,17 @@ function popups() {
   this.$document.on("click", ".popup-close", function () {
     setTimeout(closePopup, 200);
   });
-  $(".popups").on("click", function (event) {
-    if ($(event.target).hasClass("video-popup")) {
-      if (!$(event.target).closest(".popup-content").length) {
-        setTimeout(closePopup, 200);
-      }
-    } else {
-      if (!$(event.target).closest(".popup").length) {
-        setTimeout(closePopup, 200);
-      }
-    }
-  });
+  // $(".popups").on("click", function (event) {
+  //   if ($(event.target).hasClass("video-popup")) {
+  //     if (!$(event.target).closest(".popup-content").length) {
+  //       setTimeout(closePopup, 200);
+  //     }
+  //   } else {
+  //     if (!$(event.target).closest(".popup").length) {
+  //       setTimeout(closePopup, 200);
+  //     }
+  //   }
+  // });
 
   function closePopup() {
     var scrolled = $(window).scrollTop();
@@ -18314,6 +18315,7 @@ module.exports = function spread(callback) {
 /* harmony export (immutable) */ __webpack_exports__["j"] = slider;
 /* harmony export (immutable) */ __webpack_exports__["h"] = popupGallerySlider;
 /* unused harmony export photoGallerySlider */
+/* harmony export (immutable) */ __webpack_exports__["g"] = playVideo;
 /* harmony export (immutable) */ __webpack_exports__["l"] = timeline;
 /* harmony export (immutable) */ __webpack_exports__["f"] = mobileMenu;
 /* harmony export (immutable) */ __webpack_exports__["e"] = isDev;
@@ -18325,7 +18327,6 @@ module.exports = function spread(callback) {
 /* harmony export (immutable) */ __webpack_exports__["i"] = scrollTo;
 /* harmony export (immutable) */ __webpack_exports__["b"] = fixedHeader;
 /* harmony export (immutable) */ __webpack_exports__["c"] = formSelect;
-/* harmony export (immutable) */ __webpack_exports__["g"] = playPause;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_polyfill__ = __webpack_require__(93);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_polyfill___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_polyfill__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__popupGallery__ = __webpack_require__(370);
@@ -18553,6 +18554,34 @@ function photoGallerySlider() {
     });
 }
 
+function playVideo() {
+    var player = $("#intro-video");
+    player.YTPlayer({
+        containment: '#intro-video',
+        autoPlay: true,
+        mute: false,
+        startAt: 0,
+        opacity: 1,
+        showYTLogo: false,
+        loop: true,
+        ratio: 'auto',
+        stopMovieOnBlur: false
+    });
+    $(".play-pause-button").on('click', function (event) {
+        var target = $(event.target);
+        if (target.hasClass("play")) {
+            // homeVideo.pause();
+            // player.playVideo();
+            player.YTPPause();
+            $(this).removeClass("play");
+        } else {
+            // homeVideo.play();
+            player.YTPPlay();
+            $(this).addClass("play");
+        }
+    });
+}
+
 function timeline() {
     $(".chapter").on("click", function (e) {
         if (!$(this).hasClass("active")) {
@@ -18590,14 +18619,16 @@ function mobileMenu() {
         $(".header-content").removeClass("active-menu");
     });
 
-    if ($(window).width() < 1280) {
-        $(".parent-menu").on("click", function (e) {
-            // if(e.target == this) {
+    // if ($(window).width() < 1280) {
+    $(".parent-menu >a").on("click", function (e) {
+        // if(e.target == this) {
+        if ($(window).width() < 1200) {
             e.preventDefault();
-            $(this).find(">a").toggleClass("active").next().slideToggle();
-            // }
-        });
-    }
+            $(this).toggleClass("active").next().slideToggle();
+        }
+        // }
+    });
+    // }
 }
 
 function isDev() {
@@ -18709,20 +18740,21 @@ function formSelect() {
     jcf.replaceAll();
 }
 
-function playPause() {
-    var homeVideo = document.getElementById("home-video"),
-        playPauseBtn = $(".play-pause-button");
-    playPauseBtn.on("click", function (event) {
-        var target = $(event.target);
-        if (target.hasClass("play")) {
-            homeVideo.pause();
-            $(this).removeClass("play");
-        } else {
-            homeVideo.play();
-            $(this).addClass("play");
-        }
-    });
-}
+// export function playPause() {
+//     const homeVideo = document.getElementById("home-video"),
+//         playPauseBtn = $(".play-pause-button");
+//     playPauseBtn.on("click", function (event) {
+//         let target = $(event.target);
+//         if (target.hasClass("play")) {
+//             homeVideo.pause();
+//             $(this).removeClass("play");
+//         } else {
+//             homeVideo.play();
+//             $(this).addClass("play");
+//         }
+//     });
+//
+// }
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(23)))
 
 /***/ }),

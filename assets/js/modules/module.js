@@ -236,6 +236,34 @@ export function photoGallerySlider() {
     });
 }
 
+export function playVideo() {
+    let player = $("#intro-video");
+    player.YTPlayer({
+        containment: '#intro-video',
+        autoPlay: true,
+        mute: false,
+        startAt: 0,
+        opacity: 1,
+        showYTLogo: false,
+        loop: true,
+        ratio: 'auto',
+        stopMovieOnBlur: false
+    });
+    $(".play-pause-button").on('click', function (event) {
+        let target = $(event.target);
+        if (target.hasClass("play")) {
+            // homeVideo.pause();
+            // player.playVideo();
+            player.YTPPause();
+            $(this).removeClass("play");
+        } else {
+            // homeVideo.play();
+            player.YTPPlay();
+            $(this).addClass("play");
+        }
+    });
+}
+
 export function timeline() {
     $(".chapter").on("click", function (e) {
         if (!$(this).hasClass("active")) {
@@ -274,14 +302,16 @@ export function mobileMenu() {
         $(".header-content").removeClass("active-menu");
     });
 
-    if ($(window).width() < 1280) {
-        $(".parent-menu").on("click", function (e) {
+    // if ($(window).width() < 1280) {
+        $(".parent-menu >a").on("click", function (e) {
             // if(e.target == this) {
-            e.preventDefault();
-            $(this).find(">a").toggleClass("active").next().slideToggle();
+            if($(window).width() < 1200) {
+                e.preventDefault();
+                $(this).toggleClass("active").next().slideToggle();
+            }
             // }
         });
-    }
+    // }
 }
 
 export function isDev() {
@@ -394,18 +424,18 @@ export function formSelect() {
     jcf.replaceAll();
 }
 
-export function playPause() {
-    const homeVideo = document.getElementById("home-video"),
-        playPauseBtn = $(".play-pause-button");
-    playPauseBtn.on("click", function (event) {
-        let target = $(event.target);
-        if (target.hasClass("play")) {
-            homeVideo.pause();
-            $(this).removeClass("play");
-        } else {
-            homeVideo.play();
-            $(this).addClass("play");
-        }
-    });
-
-}
+// export function playPause() {
+//     const homeVideo = document.getElementById("home-video"),
+//         playPauseBtn = $(".play-pause-button");
+//     playPauseBtn.on("click", function (event) {
+//         let target = $(event.target);
+//         if (target.hasClass("play")) {
+//             homeVideo.pause();
+//             $(this).removeClass("play");
+//         } else {
+//             homeVideo.play();
+//             $(this).addClass("play");
+//         }
+//     });
+//
+// }

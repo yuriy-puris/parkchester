@@ -3,6 +3,7 @@
     border-bottom: 1px solid $color-light-grey;
   }
 }
+
 .apartments-holder {
   text-align: center;
   .h5 {
@@ -18,7 +19,7 @@
   }
   p {
     padding: 0 0 10px;
-    margin: 0 0 10px;  
+    margin: 0 0 10px;
     @include media(">=xtablet") {
       margin: 0 0 20px;
     }
@@ -53,6 +54,11 @@
       @include media(">=tablet") {
         padding: 0 0 25px;
       }
+      & + p {
+        margin: 0;
+        padding: 0;
+        border-bottom: 0;
+      }
     }
     .btn {
       padding: 5px 22px;
@@ -63,6 +69,7 @@
     }
   }
 }
+
 .apartments-item {
   padding: 0 0 30px;
   @include media(">=tablet") {
@@ -71,6 +78,7 @@
     margin: 0;
   }
 }
+
 .visual-bedroom {
   @include media(">=tablet") {
     display: flex;
@@ -105,6 +113,7 @@
     }
   }
 }
+
 .tab-nav {
   @include font-regular;
   font-size: 14px;
@@ -140,20 +149,28 @@
     }
   }
 }
+
 .js-tab-underline {
   font-size: 0;
   width: 1px;
   height: 3px;
   left: 15px;
-  bottom: 1px;
+  bottom: 18px;
   position: absolute;
   background: $color-gold;
-  //transition: .5s ease;
   transition: left .5s, width .5s;
+  @include media(">=tablet") {
+    bottom: 15px;
+  }
+  @include media(">=desktop") {
+    bottom: 1px;
+  }
 }
+
 .tabs-content {
   position: relative;
 }
+
 .tab-content-item {
   top: 0;
   left: 0;

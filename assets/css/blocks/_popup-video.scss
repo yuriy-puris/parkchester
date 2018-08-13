@@ -6,10 +6,15 @@
   height: 100vh;
   //background-color: transparent;
   //overflow: hidden;
-  display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  //visibility: hidden;
+  display: none;
+  &.opened {
+    display: flex;
+    //visibility: visible;
+  }
   .popup-close {
     color: $color-black;
     border-color: $color-black;

@@ -38,6 +38,7 @@ export function popups() {
       $(".video-popup.opened iframe")[0].contentWindow.postMessage("{\"event\":\"command\",\"func\":\"" + "stopVideo" + "\",\"args\":\"\"}", "*");
     };
     $(".popup").removeClass("opened");
+    $(".video-popup").removeClass("opened");
     popupWrap.removeClass("active");
     mainWrap.removeClass("no-scroll");
     window.location.hash = "";

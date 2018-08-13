@@ -13,6 +13,16 @@ export const constants = {
     $document: $(document),
 };
 
+export function smoothScrollAmenities() {
+    $('.anchor-nav a').on('click', function (e) {
+        e.preventDefault();
+        let anchor = $(this).attr('href');
+        $('html, body').animate({
+            scrollTop: $(anchor).offset().top - $('header').innerHeight()
+        }, 500);
+    })
+}
+
 
 export function slider() {
     $(".residents-holder").slick({

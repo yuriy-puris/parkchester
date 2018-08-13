@@ -4668,7 +4668,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 Object(__WEBPACK_IMPORTED_MODULE_5__libs_binder__["a" /* default */])({
     bounds: {
-        "html": [__WEBPACK_IMPORTED_MODULE_13__modules_module__["a" /* constants */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["j" /* slider */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["f" /* mobileMenu */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["e" /* isDev */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["k" /* tabs */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["l" /* timeline */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["d" /* initMasonry */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["h" /* popupGallerySlider */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["i" /* scrollTo */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["b" /* fixedHeader */], __WEBPACK_IMPORTED_MODULE_11__modules_googleMap__["a" /* googleMap */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["c" /* formSelect */], __WEBPACK_IMPORTED_MODULE_12__modules_vueMap__["a" /* vueMap */]],
+        "html": [__WEBPACK_IMPORTED_MODULE_13__modules_module__["a" /* constants */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["j" /* slider */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["f" /* mobileMenu */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["e" /* isDev */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["l" /* tabs */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["m" /* timeline */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["d" /* initMasonry */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["h" /* popupGallerySlider */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["i" /* scrollTo */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["b" /* fixedHeader */], __WEBPACK_IMPORTED_MODULE_11__modules_googleMap__["a" /* googleMap */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["c" /* formSelect */], __WEBPACK_IMPORTED_MODULE_12__modules_vueMap__["a" /* vueMap */]],
+        ".anchor-nav": __WEBPACK_IMPORTED_MODULE_13__modules_module__["k" /* smoothScrollAmenities */],
         "#intro-video": __WEBPACK_IMPORTED_MODULE_13__modules_module__["g" /* playVideo */],
         ".accordion": __WEBPACK_IMPORTED_MODULE_6__modules_accordion__["a" /* accordion */],
         ".custom-play-btn": __WEBPACK_IMPORTED_MODULE_7__modules_customYTPlayer__["a" /* customYTPlayer */],
@@ -16742,6 +16743,7 @@ function popups() {
       $(".video-popup.opened iframe")[0].contentWindow.postMessage("{\"event\":\"command\",\"func\":\"" + "stopVideo" + "\",\"args\":\"\"}", "*");
     };
     $(".popup").removeClass("opened");
+    $(".video-popup").removeClass("opened");
     popupWrap.removeClass("active");
     mainWrap.removeClass("no-scroll");
     window.location.hash = "";
@@ -18322,14 +18324,15 @@ module.exports = function spread(callback) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function($) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return constants; });
+/* harmony export (immutable) */ __webpack_exports__["k"] = smoothScrollAmenities;
 /* harmony export (immutable) */ __webpack_exports__["j"] = slider;
 /* harmony export (immutable) */ __webpack_exports__["h"] = popupGallerySlider;
 /* unused harmony export photoGallerySlider */
 /* harmony export (immutable) */ __webpack_exports__["g"] = playVideo;
-/* harmony export (immutable) */ __webpack_exports__["l"] = timeline;
+/* harmony export (immutable) */ __webpack_exports__["m"] = timeline;
 /* harmony export (immutable) */ __webpack_exports__["f"] = mobileMenu;
 /* harmony export (immutable) */ __webpack_exports__["e"] = isDev;
-/* harmony export (immutable) */ __webpack_exports__["k"] = tabs;
+/* harmony export (immutable) */ __webpack_exports__["l"] = tabs;
 /* unused harmony export gallery */
 /* unused harmony export wrapperGallery */
 /* unused harmony export checkViewPort */
@@ -18352,6 +18355,16 @@ var constants = {
     $window: $(window),
     $document: $(document)
 };
+
+function smoothScrollAmenities() {
+    $('.anchor-nav a').on('click', function (e) {
+        e.preventDefault();
+        var anchor = $(this).attr('href');
+        $('html, body').animate({
+            scrollTop: $(anchor).offset().top - $('header').innerHeight()
+        }, 500);
+    });
+}
 
 function slider() {
     $(".residents-holder").slick({

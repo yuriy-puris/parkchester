@@ -24,6 +24,7 @@ import {
     fixedHeader,
     formSelect,
     playVideo,
+    smoothScrollAmenities,
 } from "./modules/module";
 
 
@@ -44,6 +45,7 @@ binder({
             formSelect,
             vueMap,
         ],
+        ".anchor-nav": smoothScrollAmenities,
         "#intro-video": playVideo,
         ".accordion": accordion,
         ".custom-play-btn": customYTPlayer,

@@ -16,6 +16,8 @@
     @include pos(absolute, 0,0);
     width: 100%;
     height: calc(100vh - 128px);
+    background-size: cover;
+    background-repeat: no-repeat;
     .inline-YTPlayer {
       width: auto;
       min-width: 100vw;

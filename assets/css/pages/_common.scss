@@ -60,7 +60,7 @@
     @include pos(absolute, center, center);
     text-indent: 0;
   }
-  @include media('>=desktop') {
+  @include media('>=xdesktop') {
     opacity: 0;
   }
 }

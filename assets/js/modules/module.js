@@ -33,6 +33,10 @@ export function slider() {
         appendArrows: $(".features-controls"),
         appendDots: $(".features-controls"),
     });
+    $(".gallery-features").on('beforeChange', function () {
+        stopVideoInSlider();
+    });
+
     $(".gallery-community").slick({
         dots: true,
         infinite: false,
@@ -42,6 +46,10 @@ export function slider() {
         appendArrows: $(".community-controls"),
         appendDots: $(".community-controls"),
     });
+    $(".gallery-community").on('beforeChange', function () {
+        stopVideoInSlider();
+    });
+
     $(".gallery-contemporary").slick({
         dots: true,
         infinite: false,
@@ -78,6 +86,7 @@ export function slider() {
             }
         ]
     });
+
     $(".large-sync").slick({
         slidesToShow: 1,
         slidesToScroll: 1,

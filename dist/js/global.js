@@ -17252,6 +17252,7 @@ function vueMap() {
                         });
                         marker.addListener('click', function () {
                             var dataTitle = this.title;
+                            console.log(dataTitle);
                             $('.tab-content-item.active').find('a').each(function () {
                                 if (dataTitle === $(this).data('title')) {
                                     $("a[data-title=" + dataTitle + "]").parent().trigger('click');
@@ -18371,6 +18372,10 @@ function slider() {
         appendArrows: $(".features-controls"),
         appendDots: $(".features-controls")
     });
+    $(".gallery-features").on('beforeChange', function () {
+        stopVideoInSlider();
+    });
+
     $(".gallery-community").slick({
         dots: true,
         infinite: false,
@@ -18380,6 +18385,10 @@ function slider() {
         appendArrows: $(".community-controls"),
         appendDots: $(".community-controls")
     });
+    $(".gallery-community").on('beforeChange', function () {
+        stopVideoInSlider();
+    });
+
     $(".gallery-contemporary").slick({
         dots: true,
         infinite: false,
@@ -18414,6 +18423,7 @@ function slider() {
             settings: "unslick"
         }]
     });
+
     $(".large-sync").slick({
         slidesToShow: 1,
         slidesToScroll: 1,

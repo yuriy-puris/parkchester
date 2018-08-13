@@ -307,6 +307,7 @@ export function vueMap() {
                         });
                         marker.addListener('click', function () {
                             let dataTitle = this.title;
+                            console.log(dataTitle);
                             $('.tab-content-item.active').find('a').each(function () {
                                 if (dataTitle === $(this).data('title')) {
                                     $(`a[data-title=${dataTitle}]`).parent().trigger('click');

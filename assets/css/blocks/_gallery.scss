@@ -21,7 +21,7 @@
 .gallery-holder {
   column-count: 2;
   column-gap: 1em;
-  margin: 0 0 30px;
+  //margin: 0 0 30px;
   width: 100%;
   @include media('>=tablet') {
     column-count: 3;

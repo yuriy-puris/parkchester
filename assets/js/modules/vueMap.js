@@ -305,6 +305,14 @@ export function vueMap() {
                             icon: image,
                             title: subItem.title,
                         });
+                        marker.addListener('click', function () {
+                            let dataTitle = this.title;
+                            $('.tab-content-item.active').find('a').each(function () {
+                                if (dataTitle === $(this).data('title')) {
+                                    $(`a[data-title=${dataTitle}]`).parent().trigger('click');
+                                }
+                            });
+                        });
                         if (i === subIdx && typeof subIdx !== typeof undefined) {
                             marker[subIdx] = new google.maps.InfoWindow({
                                 position: {
@@ -439,7 +447,7 @@ export function vueMap() {
                     return dateStr;
                 },
                 eventsIndex() {
-                    console.log('eventsIndex');
+                    // console.log('eventsIndex');
                     this.per_paged += 6;
                     let next_items = this.per_paged;
                     this.activeIndex = next_items;

@@ -80,6 +80,8 @@
 }
 
 .visual-bedroom {
+  font-size: 0;
+  line-height: 0;
   @include media(">=tablet") {
     display: flex;
     justify-content: space-between;
@@ -103,6 +105,7 @@
     outline: none;
     transition: box-shadow .3s;
     display: inline-block;
+    vertical-align: top;
     @include media(">=tablet") {
       width: 300px;
       height: 300px;

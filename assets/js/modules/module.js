@@ -51,7 +51,7 @@ export function slider() {
         appendArrows: $(".contemporary-controls"),
         appendDots: $(".contemporary-controls"),
     });
-    $(".gallery-contemporary").on('beforeChange', function(){
+    $(".gallery-contemporary").on('beforeChange', function () {
         stopVideoInSlider();
     });
     $(".timeline-slider").slick({
@@ -85,7 +85,7 @@ export function slider() {
         fade: true,
         asNavFor: ".small-sync"
     });
-    $(".large-sync").on('beforeChange', function(){
+    $(".large-sync").on('beforeChange', function () {
         stopVideoInSlider();
     });
     $(".small-sync").slick({
@@ -151,8 +151,9 @@ export function slider() {
     });
 
     function stopVideoInSlider() {
-        $('iframe').each(function(){
-            $(this)[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+        $('iframe').each(function () {
+            $(this)[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+            $(this).parent().find('.video-poster').removeClass('active');
         });
     }
 
@@ -314,16 +315,12 @@ export function mobileMenu() {
         $(".header-content").removeClass("active-menu");
     });
 
-    // if ($(window).width() < 1280) {
-        $(".parent-menu >a").on("click", function (e) {
-            // if(e.target == this) {
-            if($(window).width() < 1280) {
-                e.preventDefault();
-                $(this).toggleClass("active").next().slideToggle();
-            }
-            // }
-        });
-    // }
+    $(".parent-menu >a").on("click", function (e) {
+        if ($(window).width() < 1280) {
+            e.preventDefault();
+            $(this).toggleClass("active").next().slideToggle();
+        }
+    });
 }
 
 export function isDev() {
@@ -341,14 +338,17 @@ export function tabs() {
     }
 
     $(".tab-nav a").on("click", function (event) {
-        $(this).parent().addClass("active").siblings(".tab-nav-item").removeClass("active");
+        let $this = $(this);
+        let leftPos = $this.position().left;
+        let innerWidth = $this.innerWidth();
+
+        $this.parent().addClass("active").siblings(".tab-nav-item").removeClass("active");
 
         $('main').hasClass('homepage') ? $('.js-tab-underline').css({
-            'left': $(this).position().left,
-            'width': $(this).innerWidth()
+            'left': leftPos,
+            'width': innerWidth
         }) : false;
-        // console.log($(this).innerWidth());
-        let attr = $(this).attr("href");
+        let attr = $this.attr("href");
         $(attr).addClass("active").siblings(".tab-content-item").removeClass("active");
         event.preventDefault();
     });

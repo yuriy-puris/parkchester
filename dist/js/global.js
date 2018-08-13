@@ -17250,6 +17250,14 @@ function vueMap() {
                             icon: image,
                             title: subItem.title
                         });
+                        marker.addListener('click', function () {
+                            var dataTitle = this.title;
+                            $('.tab-content-item.active').find('a').each(function () {
+                                if (dataTitle === $(this).data('title')) {
+                                    $("a[data-title=" + dataTitle + "]").parent().trigger('click');
+                                }
+                            });
+                        });
                         if (i === subIdx && (typeof subIdx === "undefined" ? "undefined" : _typeof(subIdx)) !== ( true ? "undefined" : _typeof(undefined))) {
                             marker[subIdx] = new google.maps.InfoWindow({
                                 position: {
@@ -17378,7 +17386,7 @@ function vueMap() {
                     return dateStr;
                 },
                 eventsIndex: function eventsIndex() {
-                    console.log('eventsIndex');
+                    // console.log('eventsIndex');
                     this.per_paged += 6;
                     var next_items = this.per_paged;
                     this.activeIndex = next_items;
@@ -18476,7 +18484,8 @@ function slider() {
 
     function stopVideoInSlider() {
         $('iframe').each(function () {
-            $(this)[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+            $(this)[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+            $(this).parent().find('.video-poster').removeClass('active');
         });
     }
 }
@@ -18632,16 +18641,12 @@ function mobileMenu() {
         $(".header-content").removeClass("active-menu");
     });
 
-    // if ($(window).width() < 1280) {
     $(".parent-menu >a").on("click", function (e) {
-        // if(e.target == this) {
         if ($(window).width() < 1280) {
             e.preventDefault();
             $(this).toggleClass("active").next().slideToggle();
         }
-        // }
     });
-    // }
 }
 
 function isDev() {
@@ -18659,14 +18664,17 @@ function tabs() {
     }
 
     $(".tab-nav a").on("click", function (event) {
-        $(this).parent().addClass("active").siblings(".tab-nav-item").removeClass("active");
+        var $this = $(this);
+        var leftPos = $this.position().left;
+        var innerWidth = $this.innerWidth();
+
+        $this.parent().addClass("active").siblings(".tab-nav-item").removeClass("active");
 
         $('main').hasClass('homepage') ? $('.js-tab-underline').css({
-            'left': $(this).position().left,
-            'width': $(this).innerWidth()
+            'left': leftPos,
+            'width': innerWidth
         }) : false;
-        // console.log($(this).innerWidth());
-        var attr = $(this).attr("href");
+        var attr = $this.attr("href");
         $(attr).addClass("active").siblings(".tab-content-item").removeClass("active");
         event.preventDefault();
     });

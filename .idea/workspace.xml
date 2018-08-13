@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6f316f8-c348-4913-8a33-69cbd9e767bb" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/assets/css/blocks/_intro-home.scss" afterPath="$PROJECT_DIR$/assets/css/blocks/_intro-home.scss" />
-      <change beforePath="$PROJECT_DIR$/assets/html/templates/intro-home.html" afterPath="$PROJECT_DIR$/assets/html/templates/intro-home.html" />
-      <change beforePath="$PROJECT_DIR$/dist/css/style.css" afterPath="$PROJECT_DIR$/dist/css/style.css" />
-      <change beforePath="$PROJECT_DIR$/dist/html/home.html" afterPath="$PROJECT_DIR$/dist/html/home.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,15 +18,17 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.60277426">
+    <splitter split-orientation="horizontal" split-proportion="0.52774274">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="intro-home.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/assets/html/templates/intro-home.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="18">
-                  <caret line="1" column="74" lean-forward="false" selection-start-line="1" selection-start-column="74" selection-end-line="1" selection-end-column="74" />
-                  <folding />
+                <state relative-caret-position="198">
+                  <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+                  <folding>
+                    <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -76,8 +74,8 @@
           <file leaf-file-name="_intro-home.scss" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/assets/css/blocks/_intro-home.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="342">
-                  <caret line="19" column="33" lean-forward="false" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+                <state relative-caret-position="324">
+                  <caret line="18" column="12" lean-forward="true" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
                   <folding />
                 </state>
               </provider>
@@ -192,8 +190,8 @@
         <option value="$PROJECT_DIR$/assets/css/blocks/_park-apartments.scss" />
         <option value="$PROJECT_DIR$/assets/css/blocks/_gallery.scss" />
         <option value="$PROJECT_DIR$/assets/js/modules/module.js" />
-        <option value="$PROJECT_DIR$/assets/css/blocks/_intro-home.scss" />
         <option value="$PROJECT_DIR$/assets/html/templates/intro-home.html" />
+        <option value="$PROJECT_DIR$/assets/css/blocks/_intro-home.scss" />
       </list>
     </option>
   </component>
@@ -409,12 +407,12 @@
       <workItem from="1533794943363" duration="14330000" />
       <workItem from="1533881681465" duration="6937000" />
       <workItem from="1533891103260" duration="19211000" />
-      <workItem from="1534140827348" duration="16918000" />
+      <workItem from="1534140827348" duration="17039000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="311521000" />
+    <option name="totallyTimeSpent" value="311642000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1977" y="-4" width="1863" height="1084" extended-state="6" />
@@ -808,18 +806,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/blocks/_intro-home.scss">
+    <entry file="file://$PROJECT_DIR$/assets/html/templates/intro-home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="33" lean-forward="false" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
-          <folding />
+        <state relative-caret-position="198">
+          <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/html/templates/intro-home.html">
+    <entry file="file://$PROJECT_DIR$/assets/css/blocks/_intro-home.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="74" lean-forward="false" selection-start-line="1" selection-start-column="74" selection-end-line="1" selection-end-column="74" />
+        <state relative-caret-position="324">
+          <caret line="18" column="12" lean-forward="true" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
           <folding />
         </state>
       </provider>

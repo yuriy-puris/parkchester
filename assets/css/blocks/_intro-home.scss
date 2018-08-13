@@ -15,8 +15,10 @@
   .video-wrap {
     @include pos(absolute, 0,0);
     width: 100%;
-    height: calc(100vh - 128px);
+    //height: calc(100vh - 128px);
+    height: 100vh;
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     .inline-YTPlayer {
       width: auto;

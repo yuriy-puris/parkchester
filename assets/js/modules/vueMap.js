@@ -310,7 +310,7 @@ export function vueMap() {
                             console.log(dataTitle);
                             $('.tab-content-item.active').find('a').each(function () {
                                 if (dataTitle === $(this).data('title')) {
-                                    $(`a[data-title=${dataTitle}]`).parent().trigger('click');
+                                    $(`a[data-title='${dataTitle}']`).parent().trigger('click');
                                 }
                             });
                         });

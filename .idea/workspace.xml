@@ -6,15 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b6f316f8-c348-4913-8a33-69cbd9e767bb" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/assets/css/blocks/_video.scss" afterPath="$PROJECT_DIR$/assets/css/blocks/_video.scss" />
-      <change beforePath="$PROJECT_DIR$/assets/css/pages/_common.scss" afterPath="$PROJECT_DIR$/assets/css/pages/_common.scss" />
-      <change beforePath="$PROJECT_DIR$/assets/css/pages/_page-amenities.scss" afterPath="$PROJECT_DIR$/assets/css/pages/_page-amenities.scss" />
-      <change beforePath="$PROJECT_DIR$/assets/html/templates/apartment-features.html" afterPath="$PROJECT_DIR$/assets/html/templates/apartment-features.html" />
-      <change beforePath="$PROJECT_DIR$/assets/html/templates/community-amenities.html" afterPath="$PROJECT_DIR$/assets/html/templates/community-amenities.html" />
-      <change beforePath="$PROJECT_DIR$/assets/js/modules/module.js" afterPath="$PROJECT_DIR$/assets/js/modules/module.js" />
+      <change beforePath="$PROJECT_DIR$/assets/css/blocks/_popups.scss" afterPath="$PROJECT_DIR$/assets/css/blocks/_popups.scss" />
       <change beforePath="$PROJECT_DIR$/assets/js/modules/vueMap.js" afterPath="$PROJECT_DIR$/assets/js/modules/vueMap.js" />
       <change beforePath="$PROJECT_DIR$/dist/css/style.css" afterPath="$PROJECT_DIR$/dist/css/style.css" />
-      <change beforePath="$PROJECT_DIR$/dist/html/amenities.html" afterPath="$PROJECT_DIR$/dist/html/amenities.html" />
       <change beforePath="$PROJECT_DIR$/dist/js/global.js" afterPath="$PROJECT_DIR$/dist/js/global.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -94,14 +88,14 @@
           <file leaf-file-name="vueMap.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/assets/js/modules/vueMap.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="524">
-                  <caret line="311" column="63" lean-forward="true" selection-start-line="311" selection-start-column="63" selection-end-line="311" selection-end-column="63" />
+                <state relative-caret-position="254">
+                  <caret line="296" column="31" lean-forward="true" selection-start-line="296" selection-start-column="31" selection-end-line="296" selection-end-column="31" />
                   <folding>
                     <element signature="e#5782#11243#0" expanded="false" />
-                    <element signature="e#14349#15419#0" expanded="false" />
-                    <element signature="e#15564#20042#0" expanded="false" />
-                    <marker date="1534169074286" expanded="true" signature="13768:14052" ph="..." />
-                    <marker date="1534169074286" expanded="true" signature="13895:14009" ph="..." />
+                    <element signature="e#14351#15421#0" expanded="false" />
+                    <element signature="e#15566#20044#0" expanded="false" />
+                    <marker date="1534169845117" expanded="true" signature="13770:14054" ph="..." />
+                    <marker date="1534169845117" expanded="true" signature="13897:14011" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -131,7 +125,7 @@
             <entry file="file://$PROJECT_DIR$/assets/css/blocks/_popups.scss">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="252">
-                  <caret line="53" column="19" lean-forward="true" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
+                  <caret line="50" column="6" lean-forward="false" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="6" />
                   <folding />
                 </state>
               </provider>
@@ -227,7 +221,6 @@
         <option value="$PROJECT_DIR$/assets/html/templates/header.html" />
         <option value="$PROJECT_DIR$/assets/css/pages/_home.scss" />
         <option value="$PROJECT_DIR$/assets/html/templates/park-apartments.html" />
-        <option value="$PROJECT_DIR$/assets/css/blocks/_popups.scss" />
         <option value="$PROJECT_DIR$/assets/html/templates/popup-video-onebedroom.html" />
         <option value="$PROJECT_DIR$/assets/html/templates/popup-video-twobedroom.html" />
         <option value="$PROJECT_DIR$/assets/html/templates/popup-video.html" />
@@ -248,6 +241,7 @@
         <option value="$PROJECT_DIR$/assets/css/pages/_common.scss" />
         <option value="$PROJECT_DIR$/assets/css/blocks/_video.scss" />
         <option value="$PROJECT_DIR$/assets/js/modules/vueMap.js" />
+        <option value="$PROJECT_DIR$/assets/css/blocks/_popups.scss" />
       </list>
     </option>
   </component>
@@ -470,12 +464,12 @@
       <workItem from="1533794943363" duration="14330000" />
       <workItem from="1533881681465" duration="6937000" />
       <workItem from="1533891103260" duration="19211000" />
-      <workItem from="1534140827348" duration="20118000" />
+      <workItem from="1534140827348" duration="21062000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="314721000" />
+    <option name="totallyTimeSpent" value="315665000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1977" y="-4" width="1863" height="1084" extended-state="6" />
@@ -828,14 +822,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/blocks/_popups.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="53" column="19" lean-forward="true" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/html/templates/community-amenities.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="633">
@@ -882,25 +868,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/modules/vueMap.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="311" column="63" lean-forward="true" selection-start-line="311" selection-start-column="63" selection-end-line="311" selection-end-column="63" />
-          <folding>
-            <element signature="e#5782#11243#0" expanded="false" />
-            <element signature="e#14349#15419#0" expanded="false" />
-            <element signature="e#15564#20042#0" expanded="false" />
-            <marker date="1534169074286" expanded="true" signature="13768:14052" ph="..." />
-            <marker date="1534169074286" expanded="true" signature="13895:14009" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/pages/_common.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="673">
           <caret line="62" column="28" lean-forward="false" selection-start-line="62" selection-start-column="28" selection-end-line="62" selection-end-column="28" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/blocks/_popups.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="50" column="6" lean-forward="false" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/modules/vueMap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="296" column="31" lean-forward="true" selection-start-line="296" selection-start-column="31" selection-end-line="296" selection-end-column="31" />
+          <folding>
+            <element signature="e#5782#11243#0" expanded="false" />
+            <element signature="e#14351#15421#0" expanded="false" />
+            <element signature="e#15566#20044#0" expanded="false" />
+            <marker date="1534169845117" expanded="true" signature="13770:14054" ph="..." />
+            <marker date="1534169845117" expanded="true" signature="13897:14011" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

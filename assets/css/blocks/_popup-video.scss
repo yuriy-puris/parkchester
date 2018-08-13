@@ -42,14 +42,14 @@
   }
 
 }
-@include media('>=xdesktop') {
-  .video-popup {
-    height: 100%;
-    &.opened {
-      top: calc(50% - 388px);
-    }
-  }
-}
+//@include media('>=xdesktop') {
+//  .video-popup {
+//    //height: 100%;
+//    &.opened {
+//      //top: calc(50% - 388px);
+//    }
+//  }
+//}
 //#popup-video-onebedroom, #popup-video-twobedroom{
 //  iframe {
 //    @include pos(absolute, center, center);

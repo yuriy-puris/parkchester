@@ -354,18 +354,25 @@ export function tabs() {
 
         underline.css('width', activeLink.innerWidth());
         underline.css('left', activeLink.position().left);
+        console.log('left pos '+activeLink.position().left);
+        console.log('outer width '+activeLink.outerWidth());
+        console.log('inner width '+activeLink.innerWidth());
     }
 
     $(".tab-nav a").on("click", function (event) {
         let $this = $(this);
         let leftPos = $this.position().left;
+        let outerWidth = $this.outerWidth();
         let innerWidth = $this.innerWidth();
+        console.log('click left pos '+leftPos);
+        console.log('click outer width '+outerWidth);
+        console.log('click inner width '+innerWidth);
 
         $this.parent().addClass("active").siblings(".tab-nav-item").removeClass("active");
 
         $('main').hasClass('homepage') ? $('.js-tab-underline').css({
             'left': leftPos,
-            'width': innerWidth
+            'width': outerWidth
         }) : false;
         let attr = $this.attr("href");
         $(attr).addClass("active").siblings(".tab-content-item").removeClass("active");

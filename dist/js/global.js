@@ -17254,12 +17254,12 @@ function vueMap() {
                         });
                         marker.addListener('click', function () {
                             var dataTitle = this.title;
-                            console.log(dataTitle);
                             $('.tab-content-item.active').find('a').each(function () {
                                 if (dataTitle === $(this).data('title')) {
                                     $("a[data-title='" + dataTitle + "']").parent().trigger('click');
                                 }
                             });
+                            // this.setIcon({url: 'http://maps.google.com/mapfiles/ms/micons/yellow.png'})
                         });
                         if (i === subIdx && (typeof subIdx === "undefined" ? "undefined" : _typeof(subIdx)) !== ( true ? "undefined" : _typeof(undefined))) {
                             marker[subIdx] = new google.maps.InfoWindow({
@@ -18684,18 +18684,25 @@ function tabs() {
 
         underline.css('width', activeLink.innerWidth());
         underline.css('left', activeLink.position().left);
+        console.log('left pos ' + activeLink.position().left);
+        console.log('outer width ' + activeLink.outerWidth());
+        console.log('inner width ' + activeLink.innerWidth());
     }
 
     $(".tab-nav a").on("click", function (event) {
         var $this = $(this);
         var leftPos = $this.position().left;
+        var outerWidth = $this.outerWidth();
         var innerWidth = $this.innerWidth();
+        console.log('click left pos ' + leftPos);
+        console.log('click outer width ' + outerWidth);
+        console.log('click inner width ' + innerWidth);
 
         $this.parent().addClass("active").siblings(".tab-nav-item").removeClass("active");
 
         $('main').hasClass('homepage') ? $('.js-tab-underline').css({
             'left': leftPos,
-            'width': innerWidth
+            'width': outerWidth
         }) : false;
         var attr = $this.attr("href");
         $(attr).addClass("active").siblings(".tab-content-item").removeClass("active");

@@ -307,12 +307,12 @@ export function vueMap() {
                         });
                         marker.addListener('click', function () {
                             let dataTitle = this.title;
-                            console.log(dataTitle);
                             $('.tab-content-item.active').find('a').each(function () {
                                 if (dataTitle === $(this).data('title')) {
                                     $(`a[data-title='${dataTitle}']`).parent().trigger('click');
                                 }
                             });
+                            // this.setIcon({url: 'http://maps.google.com/mapfiles/ms/micons/yellow.png'})
                         });
                         if (i === subIdx && typeof subIdx !== typeof undefined) {
                             marker[subIdx] = new google.maps.InfoWindow({

@@ -11,6 +11,7 @@
     display: inline-block;
     height: 40px;
     width: 40px;
+    font-size: 0;
     &:hover {
       .soc-content {
         fill: $color-gold

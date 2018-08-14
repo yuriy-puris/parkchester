@@ -354,22 +354,38 @@ export function tabs() {
 
         underline.css('width', activeLink.parent().innerWidth());
         underline.css('left', activeLink.position().left);
-        // console.log('width '+activeLink.width());
-        // console.log('left pos '+activeLink.position().left);
-        // console.log('outer width '+activeLink.outerWidth());
-        // console.log('inner width '+activeLink.innerWidth());
+
+        console.log('parent width '+activeLink.parent().width());
+        console.log('parent left pos '+activeLink.parent().position().left);
+        console.log('parent outer width '+activeLink.parent().outerWidth());
+        console.log('parent inner width '+activeLink.parent().innerWidth());
+        console.log('');
+        console.log('width '+activeLink.width());
+        console.log('left pos '+activeLink.position().left);
+        console.log('outer width '+activeLink.outerWidth());
+        console.log('inner width '+activeLink.innerWidth());
     }
 
     $(".tab-nav a").on("click", function (event) {
         let $this = $(this);
         let leftPos = $this.position().left;
-        let outerWidth = $this.parent().outerWidth();
-        let innerWidth = $this.parent().innerWidth();
-        // console.log('click width '+$this.width());
-        // console.log('click left pos '+leftPos);
-        // console.log('click outer width '+outerWidth);
-        // console.log('click inner width '+innerWidth);
-        console.log($this.parent());
+        let outerWidth = $this.outerWidth();
+        let innerWidth = $this.innerWidth();
+
+        let $thisParent = $(this).parent();
+        let leftPosParent = $this.parent().position().left;
+        let outerWidthParent = $this.parent().outerWidth();
+        let innerWidthParent = $this.parent().innerWidth();
+
+        console.log('clickParent width '+$thisParent.width());
+        console.log('clickParent left pos '+leftPosParent);
+        console.log('clickParent outer width '+outerWidthParent);
+        console.log('clickParent inner width '+innerWidthParent);
+        console.log('');
+        console.log('click width '+$this.width());
+        console.log('click left pos '+leftPos);
+        console.log('click outer width '+outerWidth);
+        console.log('click inner width '+innerWidth);
 
         $this.parent().addClass("active").siblings(".tab-nav-item").removeClass("active");
 

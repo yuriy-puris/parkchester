@@ -352,21 +352,24 @@ export function tabs() {
         let underline = $('.js-tab-underline');
         let activeLink = $('.tab-nav .active a');
 
-        underline.css('width', activeLink.innerWidth());
+        underline.css('width', activeLink.parent().innerWidth());
         underline.css('left', activeLink.position().left);
-        console.log('left pos '+activeLink.position().left);
-        console.log('outer width '+activeLink.outerWidth());
-        console.log('inner width '+activeLink.innerWidth());
+        // console.log('width '+activeLink.width());
+        // console.log('left pos '+activeLink.position().left);
+        // console.log('outer width '+activeLink.outerWidth());
+        // console.log('inner width '+activeLink.innerWidth());
     }
 
     $(".tab-nav a").on("click", function (event) {
         let $this = $(this);
         let leftPos = $this.position().left;
-        let outerWidth = $this.outerWidth();
-        let innerWidth = $this.innerWidth();
-        console.log('click left pos '+leftPos);
-        console.log('click outer width '+outerWidth);
-        console.log('click inner width '+innerWidth);
+        let outerWidth = $this.parent().outerWidth();
+        let innerWidth = $this.parent().innerWidth();
+        // console.log('click width '+$this.width());
+        // console.log('click left pos '+leftPos);
+        // console.log('click outer width '+outerWidth);
+        // console.log('click inner width '+innerWidth);
+        console.log($this.parent());
 
         $this.parent().addClass("active").siblings(".tab-nav-item").removeClass("active");
 

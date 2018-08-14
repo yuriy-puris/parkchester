@@ -17307,19 +17307,19 @@ function vueMap() {
             template: "#sort-holder",
             data: function data() {
                 return {
-                    language: "en",
-                    selected: "2018-07-01",
-                    start: "2018-07-01",
-                    pseudo_start: "Jul 01, 2018",
-                    end: "2018-09-01",
-                    pseudo_end: "Sep 01, 2018",
-                    range: ["2016-01-01", "2016-01-11"],
-                    init: "2016-12-26",
-                    active: true,
-                    activeIndex: 6,
-                    activeViewMore: true,
-                    per_paged: 6,
-                    page: 1
+                    language: filterSettings.language,
+                    selected: filterSettings.selected,
+                    start: filterSettings.start,
+                    pseudo_start: filterSettings.pseudo_start,
+                    end: filterSettings.end,
+                    pseudo_end: filterSettings.pseudo_end,
+                    range: filterSettings.range,
+                    init: filterSettings.init,
+                    active: filterSettings.active,
+                    activeIndex: filterSettings.activeIndex,
+                    activeViewMore: filterSettings.activeViewMore,
+                    per_paged: filterSettings.per_paged,
+                    page: filterSettings.page
                 };
             },
 
@@ -18682,21 +18682,24 @@ function tabs() {
         var underline = $('.js-tab-underline');
         var activeLink = $('.tab-nav .active a');
 
-        underline.css('width', activeLink.innerWidth());
+        underline.css('width', activeLink.parent().innerWidth());
         underline.css('left', activeLink.position().left);
-        console.log('left pos ' + activeLink.position().left);
-        console.log('outer width ' + activeLink.outerWidth());
-        console.log('inner width ' + activeLink.innerWidth());
+        // console.log('width '+activeLink.width());
+        // console.log('left pos '+activeLink.position().left);
+        // console.log('outer width '+activeLink.outerWidth());
+        // console.log('inner width '+activeLink.innerWidth());
     }
 
     $(".tab-nav a").on("click", function (event) {
         var $this = $(this);
         var leftPos = $this.position().left;
-        var outerWidth = $this.outerWidth();
-        var innerWidth = $this.innerWidth();
-        console.log('click left pos ' + leftPos);
-        console.log('click outer width ' + outerWidth);
-        console.log('click inner width ' + innerWidth);
+        var outerWidth = $this.parent().outerWidth();
+        var innerWidth = $this.parent().innerWidth();
+        // console.log('click width '+$this.width());
+        // console.log('click left pos '+leftPos);
+        // console.log('click outer width '+outerWidth);
+        // console.log('click inner width '+innerWidth);
+        console.log($this.parent());
 
         $this.parent().addClass("active").siblings(".tab-nav-item").removeClass("active");
 

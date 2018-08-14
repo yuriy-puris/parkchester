@@ -34,7 +34,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.33117303">
+    <splitter split-orientation="horizontal" split-proportion="0.37265068">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="_header.scss" pinned="false" current-in-tab="false">
@@ -50,8 +50,8 @@
           <file leaf-file-name="vue-neighborhood.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/assets/html/vue-neighborhood.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="529">
-                  <caret line="153" column="83" lean-forward="false" selection-start-line="153" selection-start-column="83" selection-end-line="153" selection-end-column="83" />
+                <state relative-caret-position="799">
+                  <caret line="258" column="2" lean-forward="false" selection-start-line="258" selection-start-column="2" selection-end-line="258" selection-end-column="50" />
                   <folding>
                     <element signature="n#template#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                     <element signature="e#7492#9172#0" expanded="false" />
@@ -428,12 +428,12 @@
       <workItem from="1533881681465" duration="6937000" />
       <workItem from="1533891103260" duration="19211000" />
       <workItem from="1534140827348" duration="25210000" />
-      <workItem from="1534226992454" duration="26048000" />
+      <workItem from="1534226992454" duration="26212000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="345861000" />
+    <option name="totallyTimeSpent" value="346025000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1977" y="-4" width="1865" height="1092" extended-state="6" />
@@ -889,22 +889,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/html/vue-neighborhood.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="153" column="83" lean-forward="false" selection-start-line="153" selection-start-column="83" selection-end-line="153" selection-end-column="83" />
-          <folding>
-            <element signature="n#template#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#7492#9172#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Downloads/-.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="107" column="0" lean-forward="true" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/html/vue-neighborhood.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="258" column="2" lean-forward="false" selection-start-line="258" selection-start-column="2" selection-end-line="258" selection-end-column="50" />
+          <folding>
+            <element signature="n#template#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#7492#9172#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

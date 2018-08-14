@@ -152,13 +152,13 @@
 }
 
 //sutom infoWindow
-#map-note-neighborhood {
+.map-note-neighborhood {
   h6 {
     text-transform: uppercase;
     color: $color-white;
     margin-bottom: 10px;
   }
-  #content-note {
+  .content-note {
     @include font-light;
     font-size: 14px;
     line-height: 16px;

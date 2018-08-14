@@ -17271,7 +17271,7 @@ function vueMap() {
                                 icon: image,
                                 title: subItem.title
                             });
-                            var content = "<div id='map-note-neighborhood'>" + "<h6>" + subItem.title + "</h6>" + "<div id='content-note'>" + "<div>" + subItem.address + "</div>" + "</div>" + "</div>";
+                            var content = "<div class='map-note-neighborhood'>" + "<h6>" + subItem.title + "</h6>" + "<div class='content-note'>" + "<div>" + subItem.address + "</div>" + "</div>" + "</div>";
                             marker[subIdx].setContent(content);
                             var crctMarker = marker[subIdx];
                             _self.correctMarker(crctMarker);
@@ -18684,44 +18684,19 @@ function tabs() {
 
         underline.css('width', activeLink.parent().innerWidth());
         underline.css('left', activeLink.position().left);
-
-        console.log('parent width ' + activeLink.parent().width());
-        console.log('parent left pos ' + activeLink.parent().position().left);
-        console.log('parent outer width ' + activeLink.parent().outerWidth());
-        console.log('parent inner width ' + activeLink.parent().innerWidth());
-        console.log('');
-        console.log('width ' + activeLink.width());
-        console.log('left pos ' + activeLink.position().left);
-        console.log('outer width ' + activeLink.outerWidth());
-        console.log('inner width ' + activeLink.innerWidth());
     }
 
     $(".tab-nav a").on("click", function (event) {
         var $this = $(this);
         var leftPos = $this.position().left;
-        var outerWidth = $this.outerWidth();
-        var innerWidth = $this.innerWidth();
-
-        var $thisParent = $(this).parent();
-        var leftPosParent = $this.parent().position().left;
-        var outerWidthParent = $this.parent().outerWidth();
-        var innerWidthParent = $this.parent().innerWidth();
-
-        console.log('clickParent width ' + $thisParent.width());
-        console.log('clickParent left pos ' + leftPosParent);
-        console.log('clickParent outer width ' + outerWidthParent);
-        console.log('clickParent inner width ' + innerWidthParent);
-        console.log('');
-        console.log('click width ' + $this.width());
-        console.log('click left pos ' + leftPos);
-        console.log('click outer width ' + outerWidth);
-        console.log('click inner width ' + innerWidth);
+        //If it doesn't work - change innerWidth on outerWidth
+        var innerWidth = $this.parent().innerWidth();
 
         $this.parent().addClass("active").siblings(".tab-nav-item").removeClass("active");
 
         $('main').hasClass('homepage') ? $('.js-tab-underline').css({
             'left': leftPos,
-            'width': outerWidthParent
+            'width': innerWidth
         }) : false;
         var attr = $this.attr("href");
         $(attr).addClass("active").siblings(".tab-content-item").removeClass("active");

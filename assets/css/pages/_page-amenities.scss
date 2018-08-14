@@ -33,3 +33,15 @@
     }
   }
 }
+.anchor-nav {
+  li {
+    &:hover {
+      a {
+        color: $color-gold;
+      }
+    }
+    a {
+      transition: color .15s;
+    }
+  }
+}

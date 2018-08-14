@@ -39,6 +39,9 @@
       font-weight: 300;
       color: #d0021b;
     }
+    .wpcf7-response-output {
+      border-color: transparent !important;
+    }
   }
   .form-control {
     @include media('>=xtablet') {

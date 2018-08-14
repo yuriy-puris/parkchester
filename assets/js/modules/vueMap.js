@@ -324,9 +324,9 @@ export function vueMap() {
                                 icon: image,
                                 title: subItem.title,
                             });
-                            let content = "<div id='map-note-neighborhood'>" +
+                            let content = "<div class='map-note-neighborhood'>" +
                                 "<h6>" + subItem.title + "</h6>" +
-                                "<div id='content-note'>" +
+                                "<div class='content-note'>" +
                                 "<div>" + subItem.address + "</div>" +
                                 "</div>" +
                                 "</div>";
@@ -369,18 +369,18 @@ export function vueMap() {
             data() {
                 return {
                     language: filterSettings.language,
-                    selected: filterSettings.selected,
-                    start: filterSettings.start,
-                    pseudo_start: filterSettings.pseudo_start,
-                    end: filterSettings.end,
-                    pseudo_end: filterSettings.pseudo_end,
-                    range: filterSettings.range,
-                    init: filterSettings.init,
-                    active: filterSettings.active,
-                    activeIndex: filterSettings.activeIndex,
-                    activeViewMore: filterSettings.activeViewMore,
-                    per_paged: filterSettings.per_paged,
-                    page: filterSettings.page,
+                    selected: filterSettings.selected ,
+                    start: filterSettings.start ,
+                    pseudo_start: filterSettings.pseudo_start ,
+                    end: filterSettings.end ,
+                    pseudo_end: filterSettings.pseudo_end ,
+                    range: filterSettings.range ,
+                    init: filterSettings.init ,
+                    active: filterSettings.active ,
+                    activeIndex: filterSettings.activeIndex ,
+                    activeViewMore: filterSettings.activeViewMore ,
+                    per_paged: filterSettings.per_paged ,
+                    page: filterSettings.page ,
                 };
             },
             components: {datepicker},

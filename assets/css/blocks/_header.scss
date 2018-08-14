@@ -165,6 +165,17 @@
       @include clearfix;
     }
     & > li {
+      &:hover {
+        > a {
+          &:before {
+            @include media(">=desktop") {
+              width: 100%;
+              right: auto;
+              left: 0;
+            }
+          }
+        }
+      }
       @include media(">=desktop") {
         float: left;
         padding-top: 10px;

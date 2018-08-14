@@ -64,8 +64,8 @@
           <file leaf-file-name="_page-schedule.scss" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/assets/css/pages/_page-schedule.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="165">
-                  <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+                <state relative-caret-position="651">
+                  <caret line="42" column="11" lean-forward="true" selection-start-line="42" selection-start-column="11" selection-end-line="42" selection-end-column="11" />
                   <folding />
                 </state>
               </provider>
@@ -180,8 +180,8 @@
         <option value="$PROJECT_DIR$/assets/css/blocks/_neighborhood-map.scss" />
         <option value="$PROJECT_DIR$/assets/images/mappin.svg" />
         <option value="$PROJECT_DIR$/assets/css/pages/_page-amenities.scss" />
-        <option value="$PROJECT_DIR$/assets/css/pages/_page-schedule.scss" />
         <option value="$PROJECT_DIR$/assets/css/blocks/_header.scss" />
+        <option value="$PROJECT_DIR$/assets/css/pages/_page-schedule.scss" />
       </list>
     </option>
   </component>
@@ -405,12 +405,12 @@
       <workItem from="1533881681465" duration="6937000" />
       <workItem from="1533891103260" duration="19211000" />
       <workItem from="1534140827348" duration="25210000" />
-      <workItem from="1534226992454" duration="21932000" />
+      <workItem from="1534226992454" duration="22357000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="341745000" />
+    <option name="totallyTimeSpent" value="342170000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1977" y="-4" width="1865" height="1092" extended-state="6" />
@@ -854,18 +854,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/pages/_page-schedule.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/blocks/_header.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="344">
           <caret line="428" column="16" lean-forward="true" selection-start-line="428" selection-start-column="16" selection-end-line="428" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/pages/_page-schedule.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="651">
+          <caret line="42" column="11" lean-forward="true" selection-start-line="42" selection-start-column="11" selection-end-line="42" selection-end-column="11" />
           <folding />
         </state>
       </provider>

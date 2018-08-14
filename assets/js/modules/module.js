@@ -391,7 +391,7 @@ export function tabs() {
 
         $('main').hasClass('homepage') ? $('.js-tab-underline').css({
             'left': leftPos,
-            'width': outerWidth
+            'width': outerWidthParent
         }) : false;
         let attr = $this.attr("href");
         $(attr).addClass("active").siblings(".tab-content-item").removeClass("active");

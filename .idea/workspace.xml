@@ -32,37 +32,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.7252106">
+    <splitter split-orientation="horizontal" split-proportion="0.35709655">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="vue-neighborhood.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/dist/html/vue-neighborhood.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="176">
-                  <caret line="499" column="13" lean-forward="true" selection-start-line="499" selection-start-column="13" selection-end-line="499" selection-end-column="13" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="_header.scss" pinned="false" current-in-tab="false">
+          <file leaf-file-name="_header.scss" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/assets/css/blocks/_header.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="74">
-                  <caret line="149" column="3" lean-forward="true" selection-start-line="149" selection-start-column="3" selection-end-line="149" selection-end-column="3" />
+                <state relative-caret-position="344">
+                  <caret line="428" column="16" lean-forward="true" selection-start-line="428" selection-start-column="16" selection-end-line="428" selection-end-column="16" />
                   <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="header.html" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/assets/html/templates/header.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="307">
-                  <caret line="55" column="27" lean-forward="true" selection-start-line="55" selection-start-column="27" selection-end-line="55" selection-end-column="27" />
-                  <folding>
-                    <element signature="n#svg#0;n#a#0;n#div#0;n#div#0;n#header#0;n#!!top" expanded="false" />
-                  </folding>
                 </state>
               </provider>
             </entry>
@@ -74,8 +52,8 @@
           <file leaf-file-name="vueMap.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/assets/js/modules/vueMap.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="216">
-                  <caret line="316" column="81" lean-forward="true" selection-start-line="316" selection-start-column="81" selection-end-line="316" selection-end-column="81" />
+                <state relative-caret-position="414">
+                  <caret line="318" column="43" lean-forward="true" selection-start-line="318" selection-start-column="43" selection-end-line="318" selection-end-column="43" />
                   <folding>
                     <element signature="e#5782#11243#0" expanded="false" />
                   </folding>
@@ -83,50 +61,13 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="_page-amenities.scss" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/assets/css/pages/_page-amenities.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="684">
-                  <caret line="38" column="9" lean-forward="true" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="_page-schedule.scss" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/assets/css/pages/_page-schedule.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="507">
-                  <caret line="34" column="16" lean-forward="true" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
+                <state relative-caret-position="165">
+                  <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
                   <folding />
                 </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="_property-animities.scss" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/assets/css/blocks/_property-animities.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="200">
-                  <caret line="80" column="20" lean-forward="true" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="20" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="_neighborhood-map.scss" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/assets/css/blocks/_neighborhood-map.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="216">
-                  <caret line="156" column="30" lean-forward="true" selection-start-line="156" selection-start-column="30" selection-end-line="156" selection-end-column="30" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="mappin.svg" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/assets/images/mappin.svg">
-              <provider selected="true" editor-type-id="images">
-                <state />
               </provider>
             </entry>
           </file>
@@ -170,9 +111,9 @@
       <find>before</find>
       <find>content-note</find>
       <find>page-nav</find>
-      <find>markerPin</find>
       <find>wpcf7</find>
       <find>bottom: -7px;</find>
+      <find>markerPin</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/dist/html</dir>
@@ -238,9 +179,9 @@
         <option value="$PROJECT_DIR$/assets/js/modules/vueMap.js" />
         <option value="$PROJECT_DIR$/assets/css/blocks/_neighborhood-map.scss" />
         <option value="$PROJECT_DIR$/assets/images/mappin.svg" />
-        <option value="$PROJECT_DIR$/assets/css/blocks/_header.scss" />
         <option value="$PROJECT_DIR$/assets/css/pages/_page-amenities.scss" />
         <option value="$PROJECT_DIR$/assets/css/pages/_page-schedule.scss" />
+        <option value="$PROJECT_DIR$/assets/css/blocks/_header.scss" />
       </list>
     </option>
   </component>
@@ -464,12 +405,12 @@
       <workItem from="1533881681465" duration="6937000" />
       <workItem from="1533891103260" duration="19211000" />
       <workItem from="1534140827348" duration="25210000" />
-      <workItem from="1534226992454" duration="20760000" />
+      <workItem from="1534226992454" duration="21932000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="340573000" />
+    <option name="totallyTimeSpent" value="341745000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1977" y="-4" width="1865" height="1092" extended-state="6" />
@@ -872,16 +813,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/modules/vueMap.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="316" column="81" lean-forward="true" selection-start-line="316" selection-start-column="81" selection-end-line="316" selection-end-column="81" />
-          <folding>
-            <element signature="e#5782#11243#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/libs/_styleguide.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -903,29 +834,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/html/templates/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="64" column="113" lean-forward="true" selection-start-line="64" selection-start-column="113" selection-end-line="64" selection-end-column="113" />
+          <folding>
+            <element signature="n#svg#0;n#a#0;n#div#0;n#div#0;n#header#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/modules/vueMap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="318" column="43" lean-forward="true" selection-start-line="318" selection-start-column="43" selection-end-line="318" selection-end-column="43" />
+          <folding>
+            <element signature="e#5782#11243#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/pages/_page-schedule.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="34" column="16" lean-forward="true" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
+        <state relative-caret-position="165">
+          <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/blocks/_header.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="149" column="3" lean-forward="true" selection-start-line="149" selection-start-column="3" selection-end-line="149" selection-end-column="3" />
+        <state relative-caret-position="344">
+          <caret line="428" column="16" lean-forward="true" selection-start-line="428" selection-start-column="16" selection-end-line="428" selection-end-column="16" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/html/templates/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="55" column="27" lean-forward="true" selection-start-line="55" selection-start-column="27" selection-end-line="55" selection-end-column="27" />
-          <folding>
-            <element signature="n#svg#0;n#a#0;n#div#0;n#div#0;n#header#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>

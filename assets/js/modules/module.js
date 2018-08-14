@@ -269,31 +269,34 @@ export function photoGallerySlider() {
 }
 
 export function playVideo() {
-    let player = $("#intro-video");
-    player.YTPlayer({
-        containment: '#intro-video',
-        autoPlay: true,
-        mute: false,
-        startAt: 0,
-        opacity: 1,
-        showYTLogo: false,
-        loop: true,
-        ratio: 'auto',
-        stopMovieOnBlur: false
+    $(window).on('load', function () {
+        let player = $("#intro-video");
+        player.YTPlayer({
+            containment: '#intro-video',
+            autoPlay: true,
+            mute: false,
+            startAt: 0,
+            opacity: 1,
+            showYTLogo: false,
+            loop: true,
+            ratio: 'auto',
+            stopMovieOnBlur: false
+        });
+        $(".play-pause-button").on('click', function (event) {
+            let target = $(event.target);
+            if (target.hasClass("play")) {
+                // homeVideo.pause();
+                // player.playVideo();
+                player.YTPPause();
+                $(this).removeClass("play");
+            } else {
+                // homeVideo.play();
+                player.YTPPlay();
+                $(this).addClass("play");
+            }
+        });
     });
-    $(".play-pause-button").on('click', function (event) {
-        let target = $(event.target);
-        if (target.hasClass("play")) {
-            // homeVideo.pause();
-            // player.playVideo();
-            player.YTPPause();
-            $(this).removeClass("play");
-        } else {
-            // homeVideo.play();
-            player.YTPPlay();
-            $(this).addClass("play");
-        }
-    });
+
 }
 
 export function timeline() {

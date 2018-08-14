@@ -16959,8 +16959,6 @@ function googleMap() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_date___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_date__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(350);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
 
 
 
@@ -17100,6 +17098,7 @@ function vueMap() {
             },
             methods: {
                 tabs: function tabs(index) {
+                    this.removeContentActive();
                     this.mainTab = index;
                     this.mainCategory = this.$store.getters.filter_mapmenu_list(index);
                     this.initMap(this.mainCategory);
@@ -17118,9 +17117,8 @@ function vueMap() {
                     this.mainTab = parentindex;
                     this.activeSubIndex = parentindex + "_" + subindex;
                 },
-                initMap: function initMap(locations, subIdx) {
-                    var _self = this,
-                        $map = this.$refs.map,
+                initMap: function initMap(locations) {
+                    var $map = this.$refs.map,
                         lat = parseFloat(locations.latitude),
                         lng = parseFloat(locations.longtitude),
                         myLatlng = new google.maps.LatLng(lat, lng),
@@ -17224,7 +17222,7 @@ function vueMap() {
                         }]
                     }],
                         mapOptions = {
-                        zoom: 7,
+                        zoom: 15,
                         center: myLatlng,
                         scrollwheel: false,
                         scaleControl: false,
@@ -17242,7 +17240,11 @@ function vueMap() {
                         url: this.icon
                     },
                         marker = void 0;
-                    Array.prototype.forEach.call(subLocations, function (subItem, i) {
+
+                    var infoWindow = new google.maps.InfoWindow();
+                    var markers = [];
+
+                    [].forEach.call(subLocations, function (subItem) {
                         marker = new google.maps.Marker({
                             position: {
                                 lat: parseFloat(subItem.latitude),
@@ -17252,50 +17254,70 @@ function vueMap() {
                             icon: image,
                             title: subItem.title
                         });
-                        marker.addListener('click', function () {
-                            var dataTitle = this.title;
-                            $('.tab-content-item.active').find('a').each(function () {
-                                if (dataTitle === $(this).data('title')) {
-                                    $("a[data-title='" + dataTitle + "']").parent().trigger('click');
+                        markers.push(marker);
+                        (function (marker, subItem) {
+
+                            function infoWindowOpen() {
+                                for (var j = 0; j < markers.length; j++) {
+                                    markers[j].setIcon({ url: markerPin });
                                 }
+                                infoWindow.setContent("<div class='map-note-neighborhood'>" + "<h6>" + subItem.title + "</h6>" + "<div id='content-note'>" + "<div>" + subItem.address + "</div>" + "</div>" + "</div>");
+                                infoWindow.open(map, marker);
+                                marker.setIcon({ url: activePin });
+                            }
+
+                            google.maps.event.addListener(marker, "click", function () {
+                                infoWindowOpen();
+                                var dataTitle = marker.title;
+                                $('.tab-content-item.active a').each(function () {
+                                    if (dataTitle === $(this).data('title')) {
+                                        $('.tab-content-item.active li').removeClass('active');
+                                        $("a[data-title='" + dataTitle + "']").parent().addClass('active');
+                                    }
+                                });
                             });
-                            // this.setIcon({url: 'http://maps.google.com/mapfiles/ms/micons/yellow.png'})
+                            $(document).on('click', '.tab-content-item.active a', function () {
+                                var dataTitle = $(this).attr('data-title');
+                                if (dataTitle === marker.title) {
+                                    $('.tab-content-item.active li').removeClass('active');
+                                    $(this).parent().addClass('active');
+                                    infoWindowOpen();
+                                }
+                                return false;
+                            });
+                        })(marker, subItem);
+                    });
+
+                    google.maps.event.addListener(infoWindow, 'domready', function () {
+                        var iwOuter = $('.gm-style-iw');
+                        var iwBackground = iwOuter.prev();
+                        iwBackground.children(':nth-child(2)').css('display', 'none');
+                        iwBackground.children(':nth-child(4)').css('display', 'none');
+                        iwOuter.parent().parent().css({
+                            left: "134px",
+                            top: "144px"
                         });
-                        if (i === subIdx && (typeof subIdx === "undefined" ? "undefined" : _typeof(subIdx)) !== ( true ? "undefined" : _typeof(undefined))) {
-                            marker[subIdx] = new google.maps.InfoWindow({
-                                position: {
-                                    lat: parseFloat(subItem.latitude),
-                                    lng: parseFloat(subItem.longtitude)
-                                },
-                                map: map,
-                                icon: image,
-                                title: subItem.title
-                            });
-                            var content = "<div class='map-note-neighborhood'>" + "<h6>" + subItem.title + "</h6>" + "<div class='content-note'>" + "<div>" + subItem.address + "</div>" + "</div>" + "</div>";
-                            marker[subIdx].setContent(content);
-                            var crctMarker = marker[subIdx];
-                            _self.correctMarker(crctMarker);
+                        iwBackground.children(':nth-child(1)').attr('style', function (i, s) {
+                            return s + 'display: none !important;';
+                        });
+                        iwBackground.children(':nth-child(3)').attr('style', function (i, s) {
+                            return s + 'display: none !important;';
+                        });
+                        iwBackground.children(':nth-child(3)').find('div').children().css('z-index', '1');
+                        var iwCloseBtn = iwOuter.next();
+                        iwCloseBtn.css({
+                            display: 'none'
+                        });
+                        if ($('.iw-content').height() < 140) {
+                            $('.iw-bottom-gradient').css('display', 'none');
                         }
+                        iwCloseBtn.mouseout(function () {
+                            $(this).css('opacity', '1');
+                        });
                     });
                 },
-                correctMarker: function correctMarker(marker) {
-                    google.maps.event.addListenerOnce(marker, "domready", function () {
-                        var iw = $(".gm-style-iw");
-                        var iwBg = iw.prev();
-                        iwBg.children(":nth-child(2)").css("display", "none");
-                        iwBg.children(":nth-child(4)").css("display", "none");
-                        iwBg.children(":nth-child(1)").attr("style", function (i, s) {
-                            return s + "display: none !important;";
-                        });
-                        iwBg.children(":nth-child(3)").attr("style", function (i, s) {
-                            return s + "display: none !important;";
-                        });
-                        iw.siblings("div, img").remove();
-                        iw.parent().parent().css({
-                            left: "120px",
-                            top: "70px"
-                        });
-                    });
+                removeContentActive: function removeContentActive() {
+                    $('.tab-content-item li').removeClass('active');
                 }
             },
             mounted: function mounted() {
@@ -17307,19 +17329,19 @@ function vueMap() {
             template: "#sort-holder",
             data: function data() {
                 return {
-                    language: filterSettings.language,
-                    selected: filterSettings.selected,
-                    start: filterSettings.start,
-                    pseudo_start: filterSettings.pseudo_start,
-                    end: filterSettings.end,
-                    pseudo_end: filterSettings.pseudo_end,
-                    range: filterSettings.range,
-                    init: filterSettings.init,
-                    active: filterSettings.active,
-                    activeIndex: filterSettings.activeIndex,
-                    activeViewMore: filterSettings.activeViewMore,
-                    per_paged: filterSettings.per_paged,
-                    page: filterSettings.page
+                    language: "en",
+                    selected: "2018-07-01",
+                    start: "2018-07-01",
+                    pseudo_start: "Jul 01, 2018",
+                    end: "2018-09-01",
+                    pseudo_end: "Sep 01, 2018",
+                    range: ["2016-01-01", "2016-01-11"],
+                    init: "2016-12-26",
+                    active: true,
+                    activeIndex: 6,
+                    activeViewMore: true,
+                    per_paged: 6,
+                    page: 1
                 };
             },
 
@@ -17389,7 +17411,6 @@ function vueMap() {
                     return dateStr;
                 },
                 eventsIndex: function eventsIndex() {
-                    // console.log('eventsIndex');
                     this.per_paged += 6;
                     var next_items = this.per_paged;
                     this.activeIndex = next_items;
@@ -18600,30 +18621,32 @@ function photoGallerySlider() {
 }
 
 function playVideo() {
-    var player = $("#intro-video");
-    player.YTPlayer({
-        containment: '#intro-video',
-        autoPlay: true,
-        mute: false,
-        startAt: 0,
-        opacity: 1,
-        showYTLogo: false,
-        loop: true,
-        ratio: 'auto',
-        stopMovieOnBlur: false
-    });
-    $(".play-pause-button").on('click', function (event) {
-        var target = $(event.target);
-        if (target.hasClass("play")) {
-            // homeVideo.pause();
-            // player.playVideo();
-            player.YTPPause();
-            $(this).removeClass("play");
-        } else {
-            // homeVideo.play();
-            player.YTPPlay();
-            $(this).addClass("play");
-        }
+    $(window).on('load', function () {
+        var player = $("#intro-video");
+        player.YTPlayer({
+            containment: '#intro-video',
+            autoPlay: true,
+            mute: false,
+            startAt: 0,
+            opacity: 1,
+            showYTLogo: false,
+            loop: true,
+            ratio: 'auto',
+            stopMovieOnBlur: false
+        });
+        $(".play-pause-button").on('click', function (event) {
+            var target = $(event.target);
+            if (target.hasClass("play")) {
+                // homeVideo.pause();
+                // player.playVideo();
+                player.YTPPause();
+                $(this).removeClass("play");
+            } else {
+                // homeVideo.play();
+                player.YTPPlay();
+                $(this).addClass("play");
+            }
+        });
     });
 }
 

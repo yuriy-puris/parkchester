@@ -133,6 +133,8 @@
   .slick-arrow {
     position: absolute;
     margin: 0;
+    top: 50%;
+    transform: translateY(-50%);
   }
   &.contemporary-controls {
     @include media(">=xtablet") {

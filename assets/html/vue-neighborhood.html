@@ -151,8 +151,7 @@
                   :key="subindex">
                   <li
                     v-for="(itm, idx) in subitem.subList"
-                    :class="{ active : activeSubIndex === (subindex + '_' + idx) }"
-                    @click="[ activeSubIndex = (subindex + '_' + idx), subTabs(idx)]">
+                    :class="{ active : activeSubIndex === (subindex + '_' + idx) }">
                     <a
                        :data-title="itm.title"
                       href="javascript:void(0)">
@@ -256,7 +255,8 @@
       page: 1,
   };
   var apiUrl = 'http://parkchester-dev.bigdropinc.net/wp-json/wp/v2/neighborhood_events';
-  var markerPin = "/dist/images/mappin.png";
+  var markerPin = "/dist/images/mappin.svg";
+  var activePin = "/dist/images/activeMappin.svg";
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.0/vue.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vuex/3.0.1/vuex.js"></script>

@@ -127,6 +127,7 @@ export function vueMap() {
             },
             methods: {
                 tabs(index) {
+                    this.removeContentActive();
                     this.mainTab = index;
                     this.mainCategory = this.$store.getters.filter_mapmenu_list(index);
                     this.initMap(this.mainCategory);
@@ -145,9 +146,8 @@ export function vueMap() {
                     this.mainTab = parentindex;
                     this.activeSubIndex = parentindex + "_" + subindex;
                 },
-                initMap(locations, subIdx) {
+                initMap(locations) {
                     let
-                        _self = this,
                         $map = this.$refs.map,
                         lat = parseFloat(locations.latitude),
                         lng = parseFloat(locations.longtitude),
@@ -277,7 +277,7 @@ export function vueMap() {
                             }
                         ],
                         mapOptions = {
-                            zoom: 7,
+                            zoom: 15,
                             center: myLatlng,
                             scrollwheel: false,
                             scaleControl: false,
@@ -295,7 +295,11 @@ export function vueMap() {
                             url: this.icon,
                         },
                         marker;
-                    Array.prototype.forEach.call(subLocations, function (subItem, i) {
+
+                    let infoWindow = new google.maps.InfoWindow();
+                    let markers = [];
+
+                    [].forEach.call(subLocations, function (subItem) {
                         marker = new google.maps.Marker({
                             position: {
                                 lat: parseFloat(subItem.latitude),
@@ -305,59 +309,80 @@ export function vueMap() {
                             icon: image,
                             title: subItem.title,
                         });
-                        marker.addListener('click', function () {
-                            let dataTitle = this.title;
-                            $('.tab-content-item.active').find('a').each(function () {
-                                if (dataTitle === $(this).data('title')) {
-                                    $(`a[data-title='${dataTitle}']`).parent().trigger('click');
+                        markers.push(marker);
+                        (function (marker, subItem) {
+
+                            function infoWindowOpen() {
+                                for (let j = 0; j < markers.length; j++) {
+                                    markers[j].setIcon({url: markerPin});
                                 }
+                                infoWindow.setContent("<div class='map-note-neighborhood'>" +
+                                    "<h6>" + subItem.title + "</h6>" +
+                                    "<div id='content-note'>" +
+                                    "<div>" + subItem.address + "</div>" +
+                                    "</div>" +
+                                    "</div>");
+                                infoWindow.open(map, marker);
+                                marker.setIcon({url: activePin});
+                            }
+
+                            google.maps.event.addListener(marker, "click", function () {
+                                infoWindowOpen();
+                                let dataTitle = marker.title;
+                                $('.tab-content-item.active a').each(function () {
+                                    if (dataTitle === $(this).data('title')) {
+                                        $('.tab-content-item.active li').removeClass('active');
+                                        $(`a[data-title='${dataTitle}']`).parent().addClass('active');
+                                    }
+                                });
                             });
-                            // this.setIcon({url: 'http://maps.google.com/mapfiles/ms/micons/yellow.png'})
-                        });
-                        if (i === subIdx && typeof subIdx !== typeof undefined) {
-                            marker[subIdx] = new google.maps.InfoWindow({
-                                position: {
-                                    lat: parseFloat(subItem.latitude),
-                                    lng: parseFloat(subItem.longtitude)
-                                },
-                                map: map,
-                                icon: image,
-                                title: subItem.title,
+                            $(document).on('click', '.tab-content-item.active a', function () {
+                                let dataTitle = $(this).attr('data-title');
+                                if (dataTitle === marker.title) {
+                                    $('.tab-content-item.active li').removeClass('active');
+                                    $(this).parent().addClass('active');
+                                    infoWindowOpen();
+                                }
+                                return false;
                             });
-                            let content = "<div class='map-note-neighborhood'>" +
-                                "<h6>" + subItem.title + "</h6>" +
-                                "<div class='content-note'>" +
-                                "<div>" + subItem.address + "</div>" +
-                                "</div>" +
-                                "</div>";
-                            marker[subIdx].setContent(content);
-                            let crctMarker = marker[subIdx];
-                            _self.correctMarker(crctMarker);
-                        }
+                        })(marker, subItem);
                     });
-                },
-                correctMarker(marker) {
-                    google.maps.event.addListenerOnce(marker, "domready", function () {
-                        let iw = $(".gm-style-iw");
-                        let iwBg = iw.prev();
-                        iwBg.children(":nth-child(2)").css("display", "none");
-                        iwBg.children(":nth-child(4)").css("display", "none");
-                        iwBg.children(":nth-child(1)").attr("style",
+
+                    google.maps.event.addListener(infoWindow, 'domready', function () {
+                        let iwOuter = $('.gm-style-iw');
+                        let iwBackground = iwOuter.prev();
+                        iwBackground.children(':nth-child(2)').css('display', 'none');
+                        iwBackground.children(':nth-child(4)').css('display', 'none');
+                        iwOuter.parent().parent().css({
+                            left: "134px",
+                            top: "144px"
+                        });
+                        iwBackground.children(':nth-child(1)').attr('style',
                             function (i, s) {
-                                return s + "display: none !important;";
+                                return s + 'display: none !important;'
                             }
                         );
-                        iwBg.children(":nth-child(3)").attr("style",
+                        iwBackground.children(':nth-child(3)').attr('style',
                             function (i, s) {
-                                return s + "display: none !important;";
+                                return s + 'display: none !important;'
                             });
-                        iw.siblings("div, img").remove();
-                        iw.parent().parent().css({
-                            left: "120px",
-                            top: "70px"
+                        iwBackground.children(':nth-child(3)').find('div').children().css('z-index', '1');
+                        let iwCloseBtn = iwOuter.next();
+                        iwCloseBtn.css({
+                            display: 'none'
+                        });
+                        if ($('.iw-content').height() < 140) {
+                            $('.iw-bottom-gradient').css('display', 'none');
+                        }
+                        iwCloseBtn.mouseout(function () {
+                            $(this).css('opacity', '1');
                         });
                     });
                 },
+                removeContentActive() {
+                    $('.tab-content-item li').removeClass('active');
+                }
+
             },
             mounted() {
                 this.tabs(this.mainTab);
@@ -368,19 +393,19 @@ export function vueMap() {
             template: "#sort-holder",
             data() {
                 return {
-                    language: filterSettings.language,
-                    selected: filterSettings.selected ,
-                    start: filterSettings.start ,
-                    pseudo_start: filterSettings.pseudo_start ,
-                    end: filterSettings.end ,
-                    pseudo_end: filterSettings.pseudo_end ,
-                    range: filterSettings.range ,
-                    init: filterSettings.init ,
-                    active: filterSettings.active ,
-                    activeIndex: filterSettings.activeIndex ,
-                    activeViewMore: filterSettings.activeViewMore ,
-                    per_paged: filterSettings.per_paged ,
-                    page: filterSettings.page ,
+                    language: "en",
+                    selected: "2018-07-01",
+                    start: "2018-07-01",
+                    pseudo_start: "Jul 01, 2018",
+                    end: "2018-09-01",
+                    pseudo_end: "Sep 01, 2018",
+                    range: ["2016-01-01", "2016-01-11"],
+                    init: "2016-12-26",
+                    active: true,
+                    activeIndex: 6,
+                    activeViewMore: true,
+                    per_paged: 6,
+                    page: 1,
                 };
             },
             components: {datepicker},
@@ -448,7 +473,6 @@ export function vueMap() {
                     return dateStr;
                 },
                 eventsIndex() {
-                    // console.log('eventsIndex');
                     this.per_paged += 6;
                     let next_items = this.per_paged;
                     this.activeIndex = next_items;

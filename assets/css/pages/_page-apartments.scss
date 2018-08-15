@@ -30,3 +30,14 @@
     }
   }
 }
+.no-dev{
+  .page-apartments {
+    .video {
+      .custom-play-btn {
+        &:before, &:after {
+          width: 240px;
+        }
+      }
+    }
+  }
+}

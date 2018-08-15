@@ -274,6 +274,7 @@
                       <li
                               v-for="item in dropLocations"
                               :data-title="item.title"
+                              :data-name="item.name"
                               @click="[ searchTabs(item.parentindex, item.subindex), triggerFilter(item.parentindex, item.subindex), activeFilter = false]">
                           {{item.parentname}} / {{item.name}}
                       </li>
@@ -308,6 +309,7 @@
                     :class="{ active : activeSubIndex === (subindex + '_' + idx) }">
                     <a
                        :data-title="itm.title"
+                       :data-name="itm.name"
                       href="javascript:void(0)">
                       {{itm.name}}
                     </a>

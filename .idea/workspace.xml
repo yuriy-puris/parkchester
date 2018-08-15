@@ -8,6 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/assets/css/blocks/_intro-home.scss" afterPath="$PROJECT_DIR$/assets/css/blocks/_intro-home.scss" />
       <change beforePath="$PROJECT_DIR$/assets/html/templates/intro-home.html" afterPath="$PROJECT_DIR$/assets/html/templates/intro-home.html" />
+      <change beforePath="$PROJECT_DIR$/assets/html/vue-neighborhood.html" afterPath="$PROJECT_DIR$/assets/html/vue-neighborhood.html" />
       <change beforePath="$PROJECT_DIR$/assets/js/modules/module.js" afterPath="$PROJECT_DIR$/assets/js/modules/module.js" />
       <change beforePath="$PROJECT_DIR$/assets/js/modules/vueMap.js" afterPath="$PROJECT_DIR$/assets/js/modules/vueMap.js" />
     </list>
@@ -22,23 +23,22 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4732143">
+    <splitter split-orientation="horizontal" split-proportion="0.36607143">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="vue-neighborhood.html" pinned="false" current-in-tab="false">
+          <file leaf-file-name="vue-neighborhood.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/assets/html/vue-neighborhood.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="183">
-                  <caret line="117" column="43" lean-forward="true" selection-start-line="117" selection-start-column="43" selection-end-line="117" selection-end-column="43" />
+                <state relative-caret-position="385">
+                  <caret line="158" column="43" lean-forward="false" selection-start-line="158" selection-start-column="43" selection-end-line="158" selection-end-column="43" />
                   <folding>
                     <element signature="n#template#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                    <element signature="e#7559#9239#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="intro-home.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="intro-home.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/assets/html/templates/intro-home.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="180">
@@ -62,6 +62,19 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="vueMap.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/assets/js/modules/vueMap.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="144">
+                  <caret line="300" column="39" lean-forward="true" selection-start-line="300" selection-start-column="39" selection-end-line="300" selection-end-column="39" />
+                  <folding>
+                    <element signature="e#5534#10995#0" expanded="false" />
+                    <element signature="e#11034#11597#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="_intro-home.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/assets/css/blocks/_intro-home.scss">
               <provider selected="true" editor-type-id="text-editor">
@@ -74,11 +87,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="module.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="module.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/assets/js/modules/module.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="124">
-                  <caret line="436" column="30" lean-forward="true" selection-start-line="436" selection-start-column="30" selection-end-line="436" selection-end-column="30" />
+                <state relative-caret-position="250">
+                  <caret line="443" column="1" lean-forward="true" selection-start-line="443" selection-start-column="1" selection-end-line="443" selection-end-column="1" />
                   <folding>
                     <element signature="e#759#971#0" expanded="false" />
                     <element signature="e#1007#1223#0" expanded="false" />
@@ -204,16 +217,16 @@
         <option value="$PROJECT_DIR$/assets/images/activeMappin.svg" />
         <option value="$PROJECT_DIR$/assets/css/pages/_page-apartments.scss" />
         <option value="$PROJECT_DIR$/assets/css/pages/_page-schedule.scss" />
-        <option value="$PROJECT_DIR$/assets/html/vue-neighborhood.html" />
         <option value="$PROJECT_DIR$/assets/js/global.js" />
         <option value="$PROJECT_DIR$/assets/css/blocks/_neighborhood-map.scss" />
         <option value="$PROJECT_DIR$/assets/css/blocks/_header.scss" />
-        <option value="$PROJECT_DIR$/assets/js/modules/vueMap.js" />
         <option value="$PROJECT_DIR$/assets/html/templates/head.html" />
         <option value="$PROJECT_DIR$/assets/html/templates/scripts.html" />
         <option value="$PROJECT_DIR$/assets/html/templates/intro-home.html" />
         <option value="$PROJECT_DIR$/assets/css/blocks/_intro-home.scss" />
         <option value="$PROJECT_DIR$/assets/js/modules/module.js" />
+        <option value="$PROJECT_DIR$/assets/html/vue-neighborhood.html" />
+        <option value="$PROJECT_DIR$/assets/js/modules/vueMap.js" />
       </list>
     </option>
   </component>
@@ -439,12 +452,12 @@
       <workItem from="1534140827348" duration="25210000" />
       <workItem from="1534226992454" duration="27804000" />
       <workItem from="1534321268712" duration="11724000" />
-      <workItem from="1534337574319" duration="2150000" />
+      <workItem from="1534337574319" duration="4115000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="361491000" />
+    <option name="totallyTimeSpent" value="363456000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1977" y="-4" width="1865" height="1092" extended-state="6" />
@@ -787,17 +800,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/modules/vueMap.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="312" column="68" lean-forward="false" selection-start-line="312" selection-start-column="68" selection-end-line="312" selection-end-column="68" />
-          <folding>
-            <element signature="e#5534#10995#0" expanded="false" />
-            <element signature="e#11034#11597#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/global.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="622">
@@ -850,17 +852,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/html/vue-neighborhood.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="117" column="43" lean-forward="true" selection-start-line="117" selection-start-column="43" selection-end-line="117" selection-end-column="43" />
-          <folding>
-            <element signature="n#template#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#7559#9239#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/html/templates/intro-home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -881,8 +872,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/modules/module.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="436" column="30" lean-forward="true" selection-start-line="436" selection-start-column="30" selection-end-line="436" selection-end-column="30" />
+        <state relative-caret-position="250">
+          <caret line="443" column="1" lean-forward="true" selection-start-line="443" selection-start-column="1" selection-end-line="443" selection-end-column="1" />
           <folding>
             <element signature="e#759#971#0" expanded="false" />
             <element signature="e#1007#1223#0" expanded="false" />
@@ -898,6 +889,27 @@
             <element signature="e#2879#3078#0" expanded="false" />
             <element signature="e#3110#3247#0" expanded="false" />
             <element signature="e#3279#4580#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/html/vue-neighborhood.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="158" column="43" lean-forward="false" selection-start-line="158" selection-start-column="43" selection-end-line="158" selection-end-column="43" />
+          <folding>
+            <element signature="n#template#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/modules/vueMap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="300" column="39" lean-forward="true" selection-start-line="300" selection-start-column="39" selection-end-line="300" selection-end-column="39" />
+          <folding>
+            <element signature="e#5534#10995#0" expanded="false" />
+            <element signature="e#11034#11597#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -305,6 +305,7 @@ export function vueMap() {
                             map: map,
                             icon: image,
                             title: subItem.title,
+                            name: subItem.name,
                         });
                         markers.push(marker);
                         (function (marker, subItem) {
@@ -335,6 +336,10 @@ export function vueMap() {
                             google.maps.event.addListener(marker, "click", function () {
                                 infoWindowOpen();
                                 let dataTitle = marker.title;
+                                let dataName = marker.name;
+                                setTimeout(() => {
+                                    $('.search-landmarks #search').val(dataName);
+                                }, 10);
                                 $('.tab-content-item.active a').each(function () {
                                     if (dataTitle === $(this).data('title')) {
                                         $('.tab-content-item.active li').removeClass('active');
@@ -344,6 +349,11 @@ export function vueMap() {
                             });
                             $(document).on('click', '.tab-content-item.active a, .search-dropdown li', function () {
                                 let dataTitle = $(this).attr('data-title');
+                                let dataName = $(this).attr('data-name');
+
+                                setTimeout(() => {
+                                    $('.search-landmarks #search').val(dataName);
+                                }, 10);
                                 if (dataTitle === marker.title) {
                                     $('.tab-content-item.active li').removeClass('active');
                                     $(this).parent().addClass('active');
@@ -395,6 +405,9 @@ export function vueMap() {
                     });
                 },
                 removeContentActive() {
+                    setTimeout(() => {
+                        $('.search-landmarks #search').val('');
+                    }, 10);
                     $('.tab-content-item li').removeClass('active');
                 }
 

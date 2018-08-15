@@ -17237,7 +17237,9 @@ function vueMap() {
                         map = new google.maps.Map($map, mapOptions),
                         subLocations = locations.subList,
                         image = {
-                        url: this.icon
+                        url: this.icon,
+                        scaledSize: new google.maps.Size(26, 32),
+                        optimized: false
                     },
                         marker = void 0;
 
@@ -17259,11 +17261,19 @@ function vueMap() {
 
                             function infoWindowOpen() {
                                 for (var j = 0; j < markers.length; j++) {
-                                    markers[j].setIcon({ url: markerPin });
+                                    markers[j].setIcon({
+                                        url: markerPin,
+                                        scaledSize: new google.maps.Size(26, 32),
+                                        optimized: false
+                                    });
                                 }
                                 infoWindow.setContent("<div class='map-note-neighborhood'>" + "<h6>" + subItem.title + "</h6>" + "<div id='content-note'>" + "<div>" + subItem.address + "</div>" + "</div>" + "</div>");
                                 infoWindow.open(map, marker);
-                                marker.setIcon({ url: activePin });
+                                marker.setIcon({
+                                    url: activePin,
+                                    scaledSize: new google.maps.Size(41, 50),
+                                    optimized: false
+                                });
                             }
 
                             google.maps.event.addListener(marker, "click", function () {

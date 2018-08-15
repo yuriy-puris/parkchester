@@ -293,6 +293,8 @@ export function vueMap() {
                         subLocations = locations.subList,
                         image = {
                             url: this.icon,
+                            scaledSize: new google.maps.Size(26, 32),
+                            optimized: false
                         },
                         marker;
 
@@ -314,7 +316,11 @@ export function vueMap() {
 
                             function infoWindowOpen() {
                                 for (let j = 0; j < markers.length; j++) {
-                                    markers[j].setIcon({url: markerPin});
+                                    markers[j].setIcon({
+                                        url: markerPin,
+                                        scaledSize: new google.maps.Size(26, 32),
+                                        optimized: false
+                                    });
                                 }
                                 infoWindow.setContent("<div class='map-note-neighborhood'>" +
                                     "<h6>" + subItem.title + "</h6>" +
@@ -323,7 +329,11 @@ export function vueMap() {
                                     "</div>" +
                                     "</div>");
                                 infoWindow.open(map, marker);
-                                marker.setIcon({url: activePin});
+                                marker.setIcon({
+                                    url: activePin,
+                                    scaledSize: new google.maps.Size(41, 50),
+                                    optimized: false
+                                });
                             }
 
                             google.maps.event.addListener(marker, "click", function () {

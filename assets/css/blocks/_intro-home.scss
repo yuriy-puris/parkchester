@@ -40,7 +40,7 @@
     @include pos(absolute, 0, 0);
     height: 100%;
     width: 100%;
-    background-image: linear-gradient(180deg, #ffffff 0%, rgba(248, 248, 248, 0) 100%);
+    background-image: linear-gradient(180deg, #ffffff 0%, rgba(248, 248, 248, 0) 50%);
     z-index: 1;
   }
   .h5, h5 {

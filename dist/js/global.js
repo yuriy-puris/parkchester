@@ -17104,11 +17104,6 @@ function vueMap() {
                     this.initMap(this.mainCategory);
                     return index;
                 },
-                subTabs: function subTabs(idx) {
-                    this.subIdx = idx;
-                    this.mainCategory = this.$store.getters.filter_mapmenu_list(this.mainTab);
-                    this.initMap(this.mainCategory, this.subIdx);
-                },
                 searchTabs: function searchTabs(parentIndex, subindex) {
                     this.mainCategory = this.$store.getters.filter_mapmenu_list(parentIndex);
                     this.initMap(this.mainCategory, subindex);
@@ -17286,7 +17281,7 @@ function vueMap() {
                                     }
                                 });
                             });
-                            $(document).on('click', '.tab-content-item.active a', function () {
+                            $(document).on('click', '.tab-content-item.active a, .search-dropdown li', function () {
                                 var dataTitle = $(this).attr('data-title');
                                 if (dataTitle === marker.title) {
                                     $('.tab-content-item.active li').removeClass('active');
@@ -17295,6 +17290,15 @@ function vueMap() {
                                 }
                                 return false;
                             });
+                            // $(document).on('click', '.tab-content-item.active a', function () {
+                            //     let dataTitle = $(this).attr('data-title');
+                            //     if (dataTitle === marker.title) {
+                            //         $('.tab-content-item.active li').removeClass('active');
+                            //         $(this).parent().addClass('active');
+                            //         infoWindowOpen();
+                            //     }
+                            //     return false;
+                            // });
                         })(marker, subItem);
                     });
 

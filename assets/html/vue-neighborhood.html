@@ -119,8 +119,9 @@
                     v-show="activeFilter"
                     >
                       <li
-                        v-for="item in dropLocations"
-                        @click="[ searchTabs(item.parentindex, item.subindex), triggerFilter(item.parentindex, item.subindex), activeFilter = false]">
+                              v-for="item in dropLocations"
+                              :data-title="item.title"
+                              @click="[ searchTabs(item.parentindex, item.subindex), triggerFilter(item.parentindex, item.subindex), activeFilter = false]">
                           {{item.parentname}} / {{item.name}}
                       </li>
                   </ul>

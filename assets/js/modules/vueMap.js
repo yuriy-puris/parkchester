@@ -310,6 +310,7 @@ export function vueMap() {
                         (function (marker, subItem) {
 
                             function infoWindowOpen() {
+                                map.setCenter(marker.getPosition());
                                 for (let j = 0; j < markers.length; j++) {
                                     markers[j].setIcon({
                                         url: markerPin,

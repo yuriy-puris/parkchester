@@ -287,6 +287,7 @@ export function adaParentMenu () {
 export function playVideo() {
     $(window).on('load', function () {
         let player = $("#intro-video");
+        let playPauseBtn = $(".play-pause-button");
         player.YTPlayer({
             containment: '#intro-video',
             autoPlay: true,
@@ -298,15 +299,13 @@ export function playVideo() {
             ratio: 'auto',
             stopMovieOnBlur: false
         });
-        $(".play-pause-button").on('click', function (event) {
+        playPauseBtn.removeClass('hidden-btn');
+        playPauseBtn.on('click', function (event) {
             let target = $(event.target);
             if (target.hasClass("play")) {
-                // homeVideo.pause();
-                // player.playVideo();
                 player.YTPPause();
                 $(this).removeClass("play");
             } else {
-                // homeVideo.play();
                 player.YTPPlay();
                 $(this).addClass("play");
             }

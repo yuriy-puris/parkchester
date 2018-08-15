@@ -18655,6 +18655,7 @@ function adaParentMenu() {
 function playVideo() {
     $(window).on('load', function () {
         var player = $("#intro-video");
+        var playPauseBtn = $(".play-pause-button");
         player.YTPlayer({
             containment: '#intro-video',
             autoPlay: true,
@@ -18666,15 +18667,13 @@ function playVideo() {
             ratio: 'auto',
             stopMovieOnBlur: false
         });
-        $(".play-pause-button").on('click', function (event) {
+        playPauseBtn.removeClass('hidden-btn');
+        playPauseBtn.on('click', function (event) {
             var target = $(event.target);
             if (target.hasClass("play")) {
-                // homeVideo.pause();
-                // player.playVideo();
                 player.YTPPause();
                 $(this).removeClass("play");
             } else {
-                // homeVideo.play();
                 player.YTPPlay();
                 $(this).addClass("play");
             }

@@ -76,6 +76,9 @@
     left: 0;
   }
   .play-pause-button {
+    transition: opacity .3s, visibility .3s;
+    opacity: 1;
+    visibility: visible;
     @include font-regular;
     font-size: 13px;
     line-height: 15px;
@@ -89,6 +92,10 @@
     @include media(">=tablet") {
       bottom: 30px;
       right: 30px;
+    }
+    &.hidden-btn {
+      opacity: 0;
+      visibility: hidden;
     }
     &::after {
       content: "";

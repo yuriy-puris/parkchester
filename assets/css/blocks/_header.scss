@@ -255,7 +255,7 @@
       }
     }
   }
-  .sub-memu {
+  .sub-menu {
     @include font-regular;
     font-size: 12px;
     line-height: 14px;
@@ -388,6 +388,30 @@
       ul {
         visibility: visible;
         opacity: 1;
+      }
+    }
+    &.opened-menu {
+      > a {
+        @include media(">=desktop") {
+          color: $color-gold;
+        }
+        &::after {
+          @include media(">=desktop") {
+            transform: translateY(0) rotateZ(-135deg);
+          }
+        }
+        &::before {
+          @include media(">=desktop") {
+            left: 0;
+            width: 100%;
+          }
+        }
+      }
+      ul {
+        @include media(">=desktop") {
+          visibility: visible;
+          opacity: 1;
+        }
       }
     }
   }

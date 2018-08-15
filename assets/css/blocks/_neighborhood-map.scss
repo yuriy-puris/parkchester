@@ -72,9 +72,9 @@
     transition: color .3s;
     display: block;
     a {
-      &:hover {
-        opacity: 0.3;
-      }
+      //&:hover {
+      //  opacity: 0.3;
+      //}
       &.active {
         color: $color-gold;
         & + ul {
@@ -97,11 +97,11 @@
     }
     & > li {
       text-transform: uppercase;
-      a {
-        &:hover {
-          opacity: 0.3;
-        }
-      }
+      //a {
+      //  &:hover {
+      //    opacity: 0.3;
+      //  }
+      //}
       &.active {
         a {
           border: 0;
@@ -138,6 +138,17 @@
     }
   }
 
+}
+.no-dev {
+  .map-menu {
+    li {
+      a {
+        &:hover {
+          opacity: 0.3;
+        }
+      }
+    }
+  }
 }
 
 .map-menu-title {

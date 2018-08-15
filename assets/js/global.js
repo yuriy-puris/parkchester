@@ -25,6 +25,7 @@ import {
     formSelect,
     playVideo,
     smoothScrollAmenities,
+    adaParentMenu,
 } from "./modules/module";
 
 
@@ -45,6 +46,7 @@ binder({
             formSelect,
             vueMap,
         ],
+        ".parent-menu": adaParentMenu,
         ".anchor-nav": smoothScrollAmenities,
         "#intro-video": playVideo,
         ".accordion": accordion,

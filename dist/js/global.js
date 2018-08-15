@@ -4668,9 +4668,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 Object(__WEBPACK_IMPORTED_MODULE_5__libs_binder__["a" /* default */])({
     bounds: {
-        "html": [__WEBPACK_IMPORTED_MODULE_13__modules_module__["a" /* constants */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["j" /* slider */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["f" /* mobileMenu */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["e" /* isDev */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["l" /* tabs */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["m" /* timeline */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["d" /* initMasonry */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["h" /* popupGallerySlider */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["i" /* scrollTo */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["b" /* fixedHeader */], __WEBPACK_IMPORTED_MODULE_11__modules_googleMap__["a" /* googleMap */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["c" /* formSelect */], __WEBPACK_IMPORTED_MODULE_12__modules_vueMap__["a" /* vueMap */]],
-        ".anchor-nav": __WEBPACK_IMPORTED_MODULE_13__modules_module__["k" /* smoothScrollAmenities */],
-        "#intro-video": __WEBPACK_IMPORTED_MODULE_13__modules_module__["g" /* playVideo */],
+        "html": [__WEBPACK_IMPORTED_MODULE_13__modules_module__["b" /* constants */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["k" /* slider */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["g" /* mobileMenu */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["f" /* isDev */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["m" /* tabs */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["n" /* timeline */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["e" /* initMasonry */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["i" /* popupGallerySlider */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["j" /* scrollTo */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["c" /* fixedHeader */], __WEBPACK_IMPORTED_MODULE_11__modules_googleMap__["a" /* googleMap */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["d" /* formSelect */], __WEBPACK_IMPORTED_MODULE_12__modules_vueMap__["a" /* vueMap */]],
+        ".parent-menu": __WEBPACK_IMPORTED_MODULE_13__modules_module__["a" /* adaParentMenu */],
+        ".anchor-nav": __WEBPACK_IMPORTED_MODULE_13__modules_module__["l" /* smoothScrollAmenities */],
+        "#intro-video": __WEBPACK_IMPORTED_MODULE_13__modules_module__["h" /* playVideo */],
         ".accordion": __WEBPACK_IMPORTED_MODULE_6__modules_accordion__["a" /* accordion */],
         ".custom-play-btn": __WEBPACK_IMPORTED_MODULE_7__modules_customYTPlayer__["a" /* customYTPlayer */],
         ".animated": __WEBPACK_IMPORTED_MODULE_8__modules_scrollAnimate__["a" /* scrollAnimate */],
@@ -18358,23 +18359,24 @@ module.exports = function spread(callback) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function($) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return constants; });
-/* harmony export (immutable) */ __webpack_exports__["k"] = smoothScrollAmenities;
-/* harmony export (immutable) */ __webpack_exports__["j"] = slider;
-/* harmony export (immutable) */ __webpack_exports__["h"] = popupGallerySlider;
+/* WEBPACK VAR INJECTION */(function($) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return constants; });
+/* harmony export (immutable) */ __webpack_exports__["l"] = smoothScrollAmenities;
+/* harmony export (immutable) */ __webpack_exports__["k"] = slider;
+/* harmony export (immutable) */ __webpack_exports__["i"] = popupGallerySlider;
 /* unused harmony export photoGallerySlider */
-/* harmony export (immutable) */ __webpack_exports__["g"] = playVideo;
-/* harmony export (immutable) */ __webpack_exports__["m"] = timeline;
-/* harmony export (immutable) */ __webpack_exports__["f"] = mobileMenu;
-/* harmony export (immutable) */ __webpack_exports__["e"] = isDev;
-/* harmony export (immutable) */ __webpack_exports__["l"] = tabs;
+/* harmony export (immutable) */ __webpack_exports__["a"] = adaParentMenu;
+/* harmony export (immutable) */ __webpack_exports__["h"] = playVideo;
+/* harmony export (immutable) */ __webpack_exports__["n"] = timeline;
+/* harmony export (immutable) */ __webpack_exports__["g"] = mobileMenu;
+/* harmony export (immutable) */ __webpack_exports__["f"] = isDev;
+/* harmony export (immutable) */ __webpack_exports__["m"] = tabs;
 /* unused harmony export gallery */
 /* unused harmony export wrapperGallery */
 /* unused harmony export checkViewPort */
-/* harmony export (immutable) */ __webpack_exports__["d"] = initMasonry;
-/* harmony export (immutable) */ __webpack_exports__["i"] = scrollTo;
-/* harmony export (immutable) */ __webpack_exports__["b"] = fixedHeader;
-/* harmony export (immutable) */ __webpack_exports__["c"] = formSelect;
+/* harmony export (immutable) */ __webpack_exports__["e"] = initMasonry;
+/* harmony export (immutable) */ __webpack_exports__["j"] = scrollTo;
+/* harmony export (immutable) */ __webpack_exports__["c"] = fixedHeader;
+/* harmony export (immutable) */ __webpack_exports__["d"] = formSelect;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_polyfill__ = __webpack_require__(93);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_polyfill___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_polyfill__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__popupGallery__ = __webpack_require__(370);
@@ -18631,6 +18633,21 @@ function photoGallerySlider() {
                 adaptiveHeight: true
             }
         }]
+    });
+}
+
+function adaParentMenu() {
+    $('.parent-menu >a').on('focus', function () {
+        $(this).keydown(function (e) {
+            if (e.keyCode == 13 && $(window).width() >= 1280) {
+                $(this).parent().addClass('opened-menu');
+            }
+        });
+    });
+    $('.main-menu ul li a').on('focus', function () {
+        if (!$(this).parents('.sub-menu').length && $(window).width() >= 1280) {
+            $('.parent-menu').removeClass('opened-menu');
+        }
     });
 }
 

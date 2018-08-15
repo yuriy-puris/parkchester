@@ -268,6 +268,22 @@ export function photoGallerySlider() {
     });
 }
 
+export function adaParentMenu () {
+    $('.parent-menu >a').on('focus', function () {
+        $(this).keydown(function(e){
+            if (e.keyCode == 13 && $(window).width() >= 1280) {
+                $(this).parent().addClass('opened-menu');
+            }
+        });
+    });
+    $('.main-menu ul li a').on('focus', function () {
+        if (!$(this).parents('.sub-menu').length && $(window).width() >= 1280) {
+            $('.parent-menu').removeClass('opened-menu');
+        }
+    });
+
+}
+
 export function playVideo() {
     $(window).on('load', function () {
         let player = $("#intro-video");

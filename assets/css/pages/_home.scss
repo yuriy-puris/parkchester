@@ -1,3 +1,13 @@
+.btn.scroll-to {
+  position: absolute;
+  left: 10px;
+  top: calc(100vh - 39px);
+  z-index: 5;
+  @include media(">=tablet") {
+    left: 30px;
+    top: calc(100vh - 48px);
+  }
+}
 .main.homepage {
   padding-bottom: 0;
   .section {

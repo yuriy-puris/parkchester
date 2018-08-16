@@ -446,9 +446,10 @@ export function initMasonry() {
 export function scrollTo() {
     if ($(".scroll-to").length) {
         const btn = $(".scroll-to"),
-            parentBtn = $(".scroll-to").parent(),
-            parentBtnOffsetTop = parentBtn.next().offset().top,
+            // parentBtn = $(".scroll-to").parent(),
+            parentBtnOffsetTop = btn.nextAll('main').children().eq(1).offset().top,
             headerHeight = $(".header").outerHeight();
+        // console.log(btn.nextAll('main').children().eq(1));
         $(".scroll-to").on("click", function () {
             $("html, body").animate({
                 scrollTop: parentBtnOffsetTop - headerHeight

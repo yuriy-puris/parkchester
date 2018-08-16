@@ -313,8 +313,13 @@ export function playVideo() {
         },200);
 
     });
-
 }
+//
+// export function cancelBtn() {
+//     setTimeout(function () {
+//         $('.page-nighborhood').find('.cancel-btn').attr('alt', 'cancel-btn');
+//     },2000);
+// }
 
 export function timeline() {
     $(".chapter").on("click", function (e) {

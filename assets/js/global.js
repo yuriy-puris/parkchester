@@ -26,6 +26,7 @@ import {
     playVideo,
     smoothScrollAmenities,
     adaParentMenu,
+    // cancelBtn,
 } from "./modules/module";
 
 
@@ -46,6 +47,7 @@ binder({
             formSelect,
             vueMap,
         ],
+        // ".cancel-btn": cancelBtn,
         ".parent-menu": adaParentMenu,
         ".anchor-nav": smoothScrollAmenities,
         "#intro-video": playVideo,

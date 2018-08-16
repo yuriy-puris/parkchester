@@ -43,6 +43,12 @@
   }
   .wpcf7-submit {
     height: 43px;
+    &:focus {
+      color: $color-white;
+      &:hover {
+        color: $color-gold;
+      }
+    }
   }
   .wpcf7-response-output {
     border-color: transparent !important;

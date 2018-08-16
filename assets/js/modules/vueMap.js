@@ -493,6 +493,9 @@ export function vueMap() {
             created() {
                 this.loadEvent();
             },
+            mounted() {
+                $('.cancel-btn').remove();
+            },
             methods: {
                 filterDate(val) {
                     let dateStr;

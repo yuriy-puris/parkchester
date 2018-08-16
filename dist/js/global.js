@@ -4669,6 +4669,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 Object(__WEBPACK_IMPORTED_MODULE_5__libs_binder__["a" /* default */])({
     bounds: {
         "html": [__WEBPACK_IMPORTED_MODULE_13__modules_module__["b" /* constants */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["k" /* slider */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["g" /* mobileMenu */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["f" /* isDev */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["m" /* tabs */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["n" /* timeline */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["e" /* initMasonry */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["i" /* popupGallerySlider */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["j" /* scrollTo */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["c" /* fixedHeader */], __WEBPACK_IMPORTED_MODULE_11__modules_googleMap__["a" /* googleMap */], __WEBPACK_IMPORTED_MODULE_13__modules_module__["d" /* formSelect */], __WEBPACK_IMPORTED_MODULE_12__modules_vueMap__["a" /* vueMap */]],
+        // ".cancel-btn": cancelBtn,
         ".parent-menu": __WEBPACK_IMPORTED_MODULE_13__modules_module__["a" /* adaParentMenu */],
         ".anchor-nav": __WEBPACK_IMPORTED_MODULE_13__modules_module__["l" /* smoothScrollAmenities */],
         "#intro-video": __WEBPACK_IMPORTED_MODULE_13__modules_module__["h" /* playVideo */],
@@ -17431,6 +17432,9 @@ function vueMap() {
             created: function created() {
                 this.loadEvent();
             },
+            mounted: function mounted() {
+                $('.cancel-btn').remove();
+            },
 
             methods: {
                 filterDate: function filterDate(val) {
@@ -18694,6 +18698,12 @@ function playVideo() {
         }, 200);
     });
 }
+//
+// export function cancelBtn() {
+//     setTimeout(function () {
+//         $('.page-nighborhood').find('.cancel-btn').attr('alt', 'cancel-btn');
+//     },2000);
+// }
 
 function timeline() {
     $(".chapter").on("click", function (e) {

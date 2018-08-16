@@ -27,9 +27,6 @@
       justify-content: flex-end;
       //position: relative;
     }
-    .wpcf7-submit {
-      height: 43px;
-    }
     .wpcf7-not-valid {
       color:#d0021b;
       border-bottom-color: #d0021b;
@@ -43,6 +40,9 @@
       font-weight: 300;
       color: #d0021b;
     }
+  }
+  .wpcf7-submit {
+    height: 43px;
   }
   .wpcf7-response-output {
     border-color: transparent !important;

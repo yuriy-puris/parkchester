@@ -99,8 +99,8 @@
           <file leaf-file-name="_page-schedule.scss" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/assets/css/pages/_page-schedule.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="435">
-                  <caret line="30" column="19" lean-forward="true" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
+                <state relative-caret-position="705">
+                  <caret line="45" column="3" lean-forward="false" selection-start-line="45" selection-start-column="3" selection-end-line="45" selection-end-column="3" />
                   <folding />
                 </state>
               </provider>
@@ -410,12 +410,12 @@
       <workItem from="1534337574319" duration="5288000" />
       <workItem from="1534400223082" duration="8438000" />
       <workItem from="1534408995025" duration="3674000" />
-      <workItem from="1534420585708" duration="1757000" />
+      <workItem from="1534420585708" duration="1936000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="378498000" />
+    <option name="totallyTimeSpent" value="378677000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1979" y="-4" width="1865" height="1092" extended-state="6" />
@@ -832,8 +832,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/pages/_page-schedule.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="30" column="19" lean-forward="true" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
+        <state relative-caret-position="705">
+          <caret line="45" column="3" lean-forward="false" selection-start-line="45" selection-start-column="3" selection-end-line="45" selection-end-column="3" />
           <folding />
         </state>
       </provider>

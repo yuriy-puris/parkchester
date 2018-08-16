@@ -297,7 +297,7 @@ export function playVideo() {
             showYTLogo: false,
             loop: true,
             ratio: 'auto',
-            stopMovieOnBlur: false
+            stopMovieOnBlur: false,
         });
         playPauseBtn.removeClass('hidden-btn');
         playPauseBtn.on('click', function (event) {

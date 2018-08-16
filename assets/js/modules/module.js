@@ -291,13 +291,11 @@ export function playVideo() {
         player.YTPlayer({
             containment: '#intro-video',
             autoPlay: true,
-            mute: false,
-            startAt: 0,
-            opacity: 1,
             showYTLogo: false,
             loop: true,
             ratio: 'auto',
             stopMovieOnBlur: false,
+            // useOnMobile:false
         });
         playPauseBtn.removeClass('hidden-btn');
         playPauseBtn.on('click', function (event) {
@@ -310,6 +308,10 @@ export function playVideo() {
                 $(this).addClass("play");
             }
         });
+        setTimeout(function () {
+            player.find('iframe').attr('tabindex', '-1');
+        },200);
+
     });
 
 }

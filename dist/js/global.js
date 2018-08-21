@@ -17219,7 +17219,7 @@ function vueMap() {
                         }]
                     }],
                         mapOptions = {
-                        zoom: 10,
+                        zoom: 13,
                         center: myLatlng,
                         scrollwheel: false,
                         scaleControl: false,

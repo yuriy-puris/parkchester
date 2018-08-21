@@ -17242,7 +17242,7 @@ function vueMap() {
 
                     var infoWindow = new google.maps.InfoWindow();
                     var markers = [];
-
+                    var bounds = new google.maps.LatLngBounds();
                     [].forEach.call(subLocations, function (subItem) {
                         marker = new google.maps.Marker({
                             position: {
@@ -17314,6 +17314,10 @@ function vueMap() {
                             // });
                         })(marker, subItem);
                     });
+                    for (var i = 0; i < markers.length; i++) {
+                        bounds.extend(markers[i].getPosition());
+                    }
+                    map.fitBounds(bounds);
 
                     google.maps.event.addListener(infoWindow, 'domready', function () {
                         var iwOuter = $('.gm-style-iw');

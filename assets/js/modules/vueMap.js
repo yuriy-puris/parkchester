@@ -295,7 +295,7 @@ export function vueMap() {
 
                     let infoWindow = new google.maps.InfoWindow();
                     let markers = [];
-
+                    let bounds = new google.maps.LatLngBounds();
                     [].forEach.call(subLocations, function (subItem) {
                         marker = new google.maps.Marker({
                             position: {
@@ -371,7 +371,12 @@ export function vueMap() {
                             //     return false;
                             // });
                         })(marker, subItem);
+
                     });
+                    for (let i = 0; i < markers.length; i++) {
+                        bounds.extend(markers[i].getPosition());
+                    }
+                    map.fitBounds(bounds);
 
                     google.maps.event.addListener(infoWindow, 'domready', function () {
                         let iwOuter = $('.gm-style-iw');

@@ -26,8 +26,8 @@
           <file leaf-file-name="park-apartments.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/assets/html/templates/park-apartments.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="126">
-                  <caret line="16" column="21" lean-forward="false" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+                <state relative-caret-position="108">
+                  <caret line="15" column="4" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
                   <folding />
                 </state>
               </provider>
@@ -125,9 +125,13 @@
           <file leaf-file-name="vueMap.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/assets/js/modules/vueMap.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="344">
-                  <caret line="277" column="42" lean-forward="true" selection-start-line="277" selection-start-column="42" selection-end-line="277" selection-end-column="42" />
-                  <folding />
+                <state relative-caret-position="468">
+                  <caret line="377" column="21" lean-forward="false" selection-start-line="377" selection-start-column="21" selection-end-line="377" selection-end-column="21" />
+                  <folding>
+                    <element signature="e#12275#12685#0" expanded="false" />
+                    <element signature="e#12315#12481#0" expanded="false" />
+                    <element signature="e#12786#16434#0" expanded="false" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -437,12 +441,12 @@
       <workItem from="1534400223082" duration="8438000" />
       <workItem from="1534408995025" duration="3674000" />
       <workItem from="1534420585708" duration="4490000" />
-      <workItem from="1534854486779" duration="60000" />
+      <workItem from="1534854486779" duration="1251000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="381291000" />
+    <option name="totallyTimeSpent" value="382482000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1977" y="-4" width="1863" height="1084" extended-state="6" />
@@ -765,14 +769,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/html/templates/park-apartments.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="16" column="21" lean-forward="false" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/pages/_page-schedule.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="810">
@@ -843,11 +839,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/html/templates/park-apartments.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="15" column="4" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/modules/vueMap.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="277" column="42" lean-forward="true" selection-start-line="277" selection-start-column="42" selection-end-line="277" selection-end-column="42" />
-          <folding />
+        <state relative-caret-position="468">
+          <caret line="377" column="21" lean-forward="false" selection-start-line="377" selection-start-column="21" selection-end-line="377" selection-end-column="21" />
+          <folding>
+            <element signature="e#12275#12685#0" expanded="false" />
+            <element signature="e#12315#12481#0" expanded="false" />
+            <element signature="e#12786#16434#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

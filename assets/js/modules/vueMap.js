@@ -273,6 +273,7 @@ export function vueMap() {
                         ],
                         mapOptions = {
                             zoom:13,
+                            maxZoom: 18,
                             center: myLatlng,
                             scrollwheel: false,
                             scaleControl: false,

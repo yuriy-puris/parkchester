@@ -108,6 +108,7 @@ export function googleMap() {
                 zoom: zoom,
                 center: mapCenter,
                 styles: styles,
+                maxZoom: 18,
                 disableDefaultUI: true,
                 scrollwheel: false,
                 zoomControl: true,

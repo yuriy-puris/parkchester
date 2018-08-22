@@ -16888,6 +16888,7 @@ function googleMap() {
                 zoom: zoom,
                 center: mapCenter,
                 styles: styles,
+                maxZoom: 18,
                 disableDefaultUI: true,
                 scrollwheel: false,
                 zoomControl: true,
@@ -17227,6 +17228,7 @@ function vueMap() {
                     }],
                         mapOptions = {
                         zoom: 13,
+                        maxZoom: 18,
                         center: myLatlng,
                         scrollwheel: false,
                         scaleControl: false,

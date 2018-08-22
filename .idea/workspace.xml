@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b6f316f8-c348-4913-8a33-69cbd9e767bb" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/assets/html/templates/map-home.html" afterPath="$PROJECT_DIR$/assets/html/templates/map-home.html" />
       <change beforePath="$PROJECT_DIR$/assets/js/modules/googleMap.js" afterPath="$PROJECT_DIR$/assets/js/modules/googleMap.js" />
-      <change beforePath="$PROJECT_DIR$/dist/html/home.html" afterPath="$PROJECT_DIR$/dist/html/home.html" />
+      <change beforePath="$PROJECT_DIR$/assets/js/modules/vueMap.js" afterPath="$PROJECT_DIR$/assets/js/modules/vueMap.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,12 +26,12 @@
           <file leaf-file-name="vueMap.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/assets/js/modules/vueMap.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="468">
-                  <caret line="292" column="26" lean-forward="true" selection-start-line="292" selection-start-column="26" selection-end-line="292" selection-end-column="26" />
+                <state relative-caret-position="162">
+                  <caret line="275" column="39" lean-forward="false" selection-start-line="275" selection-start-column="39" selection-end-line="275" selection-end-column="39" />
                   <folding>
-                    <element signature="e#12275#12685#0" expanded="false" />
-                    <element signature="e#12315#12481#0" expanded="false" />
-                    <element signature="e#12786#16434#0" expanded="false" />
+                    <element signature="e#12316#12726#0" expanded="false" />
+                    <element signature="e#12356#12522#0" expanded="false" />
+                    <element signature="e#12827#16475#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -55,8 +54,8 @@
           <file leaf-file-name="googleMap.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/assets/js/modules/googleMap.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="648">
-                  <caret line="128" column="0" lean-forward="true" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
+                <state relative-caret-position="324">
+                  <caret line="110" column="27" lean-forward="false" selection-start-line="110" selection-start-column="27" selection-end-line="110" selection-end-column="27" />
                   <folding>
                     <element signature="e#746#904#0" expanded="false" />
                     <element signature="e#906#1077#0" expanded="false" />
@@ -75,7 +74,7 @@
                     <element signature="e#3955#4101#0" expanded="false" />
                     <element signature="e#4103#4268#0" expanded="false" />
                     <element signature="e#4270#4442#0" expanded="false" />
-                    <element signature="e#6270#7444#0" expanded="false" />
+                    <element signature="e#6299#7473#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -192,9 +191,9 @@
         <option value="$PROJECT_DIR$/node_modules/vue-date/src/Datepicker.vue" />
         <option value="$PROJECT_DIR$/assets/js/modules/module.js" />
         <option value="$PROJECT_DIR$/assets/js/global.js" />
-        <option value="$PROJECT_DIR$/assets/js/modules/vueMap.js" />
         <option value="$PROJECT_DIR$/assets/css/blocks/_intro-home.scss" />
         <option value="$PROJECT_DIR$/assets/html/templates/map-home.html" />
+        <option value="$PROJECT_DIR$/assets/js/modules/vueMap.js" />
         <option value="$PROJECT_DIR$/assets/js/modules/googleMap.js" />
       </list>
     </option>
@@ -247,6 +246,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -310,7 +310,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -396,15 +395,16 @@
       <workItem from="1534854486779" duration="2685000" />
       <workItem from="1534931369630" duration="2512000" />
       <workItem from="1534938586754" duration="2966000" />
-      <workItem from="1534944847556" duration="664000" />
+      <workItem from="1534944847556" duration="770000" />
+      <workItem from="1534947225391" duration="562000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="390058000" />
+    <option name="totallyTimeSpent" value="390726000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1977" y="-4" width="1863" height="1084" extended-state="6" />
+    <frame x="2106" y="300" width="1863" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -412,12 +412,12 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -749,7 +749,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="20" column="19" lean-forward="true" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -765,7 +764,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="576">
           <caret line="32" column="18" lean-forward="false" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -773,26 +771,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/modules/vueMap.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="292" column="26" lean-forward="true" selection-start-line="292" selection-start-column="26" selection-end-line="292" selection-end-column="26" />
+        <state relative-caret-position="162">
+          <caret line="275" column="39" lean-forward="false" selection-start-line="275" selection-start-column="39" selection-end-line="275" selection-end-column="39" />
           <folding>
-            <element signature="e#12275#12685#0" expanded="false" />
-            <element signature="e#12315#12481#0" expanded="false" />
-            <element signature="e#12786#16434#0" expanded="false" />
+            <element signature="e#12316#12726#0" expanded="false" />
+            <element signature="e#12356#12522#0" expanded="false" />
+            <element signature="e#12827#16475#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/modules/googleMap.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="128" column="0" lean-forward="true" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
+        <state relative-caret-position="324">
+          <caret line="110" column="27" lean-forward="false" selection-start-line="110" selection-start-column="27" selection-end-line="110" selection-end-column="27" />
           <folding>
             <element signature="e#746#904#0" expanded="false" />
             <element signature="e#906#1077#0" expanded="false" />
@@ -811,7 +808,7 @@
             <element signature="e#3955#4101#0" expanded="false" />
             <element signature="e#4103#4268#0" expanded="false" />
             <element signature="e#4270#4442#0" expanded="false" />
-            <element signature="e#6270#7444#0" expanded="false" />
+            <element signature="e#6299#7473#0" expanded="false" />
           </folding>
         </state>
       </provider>

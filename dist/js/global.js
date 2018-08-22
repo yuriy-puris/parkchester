@@ -16895,6 +16895,7 @@ function googleMap() {
             };
             var map = new google.maps.Map($map[0], mapOptions);
             var markers = eval($map.data('content'));
+            var bounds = new google.maps.LatLngBounds();
 
             for (var i = 0; i < markers.length; i++) {
                 var newCoords = {
@@ -16905,6 +16906,12 @@ function googleMap() {
                     content = markers[i].content;
                 addMarkers(newCoords, map, image, title, content);
             }
+
+            for (var k = 0; k < markers.length; k++) {
+                bounds.extend(markers[k]);
+            }
+
+            map.fitBounds(bounds);
 
             function addMarkers(coords, map, pin, title, content) {
                 var marker = new google.maps.Marker({

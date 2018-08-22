@@ -115,6 +115,7 @@ export function googleMap() {
             };
             let map = new google.maps.Map($map[0], mapOptions);
             let markers = eval($map.data('content'));
+            let bounds = new google.maps.LatLngBounds();
 
             for (let i = 0; i < markers.length; i++) {
                 let newCoords = {
@@ -125,6 +126,12 @@ export function googleMap() {
                     content = markers[i].content;
                 addMarkers(newCoords, map, image, title, content);
             }
+
+            for (let k = 0; k < markers.length; k++) {
+                bounds.extend(markers[k]);
+            }
+
+            map.fitBounds(bounds);
 
 
             function addMarkers(coords, map, pin, title, content) {

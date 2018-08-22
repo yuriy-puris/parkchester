@@ -376,6 +376,7 @@ export function vueMap() {
                     for (let i = 0; i < markers.length; i++) {
                         bounds.extend(markers[i].getPosition());
                     }
+
                     map.fitBounds(bounds);
 
                     google.maps.event.addListener(infoWindow, 'domready', function () {

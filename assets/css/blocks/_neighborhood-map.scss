@@ -88,6 +88,11 @@
         color: $color-gold;
       }
     }
+    &.sub-active {
+      a {
+        color: $color-gold;
+      }
+    }
   }
   & > ul {
     position: relative;

@@ -6,6 +6,8 @@ export function vueMap() {
 
         const state = {
             data: markerCollection,
+            map_api: null,
+            map_api_points: [],
             list_events: null,
             emptyEvents: false,
             activeViewMore: false,
@@ -13,11 +15,22 @@ export function vueMap() {
             activeMore: true
         };
         const getters = {
+            get_new_mapmenu_list: state => {
+                return state.map_api;
+            },
             get_mapmenu_list: state => {
                 return state.data;
             },
             filter_mapmenu_list: (state) => (id) => {
-                return state.data[id];
+              let id_new = Number(id);
+              if (id == 0) {
+                id_new = Number(id) + 1
+              }
+              for (let idx in state.map_api) {
+                  if(Number(idx) === id_new) {
+                    return state.map_api[idx]
+                  }
+              }
             },
             get_events: state => {
                 return state.list_events;
@@ -50,11 +63,25 @@ export function vueMap() {
                 }).then(data => {
                     commit("setEventList", {events: data.data.events, events_length: data.data.count_events});
                 });
+            },
+            load_map_api: ({commit}, query) => {
+                let mapApi = mapApiUrl;
+                axios.get(mapApi)
+                  .then(data => {
+                    commit("setMapList", { mapList: data.data })
+                  })
             }
         };
         const mutations = {
+            setMapList: (state, { mapList }) => {
+                state.map_api = mapList
+                let mapApi = state.map_api
+                for (let item in mapApi) {
+                    let itm = state.map_api[item]
+                    state.map_api_points.push(itm)
+                }
+            },
             setEventList: (state, {events, events_length}) => {
-
                 if (state.list_events !== null && state.list_events.length == events_length) {
                     state.activeMore = false;
                 } else {
@@ -86,7 +113,8 @@ export function vueMap() {
             template: "#map-holder",
             data() {
                 return {
-                    mainTab: 0,
+                    mainTab: 1,
+                    subTab: 0,
                     mainCategory: null,
                     subIdx: null,
                     icon: markerPin,
@@ -98,39 +126,74 @@ export function vueMap() {
                 };
             },
             computed: {
+                getNewLocations() {
+                    return this.$store.getters.get_new_mapmenu_list
+                },
                 getLocations() {
                     return this.$store.getters.get_mapmenu_list;
                 },
                 dropLocations: function () {
                     let _self = this,
                         arrDrop = [];
-                    _self.$store.getters.get_mapmenu_list.map((item, index) => {
-                        item.subList.map((itm, idx) => {
-                            itm.parentname = item.name;
-                            itm.parentindex = index;
-                            itm.subindex = idx;
-                            arrDrop.push(itm);
-                        });
-                    });
-                    if (_self.searchText !== "" && _self.searchText !== null) {
 
-                        let res_arr = arrDrop.filter(item => {
-                            return item.name.toLowerCase().indexOf(_self.searchText.toLowerCase()) >= 0;
-                        });
-                        _self.activeFilter = (res_arr.length > 0) ? true : false;
-
-                        return res_arr;
-                    } else {
-                        _self.activeFilter = false;
+                  let map_data,
+                      search_arr = [],
+                      updateSearch = [];
+                  if (this.$store.getters.get_new_mapmenu_list !== null) {
+                    map_data = this.$store.getters.get_new_mapmenu_list;
+                    for (let search_key in map_data) {
+                      let search_sub_cat = map_data[search_key]
+                      if (search_sub_cat.sub_cats) {
+                        search_arr.push(search_sub_cat.sub_cats)
+                      }
                     }
+                    if (_self.searchText !== "" && _self.searchText !== null) {
+                      search_arr.forEach(item => {
+                         for (let item_key in item) {
+                             let sub_key = item[item_key]
+                             updateSearch.push(sub_key)
+                         }
+                      });
+                      let res_arr = updateSearch.filter(item => {
+                        return item.name.toLowerCase().indexOf(_self.searchText.toLowerCase()) >= 0;
+                      });
+                      _self.activeFilter = (res_arr.length > 0) ? true : false;
+                      console.log(res_arr);
+                      return res_arr;
+                      // let res_arr = search_arr.filter(item => {
+                      //   return item.name.toLowerCase().indexOf(_self.searchText.toLowerCase()) >= 0;
+                      // });
+                      // _self.activeFilter = (res_arr.length > 0) ? true : false;
+                      // return res_arr;
+                    } else {
+                      _self.activeFilter = false;
+                    }
+                    // _self.$store.getters.get_mapmenu_list.map((item, index) => {
+                    //   item.subList.map((itm, idx) => {
+                    //     itm.parentname = item.name;
+                    //     itm.parentindex = index;
+                    //     itm.subindex = idx;
+                    //     arrDrop.push(itm);
+                    //   });
+                    // });
+                  }
                 }
             },
+            created() {
+                this.loadMapApi()
+            },
             methods: {
-                tabs(index) {
+                loadMapApi() {
+                  this.$store.dispatch('load_map_api')
+                },
+                tabs(index, sub_index) {
                     this.removeContentActive();
+                    if (sub_index) {
+                      this.subTab = sub_index;
+                    };
                     this.mainTab = index;
                     this.mainCategory = this.$store.getters.filter_mapmenu_list(index);
-                    this.initMap(this.mainCategory);
+                    this.initMap(this.mainCategory, sub_index);
                     return index;
                 },
                 searchTabs(parentIndex, subindex) {
@@ -140,13 +203,14 @@ export function vueMap() {
                 triggerFilter(parentindex, subindex) {
                     this.mainTab = parentindex;
                     this.activeSubIndex = parentindex + "_" + subindex;
+                    console.log(parentindex)
                 },
-                initMap(locations) {
+                initMap(locations, sub_locations) {
                     let
                         $map = this.$refs.map,
-                        lat = parseFloat(locations.latitude),
-                        lng = parseFloat(locations.longtitude),
-                        myLatlng = new google.maps.LatLng(lat, lng),
+                        // lat = parseFloat(locations.latitude),
+                        // lng = parseFloat(locations.longtitude),
+                        // myLatlng = new google.maps.LatLng(lat, lng),
                         styles = [
                             {
                                 "featureType": "administrative",
@@ -274,7 +338,7 @@ export function vueMap() {
                         mapOptions = {
                             zoom:13,
                             maxZoom: 18,
-                            center: myLatlng,
+                            // center: myLatlng,
                             scrollwheel: false,
                             scaleControl: false,
                             zoomControl: true,
@@ -286,32 +350,66 @@ export function vueMap() {
                             styles: styles
                         },
                         map = new google.maps.Map($map, mapOptions),
-                        subLocations = locations.subList,
                         image = {
                             url: this.icon,
                             scaledSize: new google.maps.Size(26, 32),
                             optimized: false
                         },
-                        marker;
+                        marker,
+                        sub_cats;
 
                     let infoWindow = new google.maps.InfoWindow();
                     let markers = [];
                     let bounds = new google.maps.LatLngBounds();
-                    [].forEach.call(subLocations, function (subItem) {
+                    let points_submenu = [];
+                    // check for sub_location
+                    if (sub_locations) {
+                      if (locations.sub_cats) {
+                        sub_cats = locations.sub_cats;
+                        let sub_points = sub_cats[sub_locations]
+                        for (let s_point in sub_points.points) {
+                          points_submenu.push(sub_points.points[s_point])
+                        }
+                      }
+                    } else {
+                      // check for sub_cats
+                      if (locations.sub_cats) {
+                        sub_cats = locations.sub_cats;
+                        for ( let sub_key in sub_cats ) {
+                          let sub_itm = sub_cats[sub_key]
+                          for (let points_key in sub_itm.points) {
+                            points_submenu.push(sub_itm.points[points_key])
+                          }
+                        }
+                      } else {
+                        sub_cats = locations.points;
+                        for ( let sub_key in sub_cats ) {
+                          let sub_itm = sub_cats[sub_key]
+                          points_submenu.push(sub_itm)
+                        }
+                      }
+                    }
+                    [].forEach.call(points_submenu, function (subItem) {
                         marker = new google.maps.Marker({
                             position: {
-                                lat: parseFloat(subItem.latitude),
-                                lng: parseFloat(subItem.longtitude)
+                                lat: parseFloat(subItem.lat),
+                                lng: parseFloat(subItem.lng)
                             },
                             map: map,
                             icon: image,
-                            title: subItem.title,
-                            name: subItem.name,
+                            title: subItem.point_name,
+                            // name: subItem.point_address,
                         });
                         markers.push(marker);
                         (function (marker, subItem) {
-
                             function infoWindowOpen() {
+                                let infoWindowContent = {}
+                                if ( subItem.point_name !== "NULL") {
+                                  infoWindowContent.name = subItem.point_name
+                                }
+                                if (subItem.point_address !== "NULL") {
+                                  infoWindowContent.address = subItem.point_address
+                                }
                                 map.setCenter(marker.getPosition());
                                 for (let j = 0; j < markers.length; j++) {
                                     markers[j].setIcon({
@@ -320,13 +418,30 @@ export function vueMap() {
                                         optimized: false
                                     });
                                 }
-                                infoWindow.setContent("<div class='map-note-neighborhood'>" +
-                                    "<h6>" + subItem.title + "</h6>" +
-                                    "<div id='content-note'>" +
-                                    "<div>" + subItem.address + "</div>" +
-                                    "</div>" +
-                                    "</div>");
-                                infoWindow.open(map, marker);
+                                if (Object.keys(infoWindowContent).length !== 0) {
+                                  let infoWindowTemplate;
+                                  if (typeof infoWindowContent.name === 'undefined') {
+                                      infoWindowTemplate = "<div class='map-note-neighborhood'>" +
+                                        "<div id='content-note'>" +
+                                        "<div>" + infoWindowContent.address + "</div>" +
+                                        "</div>" +
+                                        "</div>";
+                                  }
+                                  else if (typeof infoWindowContent.address === 'undefined') {
+                                        infoWindowTemplate = "<div class='map-note-neighborhood'>" +
+                                          "<h6>" + infoWindowContent.name + "</h6>" +
+                                          "</div>";
+                                  } else {
+                                        infoWindowTemplate = "<div class='map-note-neighborhood'>" +
+                                          "<h6>" + infoWindowContent.name + "</h6>" +
+                                          "<div id='content-note'>" +
+                                          "<div>" + infoWindowContent.address + "</div>" +
+                                          "</div>" +
+                                          "</div>";
+                                  }
+                                  infoWindow.setContent(infoWindowTemplate);
+                                  infoWindow.open(map, marker);
+                                }
                                 marker.setIcon({
                                     url: activePin,
                                     scaledSize: new google.maps.Size(41, 50),
@@ -337,9 +452,9 @@ export function vueMap() {
                             google.maps.event.addListener(marker, "click", function () {
                                 infoWindowOpen();
                                 let dataTitle = marker.title;
-                                let dataName = marker.name;
+                                // let dataName = marker.name;
                                 setTimeout(() => {
-                                    $('.search-landmarks #search').val(dataName);
+                                    $('.search-landmarks #search').val(dataTitle);
                                 }, 10);
                                 $('.tab-content-item.active a').each(function () {
                                     if (dataTitle === $(this).data('title')) {
@@ -348,7 +463,7 @@ export function vueMap() {
                                     }
                                 });
                             });
-                            $(document).on('click', '.tab-content-item.active a, .search-dropdown li', function () {
+                            $(document).on('click', '.search-dropdown li', function () {
                                 let dataTitle = $(this).attr('data-title');
                                 let dataName = $(this).attr('data-name');
 
@@ -420,7 +535,9 @@ export function vueMap() {
 
             },
             mounted() {
-                this.tabs(this.mainTab);
+                setTimeout(() => {
+                  this.tabs(this.mainTab);
+                }, 2000)
             }
         });
 

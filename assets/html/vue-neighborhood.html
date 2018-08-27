@@ -122,7 +122,7 @@
                               v-for="item in dropLocations"
                               :data-title="item.title"
                               :data-name="item.name"
-                              @click="[ searchTabs(item.parentindex, item.subindex), triggerFilter(item.parentindex, item.subindex), activeFilter = false]">
+                              @click="[triggerFilter(item.subcat_id, item.subindex), activeFilter = false]">
                           {{item.parentname}} / {{item.name}}
                       </li>
                   </ul>
@@ -135,28 +135,28 @@
               <div class="map-menu-title">LANDMARKS NEAR PARKCHESTER</div>
               <ul class="tab-nav map-menu-list">
                 <li
-                    v-for="(item, index) in getLocations"
+                    v-for="(item, index) in getNewLocations"
                     :class="['tab-nav-item', {'active' : index == mainTab}]"
                     :key="index"
                     @click="tabs(index)">
                     <a
                       href="javascript:void(0)"
-                      >cd
+                      >
                       {{item.name}}
                   </a>
                 </li>
               </ul>
               <div class="tabs-content">
                 <ul
-                  v-for="(subitem, subindex) in getLocations"
-                  :class="['tab-content-item',{ 'active' : subindex == mainTab }]"
+                  v-for="(subitem, subindex) in getNewLocations"
+				  :class="['tab-content-item', {'active' : subindex == mainTab}]"
                   :key="subindex">
                   <li
-                    v-for="(itm, idx) in subitem.subList"
-                    :class="{ active : activeSubIndex === (subindex + '_' + idx) }">
+                    v-for="(itm, idx) in subitem.sub_cats"
+                    :class="{ 'sub-active' : idx == subTab }"
+				  	@click="tabs(subindex, idx)">
                     <a
-                       :data-title="itm.title"
-                       :data-name="itm.name"
+					  :data-name="itm.name"
                       href="javascript:void(0)">
                       {{itm.name}}
                     </a>
@@ -257,6 +257,7 @@
       per_paged: 6,
       page: 1,
   };
+  var mapApiUrl = 'http://parkchester-dev.bigdropinc.net/wp-json/wp/v2/neighborhood_map_data';
   var apiUrl = 'http://parkchester-dev.bigdropinc.net/wp-json/wp/v2/neighborhood_events';
   var markerPin = "/dist/images/mappin.svg";
   var activePin = "/dist/images/activeMappin.svg";

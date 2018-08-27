@@ -17186,6 +17186,14 @@ function vueMap() {
                     this.initMap(this.mainCategory, subindex);
                 },
                 triggerFilter: function triggerFilter(parentindex, subindex) {
+
+                    var data_search = this.$store.getters.get_new_mapmenu_list;
+                    for (var search_key in data_search) {
+                        var search_sub_cat = map_data[search_key];
+                        if (search_sub_cat.sub_cats) {
+                            search_arr.push(search_sub_cat.sub_cats);
+                        }
+                    }
                     this.mainTab = parentindex;
                     this.activeSubIndex = parentindex + "_" + subindex;
                     console.log(parentindex);

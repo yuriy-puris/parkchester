@@ -306,8 +306,9 @@
                   :key="subindex">
                   <li
                     v-for="(itm, idx) in subitem.sub_cats"
-                    :class="{ 'sub-active' : idx == subTab }"
-				  	@click="tabs(subindex, idx)">
+                    :class="[ 'itm.subcat_id', {'sub-active' : idx == subTab }]"
+				  	@click="tabs(subindex, idx)"
+				  	ref="itm.subcat_id">
                     <a
 					  :data-name="itm.name"
                       href="javascript:void(0)">

@@ -184,7 +184,7 @@ export function vueMap() {
             },
             methods: {
                 loadMapApi() {
-                  this.$store.dispatch('load_map_api')
+                  this.$store.dispatch('load_map_api');
                 },
                 tabs(index, sub_index) {
                     this.removeContentActive();
@@ -201,6 +201,14 @@ export function vueMap() {
                     this.initMap(this.mainCategory, subindex);
                 },
                 triggerFilter(parentindex, subindex) {
+
+                  let data_search = this.$store.getters.get_new_mapmenu_list
+                  for (let search_key in data_search) {
+                    let search_sub_cat = map_data[search_key]
+                    if (search_sub_cat.sub_cats) {
+                      search_arr.push(search_sub_cat.sub_cats)
+                    }
+                  }
                     this.mainTab = parentindex;
                     this.activeSubIndex = parentindex + "_" + subindex;
                     console.log(parentindex)

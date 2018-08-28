@@ -275,8 +275,8 @@
                               v-for="item in dropLocations"
                               :data-title="item.title"
                               :data-name="item.name"
-                              @click="[triggerFilter(item.subcat_id, item.subindex), activeFilter = false]">
-                          {{item.parentname}} / {{item.name}}
+                              @click="[triggerFilter(item.parent_id, item.self_id), activeFilter = false]">
+                          {{item.parent_name}} / {{item.name}}
                       </li>
                   </ul>
               </div>

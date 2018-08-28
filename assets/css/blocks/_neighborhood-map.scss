@@ -262,8 +262,12 @@
     margin: 0 0 15px;
     padding: 0 30px;
     cursor: pointer;
+    transition: color .3s;
     &:last-child {
       margin-bottom: 0;
+    }
+    &:hover {
+      color: $color-gold;
     }
   }
 }

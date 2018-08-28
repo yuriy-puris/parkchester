@@ -17127,6 +17127,12 @@ function vueMap() {
                         map_data = this.$store.getters.get_new_mapmenu_list;
                         for (var search_key in map_data) {
                             var search_sub_cat = map_data[search_key];
+                            for (var s_cat in search_sub_cat.sub_cats) {
+                                var s_key_cat = search_sub_cat.sub_cats[s_cat];
+                                s_key_cat.parent_name = search_sub_cat.name;
+                                s_key_cat.parent_id = search_key;
+                                s_key_cat.self_id = s_cat;
+                            }
                             if (search_sub_cat.sub_cats) {
                                 search_arr.push(search_sub_cat.sub_cats);
                             }
@@ -17185,18 +17191,24 @@ function vueMap() {
                     this.mainCategory = this.$store.getters.filter_mapmenu_list(parentIndex);
                     this.initMap(this.mainCategory, subindex);
                 },
-                triggerFilter: function triggerFilter(parentindex, subindex) {
-
-                    var data_search = this.$store.getters.get_new_mapmenu_list;
-                    for (var search_key in data_search) {
-                        var search_sub_cat = map_data[search_key];
-                        if (search_sub_cat.sub_cats) {
-                            search_arr.push(search_sub_cat.sub_cats);
-                        }
-                    }
-                    this.mainTab = parentindex;
-                    this.activeSubIndex = parentindex + "_" + subindex;
-                    console.log(parentindex);
+                triggerFilter: function triggerFilter(index, sub_index) {
+                    this.removeContentActive();
+                    if (sub_index) {
+                        this.subTab = sub_index;
+                    };
+                    this.mainTab = index;
+                    this.mainCategory = this.$store.getters.filter_mapmenu_list(index);
+                    this.initMap(this.mainCategory, sub_index);
+                    // let data_search = this.$store.getters.get_new_mapmenu_list
+                    // for (let search_key in data_search) {
+                    //   let search_sub_cat = map_data[search_key]
+                    //   if (search_sub_cat.sub_cats) {
+                    //     search_arr.push(search_sub_cat.sub_cats)
+                    //   }
+                    // }
+                    //   this.mainTab = parentindex;
+                    //   this.activeSubIndex = parentindex + "_" + subindex;
+                    //   console.log(parentindex)
                 },
                 initMap: function initMap(locations, sub_locations) {
                     var $map = this.$refs.map,

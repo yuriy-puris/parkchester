@@ -133,32 +133,38 @@ export function vueMap() {
                     return this.$store.getters.get_mapmenu_list;
                 },
                 dropLocations: function () {
-                    let _self = this,
-                        arrDrop = [];
+                  let _self = this,
+                    arrDrop = [];
 
                   let map_data,
-                      search_arr = [],
-                      updateSearch = [];
+                    search_arr = [],
+                    updateSearch = [];
                   if (this.$store.getters.get_new_mapmenu_list !== null) {
                     map_data = this.$store.getters.get_new_mapmenu_list;
                     for (let search_key in map_data) {
                       let search_sub_cat = map_data[search_key]
+                      for ( let s_cat in search_sub_cat.sub_cats ) {
+                        let s_key_cat = search_sub_cat.sub_cats[s_cat]
+                        s_key_cat.parent_name = search_sub_cat.name
+                        s_key_cat.parent_id = search_key
+                        s_key_cat.self_id = s_cat
+                      }
                       if (search_sub_cat.sub_cats) {
                         search_arr.push(search_sub_cat.sub_cats)
                       }
                     }
                     if (_self.searchText !== "" && _self.searchText !== null) {
                       search_arr.forEach(item => {
-                         for (let item_key in item) {
-                             let sub_key = item[item_key]
-                             updateSearch.push(sub_key)
-                         }
+                        for (let item_key in item) {
+                          let sub_key = item[item_key]
+                          updateSearch.push(sub_key)
+                        }
                       });
                       let res_arr = updateSearch.filter(item => {
                         return item.name.toLowerCase().indexOf(_self.searchText.toLowerCase()) >= 0;
                       });
                       _self.activeFilter = (res_arr.length > 0) ? true : false;
-                      console.log(res_arr);
+                      console.log(res_arr)
                       return res_arr;
                       // let res_arr = search_arr.filter(item => {
                       //   return item.name.toLowerCase().indexOf(_self.searchText.toLowerCase()) >= 0;
@@ -200,18 +206,24 @@ export function vueMap() {
                     this.mainCategory = this.$store.getters.filter_mapmenu_list(parentIndex);
                     this.initMap(this.mainCategory, subindex);
                 },
-                triggerFilter(parentindex, subindex) {
-
-                  let data_search = this.$store.getters.get_new_mapmenu_list
-                  for (let search_key in data_search) {
-                    let search_sub_cat = map_data[search_key]
-                    if (search_sub_cat.sub_cats) {
-                      search_arr.push(search_sub_cat.sub_cats)
-                    }
-                  }
-                    this.mainTab = parentindex;
-                    this.activeSubIndex = parentindex + "_" + subindex;
-                    console.log(parentindex)
+                triggerFilter(index, sub_index) {
+                  this.removeContentActive();
+                  if (sub_index) {
+                    this.subTab = sub_index;
+                  };
+                  this.mainTab = index;
+                  this.mainCategory = this.$store.getters.filter_mapmenu_list(index);
+                  this.initMap(this.mainCategory, sub_index);
+                  // let data_search = this.$store.getters.get_new_mapmenu_list
+                  // for (let search_key in data_search) {
+                  //   let search_sub_cat = map_data[search_key]
+                  //   if (search_sub_cat.sub_cats) {
+                  //     search_arr.push(search_sub_cat.sub_cats)
+                  //   }
+                  // }
+                  //   this.mainTab = parentindex;
+                  //   this.activeSubIndex = parentindex + "_" + subindex;
+                  //   console.log(parentindex)
                 },
                 initMap(locations, sub_locations) {
                     let

@@ -258,6 +258,8 @@
   width: 100%;
   padding: 30px 0;
   margin: 10px 0 0;
+  max-height: 400px;
+  overflow-y: auto;
   li {
     margin: 0 0 15px;
     padding: 0 30px;
@@ -266,8 +268,10 @@
     &:last-child {
       margin-bottom: 0;
     }
-    &:hover {
-      color: $color-gold;
+    a {
+      &:hover {
+        color: $color-gold;
+      }
     }
   }
 }

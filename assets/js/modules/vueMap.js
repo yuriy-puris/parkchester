@@ -164,24 +164,10 @@ export function vueMap() {
                         return item.name.toLowerCase().indexOf(_self.searchText.toLowerCase()) >= 0;
                       });
                       _self.activeFilter = (res_arr.length > 0) ? true : false;
-                      console.log(res_arr)
                       return res_arr;
-                      // let res_arr = search_arr.filter(item => {
-                      //   return item.name.toLowerCase().indexOf(_self.searchText.toLowerCase()) >= 0;
-                      // });
-                      // _self.activeFilter = (res_arr.length > 0) ? true : false;
-                      // return res_arr;
                     } else {
                       _self.activeFilter = false;
                     }
-                    // _self.$store.getters.get_mapmenu_list.map((item, index) => {
-                    //   item.subList.map((itm, idx) => {
-                    //     itm.parentname = item.name;
-                    //     itm.parentindex = index;
-                    //     itm.subindex = idx;
-                    //     arrDrop.push(itm);
-                    //   });
-                    // });
                   }
                 }
             },
@@ -193,10 +179,13 @@ export function vueMap() {
                   this.$store.dispatch('load_map_api');
                 },
                 tabs(index, sub_index) {
+                    this.searchText = "";
                     this.removeContentActive();
                     if (sub_index) {
                       this.subTab = sub_index;
-                    };
+                    } else {
+                      this.subTab = 0
+                    }
                     this.mainTab = index;
                     this.mainCategory = this.$store.getters.filter_mapmenu_list(index);
                     this.initMap(this.mainCategory, sub_index);
@@ -207,23 +196,21 @@ export function vueMap() {
                     this.initMap(this.mainCategory, subindex);
                 },
                 triggerFilter(index, sub_index) {
-                  this.removeContentActive();
+                  this.searchText = "";
                   if (sub_index) {
                     this.subTab = sub_index;
-                  };
+                  } else {
+                    this.subTab = 0
+                  }
                   this.mainTab = index;
                   this.mainCategory = this.$store.getters.filter_mapmenu_list(index);
                   this.initMap(this.mainCategory, sub_index);
-                  // let data_search = this.$store.getters.get_new_mapmenu_list
-                  // for (let search_key in data_search) {
-                  //   let search_sub_cat = map_data[search_key]
-                  //   if (search_sub_cat.sub_cats) {
-                  //     search_arr.push(search_sub_cat.sub_cats)
-                  //   }
-                  // }
-                  //   this.mainTab = parentindex;
-                  //   this.activeSubIndex = parentindex + "_" + subindex;
-                  //   console.log(parentindex)
+                },
+                autoValue(sub_name) {
+                  this.searchText = sub_name;
+                  setTimeout(() => {
+                    this.activeFilter = false;
+                  }, 10)
                 },
                 initMap(locations, sub_locations) {
                     let
@@ -437,7 +424,7 @@ export function vueMap() {
                                         scaledSize: new google.maps.Size(26, 32),
                                         optimized: false
                                     });
-                                }
+                                };
                                 if (Object.keys(infoWindowContent).length !== 0) {
                                   let infoWindowTemplate;
                                   if (typeof infoWindowContent.name === 'undefined') {
@@ -471,32 +458,32 @@ export function vueMap() {
 
                             google.maps.event.addListener(marker, "click", function () {
                                 infoWindowOpen();
-                                let dataTitle = marker.title;
+                                // let dataTitle = marker.title;
                                 // let dataName = marker.name;
-                                setTimeout(() => {
-                                    $('.search-landmarks #search').val(dataTitle);
-                                }, 10);
-                                $('.tab-content-item.active a').each(function () {
-                                    if (dataTitle === $(this).data('title')) {
-                                        $('.tab-content-item.active li').removeClass('active');
-                                        $(`a[data-title='${dataTitle}']`).parent().addClass('active');
-                                    }
-                                });
+                                // setTimeout(() => {
+                                //     $('.search-landmarks #search').val(dataTitle);
+                                // }, 10);
+                                // $('.tab-content-item.active a').each(function () {
+                                //     if (dataTitle === $(this).data('title')) {
+                                //         $('.tab-content-item.active li').removeClass('active');
+                                //         $(`a[data-title='${dataTitle}']`).parent().addClass('active');
+                                //     }
+                                // });
                             });
-                            $(document).on('click', '.search-dropdown li', function () {
-                                let dataTitle = $(this).attr('data-title');
-                                let dataName = $(this).attr('data-name');
-
-                                setTimeout(() => {
-                                    $('.search-landmarks #search').val(dataName);
-                                }, 10);
-                                if (dataTitle === marker.title) {
-                                    $('.tab-content-item.active li').removeClass('active');
-                                    $(this).parent().addClass('active');
-                                    infoWindowOpen();
-                                }
-                                return false;
-                            });
+                            // $(document).on('click', '.search-dropdown li', function () {
+                            //     let dataTitle = $(this).attr('data-title');
+                            //     let dataName = $(this).attr('data-name');
+                            //
+                            //     setTimeout(() => {
+                            //         $('.search-landmarks #search').val(dataName);
+                            //     }, 10);
+                            //     if (dataTitle === marker.title) {
+                            //         $('.tab-content-item.active li').removeClass('active');
+                            //         $(this).parent().addClass('active');
+                            //         infoWindowOpen();
+                            //     }
+                            //     return false;
+                            // });
                             // $(document).on('click', '.tab-content-item.active a', function () {
                             //     let dataTitle = $(this).attr('data-title');
                             //     if (dataTitle === marker.title) {
@@ -552,7 +539,6 @@ export function vueMap() {
                     }, 10);
                     $('.tab-content-item li').removeClass('active');
                 }
-
             },
             mounted() {
                 setTimeout(() => {

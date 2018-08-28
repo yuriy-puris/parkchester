@@ -274,9 +274,18 @@
                       <li
                               v-for="item in dropLocations"
                               :data-title="item.title"
-                              :data-name="item.name"
-                              @click="[triggerFilter(item.parent_id, item.self_id), activeFilter = false]">
-                          {{item.parent_name}} / {{item.name}}
+                              :data-name="item.name">
+						  <a
+							  href="javascript:void(0)"
+							  @click="[triggerFilter(item.parent_id)]">
+							  {{item.parent_name}}
+						  </a>
+						  /
+						  <a
+							  href="javascript:void(0)"
+							  @click="[triggerFilter(item.parent_id, item.self_id), autoValue(item.name)]">
+							  {{item.name}}
+						  </a>
                       </li>
                   </ul>
               </div>
@@ -307,8 +316,7 @@
                   <li
                     v-for="(itm, idx) in subitem.sub_cats"
                     :class="[ 'itm.subcat_id', {'sub-active' : idx == subTab }]"
-				  	@click="tabs(subindex, idx)"
-				  	ref="itm.subcat_id">
+				  	@click="tabs(subindex, idx)">
                     <a
 					  :data-name="itm.name"
                       href="javascript:void(0)">

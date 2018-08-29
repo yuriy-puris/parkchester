@@ -18,6 +18,23 @@ export function vueMap() {
             get_new_mapmenu_list: state => {
                 return state.map_api;
             },
+            get_drop_locations: state => {
+              if (state.map_api !== null) {
+                let search_arr = [];
+                Object.keys(state.map_api).forEach(key => {
+                  let sub_cat = state.map_api[key];
+                  if (sub_cat.sub_cats) {
+                    Object.keys(sub_cat.sub_cats).forEach(sub_key => {
+                      sub_cat.sub_cats[sub_key]["parent_name"] = sub_cat.name
+                      sub_cat.sub_cats[sub_key]["parent_id"] = key
+                      sub_cat.sub_cats[sub_key]["self_id"] = sub_key
+                      search_arr.push(sub_cat.sub_cats[sub_key])
+                    });
+                  }
+                });
+                return search_arr;
+              }
+            },
             get_mapmenu_list: state => {
                 return state.data;
             },
@@ -133,41 +150,15 @@ export function vueMap() {
                     return this.$store.getters.get_mapmenu_list;
                 },
                 dropLocations: function () {
-                  let _self = this,
-                    arrDrop = [];
-
-                  let map_data,
-                    search_arr = [],
-                    updateSearch = [];
-                  if (this.$store.getters.get_new_mapmenu_list !== null) {
-                    map_data = this.$store.getters.get_new_mapmenu_list;
-                    for (let search_key in map_data) {
-                      let search_sub_cat = map_data[search_key]
-                      for ( let s_cat in search_sub_cat.sub_cats ) {
-                        let s_key_cat = search_sub_cat.sub_cats[s_cat]
-                        s_key_cat.parent_name = search_sub_cat.name
-                        s_key_cat.parent_id = search_key
-                        s_key_cat.self_id = s_cat
-                      }
-                      if (search_sub_cat.sub_cats) {
-                        search_arr.push(search_sub_cat.sub_cats)
-                      }
-                    }
-                    if (_self.searchText !== "" && _self.searchText !== null) {
-                      search_arr.forEach(item => {
-                        for (let item_key in item) {
-                          let sub_key = item[item_key]
-                          updateSearch.push(sub_key)
-                        }
-                      });
-                      let res_arr = updateSearch.filter(item => {
-                        return item.name.toLowerCase().indexOf(_self.searchText.toLowerCase()) >= 0;
-                      });
-                      _self.activeFilter = (res_arr.length > 0) ? true : false;
-                      return res_arr;
-                    } else {
-                      _self.activeFilter = false;
-                    }
+                  if (this.searchText !== "" && this.searchText !== null) {
+                    let search_item = this.$store.getters.get_drop_locations;
+                    let res_arr = search_item.filter(item => {
+                      return item.name.toLowerCase().indexOf(this.searchText.toLowerCase()) >= 0;
+                    });
+                    this.activeFilter = res_arr.length > 0 ? true : false;
+                    return res_arr;
+                  } else {
+                    this.activeFilter = false;
                   }
                 }
             },
@@ -213,11 +204,29 @@ export function vueMap() {
                   }, 10)
                 },
                 initMap(locations, sub_locations) {
+                    // parse locations/sub_locations
+                    let points_submenu = [];
+                    // check for sub_location
+                    if (sub_locations) {
+                      let objPoints = locations.sub_cats[sub_locations]
+                      Object.keys(objPoints.points).forEach(key => {
+                        points_submenu.push(objPoints.points[key]);
+                      });
+                    } else {
+                      // check for sub_cats
+                      if (locations.sub_cats) {
+                        Object.keys(locations.sub_cats).forEach(key => {
+                          let sub_points = locations.sub_cats[key];
+                          Object.keys(sub_points.points).forEach(sub_key => {
+                            points_submenu.push(sub_points.points[sub_key]);
+                          })
+                        });
+                      } else {
+                        Object.keys(locations.points).forEach(key => points_submenu.push(locations.points[key]))
+                      }
+                    };
                     let
                         $map = this.$refs.map,
-                        // lat = parseFloat(locations.latitude),
-                        // lng = parseFloat(locations.longtitude),
-                        // myLatlng = new google.maps.LatLng(lat, lng),
                         styles = [
                             {
                                 "featureType": "administrative",
@@ -343,9 +352,8 @@ export function vueMap() {
                             }
                         ],
                         mapOptions = {
-                            zoom:13,
+                            zoom: 13,
                             maxZoom: 18,
-                            // center: myLatlng,
                             scrollwheel: false,
                             scaleControl: false,
                             zoomControl: true,
@@ -362,40 +370,11 @@ export function vueMap() {
                             scaledSize: new google.maps.Size(26, 32),
                             optimized: false
                         },
-                        marker,
-                        sub_cats;
+                        marker;
 
                     let infoWindow = new google.maps.InfoWindow();
                     let markers = [];
                     let bounds = new google.maps.LatLngBounds();
-                    let points_submenu = [];
-                    // check for sub_location
-                    if (sub_locations) {
-                      if (locations.sub_cats) {
-                        sub_cats = locations.sub_cats;
-                        let sub_points = sub_cats[sub_locations]
-                        for (let s_point in sub_points.points) {
-                          points_submenu.push(sub_points.points[s_point])
-                        }
-                      }
-                    } else {
-                      // check for sub_cats
-                      if (locations.sub_cats) {
-                        sub_cats = locations.sub_cats;
-                        for ( let sub_key in sub_cats ) {
-                          let sub_itm = sub_cats[sub_key]
-                          for (let points_key in sub_itm.points) {
-                            points_submenu.push(sub_itm.points[points_key])
-                          }
-                        }
-                      } else {
-                        sub_cats = locations.points;
-                        for ( let sub_key in sub_cats ) {
-                          let sub_itm = sub_cats[sub_key]
-                          points_submenu.push(sub_itm)
-                        }
-                      }
-                    }
                     [].forEach.call(points_submenu, function (subItem) {
                         marker = new google.maps.Marker({
                             position: {
@@ -404,13 +383,19 @@ export function vueMap() {
                             },
                             map: map,
                             icon: image,
-                            title: subItem.point_name,
-                            // name: subItem.point_address,
+                            title: subItem.point_name
                         });
                         markers.push(marker);
                         (function (marker, subItem) {
                             function infoWindowOpen() {
-                                let infoWindowContent = {}
+                                for (let j = 0; j < markers.length; j++) {
+                                  markers[j].setIcon({
+                                    url: markerPin,
+                                    scaledSize: new google.maps.Size(26, 32),
+                                    optimized: false
+                                  });
+                                };
+                                let infoWindowContent = {};
                                 if ( subItem.point_name !== "NULL") {
                                   infoWindowContent.name = subItem.point_name
                                 }
@@ -418,13 +403,6 @@ export function vueMap() {
                                   infoWindowContent.address = subItem.point_address
                                 }
                                 map.setCenter(marker.getPosition());
-                                for (let j = 0; j < markers.length; j++) {
-                                    markers[j].setIcon({
-                                        url: markerPin,
-                                        scaledSize: new google.maps.Size(26, 32),
-                                        optimized: false
-                                    });
-                                };
                                 if (Object.keys(infoWindowContent).length !== 0) {
                                   let infoWindowTemplate;
                                   if (typeof infoWindowContent.name === 'undefined') {

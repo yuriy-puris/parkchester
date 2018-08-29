@@ -16989,6 +16989,23 @@ function vueMap() {
             get_new_mapmenu_list: function get_new_mapmenu_list(state) {
                 return state.map_api;
             },
+            get_drop_locations: function get_drop_locations(state) {
+                if (state.map_api !== null) {
+                    var search_arr = [];
+                    Object.keys(state.map_api).forEach(function (key) {
+                        var sub_cat = state.map_api[key];
+                        if (sub_cat.sub_cats) {
+                            Object.keys(sub_cat.sub_cats).forEach(function (sub_key) {
+                                sub_cat.sub_cats[sub_key]["parent_name"] = sub_cat.name;
+                                sub_cat.sub_cats[sub_key]["parent_id"] = key;
+                                sub_cat.sub_cats[sub_key]["self_id"] = sub_key;
+                                search_arr.push(sub_cat.sub_cats[sub_key]);
+                            });
+                        }
+                    });
+                    return search_arr;
+                }
+            },
             get_mapmenu_list: function get_mapmenu_list(state) {
                 return state.data;
             },
@@ -17117,41 +17134,17 @@ function vueMap() {
                 },
 
                 dropLocations: function dropLocations() {
-                    var _self = this,
-                        arrDrop = [];
+                    var _this = this;
 
-                    var map_data = void 0,
-                        search_arr = [],
-                        updateSearch = [];
-                    if (this.$store.getters.get_new_mapmenu_list !== null) {
-                        map_data = this.$store.getters.get_new_mapmenu_list;
-                        for (var search_key in map_data) {
-                            var search_sub_cat = map_data[search_key];
-                            for (var s_cat in search_sub_cat.sub_cats) {
-                                var s_key_cat = search_sub_cat.sub_cats[s_cat];
-                                s_key_cat.parent_name = search_sub_cat.name;
-                                s_key_cat.parent_id = search_key;
-                                s_key_cat.self_id = s_cat;
-                            }
-                            if (search_sub_cat.sub_cats) {
-                                search_arr.push(search_sub_cat.sub_cats);
-                            }
-                        }
-                        if (_self.searchText !== "" && _self.searchText !== null) {
-                            search_arr.forEach(function (item) {
-                                for (var item_key in item) {
-                                    var sub_key = item[item_key];
-                                    updateSearch.push(sub_key);
-                                }
-                            });
-                            var res_arr = updateSearch.filter(function (item) {
-                                return item.name.toLowerCase().indexOf(_self.searchText.toLowerCase()) >= 0;
-                            });
-                            _self.activeFilter = res_arr.length > 0 ? true : false;
-                            return res_arr;
-                        } else {
-                            _self.activeFilter = false;
-                        }
+                    if (this.searchText !== "" && this.searchText !== null) {
+                        var search_item = this.$store.getters.get_drop_locations;
+                        var res_arr = search_item.filter(function (item) {
+                            return item.name.toLowerCase().indexOf(_this.searchText.toLowerCase()) >= 0;
+                        });
+                        this.activeFilter = res_arr.length > 0 ? true : false;
+                        return res_arr;
+                    } else {
+                        this.activeFilter = false;
                     }
                 }
             },
@@ -17192,20 +17185,39 @@ function vueMap() {
                     this.initMap(this.mainCategory, sub_index);
                 },
                 autoValue: function autoValue(sub_name) {
-                    var _this = this;
+                    var _this2 = this;
 
                     this.searchText = sub_name;
                     setTimeout(function () {
-                        _this.activeFilter = false;
+                        _this2.activeFilter = false;
                     }, 10);
                 },
                 initMap: function initMap(locations, sub_locations) {
+                    // parse locations/sub_locations
+                    var points_submenu = [];
+                    // check for sub_location
+                    if (sub_locations) {
+                        var objPoints = locations.sub_cats[sub_locations];
+                        Object.keys(objPoints.points).forEach(function (key) {
+                            points_submenu.push(objPoints.points[key]);
+                        });
+                    } else {
+                        // check for sub_cats
+                        if (locations.sub_cats) {
+                            Object.keys(locations.sub_cats).forEach(function (key) {
+                                var sub_points = locations.sub_cats[key];
+                                Object.keys(sub_points.points).forEach(function (sub_key) {
+                                    points_submenu.push(sub_points.points[sub_key]);
+                                });
+                            });
+                        } else {
+                            Object.keys(locations.points).forEach(function (key) {
+                                return points_submenu.push(locations.points[key]);
+                            });
+                        }
+                    };
                     var $map = this.$refs.map,
-
-                    // lat = parseFloat(locations.latitude),
-                    // lng = parseFloat(locations.longtitude),
-                    // myLatlng = new google.maps.LatLng(lat, lng),
-                    styles = [{
+                        styles = [{
                         "featureType": "administrative",
                         "elementType": "all",
                         "stylers": [{
@@ -17307,7 +17319,6 @@ function vueMap() {
                         mapOptions = {
                         zoom: 13,
                         maxZoom: 18,
-                        // center: myLatlng,
                         scrollwheel: false,
                         scaleControl: false,
                         zoomControl: true,
@@ -17324,40 +17335,11 @@ function vueMap() {
                         scaledSize: new google.maps.Size(26, 32),
                         optimized: false
                     },
-                        marker = void 0,
-                        sub_cats = void 0;
+                        marker = void 0;
 
                     var infoWindow = new google.maps.InfoWindow();
                     var markers = [];
                     var bounds = new google.maps.LatLngBounds();
-                    var points_submenu = [];
-                    // check for sub_location
-                    if (sub_locations) {
-                        if (locations.sub_cats) {
-                            sub_cats = locations.sub_cats;
-                            var sub_points = sub_cats[sub_locations];
-                            for (var s_point in sub_points.points) {
-                                points_submenu.push(sub_points.points[s_point]);
-                            }
-                        }
-                    } else {
-                        // check for sub_cats
-                        if (locations.sub_cats) {
-                            sub_cats = locations.sub_cats;
-                            for (var sub_key in sub_cats) {
-                                var sub_itm = sub_cats[sub_key];
-                                for (var points_key in sub_itm.points) {
-                                    points_submenu.push(sub_itm.points[points_key]);
-                                }
-                            }
-                        } else {
-                            sub_cats = locations.points;
-                            for (var _sub_key in sub_cats) {
-                                var _sub_itm = sub_cats[_sub_key];
-                                points_submenu.push(_sub_itm);
-                            }
-                        }
-                    }
                     [].forEach.call(points_submenu, function (subItem) {
                         marker = new google.maps.Marker({
                             position: {
@@ -17367,11 +17349,17 @@ function vueMap() {
                             map: map,
                             icon: image,
                             title: subItem.point_name
-                            // name: subItem.point_address,
                         });
                         markers.push(marker);
                         (function (marker, subItem) {
                             function infoWindowOpen() {
+                                for (var j = 0; j < markers.length; j++) {
+                                    markers[j].setIcon({
+                                        url: markerPin,
+                                        scaledSize: new google.maps.Size(26, 32),
+                                        optimized: false
+                                    });
+                                };
                                 var infoWindowContent = {};
                                 if (subItem.point_name !== "NULL") {
                                     infoWindowContent.name = subItem.point_name;
@@ -17380,13 +17368,6 @@ function vueMap() {
                                     infoWindowContent.address = subItem.point_address;
                                 }
                                 map.setCenter(marker.getPosition());
-                                for (var j = 0; j < markers.length; j++) {
-                                    markers[j].setIcon({
-                                        url: markerPin,
-                                        scaledSize: new google.maps.Size(26, 32),
-                                        optimized: false
-                                    });
-                                };
                                 if (Object.keys(infoWindowContent).length !== 0) {
                                     var infoWindowTemplate = void 0;
                                     if (typeof infoWindowContent.name === 'undefined') {
@@ -17487,10 +17468,10 @@ function vueMap() {
                 }
             },
             mounted: function mounted() {
-                var _this2 = this;
+                var _this3 = this;
 
                 setTimeout(function () {
-                    _this2.tabs(_this2.mainTab);
+                    _this3.tabs(_this3.mainTab);
                 }, 2000);
             }
         });

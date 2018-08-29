@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b6f316f8-c348-4913-8a33-69cbd9e767bb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/html/vue-neighborhood.html" afterPath="$PROJECT_DIR$/assets/html/vue-neighborhood.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/modules/vueMap.js" afterPath="$PROJECT_DIR$/assets/js/modules/vueMap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/vue-neighborhood.html" afterPath="$PROJECT_DIR$/dist/html/vue-neighborhood.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/global.js" afterPath="$PROJECT_DIR$/dist/js/global.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,6 +21,42 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileEditorManager">
+    <splitter split-orientation="horizontal" split-proportion="0.3962264">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="vue-neighborhood.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/assets/html/vue-neighborhood.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="425">
+                  <caret line="25" column="22" lean-forward="false" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="vueMap.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/assets/js/modules/vueMap.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="476">
+                  <caret line="413" column="35" lean-forward="true" selection-start-line="413" selection-start-column="35" selection-end-line="413" selection-end-column="35" />
+                  <folding>
+                    <element signature="e#2510#3304#0" expanded="false" />
+                    <element signature="e#3332#4279#0" expanded="false" />
+                    <element signature="e#8801#14262#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -26,8 +66,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>markerPin</find>
-      <find>call</find>
       <find>url:</find>
       <find>main-menu</find>
       <find>sub</find>
@@ -56,6 +94,8 @@
       <find>removeContentActive</find>
       <find>console</find>
       <find>search-dropdown</find>
+      <find>zoom</find>
+      <find>get_new_mapmenu_list</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -122,11 +162,11 @@
         <option value="$PROJECT_DIR$/assets/js/modules/module.js" />
         <option value="$PROJECT_DIR$/assets/js/global.js" />
         <option value="$PROJECT_DIR$/assets/html/templates/map-home.html" />
-        <option value="$PROJECT_DIR$/assets/js/modules/googleMap.js" />
         <option value="$PROJECT_DIR$/assets/html/templates/intro-home.html" />
         <option value="$PROJECT_DIR$/assets/css/blocks/_intro-home.scss" />
-        <option value="$PROJECT_DIR$/assets/html/vue-neighborhood.html" />
         <option value="$PROJECT_DIR$/assets/css/blocks/_neighborhood-map.scss" />
+        <option value="$PROJECT_DIR$/assets/js/modules/googleMap.js" />
+        <option value="$PROJECT_DIR$/assets/html/vue-neighborhood.html" />
         <option value="$PROJECT_DIR$/assets/js/modules/vueMap.js" />
       </list>
     </option>
@@ -158,10 +198,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2106" />
-    <option name="y" value="300" />
-    <option name="width" value="1861" />
-    <option name="height" value="1048" />
+    <option name="x" value="1920" />
+    <option name="y" value="-4" />
+    <option name="width" value="1920" />
+    <option name="height" value="1084" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -186,6 +226,17 @@
               <item name="review_parkchester" type="b2602c69:ProjectViewProjectNode" />
               <item name="review_parkchester" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="review_parkchester" type="b2602c69:ProjectViewProjectNode" />
+              <item name="review_parkchester" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="review_parkchester" type="b2602c69:ProjectViewProjectNode" />
+              <item name="review_parkchester" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -197,7 +248,7 @@
   <component name="PropertiesComponent">
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../kanekessler" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../shipme" />
     <property name="nodejs_interpreter_path" value="/usr/bin/node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
@@ -280,15 +331,19 @@
       <workItem from="1534944847556" duration="770000" />
       <workItem from="1534947225391" duration="562000" />
       <workItem from="1535437507406" duration="9760000" />
-      <workItem from="1535461370715" duration="78000" />
+      <workItem from="1535461370715" duration="280000" />
+      <workItem from="1535461659568" duration="1817000" />
+      <workItem from="1535463490012" duration="21000" />
+      <workItem from="1535465656669" duration="2593000" />
+      <workItem from="1535524822363" duration="25675000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="430389000" />
+    <option name="totallyTimeSpent" value="460697000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2106" y="300" width="1922" height="1092" extended-state="6" />
+    <frame x="1920" y="-4" width="1920" height="1084" extended-state="6" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13389562" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -297,7 +352,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20628272" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2356021" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -637,13 +692,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/modules/googleMap.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="110" column="27" lean-forward="false" selection-start-line="110" selection-start-column="27" selection-end-line="110" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/html/templates/intro-home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -665,25 +713,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/blocks/_neighborhood-map.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="245" column="3" lean-forward="true" selection-start-line="245" selection-start-column="3" selection-end-line="245" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/modules/googleMap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2">
+          <caret line="1" column="32" lean-forward="false" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
+          <folding>
+            <element signature="e#746#904#0" expanded="false" />
+            <element signature="e#906#1077#0" expanded="false" />
+            <element signature="e#1284#1539#0" expanded="false" />
+            <element signature="e#1781#1946#0" expanded="false" />
+            <element signature="e#1948#2095#0" expanded="false" />
+            <element signature="e#2276#2492#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/html/vue-neighborhood.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="118" column="28" lean-forward="false" selection-start-line="118" selection-start-column="28" selection-end-line="118" selection-end-column="28" />
+        <state relative-caret-position="425">
+          <caret line="25" column="22" lean-forward="false" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/modules/vueMap.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="426" column="34" lean-forward="true" selection-start-line="426" selection-start-column="34" selection-end-line="426" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/blocks/_neighborhood-map.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="245" column="3" lean-forward="true" selection-start-line="245" selection-start-column="3" selection-end-line="245" selection-end-column="3" />
+        <state relative-caret-position="476">
+          <caret line="413" column="35" lean-forward="true" selection-start-line="413" selection-start-column="35" selection-end-line="413" selection-end-column="35" />
+          <folding>
+            <element signature="e#2510#3304#0" expanded="false" />
+            <element signature="e#3332#4279#0" expanded="false" />
+            <element signature="e#8801#14262#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
